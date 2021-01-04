@@ -15,4 +15,5 @@ In linux, type ./run.sh
 Then it would build them. In windows which is not WSL, you can use virtual machine player and pre-built ISO image to try it.
 
 #Screenshot
+
 ![Screenshot of 1.2 beta](sshot.jpg)

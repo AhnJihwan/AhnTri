@@ -1,12 +1,12 @@
 # Beta of AhnTri 1.2
-Added feature
+Added feature(Accomplished)
 - DOS Box GUI
 - Organized structue
 - Notes(doesn't save files, just keyboard I/O) --> Looking forward to save
 - Power functions in CCalc
 - Grub which could be run with Linux
 
-WIW(What I Want)
+WIW(What I Want, Unaccomplished yet)
 - Memory mamgaement( Directories, Filesystem, save/open files...)
 - Time
 - Window multi taksing

@@ -5,6 +5,7 @@ Added feature
 - Notes(doesn't save files, just keyboard I/O) --> Looking forward to save
 - Power functions in CCalc
 - Grub which could be run with Linux
+
 WIW(What I Want)
 - Memory mamgaement( Directories, Filesystem, save/open files...)
 - Time

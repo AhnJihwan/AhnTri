@@ -13,14 +13,19 @@
 void display_menu()
 {
   gotoxy(25, 0);
-  os_print_color("\n#|4|=|3|###################", BLACK, WHITE);
-  os_print_color("\n#   AhnTri NumDOS 1.2     #", BLACK, WHITE);
-  os_print_color("\n#-~=-~=~--~=~--~=~--~=~-=-#", BLACK, WHITE);
-  os_print_color("\n# Press [0] for help or o #", BLACK, WHITE);
-  os_print_color("\n# ther key for each apps. #", BLACK, WHITE);
-  os_print_color("\n###########################", BLACK, WHITE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color(" (4-exit)        (3-clear) ", BLACK, WHITE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color("    AhnTri NumDOS 1.2      ", BLACK, WHITE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color(" -~=-~=~--~=~--~=~--~=~-=- ", BLACK, WHITE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color("  Press [0] for help or o  ", BLACK, WHITE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color("  ther key for each apps.  ", BLACK, WHITE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color("                           ", BLACK, WHITE);
 }
-
 
 void kernmain()
 {

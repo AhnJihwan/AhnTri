@@ -28,7 +28,7 @@ WIW(What I Want, Unaccomplished yet)
 
 # How to build
 In Linux, type `~$ ./run.sh`. I use Xfce Ubuntu(Xubuntu), and I get something like this:
-![Screenshot of building](asdf.jpg)
+![Screenshot of building](adsf.jpg)
 Then it would build them. In windows which is not WSL, you can use virtual machine player and pre-built ISO image to try it.
 
 # Screenshot

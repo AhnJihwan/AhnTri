@@ -1,20 +1,27 @@
 void display_help()
 {
   gotoxy(25, 0);
-  os_print_color("\n /-----------------------/ |", WHITE, BLUE);
-  os_print_color("\n ------------------------| |", WHITE, BLUE);
-  os_print_color("\n|    AhnTri Notes 1.2    | |", WHITE, BLUE);
-  os_print_color("\n|-~=-~=~--~=~--~=~--~=~--| |", WHITE, BLUE);
-  os_print_color("\n| Take notes and do not  | |", WHITE, BLUE);
-  os_print_color("\n| shut down the PC then. | |", WHITE, BLUE);
-  os_print_color("\n-------------------------|/ ", WHITE, BLUE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color(" /-----------------------/ |", WHITE, BRIGHT_BLUE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color(" ------------------------| |", WHITE, BRIGHT_BLUE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color("|    AhnTri Notes 1.2    | |", WHITE, BRIGHT_BLUE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color("|-~=-~=~--~=~--~=~--~=~--| |", WHITE, BRIGHT_BLUE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color("| Take notes and do not  | |", WHITE, BRIGHT_BLUE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color("| shut down the PC then. | |", WHITE, BRIGHT_BLUE);
+  os_print_color("\n                           ", BLACK, BLACK);
+  os_print_color("-------------------------|/ ", WHITE, BRIGHT_BLUE);
 }
 
 void notes(){
 	int NoTe;
-	clear_screen();
 	display_help();
 	print_new_line();
+	os_print_string("                           -> ");
 	NoTe = read_int();
 }
 

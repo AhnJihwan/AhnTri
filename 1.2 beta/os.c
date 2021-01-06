@@ -32,7 +32,7 @@ void kernmain()
   int choice, num1, num2, po1;
   while(1){
     display_menu();
-    os_print_string("\n\ntrikern~@ ");
+    os_print_string("\n\n                           trikern~@ ");
     choice = read_int();
     switch(choice){
       case 0:

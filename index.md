@@ -1,35 +1,41 @@
 # Welcome to AhnTri Page
 
-Hello! AhnTri is my hobbiest OS (yet) and this is just to play around my codes of C and Assembly.
+AhnTri is my hobbiest OS yet and it is in developmeent.
 
-### Markdown
+### What it is all about
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This is little more than some freeware OS which can run with Linux thanks to GRUB so that it can multiboot. People who know C and Assembly can make something like this.
+So, it is very, very simple.
+In able to run it, copy and paste the code below.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```INI
+menuentry "TriOS2.10" {
+	multiboot /boot/TriOS2.bin
+}
 ```
+# Current status
+Added feature(Accomplished)
+- DOS Box GUI
+- Organized structue
+- Notes(doesn't save files, just keyboard I/O) --> Looking forward to save
+- Power functions in CCalc
+- Grub which could be run with Linux
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+WIW(What I Want, Unaccomplished yet)
+- Memory mamgaement( Directories, Filesystem, save/open files...)
+- Time
+- Window multi taksing
 
-### Jekyll Themes
+# How to build
+In Linux, type `~$ ./run.sh`. I use Xfce Ubuntu(Xubuntu), and I get something like this:
+![Screenshot of building](asdf.jpg)
+Then it would build them. In windows which is not WSL, you can use virtual machine player and pre-built ISO image to try it.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AhnJihwan/AhnTri/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+# Screenshot
+Just a screenshot and the window one whould probably get when typed `2` in the NumDOS terminal.
+![Screenshot of 1.2 beta 2](sshot.jpg)
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Jekyll Themes of AhnTri
+
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AhnJihwan/AhnTri/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file. 

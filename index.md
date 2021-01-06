@@ -35,7 +35,5 @@ Then it would build them. In windows which is not WSL, you can use virtual machi
 Just a screenshot and the window one whould probably get when typed `2` in the NumDOS terminal.
 ![Screenshot of 1.2 beta 2](sshot.jpg)
 
-
-### Jekyll Themes of AhnTri
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AhnJihwan/AhnTri/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file. 
+# Pre-built
+Go to the `build` folder of the branch `main`.

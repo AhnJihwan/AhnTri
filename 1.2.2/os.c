@@ -35,7 +35,7 @@ void kernmain(){
 		display_menu();
 		os_print_string("\n\ntrikern~@ ");
 		choice = read_char();
-		if(strcmp(choice, helpar[])==0){
+		if(strcmp(choice, "help")==0){
 			help();
 		} else if(strcmp(choice, "ccalc")==0){
 			ccalc();

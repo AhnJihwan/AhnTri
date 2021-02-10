@@ -14,7 +14,6 @@
 #include "tcom/cbot.h"
 #include "tcom/forker.h"
 #include "homenu.h"
-#include "tcom/include/stdint.h"
 
 void display_menu()
 {
@@ -22,69 +21,46 @@ void display_menu()
   os_print_color("\n\t", RED, BLACK);
   os_print_color("\t", GREEN, BLACK);
   os_print_color("\t", YELLOW, BLACK);
-  os_print_color("     4-exit 3-clear     ", BLACK, CYAN);
+  os_print_color("                        ", BLACK, CYAN);
   os_print_color("\n    AhnTri NumDOS 1.2      ", BLACK, WHITE);
   os_print_color("\n -~=-~=~--~=~--~=~--~=~-=- ", BLACK, WHITE);
-  os_print_color("\n  Press [0] for help or o  ", BLACK, WHITE);
+  os_print_color("\n  Type help for help or o  ", BLACK, WHITE);
   os_print_color("\n  ther key for each apps.  ", BLACK, WHITE);
   os_print_color("\n                           ", BLACK, WHITE);
 }
 
-void kernmain()
-{
-  int choice, num1, num2, po1;
-  while(1){
-    display_menu();
-    os_print_string("\n\ntrikern~@ ");
-    choice = read_int();
-    switch(choice){
-      case 0:
-        help();
-        break;
-      case '@':
-        help();
-        break;
-      case 1:
-        ccalc();
-        break;
-      case 2:
-        osver();
-        break;
-      case 3:
-        clscr();
-        break;
-      case 4:
-        exit();
-        break;
-      case 5:
-        cputest();
-        break;
-      case 6:
-        notes();
-        break;
-      case 7:
-        pedx();
-        break;
-      case 8:
-        ahntroid();
-        break;
-      case 9:
-        fbomb();
-        break;
-      case 10:
-        homem();
-        break;
-      case KEY_HOME:
-        homem();
-        break;
-      default:
-        os_print_string("\nNo such command(number)!");
-        break;
-    }
-    os_print_string("\n\nPress any key to contine...");
-    getchar();
-    clear_screen();
-  }
+void kernmain(){
+	int choice, num1, num2, po1;
+	while(1){
+		display_menu();
+		os_print_string("\n\ntrikern~@ ");
+		choice = read_char();
+		if(strcmp(choice, helpar[])==0){
+			help();
+		} else if(strcmp(choice, "ccalc")==0){
+			ccalc();
+		} else if(strcmp(choice, "osver")==0){
+			osver();
+		} else if(strcmp(choice, "clscr")==0){
+			clscr();
+		} else if(strcmp(choice, "exit")==0){
+			exit();
+		} else if(strcmp(choice, "cputest")==0){
+			cputest();
+		} else if(strcmp(choice, "notes")==0){
+			notes();
+		} else if(strcmp(choice, "pedx")==0){
+			pedx();
+		} else if(strcmp(choice, "atroid")==0){
+			ahntroid();
+		} else if(strcmp(choice, "atfork")==0){
+			fbomb();
+		} else if(strcmp(choice, "homenu")==0){
+			homem();
+		}else{
+			os_print_string("\n\nPress any key to contine...");
+		}
+	}
 }
 
 void mkern_main()

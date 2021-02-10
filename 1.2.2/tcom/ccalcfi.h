@@ -29,14 +29,6 @@ void display_menu_ccalc()
   os_print_color("\n                           ", BLACK, BLACK);
   os_print_color("  -~=-~=~--~=~--~=~--~=~--~=  ", BLACK, CYAN);
   os_print_color("\n                           ", BLACK, BLACK);
-  os_print_color("1 for addition, 2 for subtract", BLACK, CYAN);
-  os_print_color("\n                           ", BLACK, BLACK);
-  os_print_color("ion, 3 for multiplication, 4 f", BLACK, CYAN);
-  os_print_color("\n                           ", BLACK, BLACK);
-  os_print_color("or division, 5 for Power 2, 6 ", BLACK, CYAN);
-  os_print_color("\n                           ", BLACK, BLACK);
-  os_print_color("for Power 3, 7 to return.     ", BLACK, CYAN);
-  os_print_color("\n                           ", BLACK, BLACK);
   os_print_color("For More, press [0] for help. ", BLACK, CYAN);
 }
 
@@ -65,10 +57,13 @@ void ccalc(){
 		ccho = read_int();
 		switch(ccho){
 			case 0:
- 				os_print_color("\n                           ", BLACK, BLACK);
-  				os_print_color("For (a+b)^3, [8], GUI [9]     ", BLACK, CYAN);
- 		 		os_print_color("\n                           ", BLACK, BLACK);
-  				os_print_color("Return to TUI, [7]", BLACK, CYAN);
+ 			 	os_print_color("\n                           ", BLACK, BLACK);
+  				os_print_color("Addition:1, Sub:2, Mul:3, Div:4   ", BLACK, CYAN);
+   			   os_print_color("\n                           ", BLACK, BLACK);
+  				os_print_color("Power 2:5, Power 3:6                 ", BLACK, CYAN);
+ 			 	os_print_color("\n                           ", BLACK, BLACK);
+  				os_print_color("For (a+b)^3,  [8], GeX [9], TUI [7] ", BLACK, CYAN);
+   			   os_print_color("\n                           ", BLACK, BLACK);
 				break;
 			case 1:
 				rtn(&num1, &num2);

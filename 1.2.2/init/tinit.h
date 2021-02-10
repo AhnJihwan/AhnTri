@@ -46,6 +46,14 @@ void init_vga(uint8 fg_color, uint8 bg_color)
   g_bg_color = bg_color;
 }
 
+int strcmp(char s1[], char s2[]) {
+    int i;
+    for (i = 0; s1[i] == s2[i]; i++) {
+        if (s1[i] == '\0') return 0;
+    }
+    return s1[i] - s2[i];
+}
+
 uint8 inb(uint16 port)
 {
   uint8 data;
@@ -173,6 +181,30 @@ void print_int(int num)
   char str_num[digit_count(num)+1];
   itoa(num, str_num);
   os_print_string(str_num);
+}
+
+int read_char()
+{
+  char ch = 0;
+  char keycode = 0;
+  char data[32];
+  int index = 0;
+  do{
+    keycode = get_input_keycode();
+    if(keycode == KEY_ENTER){
+      data[index] = '\0';
+      print_new_line();
+      break;
+    }else{
+      ch = get_ascii_char(keycode);
+      print_char(ch);
+      data[index] = ch;
+      index++;
+    }
+    suspend(OS_suspend);
+  }while(ch > 0);
+
+  return data;
 }
 
 int read_int()

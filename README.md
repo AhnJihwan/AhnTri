@@ -1,4 +1,4 @@
-#AhnTri OS
+# AhnTri OS
 This is my hobby OS, now it can be run on real hardware, focused on bootable USBs.
 Can be used as multipurpose like calculators and more. 
 Has a simple code art in it and you can try it out at forker.h.
@@ -26,5 +26,5 @@ menuentry "AhnTriOS" {
 }
 ```
 #Screenshots
-![Screenshot of 1.2.3](sshot.jpg)
-![Screenshot of 1.2.3](sshot2.jpg)
+![Screenshot of 1.2.3](sshot.png)
+![Screenshot of 1.2.3](sshot2.png)

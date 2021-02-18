@@ -2,7 +2,7 @@
 #include "kernel.h"
 #include "kio/utils.h"
 #include "kio/char.h"
-#include "init/tinit.h"
+#include "init/tinit_vmpc.h"
 #include "tcom/ccalcfi.h"
 #include "tcom/osver.h"
 #include "tcom/clscr.h"

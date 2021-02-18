@@ -141,7 +141,7 @@ void print_char_notepad(char ch)
   vga_index++;
 }
 
-void os_print_string(char *str)
+void printf(char *str)
 {
   uint32 index = 0;
   while(str[index]){
@@ -180,7 +180,7 @@ void print_int(int num)
 {
   char str_num[digit_count(num)+1];
   itoa(num, str_num);
-  os_print_string(str_num);
+  printf(str_num);
 }
 
 int read_char()

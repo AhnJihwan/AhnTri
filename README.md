@@ -11,6 +11,8 @@ Added feature(Accomplished)
 - Better system
 - UI change
 - Additional functions in CCalc
+- Renamed function `os_print_string` to `printf`
+- Updated math.h for more efficient math
 - small other changes
 
 WIW(What I Want, Unaccomplished yet)

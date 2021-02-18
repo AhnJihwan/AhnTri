@@ -2,7 +2,7 @@
 #include "kernel.h"
 #include "kio/utils.h"
 #include "kio/char.h"
-#include "init/tinit_vmpc.h"
+#include "init/tinit_vmpc.h"						//Fixed fatal bug which does not build in vmpc
 #include "tcom/ccalcfi.h"
 #include "tcom/osver.h"
 #include "tcom/clscr.h"

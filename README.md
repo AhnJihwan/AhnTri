@@ -24,7 +24,7 @@ WIW(What I Want, Unaccomplished yet)
 In able to run it in your PC, copy and paste the code below.
 ```INI
 menuentry "AhnTriOS" {
-	multiboot /boot/directory/of/your/os/TriOS2.bin
+	multiboot /boot/directory/of/your/os/ATOS1.bin
 }
 ```
 # Screenshots

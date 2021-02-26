@@ -9,8 +9,8 @@ So, it is very, very simple.
 In able to run it, copy and paste the code below.
 
 ```INI
-menuentry "TriOS2.10" {
-	multiboot /boot/TriOS2.bin
+menuentry "AhnTri OS" {
+	multiboot /boot/ATOS1.bin
 }
 ```
 # Current status

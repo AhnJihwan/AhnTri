@@ -32,7 +32,7 @@ void display_menu()
 void kernmain(){
 	char * choice;
 	while(1){
-		os_print_string("\n\ntrikern~@ ");
+		printf("\n\ntrikern~@ ");
 		choice = read_char();
 		if(strcmp(choice, "help")==0){
 			help();
@@ -57,7 +57,7 @@ void kernmain(){
 		} else if(strcmp(choice, "homenu")==0){
 			homem();
 		}else{
-			os_print_string("\nCommand not found.");
+			printf("\nCommand not found.");
 		}
 	}
 }

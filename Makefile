@@ -11,12 +11,12 @@ i686-bboot: boot/boot.s
 	i686-elf-as --32 boot/boot.s -o boot.o
 
 #Build Kernel image via i686-elf-gcc
-i686-kernel: os_rpc.c
-	i686-elf-gcc -c os_rpc.c -o image.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+i686-kernel: init/os_rpc.c
+	i686-elf-gcc -c init/os_rpc.c -o image.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 #Build kernel main image
-kernel: os_rpc.c
-	gcc -m32 -c os_rpc.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
+kernel: init/os_rpc.c
+	gcc -m32 -c init/os_rpc.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 
 #Build Keychar drivers
 keychar: kio/char.c kio/utils.c

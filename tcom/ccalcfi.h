@@ -21,44 +21,44 @@ void divion(int a, int b){
 void display_menu_ccalc()
 {
   gotoxy(25, 0);
-  os_print_string("\n");
+  printf("\n");
   os_print_color("       AhnTri C caculator     ", BLACK, GREY);
   gotoxy(25, 0);
-  os_print_string("\n");
+  printf("\n");
   os_print_color("  [ Welcome to AhnTri Calc ]  ", BLACK, WHITE);
   gotoxy(25, 0);
-  os_print_string("\n");
+  printf("\n");
   os_print_color("  -~=-~=~--~=~--~=~--~=~--~=  ", BLACK, WHITE);
-  os_print_string("\n");
+  printf("\n");
   os_print_color("For More, press [0] for help. ", BLACK, WHITE);
 }
 
 void rtn(int* num1, int *num2)
 {
-  os_print_string("Enter first number : ");
+  printf("Enter first number : ");
   suspend(OS_suspend);
   *num1 = read_int();
-  os_print_string("Enter second number : ");
+  printf("Enter second number : ");
   suspend(OS_suspend);
   *num2 = read_int();
 }
 
 void abc(int * num1, int * num2, int * num3)
 {
-  os_print_string("Enter first number : ");
+  printf("Enter first number : ");
   suspend(OS_suspend);
   *num1 = read_int();
-  os_print_string("Enter second number : ");
+  printf("Enter second number : ");
   suspend(OS_suspend);
   *num2 = read_int();
-  os_print_string("Enter third number : ");
+  printf("Enter third number : ");
   suspend(OS_suspend);
   *num3 = read_int();
 }
 
 void rtnp(int* po1)
 {
-  os_print_string("Enter base : ");
+  printf("Enter base : ");
   suspend(OS_suspend);
   *po1 = read_int();
 }
@@ -67,50 +67,50 @@ void ccalc(){
 	int ccho, num1, num2, num3, po1;
 	while(1){
 		display_menu_ccalc();
-		os_print_string("\n\n> ");
+		printf("\n\n> ");
 		ccho = read_int();
 		switch(ccho){
 			case 0:
- 			 	os_print_string("\n");
+ 			 	printf("\n");
   				os_print_color("Addition:1, Sub:2, Mul:3, Div:4   ", BLACK, WHITE);
-   			   os_print_string("\n");
+   			   printf("\n");
   				os_print_color("Power 2:5, Power 3:6, sqrt: [10]  ", BLACK, WHITE);
- 			 	os_print_string("\n");
+ 			 	printf("\n");
   				os_print_color("For (a+b)^3,  [8], GeX [9], TUI [7] ", BLACK, WHITE);
-   			   os_print_string("\n");
+   			   printf("\n");
 				break;
 			case 1:
 				rtn(&num1, &num2);
-				os_print_string("Addition : ");
+				printf("Addition : ");
 				adton(num1, num2);
 				break;
 			case 2:
 				rtn(&num1, &num2);
-				os_print_string("Substraction : ");
+				printf("Substraction : ");
 				subton(num1, num2);
 				break;
 			case 3:
 				rtn(&num1, &num2);
-				os_print_string("Multiplication : ");
+				printf("Multiplication : ");
 				multon(num1, num2);
 				break;
 			case 4:
 				rtn(&num1, &num2);
 				if(num2 == 0){
-					os_print_string("Error : Divide by 0");
+					printf("Error : Divide by 0");
 				}else{
-					os_print_string("Division : ");
+					printf("Division : ");
 					print_int(num1 / num2);
 				}
 				break;
 			case 5:
 				rtnp(&po1);
-				os_print_string("Powered 2 result : ");
+				printf("Powered 2 result : ");
 				print_int(powt(po1));
 				break;
 			case 6:
 				rtnp(&po1);
-				os_print_string("Powered 3 result : ");
+				printf("Powered 3 result : ");
 				print_int(powth(po1));
 				break;
 			case 7:
@@ -118,12 +118,12 @@ void ccalc(){
 				break;
 			case 8:
 				rtn(&num1, &num2);
-				os_print_string("Result number : ");
+				printf("Result number : ");
 				print_int(addnpth(num1, num2));
 				break;
 			case 10:
 				rtnp(&po1);
-				os_print_string("Sqare root : ");
+				printf("Sqare root : ");
 				print_int(sqrt(po1));
 				break;
 			case 9:
@@ -133,7 +133,7 @@ void ccalc(){
 				ccalc();
 				break;
 		}
-		os_print_string("\n\nPress any key to reload screen...");
+		printf("\n\nPress any key to reload screen...");
 		getchar();
 		clear_screen();
 	}

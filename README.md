@@ -14,12 +14,12 @@ Added feature(Accomplished)
 - Renamed function `os_print_string` to `printf`
 - Updated math.h for more efficient math
 - small other changes
-
+- PS/2 Mouse but it has a bug which makes the OS a mess.
 WIW(What I Want, Unaccomplished yet)
 - Memory mamgaement( Directories, Filesystem, save/open files...)
 - Time
 - Graphichs
-- PS2 mouse
+
 #Multiboot
 In able to run it in your PC, copy and paste the code below.
 ```INI

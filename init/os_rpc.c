@@ -40,11 +40,11 @@ void kernmain(){
 			ccalc();
 		} else if(strcmp(choice, "osver")==0 || strcmp(choice, "atfetch")==0){
 			osver();
-		} else if(strcmp(choice, "clscr")==0 || strcmp(choice, "clear")==0){
+		} else if(strcmp(choice, "clscr")==0 || strcmp(choice, "clear")==0 || strcmp(choice, "cls")==0){	//just 4 ppl who are used to dos
 			clscr();
 		} else if(strcmp(choice, "exit")==0){
 			exit();
-		} else if(strcmp(choice, "cputest")==0){
+		} else if(strcmp(choice, "cputest")==0 || strcmp(choice, "cpuid")==0){					//The real name of it was cpuid
 			cputest();
 		} else if(strcmp(choice, "notes")==0){
 			notes();

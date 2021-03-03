@@ -1,7 +1,3 @@
-/*
-This is not mine, this is some code from other github content called 'OS' which I
-Leaned from
-*/
 
 int digit_ascii_codes[10] = {0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39};
 
@@ -130,7 +126,7 @@ void cpuid_test()
 
 void cputest()
 {
-  init_vga(GREEN, BLACK);
+  init_vga(CYAN, BLACK);
   cpuid_test();
 }
 

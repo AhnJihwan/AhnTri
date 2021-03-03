@@ -6,6 +6,7 @@
 #include "../tcom/ccalcfi.h"
 #include "../tcom/osver.h"
 #include "../tcom/clscr.h"
+#include "../tcom/cpu/ports.h"
 #include "../tcom/exit.h"
 #include "../tcom/cpuid.h"
 #include "../tcom/note.h"
@@ -14,6 +15,7 @@
 #include "../tcom/cbot.h"
 #include "../tcom/forker.h"
 #include "../homenu.h"
+#include "../kio/types.h"
 
 void display_menu()
 {
@@ -42,8 +44,8 @@ void kernmain(){
 			osver();
 		} else if(strcmp(choice, "clscr")==0 || strcmp(choice, "clear")==0 || strcmp(choice, "cls")==0){	//just 4 ppl who are used to dos
 			clscr();
-		} else if(strcmp(choice, "exit")==0){
-			exit();
+		} else if(strcmp(choice, "halt")==0 || strcmp(choice, "shutdown")==0){
+			shutdown();
 		} else if(strcmp(choice, "cputest")==0 || strcmp(choice, "cpuid")==0){					//The real name of it was cpuid
 			cputest();
 		} else if(strcmp(choice, "notes")==0){

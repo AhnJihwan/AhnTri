@@ -18,11 +18,13 @@ i686-kernel: init/os_rpc.c
 	i686-elf-gcc -c init/os_rpc.c -o image.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 #Build GDT
-gdt: init/gdt.c
+gdt: init/gdt.c init/load_gdt.s
 	gcc -m32 -c init/gdt.c -o gdt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+	as --32 init/load_gdt.s -o load_gdt.o
 
-i686-gdt: init/gdt.c init/gdt.h
+i686-gdt: init/gdt.c init/load_gdt.s
 	i686-elf-gcc -c init/gdt.c -o gdt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+	as --32 init/load_gdt.s -o load_gdt.o
 
 #Build kernel main image
 kernel: init/os_rpc.c
@@ -44,12 +46,12 @@ i686-keychar: kio/utils.c kio/char.c
 	gcc -m32 -c kio/char.c -o char.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 
 #Link everything up
-ld: linker.ld linker.ld image.o char.o boot.o
-	ld -m elf_i386 -T linker.ld image.o utils.o char.o boot.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld image.o char.o boot.o gdt.o load_gdt.o
+	ld -m elf_i386 -T linker.ld image.o utils.o char.o boot.o gdt.o load_gdt.o -o ATOS1.bin -nostdlib
 
 #Link everything up
-ld_vm: linker.ld linker.ld imagei.o char.o boot.o
-	ld -m elf_i386 -T linker.ld imagei.o utils.o char.o boot.o -o ATOS2.bin -nostdlib
+ld_vm: linker.ld linker.ld imagei.o char.o boot.o gdt.o load_gdt.o
+	ld -m elf_i386 -T linker.ld imagei.o utils.o char.o boot.o gdt.o load_gdt.o -o ATOS2.bin -nostdlib
 
 #Assemble gru(bboot)loader
 bboot: boot/boot.s

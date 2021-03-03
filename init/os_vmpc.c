@@ -16,6 +16,7 @@
 #include "../tcom/forker.h"
 #include "../homenu.h"
 #include "../kio/types.h"
+#include "gdt.h"
 
 void display_menu()
 {

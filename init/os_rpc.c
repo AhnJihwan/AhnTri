@@ -16,6 +16,7 @@
 #include "../tcom/forker.h"
 #include "../homenu.h"
 #include "../kio/types.h"
+#include "gdt.h"
 
 void display_menu()
 {
@@ -66,6 +67,7 @@ void kernmain(){
 
 void mkern_main()
 {
+  init_gdt();
   init_vga(CYAN, BLACK);
   display_menu();
   kernmain();

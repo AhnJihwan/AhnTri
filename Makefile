@@ -1,10 +1,13 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot kernel keychar ld buildgrub clean
+make_deafult: bboot kernel keychar gdt ld buildgrub clean
+
+#Makes VMPC up
+vmpc: bboot kernel_vmpc keychar gdt ld_vm buildgrub_vmpc clean_vmpc
 
 #Makes it via i686-elf-gcc
-make_i686: i686-bboot i686-kernel i686-keychar ld buildgrub clean
+make_i686: i686-bboot i686-kernel i686-keychar i686-gdt ld buildgrub clean
 
 #Assemble via i686-elf-gcc
 i686-bboot: boot/boot.s
@@ -14,9 +17,20 @@ i686-bboot: boot/boot.s
 i686-kernel: init/os_rpc.c
 	i686-elf-gcc -c init/os_rpc.c -o image.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
+#Build GDT
+gdt: init/gdt.c
+	gcc -m32 -c init/gdt.c -o gdt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
+i686-gdt: init/gdt.c init/gdt.h
+	i686-elf-gcc -c init/gdt.c -o gdt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
 #Build kernel main image
 kernel: init/os_rpc.c
 	gcc -m32 -c init/os_rpc.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
+
+#Build kernel main image
+kernel_vmpc: init/os_vmpc.c
+	gcc -m32 -c init/os_vmpc.c -o imagei.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 
 #Build Keychar drivers
 keychar: kio/char.c kio/utils.c
@@ -33,6 +47,10 @@ i686-keychar: kio/utils.c kio/char.c
 ld: linker.ld linker.ld image.o char.o boot.o
 	ld -m elf_i386 -T linker.ld image.o utils.o char.o boot.o -o ATOS1.bin -nostdlib
 
+#Link everything up
+ld_vm: linker.ld linker.ld imagei.o char.o boot.o
+	ld -m elf_i386 -T linker.ld imagei.o utils.o char.o boot.o -o ATOS2.bin -nostdlib
+
 #Assemble gru(bboot)loader
 bboot: boot/boot.s
 	as --32 boot/boot.s -o boot.o
@@ -45,9 +63,20 @@ buildgrub: ATOS1.bin
 	cp grub.cfg rpc_isodir/boot/grub/grub.cfg
 	grub-mkrescue -o atos_rpc.iso rpc_isodir
 
+#Build ISO file via grub
+buildgrub_vmpc: ATOS2.bin
+	grub-file --is-x86-multiboot ATOS2.bin
+	mkdir -p vmpc_isodir/boot/grub
+	cp ATOS2.bin vmpc_isodir/boot/ATOS2.bin
+	grub-mkrescue -o atos_vmpc.iso vmpc_isodir
+
 #Run it in QEMU
 qemu: atos_rpc.iso
 	qemu-system-i386 -cdrom atos_rpc.iso
+
+#Run it in QEMU
+qemu_vmpc: atos_vmpc.iso
+	qemu-system-i386 -cdrom atos_vmpc.iso
 
 #install packages if not via apt
 installpkg_apt:
@@ -60,3 +89,7 @@ elf_i386_declare:
 #Cleaning up files
 clean:
 	rm image.o char.o boot.o utils.o
+
+#Cleaning up files
+clean_vmpc:
+	rm imagei.o char.o boot.o utils.o

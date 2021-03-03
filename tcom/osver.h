@@ -27,7 +27,7 @@ Terminal name       OS_NUM
 */
 
 void osver(){
-	os_print_color("        /\\       OS: AhnTri OS 1.2.3 i386          " , BRIGHT_BLUE, CYAN);
+	os_print_color("        /\\       OS: AhnTri OS 1.2.3.2 i386        " , BRIGHT_BLUE, CYAN);
 	os_print_color("\n       /@ \\      Machine: " , BRIGHT_BLUE, CYAN);
 	bitidentify();
 	os_print_color("                   " , BRIGHT_BLUE, CYAN);

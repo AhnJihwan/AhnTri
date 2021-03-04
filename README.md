@@ -1,4 +1,4 @@
-![AhnTriLogo](at.png)
+![AhnTriLogo](at.jpg)
 # AhnTri OS
 This is my hobby OS, now it can be run on real hardware, focused on bootable USBs.
 Can be used as multipurpose like calculators and more. 

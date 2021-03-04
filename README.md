@@ -32,3 +32,4 @@ menuentry "AhnTriOS" {
 ![Screenshot of 1.2.3](sshot.png)
 ![Screenshot of 1.2.3](sshot2.png)
 ![Screenshot of 1.2.3](sshot3.png)
+![Screenshot of 1.2.3](sshot4.png)

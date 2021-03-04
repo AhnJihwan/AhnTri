@@ -14,6 +14,7 @@
 #include "../tcom/help.h"
 #include "../tcom/cbot.h"
 #include "../tcom/forker.h"
+#include "../tcom/timermode.h"
 #include "../homenu.h"
 #include "../kio/types.h"
 #include "gdt.h"
@@ -53,20 +54,26 @@ void kernmain(){
 			notes();
 		} else if(strcmp(choice, "pedx")==0){
 			pedx();
-		} else if(strcmp(choice, "atroid"==0) || strcmp(choice, "ai")==0){
-			ahntroid();
 		} else if(strcmp(choice, "atfork")==0){
 			fbomb();
 		} else if(strcmp(choice, "homenu")==0){
 			homem();
+		} else if(strcmp(choice, "timer")==0){
+			timer();
+		} else if(strcmp(choice, "atroid"==0) || strcmp(choice, "ai")==0){
+			ahntroid();
 		}else{
-			printf("\nCommand not found.");
+			printf("\n");
+			printf(choice);
+			printf(": command not found");
+
 		}
 	}
 }
 
 void mkern_main()
 {
+  init_gdt();
   init_vga(CYAN, BLACK);
   display_menu();
   kernmain();

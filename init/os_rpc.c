@@ -14,6 +14,7 @@
 #include "../tcom/help.h"
 #include "../tcom/cbot.h"
 #include "../tcom/forker.h"
+#include "../tcom/timermode.h"
 #include "../homenu.h"
 #include "../kio/types.h"
 #include "gdt.h"
@@ -35,7 +36,9 @@ void display_menu()
 void kernmain(){
 	char * choice;
 	while(1){
-		printf("\n\ntrikern~@ ");
+		printf("\n\ntrikern~");
+		print_char(30);
+		printf(" ");
 		choice = read_char();
 		if(strcmp(choice, "help")==0){
 			help();
@@ -53,14 +56,19 @@ void kernmain(){
 			notes();
 		} else if(strcmp(choice, "pedx")==0){
 			pedx();
-		} else if(strcmp(choice, "atroid"==0) || strcmp(choice, "ai")==0){
-			ahntroid();
 		} else if(strcmp(choice, "atfork")==0){
 			fbomb();
 		} else if(strcmp(choice, "homenu")==0){
 			homem();
+		} else if(strcmp(choice, "timer")==0){
+			timer();
+		} else if(strcmp(choice, "atroid"==0) || strcmp(choice, "ai")==0){
+			ahntroid();
 		}else{
-			printf("\nCommand not found.");
+			printf("\n");
+			printf(choice);
+			printf(": command not found");
+
 		}
 	}
 }

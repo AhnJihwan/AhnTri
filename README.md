@@ -18,6 +18,7 @@ Added feature(Accomplished)
 - PS/2 Mouse but it has a bug which makes the OS a mess.
 - GDT and malloc() memory managements
 - Timer
+
 WIW(What I Want, Unaccomplished yet)
 - Directory access
 - Graphichs

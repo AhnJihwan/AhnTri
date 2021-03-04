@@ -15,9 +15,10 @@ Added feature(Accomplished)
 - Updated math.h for more efficient math
 - small other changes
 - PS/2 Mouse but it has a bug which makes the OS a mess.
+- GDT and malloc() memory managements
+- Timer
 WIW(What I Want, Unaccomplished yet)
-- Memory mamgaement( Directories, Filesystem, save/open files...)
-- Time
+- Directory access
 - Graphichs
 
 #Multiboot
@@ -30,3 +31,4 @@ menuentry "AhnTriOS" {
 # Screenshots
 ![Screenshot of 1.2.3](sshot.png)
 ![Screenshot of 1.2.3](sshot2.png)
+![Screenshot of 1.2.3](sshot3.png)

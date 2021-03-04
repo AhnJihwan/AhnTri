@@ -36,7 +36,9 @@ void display_menu()
 void kernmain(){
 	char * choice;
 	while(1){
-		printf("\n\ntrikern~@ ");
+		printf("\n\ntrikern~");
+		print_char(30);
+		printf(" ");
 		choice = read_char();
 		if(strcmp(choice, "help")==0){
 			help();

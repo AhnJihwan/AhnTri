@@ -6,6 +6,10 @@ Has a simple code art in it and you can try it out at forker.h.
 Now supporting text I/O, not NumDOS.
 However, NumDOS is available at GeX(something like GUI, I mean, like Samsung DeX or Kali KeX)
 Recommend Ventoy for USB.
+OK, um... I have found out I have missed malloc h here and it wont build giving the error no function malloc and free
+And I just made a new feature: memory copy.
+Now it can memorize chars like a or b
+I am looking forward to usernames and passwords, and some AI funtions for cbot.
 # Current status
 Added feature(Accomplished)
 - Terminal instead of NumDOS
@@ -15,8 +19,9 @@ Added feature(Accomplished)
 - Renamed function `os_print_string` to `printf`
 - Updated math.h for more efficient math
 - small other changes
-- PS/2 Mouse but it has a bug which makes the OS a mess.
+- PS/2 Mouse but it has a bug which makes the OS a mess.(So sorry but don't move your mouse when running in real hardware. I've done it and this but killed me.)
 - GDT and malloc() memory managements
+- memcpy() function
 - Timer
 
 WIW(What I Want, Unaccomplished yet)

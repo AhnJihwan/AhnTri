@@ -8,6 +8,18 @@ uint32 strlen(const char* str)
   return length;
 }
 
+long stoi(const char *s)
+{
+    long i;
+    i = 0;
+    while(*s >= '0' && *s <= '9')
+    {
+        i = i * 10 + (*s - '0');
+        s++;
+    }
+    return i;
+}
+
 uint32 digit_count(int num)
 {
   uint32 count = 0;

@@ -1,6 +1,5 @@
 // include files by #include <neccessary file>
 #include "../kernel.h"
-#include "../kio/utils.h"
 #include "../kio/char.h"
 #include "tinit_rpc.h"
 #include "../tcom/ccalcfi.h"
@@ -15,9 +14,11 @@
 #include "../tcom/cbot.h"
 #include "../tcom/forker.h"
 #include "../tcom/timermode.h"
+#include "../tcom/mem.h"
 #include "../homenu.h"
 #include "../kio/types.h"
 #include "gdt.h"
+#include "../AhnLibc/mem.h"
 
 void display_menu()
 {
@@ -62,6 +63,10 @@ void kernmain(){
 			homem();
 		} else if(strcmp(choice, "timer")==0){
 			timer();
+		} else if(strcmp(choice, "memset")==0){
+			memanset();
+		} else if(strcmp(choice, "mp")==0){
+			memprintf();
 		} else if(strcmp(choice, "atroid"==0) || strcmp(choice, "ai")==0){
 			ahntroid();
 		}else{

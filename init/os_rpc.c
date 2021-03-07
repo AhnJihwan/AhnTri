@@ -26,7 +26,7 @@ void display_menu()
   os_print_color("\n                          ", BLACK, CYAN);
   os_print_color("-", YELLOW, BLACK);
   os_print_color("+", GREEN, BLACK);
-  os_print_color("\t", RED, BLACK);
+  os_print_color("x", RED, BLACK);
   os_print_color("\n    AhnTri Terminal 1.2      ", BLACK, WHITE);
   os_print_color("\n  -~=-~=~--~=~--~=~--~=~-=-  ", BLACK, WHITE);
   os_print_color("\n   Type help for help or o   ", BLACK, WHITE);
@@ -63,11 +63,11 @@ void kernmain(){
 			homem();
 		} else if(strcmp(choice, "timer")==0){
 			timer();
-		} else if(strcmp(choice, "memset")==0){
+		} else if(strcmp(choice, "memor")==0){
 			memanset();
 		} else if(strcmp(choice, "mp")==0){
 			memprintf();
-		} else if(strcmp(choice, "atroid"==0) || strcmp(choice, "ai")==0){
+		} else if(strcmp(choice, "atroid")==0 || strcmp(choice, "ai")==0){
 			ahntroid();
 		}else{
 			printf("\n");

@@ -63,15 +63,15 @@ void kernmain(){
 			homem();
 		} else if(strcmp(choice, "timer")==0){
 			timer();
-		} else if(strcmp(choice, "memset")==0){
+		} else if(strcmp(choice, "memor")==0){
 			memanset();
 		} else if(strcmp(choice, "mp")==0){
 			memprintf();
-		} else if(strcmp(choice, "atroid"==0) || strcmp(choice, "ai")==0){
+		} else if(strcmp(choice, "atroid")==0 || strcmp(choice, "ai")==0){
 			ahntroid();
 		}else{
 			printf("\n");
-			printf(choice);
+			print_char(choice);
 			printf(": command not found");
 
 		}

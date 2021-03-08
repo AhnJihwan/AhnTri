@@ -6,6 +6,7 @@ Has a simple code art in it and you can try it out at forker.h.
 Now supporting text I/O, not NumDOS.
 However, NumDOS is available at GeX(something like GUI, I mean, like Samsung DeX or Kali KeX)
 Recommend Ventoy for USB.
+Since I am just 13, my code will be super bad. 
 OK, um... I have found out I have missed malloc h here and it wont build giving the error no function malloc and free
 And I just made a new feature: memory copy.
 Now it can memorize chars like a or b
@@ -27,6 +28,7 @@ Added feature(Accomplished)
 WIW(What I Want, Unaccomplished yet)
 - Directory access
 - Graphichs
+- Fonts
 
 #Multiboot
 In able to run it in your PC, copy and paste the code below.

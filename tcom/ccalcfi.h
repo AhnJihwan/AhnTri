@@ -1,7 +1,7 @@
 #include "../AhnLibc/math.h"
 
 //Ccalc for include
-//Made in VS code
+//Made in Xubuntu
 // Simple calculations
 void adton(int a, int b){
     print_int(a + b);

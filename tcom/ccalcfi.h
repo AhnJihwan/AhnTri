@@ -126,6 +126,11 @@ void ccalc(){
 				printf("Sqare root : ");
 				print_int(sqrt(po1));
 				break;
+			case 11:
+				rtnp(&po1);
+				printf(po1);
+				printf("! = ");
+				print_int(factorial(po1));
 			case 9:
 				homem();
 				break;

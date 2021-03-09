@@ -74,4 +74,19 @@ int quareq_r2(int a, int b, int c){
         return r2;
 }
 
+int factorial(int n){												//Now factorial function added in math.h.
+	int i;
+	int fact = 1;
+	int err = 666;
+	if(n<0)
+		return err;
+	else{
+		for(i = 1; i<=n; ++i){
+			fact *= i;
+		}
+		return fact;
+	}
+	return fact;
+}
+
 #endif

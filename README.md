@@ -7,6 +7,7 @@ Now supporting text I/O, not NumDOS.
 However, NumDOS is available at GeX(something like GUI, I mean, like Samsung DeX or Kali KeX)
 Recommend Ventoy for USB.
 Since I am just 13, my code will be super bad. 
+And sorry for my slow updates; I need to go to school and I have exams.
 OK, um... I have found out I have missed malloc h here and it wont build giving the error no function malloc and free
 And I just made a new feature: memory copy.
 Now it can memorize chars like a or b

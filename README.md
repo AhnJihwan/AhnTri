@@ -4,6 +4,7 @@ This is my hobby OS, now it can be run on real hardware, focused on bootable USB
 Can be used as multipurpose like calculators and more. 
 Has a simple code art in it and you can try it out at forker.h.
 Now supporting text I/O, not NumDOS.
+AhnTri/Fish Operating System
 However, NumDOS is available at GeX(something like GUI, I mean, like Samsung DeX or Kali KeX)
 Recommend Ventoy for USB.
 Since I am just 13, my code will be super bad. 
@@ -12,6 +13,8 @@ OK, um... I have found out I have missed malloc h here and it wont build giving 
 And I just made a new feature: memory copy.
 Now it can memorize chars like a or b
 I am looking forward to usernames and passwords, and some AI funtions for cbot.
+# What I am developing NOW: Game
+And I cannot develop from middle of april to end of april.
 # Current status
 Added feature(Accomplished)
 - Terminal instead of NumDOS

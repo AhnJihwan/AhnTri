@@ -13,7 +13,7 @@ OK, um... I have found out I have missed malloc h here and it wont build giving 
 And I just made a new feature: memory copy.
 Now it can memorize chars like a or b
 I am looking forward to usernames and passwords, and some AI funtions for cbot.
-# What I am developing NOW: Game
+# What I am developing NOW: Game for AhnTri
 And I cannot develop from middle of april to end of april.
 # Current status
 Added feature(Accomplished)

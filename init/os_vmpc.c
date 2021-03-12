@@ -26,18 +26,18 @@ void display_menu()
   os_print_color("\n                          ", BLACK, CYAN);
   os_print_color("-", YELLOW, BLACK);
   os_print_color("+", GREEN, BLACK);
-  os_print_color("\t", RED, BLACK);
-  os_print_color("\n    AhnTri Terminal 1.2      ", BLACK, WHITE);
+  os_print_color("x", RED, BLACK);
+  os_print_color("\n      AhnTri Terminal        ", BLACK, WHITE);
   os_print_color("\n  -~=-~=~--~=~--~=~--~=~-=-  ", BLACK, WHITE);
   os_print_color("\n   Type help for help or o   ", BLACK, WHITE);
   os_print_color("\n   ther key for each apps.   ", BLACK, WHITE);
-  os_print_color("\n   Copyright 2021 Jihwan Ahn ", BLACK, WHITE);
+  os_print_color("\n                             ", BLACK, WHITE);
 }
 
 void kernmain(){
 	char * choice;
 	while(1){
-		printf("\n\ntrikern~");
+		printf("\n\n@kern~");
 		print_char(30);
 		printf(" ");
 		choice = read_char();
@@ -71,7 +71,7 @@ void kernmain(){
 			ahntroid();
 		}else{
 			printf("\n");
-			print_char(choice);
+			printf(choice);
 			printf(": command not found");
 
 		}

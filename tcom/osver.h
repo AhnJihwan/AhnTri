@@ -28,12 +28,12 @@ Terminal name       OS_NUM
 
 void osver(){
 	os_print_color("        /\\       OS: AhnTri OS 1.2.3.2 i386        " , BRIGHT_BLUE, CYAN);
-	os_print_color("\n       /@ \\      Machine: " , BRIGHT_BLUE, CYAN);
+	os_print_color("\n       /  \\      Machine: " , BRIGHT_BLUE, CYAN);
 	bitidentify();
 	os_print_color("                   " , BRIGHT_BLUE, CYAN);
 	os_print_color("\n      /    \\     Kernel: AhnTri 1.20 +             " , BRIGHT_BLUE, CYAN);
 	os_print_color("\n     /      \\    Terminal: Terminal 123            " , BRIGHT_BLUE, CYAN);
-	os_print_color("\n    /  1.20  \\   Themes: AhnTri                    " , BRIGHT_BLUE, CYAN);
+	os_print_color("\n    /        \\   Themes: AhnTri                    " , BRIGHT_BLUE, CYAN);
 	os_print_color("\n   /  AhnTri  \\                                    " , BRIGHT_BLUE, CYAN);
 	os_print_color("\n  /____________\\                                   " , BRIGHT_BLUE, CYAN);
 }

@@ -26,6 +26,9 @@ void ahntroid(){
 	}else if(strcmp(input, "fu")==0 || strcmp(input, "fuck")==0 || strcmp(input, "fuck u")==0 || strcmp(input, "fuck you")==0 || strcmp(input, "crap")==0 || strcmp(input, "shit")==0 || strcmp(input, "jesus")==0){
 		printf("Don't say those words. If you do, fuck you :(");
 		free(input);
+	}else if(strcmp(input, "who are u")==0 || strcmp(input, "what is your gender")==0 || strcmp(input, "whoareu")==0 || strcmp(input, "uname")==0){
+		printf("I am AhnTroid. I am an man bot. I am Artificial Intellegence.");
+		free(input);
 	}else{
 		printf("Word not trained or not exist in code.");
 		

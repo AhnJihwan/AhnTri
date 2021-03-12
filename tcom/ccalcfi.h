@@ -128,9 +128,10 @@ void ccalc(){
 				break;
 			case 11:
 				rtnp(&po1);
-				printf(po1);
+				print_int(po1);
 				printf("! = ");
 				print_int(factorial(po1));
+				break;
 			case 9:
 				homem();
 				break;

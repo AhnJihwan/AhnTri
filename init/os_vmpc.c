@@ -15,6 +15,8 @@
 #include "../tcom/forker.h"
 #include "../tcom/timermode.h"
 #include "../tcom/mem.h"
+#include "../tcom/game.h"
+#include "new.h"
 #include "../homenu.h"
 #include "../kio/types.h"
 #include "gdt.h"
@@ -36,6 +38,7 @@ void display_menu()
 
 void kernmain(){
 	char * choice;
+	display_menu();
 	while(1){
 		printf("\n\n@kern~");
 		print_char(30);
@@ -67,6 +70,8 @@ void kernmain(){
 			memanset();
 		} else if(strcmp(choice, "mp")==0){
 			memprintf();
+		} else if(strcmp(choice, "game")==0){
+			game();
 		} else if(strcmp(choice, "atroid")==0 || strcmp(choice, "ai")==0){
 			ahntroid();
 		}else{
@@ -82,6 +87,5 @@ void mkern_main()
 {
   init_gdt();
   init_vga(CYAN, BLACK);
-  display_menu();
-  kernmain();
+  newmain();
 }

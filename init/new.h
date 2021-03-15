@@ -3,19 +3,19 @@
 void newmain(){
 	char capps = KEY_A;
 	gotoxy(25, 0);
-	printf("AhnTri Applications Execute Menu");
-	printf("\nChoose an application to continue...");
-	printf("\n[a] AhnTri Terminal Interface");
-	printf("\n[b] AhnTri C Calulator");
-	printf("\n[c] AhnTri Memory Set");
-	printf("\n[d] AhnTri Memory Print");
-	printf("\n[e] CPU ID");
-	printf("\n[f] AhnTroid AI Assistant");
-	printf("\n[g] AhnTri Notetaker");
-	printf("\n[h] AhnTri Apps(NumDOS/GeX) menu");
-	printf("\n[i] AhnTri Timer");
-	printf("\n[j] Halt the CPU(Shutdown)");
-	printf("\n\n\n\n\n\nCopyright 2021 Jihwan Ahn");
+	os_print_color("AhnTri Applications Execute Menu", BLACK, CYAN);
+	os_print_color("\nChoose an application to continue...                                            ", BLACK, CYAN);
+	os_print_color("\n[a] AhnTri Terminal Interface                                                   ", BLACK, CYAN);
+	os_print_color("\n[b] AhnTri C Calulator                                                          ", BLACK, CYAN);
+	os_print_color("\n[c] AhnTri Memory Set                                                           ", BLACK, CYAN);
+	os_print_color("\n[d] AhnTri Memory Print                                                         ", BLACK, CYAN);
+	os_print_color("\n[e] CPU ID                                                                      ", BLACK, CYAN);
+	os_print_color("\n[f] AhnTroid AI Assistant                                                       ", BLACK, CYAN);
+	os_print_color("\n[g] AhnTri Notetaker                                                            ", BLACK, CYAN);
+	os_print_color("\n[h] AhnTri Apps(NumDOS/GeX) menu                                                ", BLACK, CYAN);
+	os_print_color("\n[i] AhnTri Timer                                                                ", BLACK, CYAN);
+	os_print_color("\n[j] Halt the CPU(Shutdown)                                                      ", BLACK, CYAN);
+	os_print_color("\n                                                                                \n                                                                                \n                                                                                \n                                                                                \n                                                                                \nCopyright 2021 Jihwan Ahn                                                       ", BLACK, CYAN);
 	capps = get_input_keycode();
 	if(capps == KEY_A){
 		clscr();

@@ -63,6 +63,8 @@ void rtnp(int* po1)
   *po1 = read_int();
 }
 
+#include "advcalc.h"
+
 void ccalc(){
 	int ccho, num1, num2, num3, po1;
 	while(1){
@@ -72,11 +74,9 @@ void ccalc(){
 		switch(ccho){
 			case 0:
  			 	printf("\n");
-  				os_print_color("Addition:1, Sub:2, Mul:3, Div:4   ", BLACK, WHITE);
+  				os_print_color("Addition:1, Sub:2, Mul:3, Div:4, Power 2:5, Power 3:6, sqrt: [10]", BLACK, WHITE);
    			   printf("\n");
-  				os_print_color("Power 2:5, Power 3:6, sqrt: [10]  ", BLACK, WHITE);
- 			 	printf("\n");
-  				os_print_color("For (a+b)^3,  [8], GeX [9], TUI [7] ", BLACK, WHITE);
+  				os_print_color("For (a+b)^3,  [8], GeX [9], TUI [7], factorial [11], Advanced calc [12]", BLACK, WHITE);
    			   printf("\n");
 				break;
 			case 1:
@@ -105,12 +105,16 @@ void ccalc(){
 				break;
 			case 5:
 				rtnp(&po1);
-				printf("Powered 2 result : ");
+				print_int(po1);
+				print_char(253);					//The output will be po1^2 I mean real ^2.
+				printf(" = ");
 				print_int(powt(po1));
 				break;
 			case 6:
 				rtnp(&po1);
-				printf("Powered 3 result : ");
+				print_int(po1);
+				print_char(253);					//The output will be po1^3 I mean real ^3.
+				printf(" = ");
 				print_int(powth(po1));
 				break;
 			case 7:
@@ -123,7 +127,9 @@ void ccalc(){
 				break;
 			case 10:
 				rtnp(&po1);
-				printf("Sqare root : ");
+				print_char(251);													//This is the real root sign    -\/--
+				print_int(po1);
+				printf(" = ");
 				print_int(sqrt(po1));
 				break;
 			case 11:
@@ -131,6 +137,9 @@ void ccalc(){
 				print_int(po1);
 				printf("! = ");
 				print_int(factorial(po1));
+				break;
+			case 12:
+				advccalc();
 				break;
 			case 9:
 				homem();
@@ -144,4 +153,3 @@ void ccalc(){
 		clear_screen();
 	}
 }
-

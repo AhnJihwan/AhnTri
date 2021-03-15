@@ -46,27 +46,27 @@ void kernmain(){
 		choice = read_char();
 		if(strcmp(choice, "help")==0){
 			help();
-		} else if(strcmp(choice, "ccalc")==0 || strcmp(choice, "calc")==0){
+		} else if(strcmp(choice, "ccalc")==0 || strcmp(choice, "calc")==0 || strcmp(choice, "accalc")==0){
 			ccalc();
-		} else if(strcmp(choice, "osver")==0 || strcmp(choice, "atfetch")==0){
+		} else if(strcmp(choice, "osver")==0 || strcmp(choice, "atfetch")==0 || strcmp(choice, "aatfetch")==0){
 			osver();
-		} else if(strcmp(choice, "clscr")==0 || strcmp(choice, "clear")==0 || strcmp(choice, "cls")==0){	//just 4 ppl who are used to dos
+		} else if(strcmp(choice, "clscr")==0 || strcmp(choice, "clear")==0 || strcmp(choice, "aclear")==0 || strcmp(choice, "acls")==0){	//just 4 ppl who are used to dos
 			clscr();
-		} else if(strcmp(choice, "halt")==0 || strcmp(choice, "shutdown")==0){
+		} else if(strcmp(choice, "halt")==0 || strcmp(choice, "shutdown")==0 || strcmp(choice, "ashutdown")==0 || strcmp(choice, "ahalt")==0){
 			shutdown();
-		} else if(strcmp(choice, "cputest")==0 || strcmp(choice, "cpuid")==0){					//The real name of it was cpuid
+		} else if(strcmp(choice, "cputest")==0 || strcmp(choice, "cpuid")==0 || strcmp(choice, "acpuid")==0){					//The real name of it was cpuid
 			cputest();
-		} else if(strcmp(choice, "notes")==0){
+		} else if(strcmp(choice, "notes")==0 || strcmp(choice, "anotes")==0){
 			notes();
-		} else if(strcmp(choice, "pedx")==0){
+		} else if(strcmp(choice, "pedx")==0 || strcmp(choice, "apedx")==0){
 			pedx();
-		} else if(strcmp(choice, "atfork")==0){
+		} else if(strcmp(choice, "atfork")==0 || strcmp(choice, "aatfork")==0){
 			fbomb();
-		} else if(strcmp(choice, "homenu")==0){
+		} else if(strcmp(choice, "homenu")==0 || strcmp(choice, "ahomenu")==0){
 			homem();
-		} else if(strcmp(choice, "timer")==0){
+		} else if(strcmp(choice, "timer")==0 || strcmp(choice, "atimer")==0){
 			timer();
-		} else if(strcmp(choice, "memor")==0){
+		} else if(strcmp(choice, "memor")==0 || strcmp(choice, "amemor")==0){
 			memanset();
 		} else if(strcmp(choice, "mp")==0){
 			memprintf();

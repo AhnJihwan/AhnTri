@@ -176,6 +176,20 @@ void os_print_color(char *str, uint8 fore_color, uint8 back_color)
   g_bg_color = bc;
 }
 
+void os_color_char(char ch, uint8 fore_color, uint8 back_color)
+{
+  uint32 index = 0;
+  uint8 fc, bc;
+  fc = g_fg_color;
+  bc = g_bg_color;
+  g_fg_color = fore_color;
+  g_bg_color = back_color;
+  print_char(ch);
+  g_fg_color = fc;
+  g_bg_color = bc;
+}
+
+
 void print_int(int num)
 {
   char str_num[digit_count(num)+1];

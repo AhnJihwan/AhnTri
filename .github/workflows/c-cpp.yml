@@ -9,12 +9,14 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-20.04
+    runs-on: xubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: make
       run: make
+    - name: mtools
+      run: sudo apt-get install mtools
     - name: make check
       run: make check
     - name: make distcheck

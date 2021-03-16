@@ -17,5 +17,3 @@ jobs:
       run: sudo apt-get install mtools
     - name: make
       run: make
-    - name: make distcheck
-      run: make distcheck

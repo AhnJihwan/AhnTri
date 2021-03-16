@@ -34,7 +34,7 @@ WIW(What I Want, Unaccomplished yet)
 - Graphichs
 - Fonts
 
-#Multiboot
+# Multiboot
 In able to run it in your PC, copy and paste the code below.
 ```INI
 menuentry "AhnTriOS" {
@@ -46,3 +46,6 @@ menuentry "AhnTriOS" {
 ![Screenshot of 1.2.3](sshot2.png)
 ![Screenshot of 1.2.3](sshot3.png)
 ![Screenshot of 1.2.3](sshot4.png)
+
+# The UI now looks like the 8090 TUI.
+- And other modern-like UI apps.

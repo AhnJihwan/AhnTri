@@ -24,16 +24,48 @@
 
 void display_menu()
 {
-  gotoxy(25, 0);
-  os_print_color("\n                          ", BLACK, CYAN);
+  printf(" ");
+  os_print_color("                          ", BLACK, CYAN);
   os_print_color("-", YELLOW, BLACK);
   os_print_color("+", GREEN, BLACK);
-  os_print_color("x", RED, BLACK);
-  os_print_color("\n      AhnTri Terminal        ", BLACK, WHITE);
-  os_print_color("\n  -~=-~=~--~=~--~=~--~=~-=-  ", BLACK, WHITE);
-  os_print_color("\n   Type help for help or o   ", BLACK, WHITE);
-  os_print_color("\n   ther key for each apps.   ", BLACK, WHITE);
-  os_print_color("\n                             ", BLACK, WHITE);
+  os_print_color("x\n", RED, BLACK);
+  printf(" ");
+  os_print_color("      AhnTri Terminal        \n", BLACK, WHITE);
+  os_color_char(178, GREY, BLACK);
+  os_print_color("  -~=-~=~--~=~--~=~--~=~-=-  \n", BLACK, WHITE);
+  os_color_char(178, GREY, BLACK);
+  os_print_color("   Type help for help or o   \n", BLACK, WHITE);
+  os_color_char(178, GREY, BLACK);
+  os_print_color("   ther key for each apps.   \n", BLACK, WHITE);
+  os_color_char(178, GREY, BLACK);
+  os_print_color("                             \n", BLACK, WHITE);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
+  os_color_char(178, GREY, BLACK);
 }
 
 void kernmain(){

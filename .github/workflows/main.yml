@@ -1,7 +1,0 @@
-- name: Github Release
-  # You may pin to the exact commit or the version.
-  # uses: elgohr/Github-Release-Action@ed9ebd01a0c57e64e948e7f2ff59c0159e52c204
-  uses: elgohr/Github-Release-Action@v3.1
-  with:
-    # The name of the release to publish
-    release: AhnTri

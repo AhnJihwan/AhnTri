@@ -1,41 +1,7 @@
-- name: Release GitHub Actions
+- name: Github Release
   # You may pin to the exact commit or the version.
-  # uses: technote-space/release-github-actions@e4f4332b6927151a4cce38d3d3ad4a48ee0bc1bd
-  uses: technote-space/release-github-actions@v6.2.2
+  # uses: elgohr/Github-Release-Action@ed9ebd01a0c57e64e948e7f2ff59c0159e52c204
+  uses: elgohr/Github-Release-Action@v3.1
   with:
-    # Secret GitHub API token to use for making API requests.
-    GITHUB_TOKEN: # default is ${{ github.token }}
-    # Package manager to use to install dependencies.
-    PACKAGE_MANAGER: # optional, default is 
-    # Commands to build.
-    BUILD_COMMAND: # optional, default is 
-    # Commit message of build commit.
-    COMMIT_MESSAGE: # default is feat: build for release
-    # Git commit name.
-    COMMIT_NAME: # default is github-actions[bot]
-    # Git commit email.
-    COMMIT_EMAIL: # default is 41898282+github-actions[bot]@users.noreply.github.com
-    # Branch name.
-    BRANCH_NAME: # default is gh-actions
-    # Files or directories to clean before release. (Comma separated)
-    CLEAN_TARGETS: # default is .[!.]*,__tests__,docs,src,*.js,*.ts,*.json,*.lock,*.yml,*.yaml
-    # Command for search build command.
-    BUILD_COMMAND_TARGET: # default is prepare,build,production,prod,package,pack
-    # Whether to allow run multiple build commands.
-    ALLOW_MULTIPLE_BUILD_COMMANDS: # optional, default is true
-    # Whether to create major version tag.
-    CREATE_MAJOR_VERSION_TAG: # optional, default is true
-    # Whether to create minor version tag.
-    CREATE_MINOR_VERSION_TAG: # optional, default is true
-    # Whether to create patch version tag.
-    CREATE_PATCH_VERSION_TAG: # optional, default is true
-    # Filename of build information.
-    OUTPUT_BUILD_INFO_FILENAME: # optional, default is 
-    # Limit fetching to the specified number of commits from the tip of each remote branch history.
-    FETCH_DEPTH: # optional, default is 3
-    # Tag name prefix for test.
-    TEST_TAG_PREFIX: # optional, default is 
-    # Whether to clean test tag.
-    CLEAN_TEST_TAG: # optional, default is false
-    # Tag name prefix for original tag.
-    ORIGINAL_TAG_PREFIX: # optional, default is 
+    # The name of the release to publish
+    release: AhnTri

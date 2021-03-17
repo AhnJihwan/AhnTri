@@ -78,6 +78,7 @@ void newmain(){
 		clscr();
 		shutdown();
 	} else{
-		kernmain();
+		clscr();
+		newmain();
 	}
 }

@@ -16,6 +16,7 @@
 #include "../tcom/timermode.h"
 #include "../tcom/mem.h"
 #include "../tcom/game.h"
+#include "../tcom/art.h"
 #include "new.h"
 #include "../homenu.h"
 #include "../kio/types.h"
@@ -104,6 +105,8 @@ void kernmain(){
 			memprintf();
 		} else if(strcmp(choice, "game")==0){
 			game();
+		} else if(strcmp(choice, "sun")==0){
+			art();
 		} else if(strcmp(choice, "atroid")==0 || strcmp(choice, "ai")==0){
 			ahntroid();
 		}else{

@@ -1,6 +1,7 @@
 // include files by #include <neccessary file>
 #include "../kernel.h"
 #include "../kio/char.h"
+#include "../2dt/idt.h"
 #include "tinit_vmpc.h"
 #include "../tcom/ccalcfi.h"
 #include "../tcom/osver.h"
@@ -120,7 +121,18 @@ void kernmain(){
 
 void mkern_main()
 {
-  init_gdt();
   init_vga(CYAN, BLACK);
+  printf("VGA initialation [OK]");
+  suspend(2);
+  init_gdt();
+  printf("\nGDT initialation [OK]\n");
+  suspend(2);
+  init_idt();
+  asm volatile("\tmov $12395, %eax");
+  asm volatile("\tint $0");
+  printf("IDT initialation [OK]");
+  isr_0_handler();
+  suspend(2);
+  clscr();
   newmain();
 }

@@ -1,10 +1,10 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot kernel keychar gdt ld buildgrub clean
+make_deafult: bboot kernel keychar gdt idt ld buildgrub clean
 
 #Makes VMPC up
-vmpc: bboot kernel_vmpc keychar gdt ld_vm buildgrub_vmpc clean_vmpc
+vmpc: bboot kernel_vmpc keychar gdt idt ld_vm buildgrub_vmpc clean_vmpc
 
 #Makes it via i686-elf-gcc
 make_i686: i686-bboot i686-kernel i686-keychar i686-gdt ld buildgrub clean
@@ -26,6 +26,11 @@ i686-gdt: init/gdt.c init/load_gdt.s
 	i686-elf-gcc -c init/gdt.c -o gdt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 	as --32 init/load_gdt.s -o load_gdt.o
 
+#Build IDT
+idt: 2dt/idt.c 2dt/load_idt.s
+	gcc -m32 -c 2dt/idt.c -o idt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+	as --32 2dt/load_idt.s -o load_idt.o
+
 #Build kernel main image
 kernel: init/os_rpc.c
 	gcc -m32 -c init/os_rpc.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
@@ -46,12 +51,12 @@ i686-keychar: kio/utils.c kio/char.c
 	gcc -m32 -c kio/char.c -o char.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 
 #Link everything up
-ld: linker.ld linker.ld image.o char.o boot.o gdt.o load_gdt.o
-	ld -m elf_i386 -T linker.ld image.o utils.o char.o boot.o gdt.o load_gdt.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld image.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o
+	ld -m elf_i386 -T linker.ld image.o utils.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o -o ATOS1.bin -nostdlib
 
 #Link everything up
-ld_vm: linker.ld linker.ld imagei.o char.o boot.o gdt.o load_gdt.o
-	ld -m elf_i386 -T linker.ld imagei.o utils.o char.o boot.o gdt.o load_gdt.o -o ATOS2.bin -nostdlib
+ld_vm: linker.ld linker.ld imagei.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o
+	ld -m elf_i386 -T linker.ld imagei.o utils.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o -o ATOS2.bin -nostdlib
 
 #Assemble gru(bboot)loader
 bboot: boot/boot.s

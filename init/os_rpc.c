@@ -18,6 +18,7 @@
 #include "../tcom/mem.h"
 #include "../tcom/game.h"
 #include "../tcom/art.h"
+#include "../tcom/dictionary.h"
 #include "new.h"
 #include "../homenu.h"
 #include "../kio/types.h"
@@ -110,6 +111,8 @@ void kernmain(){
 			art();
 		} else if(strcmp(choice, "atroid")==0 || strcmp(choice, "ai")==0){
 			ahntroid();
+		} else if(strcmp(choice, "adic")==0 || strcmp(choice, "dict")==0){
+			fdic();
 		}else{
 			printf("\n");
 			printf(choice);
@@ -122,16 +125,49 @@ void kernmain(){
 void mkern_main()
 {
   init_vga(CYAN, BLACK);
-  printf("VGA initialation [OK]");
+  printf("\nVGA initialation");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(" [OK]\n");
   suspend(2);
   init_gdt();
-  printf("\nGDT initialation [OK]\n");
+  printf("\nGDT initialation");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(" [OK]\n");
   suspend(2);
   init_idt();
   asm volatile("\tmov $12395, %eax");
   asm volatile("\tint $0");
-  printf("IDT initialation [OK]");
+  printf("\nIDT initialation");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(" [OK]\n");
   isr_0_handler();
+  printf("Loading main menu.");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
   suspend(2);
   clscr();
   newmain();

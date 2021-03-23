@@ -30,8 +30,9 @@ Added feature(Accomplished)
 - Timer
 
 WIW(What I Want, Unaccomplished yet)
-- Directory access
-- Graphichs
+- Paging(Able to do it quick)
+- Directory access(Long...)
+- Graphics
 - Fonts
 
 # Multiboot

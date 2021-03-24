@@ -7,11 +7,11 @@ int bitidentify(){
 	int a = (int) k;
 	char c;
     	if(a==4){
-		os_print_color("32-bit" , BRIGHT_BLUE, CYAN);
+		os_print_color("32-bit    " , BLACK, CYAN);
 	}else if(a==8){
-		os_print_color("64-bit" , BRIGHT_BLUE, CYAN);
+		os_print_color("64-bit    " , BLACK, CYAN);
 	}else{
-		os_print_color("Undefined" , BRIGHT_BLUE, CYAN);
+		os_print_color("Undefined " , BLACK, CYAN);
 	}
 }
 
@@ -27,13 +27,13 @@ Terminal name       OS_NUM
 */
 
 void osver(){
-	os_print_color("        /\\       OS: AhnTri OS 1.2.4 i386           " , BLACK, CYAN);
+	os_print_color("        /\\       OS: AhnTri OS 1.2.4 i386 Crap Covid   " , BLACK, CYAN);
 	os_print_color("\n       /  \\      Machine: " , BLACK, CYAN);
 	bitidentify();
 	os_print_color("                   " , BLACK, CYAN);
-	os_print_color("\n      /    \\     Kernel: AhnTri 1.20 +             " , BLACK, CYAN);
-	os_print_color("\n     /      \\    Terminal: Terminal 124            " , BLACK, CYAN);
-	os_print_color("\n    /        \\   Themes: AhnTri                    " , BLACK, CYAN);
-	os_print_color("\n   /  AhnTri  \\                                    " , BLACK, CYAN);
-	os_print_color("\n  /____________\\                                   " , BLACK, CYAN);
+	os_print_color("\n      /    \\     Kernel: AhnTri 1.20 +                 " , BLACK, CYAN);
+	os_print_color("\n     /      \\    Terminal: Terminal 124                " , BLACK, CYAN);
+	os_print_color("\n    /        \\   Themes: AhnTri                        " , BLACK, CYAN);
+	os_print_color("\n   /  AhnTri  \\                                        " , BLACK, CYAN);
+	os_print_color("\n  /____________\\                                       " , BLACK, CYAN);
 }

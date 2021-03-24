@@ -3,12 +3,5 @@ void exit(){
 	suspend(OS_suspend*3);
  	clear_screen();
  	printf("Exited...");
-	kernmain();
+	asm volatile("hlt");
 }
-
-/*
-For LS@
-void exit(){
-	printf("Exiting from LS@...");
-}
-*/

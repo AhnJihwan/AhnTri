@@ -20,6 +20,7 @@ void divion(int a, int b){
 }
 void display_menu_ccalc()
 {
+  init_vga(WHITE, BLACK);
   gotoxy(25, 0);
   printf("\n");
   os_print_color("       AhnTri C caculator     ", BLACK, GREY);
@@ -118,6 +119,7 @@ void ccalc(){
 				print_int(powth(po1));
 				break;
 			case 7:
+				init_vga(CYAN, BLACK);
 				kernmain();
 				break;
 			case 8:

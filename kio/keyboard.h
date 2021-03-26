@@ -51,7 +51,7 @@ C code for keyboard I/Os
 #define KEY_EQUAL 0x0D
 #define KEY_KEYPAD_PLUS 0x4E
 #define KEY_KEYPAD_DIV 0x35
-//TriKernel System SHIFT alternative
+//AhnTriKernel System SHIFT alternative(ATDRIVER)
 #define KEY_SQUARE_OPENED_BRACKET 0x1A
 #define KEY_SQUARE_CLOSED_BRACKET 0x1B
 #define KEY_SEMICOLON 0x27
@@ -60,6 +60,10 @@ C code for keyboard I/Os
 #define KEY_AT 0x3B
 #define KEY_SHARP 0x3C
 #define KEY_DOLLAR 0x3D
+#define KEY_PERCENT 0x3E
+#define KEY_POWER 0x3F
+#define KEY_AND 0x40
+#define KEY_STAR 0x41
 //Computer Deafults
 #define KEY_BACKSPACE 0x0E
 #define KEY_DELETE 0x53

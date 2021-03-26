@@ -52,6 +52,10 @@ char get_ascii_char(uint8 key_code)
     case KEY_AT : return '@';
     case KEY_SHARP : return '#';
     case KEY_DOLLAR : return '$';
+    case KEY_PERCENT : return '%';
+    case KEY_POWER : return '^';
+    case KEY_AND : return '&';
+    case KEY_STAR : return '*';
     case KEY_ESC : return exit();
     default : return 0;
   }

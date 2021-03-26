@@ -13,8 +13,16 @@ OK, um... I have found out I have missed malloc h here and it wont build giving 
 And I just made a new feature: memory copy.
 Now it can memorize chars like a or b
 I am looking forward to usernames and passwords, and some AI funtions for cbot.
-# What I am developing NOW: Game for AhnTri
-And I cannot develop from middle of april to end of april.
+# What I am developing NOW: Directories for AhnTri
+
+# What this project is all 'bout
+This is for
+ - People who don't want to trash thier old PC but has an useless USB
+ - People who loved TUI from 80/900/0
+ - People who just want to try out any OS
+ - People who are AhnTri fans
+ - People who are AhnTri Stargazers
+ - Me
 # Current status
 Added feature(Accomplished)
 - Terminal instead of NumDOS

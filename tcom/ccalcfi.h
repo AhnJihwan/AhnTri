@@ -18,6 +18,22 @@ void multon(int a, int b){
 void divion(int a, int b){
     print_int(a / b);
 }
+
+//Quarderic Equation Solver4 AhnTri
+void quareq_ccalc(){
+	int a, b, c;
+	printf("Please enter a in equation ax^2+bx+c: ");
+	a = read_int();
+	printf("Please enter b in equation ax^2+bx+c: ");
+	b = read_int();
+	printf("Please enter c in equation ax^2+bx+c: ");
+	c = read_int();
+	print_int(quareq_r1(a, b, c));
+	printf(" and ");
+	print_int(quareq_r2(a, b, c));
+	printf(" are the roots.");
+}
+
 void display_menu_ccalc()
 {
   init_vga(WHITE, BLACK);
@@ -143,6 +159,8 @@ void ccalc(){
 			case 12:
 				advccalc();
 				break;
+			case 13:
+				quareq_ccalc();
 			case 9:
 				homem();
 				break;

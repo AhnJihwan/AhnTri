@@ -14,7 +14,7 @@ And I just made a new feature: memory copy.
 Now it can memorize chars like a or b
 I am looking forward to usernames and passwords, and some AI funtions for cbot.
 # What I am developing NOW: Directories for AhnTri
-
+# 200th commit anniversary 4:24pm 3/37/2021
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

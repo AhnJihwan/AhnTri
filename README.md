@@ -1,5 +1,6 @@
 ![AhnTriLogo](at.jpg)
 # AhnTri OS
+This is the Kerel and the CLI OS.
 This is my hobby OS, now it can be run on real hardware, focused on bootable USBs.
 Can be used as multipurpose like calculators and more. 
 Has a simple code art in it and you can try it out at forker.h.

@@ -115,6 +115,9 @@ void kernmain(){
 			ahntroid();
 		} else if(strcmp(choice, "adic")==0 || strcmp(choice, "dict")==0){
 			fdic();
+		} else if(strcmp(choice, "cal 2021")==0){
+			clscr();
+			acal();
 		}else{
 			printf("\n");
 			printf(choice);

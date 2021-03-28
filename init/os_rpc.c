@@ -18,6 +18,7 @@
 #include "../tcom/mem.h"
 #include "../tcom/game.h"
 #include "../tcom/art.h"
+#include "../tcom/cal.h"
 #include "../tcom/dictionary.h"
 #include "new.h"
 #include "../homenu.h"

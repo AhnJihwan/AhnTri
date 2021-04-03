@@ -89,4 +89,13 @@ int factorial(int n){												//Now factorial function added in math.h.
 	return fact;
 }
 
+int xpy(int x, int y){			//Get input: X^Y
+        int res = 1;				  //Set result to 1 in case y is 0
+        while(y!=0){				//While y is NOT 0 i did it when 0 above
+                res *= x;			  //Result is x*result until y.
+                --y;
+        }
+        return res;				  //Return the result
+}
+
 #endif

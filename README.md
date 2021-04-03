@@ -1,6 +1,6 @@
 ![AhnTriLogo](at.jpg)
 # AhnTri OS
-This is a note that I am alive.
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
 This is the Kernel and the CLI OS.
 This is my hobby OS, now it can be run on real hardware, focused on bootable USBs.
 Can be used as multipurpose like calculators and more. 

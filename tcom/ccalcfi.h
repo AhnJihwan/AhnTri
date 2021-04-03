@@ -162,8 +162,9 @@ void ccalc(){
 			case 13:
 				quareq_ccalc();
 			case 14:
-				rtn(&x, &y);
-				print_int(xpy(x, y));
+				rtn(&num1, &num2);
+				print_int(xpy(num1, num2));
+				break;
 			case 9:
 				homem();
 				break;

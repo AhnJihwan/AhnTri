@@ -16,7 +16,7 @@ OK, um... I have found out I have missed malloc h here and it wont build giving 
 And I just made a new feature: memory copy.
 Now it can memorize chars like a or b
 I am looking forward to usernames and passwords, and some AI funtions for cbot.
-# What I am developing NOW: Directories for AhnTri
+# Announcement: My hobby OS AhnTri may not have active updates(it would probably have minor ones often) during my exam study period(April 6th-April 29th)
 # 200th commit anniversary 4:24pm 3/37/2021
 # What this project is all 'bout
 This is for

@@ -1,7 +1,7 @@
 ![AhnTriLogo](at.jpg)
 # AhnTri OS
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
-
+# I am not chinese; just to be sure. I am KOREAN.
 This is the Kernel and the CLI OS.
 This is my hobby OS, now it can be run on real hardware, focused on bootable USBs.
 Can be used as multipurpose like calculators and more. 

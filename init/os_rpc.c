@@ -20,6 +20,7 @@
 #include "../tcom/art.h"
 #include "../tcom/cal.h"
 #include "../tcom/dictionary.h"
+#include "../tcom/advset.h"
 #include "new.h"
 #include "../homenu.h"
 #include "../kio/types.h"
@@ -112,6 +113,8 @@ void kernmain(){
 			game();
 		} else if(strcmp(choice, "sun")==0){
 			art();
+		} else if(strcmp(choice, "advset")==0){
+			advset();
 		} else if(strcmp(choice, "atroid")==0 || strcmp(choice, "ai")==0){
 			ahntroid();
 		} else if(strcmp(choice, "adic")==0 || strcmp(choice, "dict")==0){

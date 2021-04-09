@@ -3,7 +3,7 @@ void advset(){
 	gotoxy(25, 0);
 	printf("AhnTri Advanced settings\n\n");
 	printf("1. Change Text color\n");
-	printf("2. Change Theme color(In development)\n");
+	printf("2. Change Theme color\n");
 	printf("3. Reload GDT\n");
 	printf("4. Reload IDT\n");
 	printf("5. Send byte to OS\n");
@@ -16,6 +16,9 @@ void advset(){
 	if(cps == KEY_1){
 		clscr();
 		txtcolr();
+	} else if(cps == KEY_2){
+		clscr();
+		thxcolr();
 	} else if(cps == KEY_3){
 		clscr();
 		init_gdt();
@@ -67,4 +70,32 @@ void txtcolr(){
 	printf("Color set: Complete.");
 }
 
-
+void thxcolr(){
+	char cathx = KEY_A;
+	printf("Select Background color");
+	printf("\nDeafult(1). BLACK\n2. CYAN\n3. GREEN\n4. RED\n5. MAGENTA\n6. BROWN");
+	suspend(3);
+	cathx = get_input_keycode();
+	if(cathx == KEY_1){
+		clscr();
+		init_vga(CYAN, BLACK);
+	} else if(cathx == KEY_2){
+		clscr();
+		init_vga(CYAN, CYAN);
+	} else if(cathx == KEY_3){
+		clscr();
+		init_vga(CYAN, GREEN);
+	} else if(cathx == KEY_4){
+		clscr();
+		init_vga(CYAN, RED);
+	} else if(cathx == KEY_5){
+		clscr();
+		init_vga(CYAN, MAGENTA);
+	} else if(cathx == KEY_6){
+		clscr();
+		init_vga(CYAN, BROWN);
+	}else{
+		printf("No such color. Try again.");
+	}
+	printf("Color set: Complete.");
+}

@@ -6,7 +6,7 @@ void notetake()
     inp = get_input_keycode();
     if(keycode == KEY_ENTER){
     	printf("\n");
-     } else if{
+     } else if(keycode == KEY_ESC){
      	clscr();
      	kernmain();
     }else{

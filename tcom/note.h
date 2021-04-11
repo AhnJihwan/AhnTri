@@ -3,7 +3,7 @@ void notetake()
   char ch = 0;
   char inp = 0;
   do{
-    inp = get_input_inp();
+    inp = get_input_keycode();
     if(inp == KEY_ENTER){
     	printf("\n");
      } else if(inp == KEY_ESC){

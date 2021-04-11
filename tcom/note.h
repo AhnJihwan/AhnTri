@@ -3,14 +3,14 @@ void notetake()
   char ch = 0;
   char inp = 0;
   do{
-    inp = get_input_keycode();
-    if(keycode == KEY_ENTER){
+    inp = get_input_inp();
+    if(inp == KEY_ENTER){
     	printf("\n");
-     } else if(keycode == KEY_ESC){
+     } else if(inp == KEY_ESC){
      	clscr();
      	kernmain();
     }else{
-      ch = get_ascii_char(keycode);
+      ch = get_ascii_char(inp);
       print_char(ch);
     }
   }while(ch > 0);

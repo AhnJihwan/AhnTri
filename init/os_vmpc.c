@@ -3,24 +3,15 @@
 #include "../kio/char.h"
 #include "../2dt/idt.h"
 #include "tinit_vmpc.h"
-#include "../tcom/ccalcfi.h"
-#include "../tcom/osver.h"
 #include "../tcom/clscr.h"
 #include "../tcom/cpu/ports.h"
 #include "../tcom/exit.h"
 #include "../tcom/cpuid.h"
-#include "../tcom/note.h"
 #include "../tcom/edxview.h"
 #include "../tcom/help.h"
-#include "../tcom/cbot.h"
 #include "../tcom/forker.h"
 #include "../tcom/timermode.h"
 #include "../tcom/mem.h"
-#include "../tcom/game.h"
-#include "../tcom/art.h"
-#include "../tcom/cal.h"
-#include "../tcom/dictionary.h"
-#include "../tcom/advset.h"
 #include "new.h"
 #include "../homenu.h"
 #include "../kio/types.h"
@@ -30,7 +21,7 @@
 void display_menu()
 {
   printf(" ");
-  os_print_color("                          ", BLACK, CYAN);
+  os_print_color("    Terminal - main menu  ", WHITE, GREY);
   os_print_color("-", YELLOW, BLACK);
   os_print_color("+", GREEN, BLACK);
   os_print_color("x\n", RED, BLACK);

@@ -22,7 +22,7 @@ One more 'very minor' one.
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB
- - People who loved TUI from 80/900/0
+ - People who loved TUI from 80/90/00
  - People who just want to try out any OS
  - People who are AhnTri fans
  - People who are AhnTri Stargazers

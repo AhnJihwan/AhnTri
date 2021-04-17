@@ -2,7 +2,7 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot kernel ccalc advset cbot cal art fishdic game notes osver keychar gdt idt ld buildgrub clean
+make_deafult: bboot kernel ccalc advset cbot cal credit art fishdic game notes osver keychar gdt idt ld buildgrub clean
 
 #Build kernel main image
 kernel: init/os_rpc.c

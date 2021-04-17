@@ -12,7 +12,7 @@
 #include "../tcom/forker.h"
 #include "../tcom/timermode.h"
 #include "../tcom/mem.h"
-#include "../tcom/credits.c
+#include "../tcom/credits.c"
 #include "new.h"
 #include "../homenu.h"
 #include "../kio/types.h"
@@ -114,7 +114,7 @@ void kernmain(){
 		} else if(strcmp(choice, "cal 2021")==0){
 			clscr();
 			acal();
-		}else if(strcmp(choice, "credit")==0 || strcmp(choice, "credits")==0);
+		}else if(strcmp(choice, "credit")==0 || strcmp(choice, "credits")==0){
 			clscr();
 			credits();
 		}else{

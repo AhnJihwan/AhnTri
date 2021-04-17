@@ -12,7 +12,6 @@
 #include "../tcom/forker.h"
 #include "../tcom/timermode.h"
 #include "../tcom/mem.h"
-#include "../tcom/credits.c"
 #include "new.h"
 #include "../homenu.h"
 #include "../kio/types.h"

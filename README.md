@@ -48,7 +48,7 @@ WIW(What I Want, Unaccomplished yet)
 - Fonts
 
 # Multiboot
-In able to run it in your PC, copy and paste the code below.
+In order to be able to run it in your PC, copy and paste the code below.
 ```INI
 menuentry "AhnTriOS" {
 	multiboot /boot/directory/of/your/os/ATOS1.bin

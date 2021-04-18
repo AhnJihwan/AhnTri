@@ -128,7 +128,7 @@ void kernmain(){
 void mkern_main()
 {
   init_vga(CYAN, BLACK);
-  printf("\nVGA initialation");
+  printf("\nVGA initialization");
   suspend(1);
   printf(".");
   suspend(1);
@@ -139,7 +139,7 @@ void mkern_main()
   printf(" [OK]\n");
   suspend(2);
   init_gdt();
-  printf("\nGDT initialation");
+  printf("\nGDT initialization");
   suspend(1);
   printf(".");
   suspend(1);
@@ -152,7 +152,7 @@ void mkern_main()
   init_idt();
   asm volatile("\tmov $12395, %eax");
   asm volatile("\tint $0");
-  printf("\nIDT initialation");
+  printf("\nIDT initialization");
   suspend(1);
   printf(".");
   suspend(1);

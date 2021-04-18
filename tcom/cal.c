@@ -2,7 +2,7 @@
 #include "../init/api.h"
 
 void acal(){
-	os_print_color("                     Calander - Year 2021                         \n", BLACK, GREY);
+	os_print_color("                     Calendar - Year 2021                         \n", BLACK, GREY);
 	printf("                            2021                                  \n");
 	printf("      January               February               March          \n");
 	printf("Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  \n");

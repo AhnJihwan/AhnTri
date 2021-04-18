@@ -17,7 +17,7 @@ And I just made a new feature: memory copy.
 Now it can memorize chars like a or b
 I am looking forward to usernames and passwords, and some AI funtions for cbot.
 # Announcement: My hobby OS AhnTri may not have active updates(it would probably have minor ones often) during my exam study period(April 6th-April 29th)
-One more 'very minor' one.
+# Announcement again: I'm getting busy since tomorrow. I think I'll have no updates(1~3 in a week is maybe possible) until April 29th. May our soul be in AhnTri...
 # 200th commit anniversary 4:24pm 3/37/2021
 # What this project is all 'bout
 This is for

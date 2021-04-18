@@ -1,6 +1,7 @@
 void credits(){
 	printf("============Developers==============\n");
 	printf("Creator: Jihwan Ahn(I am KOREAN guy)\n");
+	printf("Developer: Ivan G.\n");
 	printf("=====Additional thanks to ...=======\n");
 	printf("BK Ahn(Dad gave me some money)\n");
 	printf("Ethan Recendez(friend in US who made the first Fish Dictionary together(2017))\n");

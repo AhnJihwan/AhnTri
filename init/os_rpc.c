@@ -96,9 +96,9 @@ void kernmain(){
 			homem();
 		} else if(strcmp(choice, "timer")==0 || strcmp(choice, "atimer")==0){
 			timer();
-		} else if(strcmp(choice, "memor")==0 || strcmp(choice, "amemor")==0){
+		} else if(strcmp(choice, "memor")==0 || strcmp(choice, "amemor")==0 || strcmp(choice, "memset")==0){
 			memanset();
-		} else if(strcmp(choice, "mp")==0){
+		} else if(strcmp(choice, "mp")==0 || strcmp(choice, "memprintf")==0){
 			memprintf();
 		} else if(strcmp(choice, "game")==0){
 			game();

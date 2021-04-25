@@ -19,7 +19,9 @@ void display_menu_ccalc_adv()
   printf("\n");
   os_print_color("Press [3] for Length Tranfer", BLACK, WHITE);
   printf("\n");
-  os_print_color("Press [4] forTime transfer  ", BLACK, WHITE);
+  os_print_color("Press [4] for Time transfer ", BLACK, WHITE);
+  printf("\n");
+  os_print_color("Press [0] for Exit          ", BLACK, WHITE);
 }
 
 void advccalc(){
@@ -52,7 +54,7 @@ void advccalc(){
 				num1 = read_int();
 				print_int(num1*60);
 				break;
-			case 4:
+			case 0:
 				ccalc();
 				break;
 		}

@@ -13,11 +13,13 @@ void display_menu_ccalc_adv()
   printf("\n");
   os_print_color("    --~=-~=~--~=~--~=~--~=~--~=~    ", BLACK, WHITE);
   printf("\n");
-  os_print_color("Press [1] for Data Tranfer", BLACK, WHITE);
+  os_print_color("Press [1] for Data Tranfer  ", BLACK, WHITE);
   printf("\n");
-  os_print_color("Press [2] for mass transfer", BLACK, WHITE);
+  os_print_color("Press [2] for mass transfer ", BLACK, WHITE);
   printf("\n");
   os_print_color("Press [3] for Length Tranfer", BLACK, WHITE);
+  printf("\n");
+  os_print_color("Press [4] forTime transfer  ", BLACK, WHITE);
 }
 
 void advccalc(){
@@ -44,6 +46,11 @@ void advccalc(){
 				num1 = read_int();
 				print_int(in2cm(num1));
 				printf("cm");
+				break;
+			case 4:
+				printf("Second to min/Minuite to hour: ");
+				num1 = read_int();
+				print_int(num1*60);
 				break;
 			case 4:
 				ccalc();

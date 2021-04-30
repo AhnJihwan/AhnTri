@@ -44,6 +44,7 @@ void notes(){
 	printf("\nStarting Notetaker");
 	suspend(100);
 	clscr();
-	printf("\n");
+	os_print_color("\nWelcome to AhnTri NoteTaker.\n", BLACK, GREY);
+	printf("Hint: press [Esc] or [Tab] to exit AhnTri NoteTaker\n");
 	notetake();
 }

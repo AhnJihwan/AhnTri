@@ -245,6 +245,30 @@ int read_int()
   return atoi(data);
 }
 
+int read_uint()
+{
+  char ch = 0;
+  char keycode = 0;
+  char data[32];
+  int index = 0;
+  do{
+    keycode = get_input_keycode();
+    if(keycode == KEY_ENTER){
+      data[index] = '\0';
+      print_new_line();
+      break;
+    }else{
+      ch = get_ascii_char(keycode);
+      print_char(ch);
+      data[index] = ch;
+      index++;
+    }
+    suspend(OS_suspend);
+  }while(ch > 0);
+
+  return atoui(data);
+}
+
 char getchar()
 {
   char keycode = 0;

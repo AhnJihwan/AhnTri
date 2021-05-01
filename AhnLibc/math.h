@@ -8,19 +8,19 @@
 
 // Powering 2, 3, 4
 int powt(int a){
-    return a * a;							//Better for functions which does not only works in ATOS.
+    xpy(a, 2);							//Better for functions which does not only works in ATOS.
 }
 
 int powth(int a){						//Three
-    return a * a * a;
+    xpy(a, 3);
 }
 
 int powf(int a){						//4
-    return a * a * a * a;
+    xpy(a, 4);
 }
 
 int powfi(int a){						//5
-    return a * a * a * a * a;
+    xpy(a, 5);
 }
 
 int addnpth(int a, int b){						//This is for (a+b)^3

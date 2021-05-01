@@ -7,4 +7,4 @@ extern int read_int();
 extern void suspend(uint32 timer_count);
 extern int get_input_keycode();
 extern void inb(uint16 port);
-extern void read_uint();
+extern int read_uint();

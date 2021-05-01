@@ -73,6 +73,12 @@ void txtcolr(){
 	printf("Color set: Complete.");
 }
 
+void inbbyusr(){
+	uint16 port;
+	port = read_uint();
+	inb(port);
+}
+
 void thxcolr(){
 	char cathx = KEY_A;
 	printf("Select Background color");
@@ -89,11 +95,11 @@ void thxcolr(){
 		clscr();
 		init_vga(CYAN, GREEN);
 	} else if(cathx == KEY_4){
-		clscr();
+		clscr(); 
 		init_vga(CYAN, RED);
 	} else if(cathx == KEY_5){
 		clscr();
-		init_vga(CYAN, MAGENTA);
+		inbbyusr();
 	} else if(cathx == KEY_6){
 		clscr();
 		init_vga(CYAN, BROWN);

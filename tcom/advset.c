@@ -73,7 +73,8 @@ void txtcolr(){
 	printf("Color set: Complete.");
 }
 void inbbyusr(
-	uint16 port = read_uint();
+	uint16 port;
+	port = read_uint();
 	inb(port);
 }
 

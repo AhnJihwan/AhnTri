@@ -21,6 +21,8 @@ void display_menu_ccalc_adv()
   printf("\n");
   os_print_color("Press [4] for Time transfer ", BLACK, WHITE);
   printf("\n");
+  os_print_color("Press [5] for Temp transfer ", BLACK, WHITE);
+  printf("\n");
   os_print_color("Press [0] for Exit          ", BLACK, WHITE);
 }
 
@@ -53,6 +55,11 @@ void advccalc(){
 				printf("Second to min/Minuite to hour: ");
 				num1 = read_int();
 				print_int(num1*60);
+				break;
+			case 5:
+				printf("Celsius to Fahrenheit: ");
+				num1  = read_int();
+				print_int(cel2far);
 				break;
 			case 0:
 				ccalc();

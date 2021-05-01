@@ -64,4 +64,15 @@ int atoi(char* s)
   return num;
 }
 
-
+int atoui(char* s)
+{
+  int len = strlen(s);
+  int i = len - 1;
+  uint16 num = 0, pos = 1;
+  while(i >= 0){
+    num += (s[i] - '0') * pos;
+    pos *= 10;
+    i--;
+  }
+  return num;
+}

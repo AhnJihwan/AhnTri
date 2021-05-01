@@ -10,6 +10,11 @@ int mb2gb(int mb){
 	return gb;
 }
 
+int cel2far(int c){
+	int f = c * 34;
+	return f;
+}
+
 int kg2lb(int kg){
 	int lb = kg*2;
 	return lb;

@@ -74,7 +74,7 @@ void txtcolr(){
 }
 void inbbyusr(
 	uint16 port = read_uint();
-	imb(port);
+	inb(port);
 }
 
 void thxcolr(){

@@ -181,8 +181,8 @@ void ccalc(){
 				homem();
 				break;
 			case 15:
-				logf();
-				break;
+				logf();		//Log b = x function
+				break;		//   a
 			default:
 				ccalc();
 				break;

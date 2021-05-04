@@ -98,4 +98,10 @@ int xpy(int x, int y){			//Get input: X^Y
         return res;				  //Return the result
 }
 
+int log(int a, int b)
+{
+        return (a > 1) ? 1 + log(a / b, b) : 0;
+}
+
+
 #endif

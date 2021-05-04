@@ -173,5 +173,8 @@ void mkern_main()
   printf(".");
   suspend(2);
   clscr();
+  #include "strtscrn.h"
+  strt_scrn();
+  clscr();
   newmain();
 }

@@ -62,6 +62,16 @@ void rtn(int* num1, int *num2)
   *num2 = read_int();
 }
 
+process logf()
+{
+	int a, b, x;
+	printf("Your a ");
+	a = read_int();
+	printf("Your b ");
+	b = read_int();
+	print_int(log(a, b));
+}
+
 void abc(int * num1, int * num2, int * num3)
 {
   printf("Enter first number : ");
@@ -95,7 +105,7 @@ void ccalc(){
  			 	printf("\n");
   				os_print_color("Addition:1, Sub:2, Mul:3, Div:4, Power 2:5, Power 3:6, sqrt: [10]", BLACK, WHITE);
    			   printf("\n");
-  				os_print_color("For (a+b)^3,  [8], GeX [9], TUI [7], factorial [11], Advanced calc [12], for ax^2+bx+c [13], and for x^y [14]", BLACK, WHITE);
+  				os_print_color("For (a+b)^3,  [8], GeX [9], TUI [7], factorial [11], Advanced calc [12], for ax^2+bx+c [13], for x^y [14], and for logab [15]", BLACK, WHITE);
    			   printf("\n");
 				break;
 			case 1:
@@ -169,6 +179,9 @@ void ccalc(){
 				break;
 			case 9:
 				homem();
+				break;
+			case 15:
+				logf();
 				break;
 			default:
 				ccalc();

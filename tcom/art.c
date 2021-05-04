@@ -1,7 +1,7 @@
 #include "../kernel.h"
 #include "../init/api.h"
 
-void art(){
+process art(){
 	clscr();
 	printf("                    AhnTri Sun\n\n");
 	os_print_color("```````...................-.--.............```````", BROWN, BLACK);

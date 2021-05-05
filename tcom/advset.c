@@ -14,6 +14,7 @@ void advset(){
 	printf("7. Change keyboard layout\n");
 	printf("8. PC CPU ID\n");
 	printf("9. Go to kernel main\n");
+	printf("a. Change Theme\n");
 	printf("AhnTroid AI is a part of AhnTri and is protected by the Apache 2.0 open source licence.\n");
 	cps = get_input_keycode();
 	if(cps == KEY_1){
@@ -37,6 +38,8 @@ void advset(){
 	} else if(cps == KEY_9){
 		clscr();
 		return;
+	}else if(cps == KEY_A){
+		init_vga(BLACK, WHITE);
 	} else{
 		clscr();
 		return;
@@ -90,7 +93,7 @@ void thxcolr(){
 		init_vga(CYAN, BLACK);
 	} else if(cathx == KEY_2){
 		clscr();
-		init_vga(CYAN, CYAN);
+		init_vga(CYAN, BRIGT_CYAN);
 	} else if(cathx == KEY_3){
 		clscr();
 		init_vga(CYAN, GREEN);

@@ -57,7 +57,7 @@ void txtcolr(){
 		init_vga(CYAN, BLACK);
 	} else if(caps == KEY_2){
 		clscr();
-		init_vga(BLACK, BLACK);
+		init_vga(GREY, BLACK);
 	} else if(caps == KEY_3){
 		clscr();
 		init_vga(GREEN, BLACK);
@@ -93,7 +93,7 @@ void thxcolr(){
 		init_vga(CYAN, BLACK);
 	} else if(cathx == KEY_2){
 		clscr();
-		init_vga(CYAN, BRIGT_CYAN);
+		init_vga(CYAN, BRIGHT_CYAN);
 	} else if(cathx == KEY_3){
 		clscr();
 		init_vga(CYAN, GREEN);

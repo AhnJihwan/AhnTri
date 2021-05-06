@@ -96,6 +96,7 @@ void rtnp(int* po1)
 
 void ccalc(){
 	int ccho, num1, num2, num3, po1;
+	char *h;
 	while(1){
 		display_menu_ccalc();
 		printf("\n\n> ");
@@ -105,7 +106,7 @@ void ccalc(){
  			 	printf("\n");
   				os_print_color("Addition:1, Sub:2, Mul:3, Div:4, Power 2:5, Power 3:6, sqrt: [10]", BLACK, WHITE);
    			   printf("\n");
-  				os_print_color("For (a+b)^3,  [8], GeX [9], TUI [7], factorial [11], Advanced calc [12], for ax^2+bx+c [13], for x^y [14], and for logab [15]", BLACK, WHITE);
+  				os_print_color("For (a+b)^3,  [8], GeX [9], TUI [7], factorial [11], Advanced calc [12], for ax^2+bx+c [13], for x^y [14], for logab [15], and for Logical AND, OR, XOR respectively, [16], [17], [18]", BLACK, WHITE);
    			   printf("\n");
 				break;
 			case 1:
@@ -183,6 +184,24 @@ void ccalc(){
 			case 15:
 				logf();		//Log b = x function
 				break;		//   a
+			case 16:
+				printf("Logical AND");
+				h = read_char();
+				rtn(&num1, &num2);
+				print_int(LOGICAL("and", num1, num2));
+				break;
+			case 17:
+				printf("Logical OR");
+				h = read_char();
+				rtn(&num1, &num2);
+				print_int(LOGICAL("or", num1, num2));
+				break;
+			case 18:
+				printf("Logical XOR");
+				h = read_char();
+				rtn(&num1, &num2);
+				print_int(LOGICAL("xor", num1, num2));
+				break;
 			default:
 				ccalc();
 				break;

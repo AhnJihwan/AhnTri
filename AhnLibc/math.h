@@ -102,4 +102,22 @@ int log(int a, int b){
                 return (b > 1) ? 1 + log(a, b / a) : 0;
 }
 
+int LOGICAL(char *l, int a, int b){
+	int x;
+	if(strcmp(l, "and")==0){
+		x = a & b;
+		return x;
+	}else if(strcmp(l, "or")==0){
+		x = a | b;
+		return x;
+	}else if(strcmp(l, "xor")==0){
+		x = a ^ b;
+		return x;
+	}else{
+		x = 0;
+		return x;
+	}
+	return x;
+}
+
 #endif

@@ -2,14 +2,14 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot kernel ccalc advset cbot cal credit art fishdic game notes osver keychar gdt idt ld buildgrub clean
+make_deafult: bboot kernel ccalc advset cbot cal credit art artii fishdic game notes osver keychar gdt idt ld buildgrub clean
 
 #Build kernel main image
 kernel: init/os_rpc.c
 	gcc -m32 -c init/os_rpc.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 #Link everything up
-ld: linker.ld linker.ld image.o ccalc.o advset.o cbot.o cal.o art.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o
-	ld -m elf_i386 -T linker.ld image.o advset.o ccalc.o cbot.o cal.o art.o notes.o osver.o fishdic.o credit.o game.o utils.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld image.o ccalc.o advset.o cbot.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o
+	ld -m elf_i386 -T linker.ld image.o advset.o ccalc.o cbot.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o utils.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o -o ATOS1.bin -nostdlib
 
 #Build ISO file via grub
 buildgrub: ATOS1.bin
@@ -55,6 +55,9 @@ cal: tcom/cal.c
 art: tcom/art.c
 	gcc -m32 -c tcom/art.c -o art.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
+artii: tcom/artii.c
+	gcc -m32 -c tcom/artii.c -o artii.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
 fishdic: tcom/fishdic.c
 	gcc -m32 -c tcom/fishdic.c -o fishdic.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
@@ -78,15 +81,15 @@ clean:
 #######################################################################################################################################################
 
 #Makes VMPC up
-vmpc: bboot kernel_vmpc ccalc advset cbot cal art fishdic credit game notes osver keychar gdt idt ld_vm buildgrub_vmpc clean
+vmpc: bboot kernel_vmpc ccalc advset cbot cal art artii fishdic credit game notes osver keychar gdt idt ld_vm buildgrub_vmpc clean
 
 #Build kernel main image
 kernel_vmpc: init/os_vmpc.c
 	gcc -m32 -c init/os_vmpc.c -o imagei.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 
 #Link everything up
-ld_vm: linker.ld linker.ld imagei.o ccalc.o advset.o cbot.o cal.o art.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o
-	ld -m elf_i386 -T linker.ld imagei.o ccalc.o advset.o cbot.o cal.o art.o notes.o osver.o credit.o fishdic.o game.o utils.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o -o ATOS2.bin -nostdlib
+ld_vm: linker.ld linker.ld imagei.o ccalc.o advset.o cbot.o cal.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o
+	ld -m elf_i386 -T linker.ld imagei.o ccalc.o advset.o cbot.o cal.o artii.o notes.o osver.o credit.o fishdic.o game.o utils.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o -o ATOS2.bin -nostdlib
 
 #Build ISO file via grub
 buildgrub_vmpc: ATOS2.bin

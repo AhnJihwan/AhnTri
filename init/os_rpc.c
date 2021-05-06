@@ -104,6 +104,8 @@ void kernmain(){
 			game();
 		} else if(strcmp(choice, "sun")==0){
 			art();
+		} else if(strcmp(choice, "plant")==0){
+			plant();
 		} else if(strcmp(choice, "advset")==0){
 			advset();
 		} else if(strcmp(choice, "atroid")==0 || strcmp(choice, "ai")==0){

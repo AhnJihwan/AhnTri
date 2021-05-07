@@ -1,6 +1,7 @@
 ![AhnTriLogo](at.jpg)
 # AhnTri OS
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
+# Getting some Stargazer's Languages: https://forms.gle/GcfstgAjpzB3h9JP7
 # I am KOREAN guy.
 This is the Kernel and the CLI OS.
 This is my hobby OS, now it can be run on real hardware, focused on bootable USBs.

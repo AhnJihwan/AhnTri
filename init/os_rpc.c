@@ -17,7 +17,6 @@
 #include "../kio/types.h"
 #include "gdt.h"
 #include "../AhnLibc/mem.h"
-#include "../fs/fs.h"
 
 void display_menu()
 {

@@ -17,6 +17,29 @@ int strrlen(const char* str)
   return length;
 }
 
+void strcpy(char dest[], const char source[]) {
+    int i = 0;
+    while (1)
+    {
+        dest[i] = source[i];
+
+        if (dest[i] == '\0')
+        {
+            break;
+        }
+
+        i++;
+    }
+}
+
+int strlen(const char* str)
+{
+  int length = 0;
+  while(str[length])
+    length++;
+  return length;
+}
+
 void itoa(int num, char *number)
 {
   int dgcount = digit_count(num);

@@ -11,23 +11,6 @@ void *malloc(signed siz){
     return mem;
 }
 
-u32int kmalloc(u32int sz, int align, u32int *phys)
-{
-  if (align == 1 && (placement_address & 0xFFFFF000)) // If the address is not already page-aligned
-  {
-    // Align it.
-    placement_address &= 0xFFFFF000;
-    placement_address += 0x1000;
-  }
-  if (phys)
-  {
-    *phys = placement_address;
-  }
-  u32int tmp = placement_address;
-  placement_address += sz;
-  return tmp;
-}
-
 void free(void *mem){
 }
 

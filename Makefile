@@ -2,14 +2,14 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot kernel ccalc advset cbot cal credit art artii fishdic game notes osver keychar gdt idt ld buildgrub clean
+make_deafult: bboot kernel ccalc advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fs ld buildgrub clean
 
 #Build kernel main image
 kernel: init/os_rpc.c
 	gcc -m32 -c init/os_rpc.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 #Link everything up
-ld: linker.ld linker.ld image.o ccalc.o advset.o cbot.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o
-	ld -m elf_i386 -T linker.ld image.o advset.o ccalc.o cbot.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o utils.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld image.o ccalc.o advset.o cbot.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
+	ld -m elf_i386 -T linker.ld image.o advset.o ccalc.o cbot.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o utils.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
 
 #Build ISO file via grub
 buildgrub: ATOS1.bin
@@ -66,6 +66,9 @@ credit: tcom/credit.c
 
 game: tcom/game.c
 	gcc -m32 -c tcom/game.c -o game.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+	
+fs: fs/fs.c
+	gcc -m32 -c tcom/fs.c -o fs.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 #Assemble gru(bboot)loader
 bboot: boot/boot.s

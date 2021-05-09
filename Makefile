@@ -68,7 +68,7 @@ game: tcom/game.c
 	gcc -m32 -c tcom/game.c -o game.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 	
 fs: fs/fs.c
-	gcc -m32 -c tcom/fs.c -o fs.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+	gcc -m32 -c fs/fs.c -o fs.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 #Assemble gru(bboot)loader
 bboot: boot/boot.s

@@ -1,3 +1,5 @@
+#include "../kernel.h"
+#include "../init/api.h"
 #include "fs.h"
 
 fs_node_t *fs_root = 0; // The root of the filesystem.

@@ -2,7 +2,7 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot kernel ccalc advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fs ld buildgrub clean
+make_deafult: bboot kernel ccalc advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
 
 #Build kernel main image
 kernel: init/os_rpc.c
@@ -67,7 +67,7 @@ credit: tcom/credit.c
 game: tcom/game.c
 	gcc -m32 -c tcom/game.c -o game.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 	
-fs: fs/fs.c
+fsa: fs/fs.c
 	gcc -m32 -c fs/fs.c -o fs.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 #Assemble gru(bboot)loader

@@ -7,7 +7,7 @@ struct registers
   uint32 int_no, err_code;  // interrupt number and error code
   uint32 eip, cs, eflags, useresp, ss;  // pushed by the processor automatically
 };
-
+#define clij() asm volatile("cli") //Thank you, jtsiomb!
 static struct registers* current_regs = NULL;
 void cli(){
   asm volatile("cli");

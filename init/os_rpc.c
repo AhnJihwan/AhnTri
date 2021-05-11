@@ -1,6 +1,6 @@
 // include files by #include <neccessary file>
 #include "../kernel.h"
-#include "../kio/char.h"
+#include "../drivers/kb/char.h"
 #include "../2dt/idt.h"
 #include "tinit_rpc.h"
 #include "../tcom/clscr.h"

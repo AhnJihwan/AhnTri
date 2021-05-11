@@ -7,7 +7,7 @@ struct registers
   uint32 int_no, err_code;  // interrupt number and error code
   uint32 eip, cs, eflags, useresp, ss;  // pushed by the processor automatically
 };
-#define INT_STOP asm volatile("cli") //Thank you, jtsiomb!
+#define INT_STOP asm volatile("cli") //Thank you, u/jtsiomb and u/Ayush7788!
 static struct registers* current_regs = NULL;
 
 // if no interrupt found then push interrupt no into stack

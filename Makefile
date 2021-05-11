@@ -75,9 +75,9 @@ bboot: boot/boot.s
 	as --32 boot/boot.s -o boot.o
 
 #Build Keychar drivers
-keychar: drivers/kb/char.c drivers/kb/utils.c
+keychar: drivers/kb/char.c kio/utils.c
 	gcc -m32 -c drivers/kb/char.c -o char.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
-	gcc -m32 -c drivers/kb/utils.c -o utils.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra
+	gcc -m32 -c kio/utils.c -o utils.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra
 
 clean:
 	rm *.o

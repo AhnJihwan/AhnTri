@@ -6,7 +6,7 @@ struct registers
   uint32 edi, esi, ebp, esp, ebx, edx, ecx, eax;  // pushed by pusha
   uint32 int_no, err_code;  // interrupt number and error code
   uint32 eip, cs, eflags, useresp, ss;  // pushed by the processor automatically
-};
+}registers_t;
 #define INT_STOP asm volatile("cli") //Thank you, u/jtsiomb and u/Ayush7788!
 static struct registers* current_regs = NULL;
 

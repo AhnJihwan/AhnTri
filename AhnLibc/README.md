@@ -1,2 +1,2 @@
 # AhnTri C Library.
-![ATCLIB logo](atcliblogo.png)
+![ATCLIB logo](atcliblogo.jpg)

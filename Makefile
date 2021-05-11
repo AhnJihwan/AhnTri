@@ -25,9 +25,9 @@ qemu: atos_rpc.iso
 
 #######################################################################################################################################################
 #Build GDT
-gdt: init/gdt.c init/load_gdt.s
-	gcc -m32 -c init/gdt.c -o gdt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-	as --32 init/load_gdt.s -o load_gdt.o
+gdt: 2dt/gdt.c 2dt/load_gdt.s
+	gcc -m32 -c 2dt/gdt.c -o gdt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+	as --32 2dt/load_gdt.s -o load_gdt.o
 
 #Build IDT
 idt: 2dt/idt.c 2dt/load_idt.s

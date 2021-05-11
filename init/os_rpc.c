@@ -15,7 +15,7 @@
 #include "new.h"
 #include "../homenu.h"
 #include "../kio/types.h"
-#include "gdt.h"
+#include "../2dt/gdt.h"
 #include "../AhnLibc/mem.h"
 
 void display_menu()

@@ -9,9 +9,6 @@ struct registers
 };
 #define clij() asm volatile("cli") //Thank you, jtsiomb!
 static struct registers* current_regs = NULL;
-void cli(){
-  asm volatile("cli");
-}                                 //Thank you, u/Bob-The-One!
 
 // if no interrupt found then push interrupt no into stack
 // for int instruction

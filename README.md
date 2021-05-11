@@ -9,7 +9,7 @@ Since I am just 13(korean age 15), my code will be super bad.
 # Announcement: My hobby OS AhnTri is back again, since I finished the test(got A on everything)!
 I think i'll need some directories and fs in here
 But first, UI first...
-# 200th commit anniversary 4:24pm 3/37/2021
+# Organizing everything; I can't do anything because I don't know what is what and how it's connected.
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

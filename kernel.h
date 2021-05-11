@@ -30,7 +30,7 @@ enum vga_color {
 };
 
 
-#include "kio/keyboard.h"
+#include "drivers/kb//keyboard.h"
 
 
 #endif

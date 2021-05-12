@@ -10,6 +10,7 @@ Since I am just 13(korean age 15), my code will be super bad.
 I think i'll need some directories and fs in here
 But first, UI first...
 # Whew!! Now it looks organized😆XD!
+# 400th COMMIT!!
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

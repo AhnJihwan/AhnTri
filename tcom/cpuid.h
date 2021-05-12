@@ -126,7 +126,6 @@ void cpuid_test()
 
 void cputest()
 {
-  init_vga(CYAN, BLACK);
   cpuid_test();
 }
 

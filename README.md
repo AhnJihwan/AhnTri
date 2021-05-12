@@ -11,6 +11,7 @@ I think i'll need some directories and fs in here
 But first, UI first...
 # Whew!! Now it looks organized😆XD!
 # 400th COMMIT!!
+I can dev in break times in school because they are all online...
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

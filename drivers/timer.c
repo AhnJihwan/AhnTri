@@ -1,12 +1,6 @@
 #include "../init/api.h"
 
 //My PIT driver code
-
-//Function that interrupts interrupts. Literally.
-void cli(){
-  asm volatile("cli");                                 //Thank you, u/Bob-The-One!
-}
-
 unsigned read_pit_count(void) {
 	unsigned count = 0;
 	cli();

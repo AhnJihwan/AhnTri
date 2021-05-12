@@ -1,3 +1,4 @@
+#include "../kio/types.h"
 extern void print_char(char ch);
 extern void printf(char *str);
 extern void init_vga(uint8 fg_color, uint8 bg_color);

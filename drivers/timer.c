@@ -1,6 +1,6 @@
 #include "../init/api.h"
 
-//My PIT driver code
+//My PIT driver code 
 unsigned read_pit_count(void) {
 	unsigned count = 0;
 	cli();

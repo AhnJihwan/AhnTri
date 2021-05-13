@@ -8,8 +8,8 @@ make_deafult: bboot kernel ccalc advset cbot cal credit art artii fishdic game n
 kernel: init/os_rpc.c
 	gcc -m32 -c init/os_rpc.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 #Link everything up
-ld: linker.ld linker.ld image.o ccalc.o advset.o cbot.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
-	ld -m elf_i386 -T linker.ld image.o advset.o ccalc.o cbot.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o utils.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld image.o ccalc.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
+	ld -m elf_i386 -T linker.ld image.o advset.o ccalc.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o utils.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
 
 #Build ISO file via grub
 buildgrub: ATOS1.bin
@@ -33,6 +33,7 @@ gdt: 2dt/gdt.c 2dt/load_gdt.s
 idt: 2dt/idt.c 2dt/load_idt.s
 	gcc -m32 -c 2dt/idt.c -o idt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 	as --32 2dt/load_idt.s -o load_idt.o
+	as --32 2dt/isr.s -o isr.o
 
 ccalc: tcom/ccalcfi.c
 	gcc -m32 -c tcom/ccalcfi.c -o ccalc.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra

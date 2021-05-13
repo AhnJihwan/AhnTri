@@ -2,7 +2,7 @@
 #include "isr.c"
 #include "idt.h"
 
-struct idt idt_entries[16];
+struct idt idt_entries[256];
 struct idtptr idt_first;
 
 extern void load_idt(struct idt*);

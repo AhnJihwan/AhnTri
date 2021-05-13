@@ -2,6 +2,7 @@
 #include "../kernel.h"
 #include "../drivers/kb/char.h"	//So what?
 #include "../2dt/idt.h"
+#include "../tcom/isrphone.h"
 #include "tinit_rpc.h"
 #include "../tcom/clscr.h"
 #include "../tcom/cpu/ports.h"
@@ -115,6 +116,9 @@ void kernmain(){
 		} else if(strcmp(choice, "cal 2021")==0){
 			clscr();
 			acal();
+		} else if(strcmp(choice, "ci")==0){
+			clscr();
+			isrphone();
 		}else if(strcmp(choice, "credit")==0 || strcmp(choice, "credits")==0){
 			clscr();
 			credits();

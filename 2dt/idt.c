@@ -9,11 +9,11 @@ extern void load_idt(struct idt*);
 
 void set_idt_gate(int intnum, uint32 isr)
 {
-  idt_entries[intnum].blow = isr & 0xffff;
+  idt_entries[intnum].blow = (isr & 0xFFFF);
   idt_entries[intnum].segsel = 0x08;
   idt_entries[intnum].zero = 0;
   idt_entries[intnum].type = 0x8E;
-  idt_entries[intnum].base_high = (isr >> 16) & 0xffff;
+  idt_entries[intnum].base_high = (isr >> 16) & 0xFFFF;
 }
 
 void init_idt()
@@ -34,6 +34,18 @@ void init_idt()
   set_idt_gate(13, (uint32)isr_13);
   set_idt_gate(14, (uint32)isr_14);
   set_idt_gate(15, (uint32)isr_15);
+  set_idt_gate(20, (uint32)isr_20);
+  set_idt_gate(21, (uint32)isr_21);
+  set_idt_gate(22, (uint32)isr_22);
+  set_idt_gate(23, (uint32)isr_23);
+  set_idt_gate(24, (uint32)isr_24);
+  set_idt_gate(25, (uint32)isr_25);
+  set_idt_gate(26, (uint32)isr_26);
+  set_idt_gate(27, (uint32)isr_27);
+  set_idt_gate(28, (uint32)isr_28);
+  set_idt_gate(29, (uint32)isr_29);
+  set_idt_gate(30, (uint32)isr_30);
+  set_idt_gate(31, (uint32)isr_31);
 
   idt_first.limsiz = sizeof(idt_entries) - 1;
   idt_first.base_address = (struct idt*)&idt_entries;

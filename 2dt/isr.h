@@ -66,5 +66,21 @@ void isr_12_handler();
 void isr_13_handler();
 void isr_14_handler();
 void isr_15_handler();
+void isr_16_handler();
+void isr_17_handler();
+void isr_18_handler();
+void isr_19_handler();
+void isr_20_handler();
+void isr_21_handler();
+void isr_22_handler();
+void isr_23_handler();
+void isr_24_handler();
+void isr_25_handler();
+void isr_26_handler();
+void isr_27_handler();
+void isr_28_handler();
+void isr_29_handler();
+void isr_30_handler();
+void isr_31_handler();
 
 #endif

@@ -15,7 +15,11 @@ void set_idt_gate(int intnum, uint32 isr)
   idt_entries[intnum].type = 0x8E;
   idt_entries[intnum].base_high = (isr >> 16) & 0xFFFF;
 }
-
+//This is my IDT that I made(I can't use other tutorials or things, I tried to copy u/Ayush7788's code with copyright notice, 
+//but I couldn't because they were all NASM.
+//OSDev wiki: They were all NASM, too.
+//I want to first thank u/Ayush7788 for helping me theoretically.
+//I moved aeverything to the S file 🍃PURE assemnbly.
 void init_idt()
 {
   set_idt_gate(0, (uint32)isr_0);

@@ -19,7 +19,7 @@ struct idtptr
    struct idt* base_address;  // base address of the first idt segment
 } __attribute__((packed));
 
-extern struct idt idt_entries[16];
+extern struct idt idt_entries[256];
 extern struct idtptr idt_first;
 
 extern void init_idt();

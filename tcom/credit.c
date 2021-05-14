@@ -179,12 +179,12 @@ void credits(){
 	printf("I saw the osdev wiki ");
 	os_print_color("https://wiki.osdev.org/Main_Page\n", BLUE, BLACK);
 	os_print_color("https://www.geeksforgeeks.org/ for Log inspiration\n", BLUE, BLACK);
-	printf("Thank you grandmother for lending me your ""precious"" PC...\n");
+	printf("Thank you grandmother E.S Lee for lending me your ""precious"" PC...\n");
 	printf("Thank you u/Bob-The-One, u/jtsiomb, and u/Ayush7788!\n");
 	printf("James Molloy's OSDEv tutorials were great for me. ");
 	os_print_color("www.jamesmolloy.co.uk\n", BLUE, BLACK);
 	printf("==Stargazers, who make AhnTri AhnTri.==\n");
-	printf("parsa011, He lives in Iran\n");
+	printf("Parsa Mahmoudy who lives in Iran\n");
 	printf("Riahiamirreza Joined on Aug 26, 2019\n");
 	printf("BOBBYWY Joined on Apr 2, 2015\n");
 	suspend(1000);
@@ -192,9 +192,9 @@ void credits(){
 	printf("==Stargazers, who make AhnTri AhnTri.==\n");
 	printf("unsafecast Joined on Dec 18, 2020\n");
 	printf("ehalferty who lives in San Francisco, CA\n");
-	printf("dreamos82 who lives in Dublin\n");
+	printf("Ivan Gualandri who lives in Dublin\n");
 	printf("programmeruser2 who lives in /dev/tty\n");
-	printf("0xdeit who lives in Mexico\n");
+	printf("Diego Garza who lives in Mexico\n");
 	printf("growlnx who lives in Rio de Janeiro, Brazil\n");
 	printf("Sanchit Kalra who lives in Chandigarh, India\n");
 	printf("scpmx who Joined on August 1, 2015\n");

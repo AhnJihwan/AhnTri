@@ -35,38 +35,38 @@ idt: 2dt/idt.c 2dt/load_idt.s
 	as --32 2dt/load_idt.s -o load_idt.o
 	as --32 2dt/isr.s -o isr.o
 
-ccalc: tcom/ccalcfi.c
-	gcc -m32 -c tcom/ccalcfi.c -o ccalc.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+ccalc: kapps/ccalcfi.c
+	gcc -m32 -c kapps/ccalcfi.c -o ccalc.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-advset: tcom/advset.c
-	gcc -m32 -c tcom/advset.c -o advset.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+advset: kapps/advset.c
+	gcc -m32 -c kapps/advset.c -o advset.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-notes: tcom/notes.c
-	gcc -m32 -c tcom/notes.c -o notes.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+notes: kapps/notes.c
+	gcc -m32 -c kapps/notes.c -o notes.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-osver: tcom/osver.c
-	gcc -m32 -c tcom/osver.c -o osver.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+osver: kapps/osver.c
+	gcc -m32 -c kapps/osver.c -o osver.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-cbot: tcom/cbot.c
-	gcc -m32 -c tcom/cbot.c -o cbot.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+cbot: kapps/cbot.c
+	gcc -m32 -c kapps/cbot.c -o cbot.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-cal: tcom/cal.c
-	gcc -m32 -c tcom/cal.c -o cal.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+cal: kapps/cal.c
+	gcc -m32 -c kapps/cal.c -o cal.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-art: tcom/art.c
-	gcc -m32 -c tcom/art.c -o art.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+art: kapps/art.c
+	gcc -m32 -c kapps/art.c -o art.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-artii: tcom/artii.c
-	gcc -m32 -c tcom/artii.c -o artii.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+artii: kapps/artii.c
+	gcc -m32 -c kapps/artii.c -o artii.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-fishdic: tcom/fishdic.c
-	gcc -m32 -c tcom/fishdic.c -o fishdic.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+fishdic: kapps/fishdic.c
+	gcc -m32 -c kapps/fishdic.c -o fishdic.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-credit: tcom/credit.c
-	gcc -m32 -c tcom/credit.c -o credit.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+credit: kapps/credit.c
+	gcc -m32 -c kapps/credit.c -o credit.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-game: tcom/game.c
-	gcc -m32 -c tcom/game.c -o game.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+game: kapps/game.c
+	gcc -m32 -c kapps/game.c -o game.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 	
 fsa: fs/fs.c
 	gcc -m32 -c fs/fs.c -o fs.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra

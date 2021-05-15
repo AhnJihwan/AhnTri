@@ -1,5 +1,5 @@
 #include "../kernel.h"
-#include "../init/api.h"
+#include "../kinc/api.h"
 
 void advset(){
 	char cps = KEY_A;

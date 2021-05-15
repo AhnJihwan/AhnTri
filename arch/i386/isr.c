@@ -1,5 +1,4 @@
-#include "../kernel.h"
-#include "../init/api.h" 
+#include "../../libc/atclib.h"
 #include "isr.h"
 #define INT_STOP asm volatile("cli") //Thank you, u/jtsiomb and u/Ayush7788!
 

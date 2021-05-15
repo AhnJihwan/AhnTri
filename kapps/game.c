@@ -1,5 +1,6 @@
 #include "../kernel.h"
-#include "../init/api.h"
+#include "../libc/atclib.h"
+
 //Catch @Whelk@ Game
 //I know this is all trash, but just...
 void game(){

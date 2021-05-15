@@ -1,7 +1,7 @@
 #ifndef GDT_H
 #define GDT_H
 
-#include "../kio/types.h"
+#include "../../libc/types/ctypes.h"
 
 #define NS 0
 #define CS 1

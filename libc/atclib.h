@@ -1,3 +1,6 @@
+#include "types/ctypes.h"
+#define OS_suspend 16
+#define NULL 0
 //Math
 extern int powt(int a);
 extern int powth(int a);
@@ -47,12 +50,12 @@ extern int read_int();
 extern int read_uint();
 extern char getchar();
 //String
+extern uint32 strlen(const char*);
 extern long stoi(const char *s);
 extern uint32 digit_count(int num);
 extern int atoui(char* s);
 extern int strcmp(char str1[], char str2[]);
 extern int strrlen(const char* str);
 extern void strcpy(char dest[], const char source[]);
-extern int strlen(const char* str);
 extern void itoa(int num, char *number);
 extern int atoi(char* s);

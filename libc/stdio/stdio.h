@@ -1,5 +1,6 @@
-#define OS_suspend 16
+#include "../../kernel.h"
 
+#define OS_suspend 16
 uint32 vga_index;
 uint16 cursor_pos = 0, cursor_next_line_index = 1;
 static uint32 next_line_index = 1;

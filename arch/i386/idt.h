@@ -1,8 +1,6 @@
 #ifndef idt_H
 #define idt_H
 
-#include "../kio/types.h"
-
 struct idt
 {
   uint16 blow;  // lower 16 bits 0-15 of the address to jump to when this interrupt fires

@@ -1,4 +1,4 @@
-#include "../init/stdio.h"
+#include "../../libc/atclib.h"
 #include "isr.c"
 #include "idt.h"
 

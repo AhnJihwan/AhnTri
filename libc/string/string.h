@@ -1,3 +1,12 @@
+
+uint32 strlen(const char* str)
+{
+  uint32 length = 0;
+  while(str[length])
+    length++;
+  return length;
+}
+
 long stoi(const char *s)
 {
     long i;
@@ -64,14 +73,6 @@ void strcpy(char dest[], const char source[]) {
 
         i++;
     }
-}
-
-int strlen(const char* str)
-{
-  int length = 0;
-  while(str[length])
-    length++;
-  return length;
 }
 
 void itoa(int num, char *number)

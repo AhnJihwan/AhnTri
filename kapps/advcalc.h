@@ -1,5 +1,3 @@
-#include "../AhnLibc/advmath.h"
-
 //Ccalc for Advanced Calculations
 void display_menu_ccalc_adv()
 {

@@ -1,6 +1,5 @@
 #include "../kernel.h"
-#include "../init/api.h"
-#include "../kio/utils.h"
+#include "../libc/atclib.h"
 
 void antroid_hmenu(){
 	printf("\nArtificial Intellegence by AhnTri: Type [6390] for help. Do not input nothing, or it would crash.");

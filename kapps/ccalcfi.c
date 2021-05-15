@@ -1,6 +1,7 @@
-#include "../AhnLibc/math.h"
+#include "../libc/atclib.h"
 #include "../kernel.h"
-#include "../init/api.h"
+#include "../kinc/api.h"
+#include "advcalc.h"
 #define ccalsusp 10
 //Ccalc for include
 //Made in Xubuntu
@@ -91,8 +92,6 @@ void rtnp(int* po1)
   suspend(ccalsusp);
   *po1 = read_int();
 }
-
-#include "advcalc.h"
 
 void ccalc(){
 	int ccho, num1, num2, num3, po1;

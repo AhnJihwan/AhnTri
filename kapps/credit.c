@@ -1,5 +1,6 @@
 #include "../kernel.h"
-#include "../init/api.h"
+#include "../libc/atclib.h"
+
 void creditt(){
   printf("Credits          \n\n");
   gotoxy(25, 12);

@@ -1,7 +1,7 @@
 #ifndef ISR_H
 #define ISR_H
 /*Organizing the Source Code of OS*/
-#include "../kio/types.h"
+#include "../../libc/atclib.h"
 /*Defining IRQs with roman numerals*/
 #define IRQ0 32		//Programmable Interrupt Timer Interrupt
 #define IRQI 33		//Keyboard Interrupt	

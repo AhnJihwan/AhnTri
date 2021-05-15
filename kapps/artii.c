@@ -1,5 +1,5 @@
 #include "../kernel.h"
-#include "../init/api.h"
+#include "../libc/atclib.h"
 
 void plant() {
 	os_print_color("dddddddmmmdddmmmmmNNN", GREEN, BLACK);

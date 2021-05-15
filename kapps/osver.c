@@ -1,5 +1,6 @@
 #include "../kernel.h"
-#include "../init/api.h"
+#include "../libc/atclib.h"
+
 #define OS_VER 1.2
 #define OS_API_VER 2.30
 #define OS_TERCOM_VER 1.00

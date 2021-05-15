@@ -39,4 +39,3 @@ menuentry "AhnTriOS" {
 
 # The UI now looks like the 8090 TUI.
 - And other modern-like UI apps.
- 

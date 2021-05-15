@@ -1,7 +1,7 @@
 #ifndef KERNEL_H
 #define KERNEL_H
 
-#include "kio/types.h"
+#include "libc/types/ctypes.h"
 
 #define NULL 0
 

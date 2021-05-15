@@ -1,7 +1,7 @@
 #ifndef CHAR_H
 #define CHAR_H
 
-#include "../../kio/types.h"
+#include "../../libc/types/ctypes.h"
 #include "keyboard.h"
 
 

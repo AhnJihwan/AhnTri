@@ -6,9 +6,11 @@ struct idt idt_entries[256];
 struct idtptr idt_first;
 
 extern void load_idt(struct idt*);
+extern void remap_pic();
 
 void set_idt_gate(int intnum, uint32 isr)
 {
+  remap_pic();
   idt_entries[intnum].blow = (isr & 0xFFFF);
   idt_entries[intnum].segsel = 0x08;
   idt_entries[intnum].zero = 0;

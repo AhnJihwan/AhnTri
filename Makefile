@@ -8,8 +8,8 @@ make_deafult: bboot atclib kernel ccalc advset cbot cal credit art artii fishdic
 kernel: main.c
 	gcc -m32 -c main.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 #Link everything up
-ld: linker.ld linker.ld clib.o image.o ccalc.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
-	ld -m elf_i386 -T linker.ld clib.o image.o advset.o ccalc.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld clib.o image.o irq.o ccalc.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
+	ld -m elf_i386 -T linker.ld clib.o image.o irq.o advset.o ccalc.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
 
 #Build ISO file via grub
 buildgrub: ATOS1.bin
@@ -26,6 +26,9 @@ qemu: atos_rpc.iso
 #######################################################################################################################################################
 atclib: libc/atclib.c
 	gcc -m32 -c libc/atclib.c -o clib.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
+irq: arch/i386/irq.c
+	gcc -m32 -c arch/i386/irq.c -o irq.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 #Build GDT
 gdt: arch/i386/gdt.c arch/i386/load_gdt.s

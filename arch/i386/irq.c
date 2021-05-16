@@ -1,0 +1,12 @@
+void remap_pic(){
+	outb(0x20, 17);
+	outb(0xA0, 17);
+	outb(0x21, 32);
+	outb(0xA1, 64);
+	outb(0x21, 4);
+	outb(0xA1, 2);
+	outb(0x21, 1);
+	outb(0xA1, 1);
+	outb(0x21, 0);
+	outb(0xA1, 0);
+}

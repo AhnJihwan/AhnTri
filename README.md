@@ -31,7 +31,6 @@ menuentry "AhnTriOS" {
 	multiboot /boot/directory/of/your/os/ATOS1.bin
 }
 ```
- 
 # Screenshots
 ![Screenshot of 1.2.3](sshot.png)
 ![Screenshot of 1.2.3](sshot2.png)

@@ -8,7 +8,7 @@ struct idtptr idt_first;
 extern void load_idt(struct idt*);
 extern void remap_pic();
 
-void set_idt_gate(int intnum, uint32 isr)
+void set_idt_gate(uint8_t intnum, uint32 isr)
 {
   remap_pic();
   idt_entries[intnum].blow = (isr & 0xFFFF);

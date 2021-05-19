@@ -17,105 +17,105 @@
 
 irq0:
   pusha
-  outb %32, %32
+  outb %0x20, %0x20
   popa
   iret
  
 irq1:
   pusha
-  outb %32, %32
+  outb %0x20, %0x20
   popa
   iret
  
 irq2:
   pusha
-  outb %32, %32
+  outb %0x20, %0x20
   popa
   iret
  
 irq3:
   pusha
-  outb %32, %32
+  outb %0x20, %0x20
   popa
   iret
  
 irq4:
   pusha
-  outb %32, %32
+  outb %0x20, %0x20
   popa
   iret
  
 irq5:
   pusha
-  outb %32, %32
+  outb %0x20, %0x20
   popa
   iret
  
 irq6:
   pusha
-  outb %32, %32
+  outb %0x20, %0x20
   popa
   iret
  
 irq7:
   pusha
-  outb %32, %32
+  outb %0x20, %0x20
   popa
   iret
  
 irq8:
   pusha
-  outb %32, %160
-  outb %32, %32
+  outb %0x20, %0xA0
+  outb %0x20, %0x20
   popa
   iret
  
 irq9:
   pusha
-  outb %32, %160
-  outb %32, %32
+  outb %0x20, %0xA0
+  outb %0x20, %0x20
   popa
   iret
  
 irq10:
   pusha
-  outb %32, %160
-  outb %32, %32
+  outb %0x20, %0xA0
+  outb %0x20, %0x20
   popa
   iret
  
 irq11:
   pusha
-  outb %32, %160
-  outb %32, %32
+  outb %0x20, %0xA0
+  outb %0x20, %0x20
   popa
   iret
  
 irq12:
   pusha
-  outb %32, %160
-  outb %32, %32
+  outb %0x20, %0xA0
+  outb %0x20, %0x20
   popa
   iret
  
 irq13:
   pusha
-  outb %32, %160
-  outb %32, %32
+  outb %0x20, %0xA0
+  outb %0x20, %0x20
   popa
   iret
  
 irq14:
   pusha
-  outb %32, %160
-  outb %32, %32
+  outb %0x20, %0xA0
+  outb %0x20, %0x20
   popa
   iret
  
 irq15:
   pusha
-  outb %32, %160
-  outb %32, %32
+  outb %0x20, %0xA0
+  outb %0x20, %0x20
   popa
   iret
  

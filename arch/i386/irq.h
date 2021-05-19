@@ -11,7 +11,7 @@
 #define IRQX 42
 #define IRQXI 43
 #define IRQXII 44
-#define IRQXII 45
+#define IRQXIII 45
 #define IRQXIV 46
 #define IRQXV 47
 

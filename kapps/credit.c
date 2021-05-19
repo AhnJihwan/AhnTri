@@ -200,6 +200,7 @@ void credits(){
 	printf("Sanchit Kalra who lives in Chandigarh, India\n");
 	printf("scpmx who Joined on August 1, 2015\n");
 	printf("Thesodadrinkerswho lives in Los Angeles, CA and is my old friend\n");
+	printf("CyborgXB4ing who Joined on May 13, 2021\n");
 	printf("AhnJihwan who lives in Seoul, South Korea\n");
 	printf("Thank you for all, who helped me XD! \nMay you be in AhnTri...\n[a] for Return, [b] for Apache 2.0 licence");
 	char licnce = KEY_A;

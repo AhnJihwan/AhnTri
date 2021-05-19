@@ -11,75 +11,74 @@ void remap_pic(){
 	outb(0xA1, 0);
 }
 
-
-void irq0_handler(void) {
+void irq0handler(void) {
           outb(32, 32);
 }
  
-void irq1_handler(void) {
+void irq1handler(void) {
 	  outb(32, 32);
 }
  
-void irq2_handler(void) {
+void irq2handler(void) {
           outb(32, 32);
 }
  
-void irq3_handler(void) {
+void irq3handler(void) {
           outb(32, 32);
 }
  
-void irq4_handler(void) {
+void irq4handler(void) {
           outb(32, 32);
 }
  
-void irq5_handler(void) {
+void irq5handler(void) {
           outb(32, 32);
 }
  
-void irq6_handler(void) {
+void irq6handler(void) {
           outb(32, 32);
 }
  
-void irq7_handler(void) {
+void irq7handler(void) {
           outb(32, 32);
 }
  
-void irq8_handler(void) {
+void irq8handler(void) {
           outb(160, 32);
           outb(32, 32);          
 }
  
-void irq9_handler(void) {
+void irq9handler(void) {
           outb(160, 32);
           outb(32, 32);
 }
  
-void irq10_handler(void) {
+void irq10handler(void) {
           outb(160, 32);
           outb(32, 32);
 }
  
-void irq11_handler(void) {
+void irq11handler(void) {
           outb(160, 32);
           outb(32, 32);
 }
  
-void irq12_handler(void) {
+void irq12handler(void) {
           outb(160, 32);
           outb(32, 32);
 }
  
-void irq13_handler(void) {
+void irq13handler(void) {
           outb(160, 32);
           outb(32, 32);
 }
  
-void irq14_handler(void) {
+void irq14handler(void) {
           outb(160, 32);
           outb(32, 32);
 }
  
-void irq15_handler(void) {
+void irq15handler(void) {
           outb(160, 32);
           outb(32, 32);
 }

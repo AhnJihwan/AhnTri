@@ -15,23 +15,6 @@
 .global irq14
 .global irq15
 
-.global irq0handler
-.global irq1handler
-.global irq2handler
-.global irq3handler
-.global irq4handler
-.global irq5handler
-.global irq6handler
-.global irq7handler
-.global irq8handler
-.global irq9handler
-.global irq10handler
-.global irq11handler
-.global irq12handler
-.global irq13handler
-.global irq14handler
-.global irq15handler
- 
 .extern irq0handler
 .extern irq1handler
 .extern irq2handler

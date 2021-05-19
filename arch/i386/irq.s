@@ -15,133 +15,107 @@
 .global irq14
 .global irq15
 
-.global irq0handler
-.global irq1handler
-.global irq2handler
-.global irq3handler
-.global irq4handler
-.global irq5handler
-.global irq6handler
-.global irq7handler
-.global irq8handler
-.global irq9handler
-.global irq10handler
-.global irq11handler
-.global irq12handler
-.global irq13handler
-.global irq14handler
-.global irq15handler
- 
-extern irq0handler
-extern irq1handler
-extern irq2handler
-extern irq3handler
-extern irq4handler
-extern irq5handler
-extern irq6handler
-extern irq7handler
-extern irq8handler
-extern irq9handler
-extern irq10handler
-extern irq11handler
-extern irq12handler
-extern irq13handler
-extern irq14handler
-extern irq15handler
- 
 irq0:
   pusha
-  call irq0handler
+  outb %32, %32
   popa
   iret
  
 irq1:
   pusha
-  call irq1handler
+  outb %32, %32
   popa
   iret
  
 irq2:
   pusha
-  call irq2handler
+  outb %32, %32
   popa
   iret
  
 irq3:
   pusha
-  call irq3handler
+  outb %32, %32
   popa
   iret
  
 irq4:
   pusha
-  call irq4handler
+  outb %32, %32
   popa
   iret
  
 irq5:
   pusha
-  call irq5handler
+  outb %32, %32
   popa
   iret
  
 irq6:
   pusha
-  call irq6handler
+  outb %32, %32
   popa
   iret
  
 irq7:
   pusha
-  call irq7handler
+  outb %32, %32
   popa
   iret
  
 irq8:
   pusha
-  call irq8handler
+  outb %32, %160
+  outb %32, %32
   popa
   iret
  
 irq9:
   pusha
-  call irq9handler
+  outb %32, %160
+  outb %32, %32
   popa
   iret
  
 irq10:
   pusha
-  call irq10handler
+  outb %32, %160
+  outb %32, %32
   popa
   iret
  
 irq11:
   pusha
-  call irq11handler
+  outb %32, %160
+  outb %32, %32
   popa
   iret
  
 irq12:
   pusha
-  call irq12handler
+  outb %32, %160
+  outb %32, %32
   popa
   iret
  
 irq13:
   pusha
-  call irq13handler
+  outb %32, %160
+  outb %32, %32
   popa
   iret
  
 irq14:
   pusha
-  call irq14handler
+  outb %32, %160
+  outb %32, %32
   popa
   iret
  
 irq15:
   pusha
-  call irq15handler
+  outb %32, %160
+  outb %32, %32
   popa
   iret
  

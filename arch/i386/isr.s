@@ -242,4 +242,3 @@ common_isr_stub_handler:
 	add $8, %esp
 	sti
 	iret
-

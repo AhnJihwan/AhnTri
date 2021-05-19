@@ -1,5 +1,5 @@
 #include "irq.h"
-#include "../../init/api.h"
+#include "../../kinc/api.h"
 void remap_pic(){
 	outb(0x20, 17);
 	outb(0xA0, 17);

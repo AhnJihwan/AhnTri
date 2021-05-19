@@ -167,6 +167,16 @@ void mkern_main()
   suspend(1);
   printf(" [OK]\n");
   isr_0_handler();
+  irq_install();
+  printf("\nIDT initialization");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(" [OK]\n");
   printf("Loading main menu.");
   suspend(1);
   printf(".");

@@ -33,4 +33,4 @@ extern void irq14();
 extern void irq15();
 
 extern void irq_install();
-extern void irq_install_handler(int irq, void (*handler)(struct regs *r));
+extern void irq_install_handler(int irq, void (*handler)(struct regs *r));        //Function made my Ayush Yadav.

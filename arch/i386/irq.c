@@ -108,7 +108,6 @@ void irq_install(){
 	asm volatile ("sti");
 }
 
-/*The following format below was borrowed from Ayush Yadav.*/
 /*The following code has been borrowed from https://github.com/ayush7788/discitix_kernel/blob/devel/cpu/irq.c, which is licensed under MIT.
 */
 /*pointers to IRQ handlers in C*/
@@ -122,4 +121,3 @@ void irq_install_handler(int irq, void (*handler)(struct regs *r)){
     irq_routines[irq] = handler;
 }
 /*End of Borrowing*/
-/*End of Borrowing format*/

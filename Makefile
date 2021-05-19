@@ -27,7 +27,7 @@ qemu: atos_rpc.iso
 atclib: libc/atclib.c
 	gcc -m32 -c libc/atclib.c -o clib.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-irq: arch/i386/irq.c
+irq: arch/i386/irq.c arch/i386/irq.s
 	gcc -m32 -c arch/i386/irq.c -o irq.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 	as --32 arch/i386/irq.s -o irq_s.o
 

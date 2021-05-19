@@ -104,5 +104,5 @@ void irq_install(){
 	set_idt_gate(IRQXII, (uint32_t)irq12);
 	set_idt_gate(IRQXIII, (uint32_t)irq13);
 	set_idt_gate(IRQXIV, (uint32_t)irq14);
-	set_irq_gate(IRQXV, (uint32_t)irq15);
+	set_idt_gate(IRQXV, (uint32_t)irq15);
 }

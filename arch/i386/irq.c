@@ -1,3 +1,5 @@
+#include "irq.h"
+#include "../../init/api.h"
 void remap_pic(){
 	outb(0x20, 17);
 	outb(0xA0, 17);
@@ -81,4 +83,24 @@ void irq14handler(void) {
 void irq15handler(void) {
           outb(160, 32);
           outb(32, 32);
+}
+
+void irq_install(){
+	remap_pic();
+	set_idt_gate(IRQ0, (uint32_t)irq0);
+	set_idt_gate(IRQI, (uint32_t)irq1);
+	set_irq_gate(IRQII, (uint32_t)irq2);
+	set_irq_gate(IRQIII, (uint32_t)irq3);
+	set_irq_gate(IRQIV, (uint32_t)irq4);
+	set_irq_gate(IRQV, (uint32_t)irq5);
+	set_irq_gate(IRQVI, (uint32_t)irq6);
+	set_irq_gate(IRQVII, (uint32_t)irq7);
+	set_irq_gate(IRQVIII, (uint32_t)irq8);
+	set_irq_gate(IRQIX, (uint32_t)irq9);
+	set_irq_gate(IRQX, (uint32_t)irq10);
+	set_irq_gate(IRQXI, (uint32_t)irq11);
+	set_irq_gate(IRQXII, (uint32_t)irq12);
+	set_irq_gate(IRQXIII, (uint32_t)irq13);
+	set_irq_gate(IRQXIV, (uint32_t)irq14);
+	set_irq_gate(IRQXV, (uint32_t)irq15);
 }

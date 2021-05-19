@@ -16,6 +16,7 @@
 #include "kinc/new.h"
 #include "kinc/homenu.h"
 #include "arch/i386/gdt.h"
+#include "arch/i386/irq.h"
 
 void display_menu()
 {

@@ -1,5 +1,7 @@
 #include "irq.h"
 #include "../../kinc/api.h"
+extern void set_idt_gate(uint8_t intnum, uint32 isr);
+
 void remap_pic(){
 	outb(0x20, 17);
 	outb(0xA0, 17);

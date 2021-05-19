@@ -32,22 +32,22 @@
 .global irq14handler
 .global irq15handler
  
-extern irq0handler
-extern irq1handler
-extern irq2handler
-extern irq3handler
-extern irq4handler
-extern irq5handler
-extern irq6handler
-extern irq7handler
-extern irq8handler
-extern irq9handler
-extern irq10handler
-extern irq11handler
-extern irq12handler
-extern irq13handler
-extern irq14handler
-extern irq15handler
+.extern irq0handler
+.extern irq1handler
+.extern irq2handler
+.extern irq3handler
+.extern irq4handler
+.extern irq5handler
+.extern irq6handler
+.extern irq7handler
+.extern irq8handler
+.extern irq9handler
+.extern irq10handler
+.extern irq11handler
+.extern irq12handler
+.extern irq13handler
+.extern irq14handler
+.extern irq15handler
  
 irq0:
   pusha

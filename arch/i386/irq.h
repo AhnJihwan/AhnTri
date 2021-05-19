@@ -15,19 +15,19 @@
 #define IRQXIV 46
 #define IRQXV 47
 
-extern irq0
-extern irq1
-extern irq2
-extern irq3
-extern irq4
-extern irq5
-extern irq6
-extern irq7
-extern irq8
-extern irq9
-extern irq10
-extern irq11
-extern irq12
-extern irq13
-extern irq14
-extern irq15
+extern void irq0();
+extern void irq1();
+extern void irq2();
+extern void irq3();
+extern void irq4();
+extern void irq5();
+extern void irq6();
+extern void irq7();
+extern void irq8();
+extern void irq9();
+extern void irq10();
+extern void irq11();
+extern void irq12();
+extern void irq13();
+extern void irq14();
+extern void irq15();

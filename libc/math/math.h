@@ -26,7 +26,7 @@ int sqrt(int number){								//Sqare root that I made
 }
 
 int quareq_r1(int a, int b, int c){
-        int D, r1, r2, rp, ip;          //IP here is not IP adress, obviously XD, and it is no use...
+        int D, r1, r2, rp;
         D = b * b - 4 * a * c;
         if( D > 0){
                 r1 = (-b + sqrt(D)) / (2 * a);
@@ -41,7 +41,7 @@ int quareq_r1(int a, int b, int c){
 }
 
 int quareq_r2(int a, int b, int c){
-        int D, r1, r2, rp, ip;          //IP here is not IP adress, obviously XD, oh i don't want to repeat...
+        int D, r1, r2, rp;
         D = b * b - 4 * a * c;
         if( D > 0){
                 r1 = (-b + sqrt(D)) / (2 * a);

@@ -4,23 +4,6 @@
 #define Math_PI = 3.14159265359;					//Stable...
 #define ROOT_TWO = 1.414213562373095048801688724209698079;
 
-// Powering 2, 3, 4
-int powt(int a){
-    xpy(a, 2);							//Better for functions which does not only works in ATOS.
-}
-
-int powth(int a){						//Three
-    xpy(a, 3);
-}
-
-int powf(int a){						//4
-    xpy(a, 4);
-}
-
-int powfi(int a){						//5
-    xpy(a, 5);
-}
-
 int addnpth(int a, int b){						//This is for (a+b)^3
     int k;
     int m = a * a * a;
@@ -96,6 +79,22 @@ int xpy(int x, int y){			//Get input: X^Y
         return res;				  //Return the result
 }
 
+//  2, 3, 4
+int powt(int a){
+    xpy(a, 2);							//Better for functions which does not only works in ATOS.
+}
+
+int powth(int a){						//Three
+    xpy(a, 3);
+}
+
+int powf(int a){						//4
+    xpy(a, 4);
+}
+
+int powfi(int a){						//5
+    xpy(a, 5);
+}
 int log(int a, int b){
                 return (b > 1) ? 1 + log(a, b / a) : 0;
 }

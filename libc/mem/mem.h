@@ -1,7 +1,7 @@
 static unsigned char memori[1024 * 1024];   //Just make my mem 1024x1024
 static signed ni = 0;
 
-void free(void *mem){
+void free(){
 }
 
 void memcpy(void *dest, void *src, signed n) 

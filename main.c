@@ -115,9 +115,9 @@ void kernmain(){
 		} else if(strcmp(choice, "cal 2021")==0){
 			clscr();
 			acal();
-		} else if(strcmp(choice, "ci")==0){
+		}else if(strcmp(choice, "pit")==0){
 			clscr();
-			isrphone();
+			//TODO:PIT timer
 		}else if(strcmp(choice, "credit")==0 || strcmp(choice, "credits")==0){
 			clscr();
 			credits();

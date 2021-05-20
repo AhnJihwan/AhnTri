@@ -39,7 +39,7 @@ int quareq_r1(int a, int b, int c){
 }
 
 int quareq_r2(int a, int b, int c){
-        int D, r1, r2;
+        int D, r2;
         D = b * b - 4 * a * c;
         if( D > 0){
                 r2 = (-b - sqrt(D)) / (2 * a);

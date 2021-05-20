@@ -26,16 +26,14 @@ int sqrt(int number){								//Sqare root that I made
 }
 
 int quareq_r1(int a, int b, int c){
-        int D, r1, r2;
+        int D, r1;
         D = b * b - 4 * a * c;
         if( D > 0){
                 r1 = (-b + sqrt(D)) / (2 * a);
-                r2 = (-b - sqrt(D)) / (2 * a);
         }else if(D == 0){
-                r1 = r2 = -b / (2 * a);
+                r1 = -b / (2 * a);
         }else if(D < 0){
                 r1 = 0;
-                r2 = 0;
         }
         return r1;
 }
@@ -44,12 +42,10 @@ int quareq_r2(int a, int b, int c){
         int D, r1, r2;
         D = b * b - 4 * a * c;
         if( D > 0){
-                r1 = (-b + sqrt(D)) / (2 * a);
                 r2 = (-b - sqrt(D)) / (2 * a);
         }else if(D == 0){
-                r1 = r2 = -b / (2 * a);
+                r2 = -b / (2 * a);
         }else if(D < 0){
-                r1 = 0;
                 r2 = 0;
         }
         return r2;

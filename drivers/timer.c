@@ -1,4 +1,4 @@
-#include "../init/api.h"
+#include "../kinc/api.h"
 #include "../arch/i386/isr.h"
 #include "../arch/i386/irq.h"
 

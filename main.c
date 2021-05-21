@@ -157,6 +157,16 @@ void mkern_main()
   asm volatile("\tmov $12395, %eax");
   asm volatile("\tint $0");
   printf("\nIDT initialization");
+  ;
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(".");
+  suspend(1);
+  printf(" [OK]\n");
+  irq_install();
+  printf("\nIRQ initialization");
   suspend(1);
   printf(".");
   suspend(1);
@@ -165,9 +175,8 @@ void mkern_main()
   printf(".");
   suspend(1);
   printf(" [OK]\n");
-  isr_0_handler();
-  irq_install();
-  printf("\nIDT initialization");
+  init_pit();
+  printf("\nPIT initialization");
   suspend(1);
   printf(".");
   suspend(1);

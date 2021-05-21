@@ -11,3 +11,7 @@ void pit_driver(registers_t *reg){
 void pbt(){
 	return tick;									//PIT based timer
 }
+
+void install_pit(){
+	irq_install_handler(IRQ0, pit_driver);
+}

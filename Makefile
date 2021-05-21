@@ -2,14 +2,14 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot atclib kernel ccalc irq advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
+make_deafult: bboot atclib kernel ccalc irq timer advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
 
 #Build kernel main image
 kernel: main.c
 	gcc -m32 -c main.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 #Link everything up
-ld: linker.ld linker.ld clib.o image.o irq.o irq_s.o ccalc.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
-	ld -m elf_i386 -T linker.ld clib.o image.o irq.o irq_s.o advset.o ccalc.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld clib.o image.o irq.o irq_s.o timer.o ccalc.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
+	ld -m elf_i386 -T linker.ld clib.o image.o irq.o irq_s.o timer.o advset.o ccalc.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
 
 #Build ISO file via grub
 buildgrub: ATOS1.bin
@@ -41,6 +41,9 @@ idt: arch/i386/idt.c arch/i386/load_idt.s
 	gcc -m32 -c arch/i386/idt.c -o idt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 	as --32 arch/i386/load_idt.s -o load_idt.o
 	as --32 arch/i386/isr.s -o isr.o
+
+timer: drivers/timer.c
+	gcc -m32 -c drivers/timer.c -o timer.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 ccalc: kapps/ccalcfi.c
 	gcc -m32 -c kapps/ccalcfi.c -o ccalc.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra

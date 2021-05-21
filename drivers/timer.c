@@ -4,7 +4,7 @@
 
 volatile uint32 tick = 0;
 
-void pit_driver(registers *reg){
+void pit_driver(registers_t *reg){
     (void)reg;
     tick++;											//Ticks
 }

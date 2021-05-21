@@ -12,6 +12,6 @@ void pbt(){
 	return tick;									//PIT based timer
 }
 
-void install_pit(){
+void init_pit(){
 	irq_install_handler(IRQ0, pit_driver);
 }

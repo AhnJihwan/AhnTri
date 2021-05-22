@@ -110,12 +110,6 @@ irq12:
   push $44
   jmp irq_stub
 
-irq12:
-  cli
-  push $0
-  push $45
-  jmp irq_stub
-
 irq13:
   cli
   push $0

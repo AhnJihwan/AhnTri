@@ -30,7 +30,7 @@ void pit_driver(registers_t *reg){
     (void)reg;
     tick++;											//Ticks
 }
-void pbt(){
+int pbt(){
 	return tick;									//PIT based timer
 }
 

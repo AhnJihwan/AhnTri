@@ -117,14 +117,6 @@ void *irq_routines[16] = {
 };
 
 /*install a given function as handler of given IRQ*/
-struct regs
-{
-    unsigned int gs, fs, es, ds;      /* pushed the segs last */
-    unsigned int edi, esi, ebp, esp, ebx, edx, ecx, eax;  /* pushed by 'pusha' */
-    unsigned int int_no, err_code;    /* our 'push byte #' and ecodes do this */
-    unsigned int eip, cs, eflags, useresp, ss;   /* pushed by the processor automatically */ 
-};
-
 void irq_install_handler(int irq, void (*handler)(struct regs *r)){
     irq_routines[irq] = handler;
 }

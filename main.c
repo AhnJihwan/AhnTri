@@ -17,6 +17,10 @@
 #include "arch/i386/gdt.h"
 #include "arch/i386/irq.h"
 
+extern void init_pit();
+extern int pbt();
+extern funtion uptime();
+
 void display_menu()
 {
   printf(" ");
@@ -116,7 +120,8 @@ void kernmain(){
 			acal();
 		}else if(strcmp(choice, "pit")==0){
 			clscr();
-			//TODO:PIT timer
+			print_int(uptime());
+			printf("seconds passed");
 		}else if(strcmp(choice, "credit")==0 || strcmp(choice, "credits")==0){
 			clscr();
 			credits();
@@ -157,7 +162,7 @@ void mkern_main()
   asm volatile("\tmov $12395, %eax");
   asm volatile("\tint $0");
   printf("\nIDT initialization");
-  ;
+  suspend(1);
   printf(".");
   suspend(1);
   printf(".");

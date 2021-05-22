@@ -17,10 +17,6 @@
 #include "arch/i386/gdt.h"
 #include "arch/i386/irq.h"
 
-extern void init_pit();
-extern int pbt();
-extern funtion uptime();
-
 void display_menu()
 {
   printf(" ");

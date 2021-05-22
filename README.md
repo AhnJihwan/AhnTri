@@ -22,6 +22,7 @@ This is for
 - [x] Apps as file(.o)
 - [x] IRQs
 - [x] Programmable Interval Timer
+- [ ] Change to graphics instead of text mode
 - [ ] Paging
 - [ ] ATA drivers and stuff
 - [ ] Filesystem

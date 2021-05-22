@@ -33,98 +33,131 @@
 .extern irq15handler
  
 irq0:
-  pusha
-  call irq0handler
-  popa
-  iret
+  cli
+  push $0
+  push $32
+  jmp irq_stub
  
 irq1:
-  pusha
-  call irq1handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $33
+  jmp irq_stub
+
 irq2:
-  pusha
-  call irq2handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $34
+  jmp irq_stub
+
 irq3:
-  pusha
-  call irq3handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $35
+  jmp irq_stub
+
 irq4:
-  pusha
-  call irq4handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $36
+  jmp irq_stub
+
 irq5:
-  pusha
-  call irq5handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $37
+  jmp irq_stub
+
 irq6:
-  pusha
-  call irq6handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $38
+  jmp irq_stub
+
 irq7:
-  pusha
-  call irq7handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $39
+  jmp irq_stub
+
 irq8:
-  pusha
-  call irq8handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $40
+  jmp irq_stub
+
 irq9:
-  pusha
-  call irq9handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $41
+  jmp irq_stub
+
 irq10:
-  pusha
-  call irq10handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $42
+  jmp irq_stub
+
 irq11:
-  pusha
-  call irq11handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $43
+  jmp irq_stub
+
 irq12:
-  pusha
-  call irq12handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $44
+  jmp irq_stub
+
+irq12:
+  cli
+  push $0
+  push $45
+  jmp irq_stub
+
 irq13:
-  pusha
-  call irq13handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $46
+  jmp irq_stub
+
 irq14:
-  pusha
-  call irq14handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $47
+  jmp irq_stub
+
 irq15:
-  pusha
-  call irq15handler
-  popa
-  iret
- 
+  cli
+  push $0
+  push $48
+  jmp irq_stub
+  
+
+irq_stub:
+    pusha
+    pushl %ds
+    pushl %es
+    pushl %fs
+    pushl %gs
+
+    movw $0x10,%ax
+    movw %ax,%ds
+    movw %ax,%es
+    movw %ax,%fs
+    movw %ax,%gs
+    movl %esp,%eax
+
+    pushl %eax
+    movl $irq_handler, %eax
+    call *%eax
+    popl %eax
+
+    popl %gs
+    popl %fs
+    popl %es
+    popl %ds
+    popa
+    addl $8,%esp
+    iret

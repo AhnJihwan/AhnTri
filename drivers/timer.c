@@ -2,6 +2,8 @@
 #include "../arch/i386/isr.h"
 #include "../arch/i386/irq.h"
 
+int pit_frequency = 0;
+
 unsigned read_pit_count(void) {
 	unsigned count = 0;
 	cli();
@@ -13,7 +15,7 @@ unsigned read_pit_count(void) {
 	return count;
 }
 
-void set_pit_count(unsigned count) {
+void spfreq(unsigned count) {
 	// Interrupts interrupts
 	cli();
 	// Set low byte
@@ -34,4 +36,5 @@ void pbt(){
 
 void init_pit(){
 	irq_install_handler(IRQ0, pit_driver);
+	spfreq(pit_frequency);
 }

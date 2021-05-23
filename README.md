@@ -7,6 +7,9 @@ Ahn is a **Korean** Last name. It's **not** chinese, don't mail or redditchat me
 I can't understand them.
 https://en.wikipedia.org/wiki/Ahn_(Korean_surname)#Gwangju_Clan
 # Recommend Ventoy for USB.
+# Messege from Core developer Jihwan Ahn
+I can't develop much again until 1 month later because of the examination.
+Sorry.
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

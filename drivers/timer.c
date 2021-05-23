@@ -29,6 +29,7 @@ volatile int tick = 0;
 void pit_driver(registers_t *reg){
     (void)reg;
     tick++;											//Ticks
+    return tick;
 }
 
 int pbt(){

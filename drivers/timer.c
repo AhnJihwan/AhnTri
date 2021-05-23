@@ -30,12 +30,13 @@ void pit_driver(registers_t *reg){
     (void)reg;
     tick++;											//Ticks
 }
+
 int pbt(){
 	return tick;									//PIT based timer
 }
 
 void init_pit(){
-	irq_install_handler(IRQ0, pit_driver);
+	irq_install_handler(IRQ0, &pit_driver);
 	spfreq(pit_frequency);
 }
 

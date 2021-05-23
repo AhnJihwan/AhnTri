@@ -20,6 +20,7 @@ This is for
 - [x] Text mode
 - [x] Descripter Tables(GDT, IDT)
 - [x] Apps as file(.o)
+- [x] ISRs
 - [ ] Change to graphics instead of text mode - framebuffer
 - [ ] IRQs
 - [ ] Programmable Interval Timer

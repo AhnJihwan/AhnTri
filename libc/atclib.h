@@ -8,7 +8,6 @@ extern uint32 digit_count(int num);
 extern int atoui(char* s);
 extern int strcmp(char str1[], char str2[]);
 extern int strrlen(const char* str);
-extern void loop(void x);
 //Math
 extern int powt(int a);
 extern int powth(int a);

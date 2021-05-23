@@ -42,7 +42,7 @@ void display_menu_ccalc()
   init_vga(WHITE, BLACK);
   gotoxy(25, 0);
   printf("\n");
-  os_print_color("   Main menu- AhnTri CCalc    ", BLACK, GREY);
+  os_print_color("    Start - AhnTri CCalc      ", BLACK, GREY);
   gotoxy(25, 0);
   printf("\n");
   os_print_color("  [ Welcome to AhnTri Calc ]  ", BLACK, WHITE);
@@ -51,15 +51,22 @@ void display_menu_ccalc()
   os_print_color("  -~=-~=~--~=~--~=~--~=~--~=  ", BLACK, WHITE);
   printf("\n");
   os_print_color("For More, press [0] for help. ", BLACK, WHITE);
+  suspend(20);
+  clscr();
 }
 
 void rtn(int* num1, int *num2)
 {
-  printf("Enter first number : ");
+  printf("\nEnter first number");
   suspend(ccalsusp);
+  gotoxy(2, 2);
   *num1 = read_int();
-  printf("Enter second number : ");
+  gotoxy(0, 5);
+  printf("Enter second number");
   suspend(ccalsusp);
+  gotoxy(2, 2);
+  printf("[                         ] ");
+  gotoxy(2, 2);
   *num2 = read_int();
 }
 
@@ -98,7 +105,8 @@ void ccalc(){
 	char *h;
 	while(1){
 		display_menu_ccalc();
-		printf("\n\n> ");
+		printf("\n\n[                         ] ");
+		gotoxy(2, 2);
 		ccho = read_int();
 		switch(ccho){
 			case 0:
@@ -109,18 +117,21 @@ void ccalc(){
    			   printf("\n");
 				break;
 			case 1:
+				printf("\nADDING 2 NUMERALS");
 				rtn(&num1, &num2);
-				printf("Addition : ");
+				gotoxy(2, 2);
 				adton(num1, num2);
 				break;
 			case 2:
+				printf("\nSUBTRACTING 2 NUMERALS");
 				rtn(&num1, &num2);
-				printf("Substraction : ");
+				gotoxy(2, 2);
 				subton(num1, num2);
 				break;
 			case 3:
+				printf("\nMULTIPLYING 2 NUMERALS");
 				rtn(&num1, &num2);
-				printf("Multiplication : ");
+				gotoxy(2, 2);
 				multon(num1, num2);
 				break;
 			case 4:
@@ -128,7 +139,8 @@ void ccalc(){
 				if(num2 == 0){
 					printf("Error : Divide by 0");
 				}else{
-					printf("Division : ");
+					printf("DIVIDING 2 NUMERALS");
+					gotoxy(2, 2);
 					print_int(num1 / num2);
 				}
 				break;

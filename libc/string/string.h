@@ -106,3 +106,9 @@ int atoi(char* s)
   }
   return num;
 }
+
+void loop(void x){
+  for(;;){
+    x();
+  }
+}

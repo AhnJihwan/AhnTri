@@ -20,9 +20,9 @@ This is for
 - [x] Text mode
 - [x] Descripter Tables(GDT, IDT)
 - [x] Apps as file(.o)
-- [x] IRQs
-- [x] Programmable Interval Timer
-- [ ] Change to graphics instead of text mode
+- [ ] Change to graphics instead of text mode - framebuffer
+- [ ] IRQs
+- [ ] Programmable Interval Timer
 - [ ] Paging
 - [ ] ATA drivers and stuff
 - [ ] Filesystem

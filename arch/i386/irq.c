@@ -38,6 +38,16 @@ void irq_install(){
 	asm volatile ("sti");
 }
 
+
+
+/*The following code is borrowed from James Molloy's OSDev Tutorials mad in 2007.*/
+isr_t interrupt_handlers[256];
+
+void register_interrupt_handler(u8int n, isr_t handler)
+{
+    interrupt_handlers[n] = handler;
+}
+
 void irq_handler(registers_t regs)
 {
     // Send an EOI (end of interrupt) signal to the PICs.
@@ -55,8 +65,8 @@ void irq_handler(registers_t regs)
         isr_t handler = interrupt_handlers[regs.int_no];
         handler(regs);
     }
-
 }
+/*End of Borrowing*/
 
 /*The following code has been borrowed from https://github.com/ayush7788/discitix_kernel/blob/devel/cpu/irq.c, which is licensed under MIT.
 */
@@ -65,32 +75,5 @@ void *irq_routines[16] = {
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0
 };
-/*The following code is borrowed from James Molloy's OSDev Tutorials mad in 2007.*/
-isr_t interrupt_handlers[256];
 
-void register_interrupt_handler(u8int n, isr_t handler)
-{
-    interrupt_handlers[n] = handler;
-}
-/*End of Borrowing*/
-
-void irq_handler(registers_t regs)
-{
-    // Send an EOI (end of interrupt) signal to the PICs.
-    // If this interrupt involved the slave.
-    if (regs.int_no >= 40)
-    {
-        // Send reset signal to slave.
-        outb(0xA0, 0x20);
-    }
-    // Send reset signal to master. (As well as slave, if necessary).
-    outb(0x20, 0x20);
-
-    if (interrupt_handlers[regs.int_no] != 0)
-    {
-        isr_t handler = interrupt_handlers[regs.int_no];
-        handler(regs);
-    }
-
-}
 /*End of borrowing*/

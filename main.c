@@ -188,6 +188,7 @@ void mkern_main()
   clscr();
   init_vga(CYAN, BLACK);
   #include "strtscrn.h"
+  strt_scrn();
   clscr();
   newmain();
 }

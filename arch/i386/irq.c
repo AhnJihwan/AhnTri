@@ -1,3 +1,4 @@
+#include "isr.h"
 #include "irq.h"
 #include "../../kinc/api.h"
 extern void set_idt_gate(uint8_t intnum, uint32 isr);
@@ -13,78 +14,6 @@ void remap_pic(){
 	outb(0xA1, 1);
 	outb(0x21, 0);
 	outb(0xA1, 0);
-}
-
-void irq0handler(void) {
-          outb(32, 32);
-}
- 
-void irq1handler(void) {
-	  outb(32, 32);
-}
- 
-void irq2handler(void) {
-          outb(32, 32);
-}
- 
-void irq3handler(void) {
-          outb(32, 32);
-}
- 
-void irq4handler(void) {
-          outb(32, 32);
-}
- 
-void irq5handler(void) {
-          outb(32, 32);
-}
- 
-void irq6handler(void) {
-          outb(32, 32);
-}
- 
-void irq7handler(void) {
-          outb(32, 32);
-}
- 
-void irq8handler(void) {
-          outb(160, 32);
-          outb(32, 32);          
-}
- 
-void irq9handler(void) {
-          outb(160, 32);
-          outb(32, 32);
-}
- 
-void irq10handler(void) {
-          outb(160, 32);
-          outb(32, 32);
-}
- 
-void irq11handler(void) {
-          outb(160, 32);
-          outb(32, 32);
-}
- 
-void irq12handler(void) {
-          outb(160, 32);
-          outb(32, 32);
-}
- 
-void irq13handler(void) {
-          outb(160, 32);
-          outb(32, 32);
-}
- 
-void irq14handler(void) {
-          outb(160, 32);
-          outb(32, 32);
-}
- 
-void irq15handler(void) {
-          outb(160, 32);
-          outb(32, 32);
 }
 
 void irq_install(){
@@ -108,30 +37,32 @@ void irq_install(){
 	asm volatile ("sti");
 }
 
-/*The following code has been borrowed from https://github.com/ayush7788/discitix_kernel/blob/devel/cpu/irq.c, which is licensed under MIT.
-*/
-/*pointers to IRQ handlers in C*/
-void *irq_routines[16] = {
-    0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0
-};
+/*The following code is borrowed from James Molloy's OSDev Tutorials mad in 2007.*/
+isr_t interrupt_handlers[256];
 
-/*install a given function as handler of given IRQ*/
-void irq_install_handler(int irq, void (*handler)(struct regs *r)){
-    irq_routines[irq] = handler;
+void register_interrupt_handler(u8int n, isr_t handler)
+{
+    interrupt_handlers[n] = handler;
 }
 
-void irq_handler(struct regs *r){
-    void (*handler)(struct regs *r);    /*blank IRQ handler function*/
-    
-    handler = irq_routines[r->int_no - 32];
-    if (handler){   /*check if handler is present*/
-        handler(r); /*if it is present call it*/
+void irq_handler(registers_t regs)
+{
+    // Send an EOI (end of interrupt) signal to the PICs.
+    // If this interrupt involved the slave.
+    if (regs.int_no >= 40)
+    {
+        // Send reset signal to slave.
+        outb(0xA0, 0x20);
     }
-    
-    if (r->int_no >= 40){       /*send End of Interrupt command to the PIC*/
-        outb(0xA0, 0x20);   /*slave PIC*/
+    // Send reset signal to master. (As well as slave, if necessary).
+    outb(0x20, 0x20);
+
+    if (interrupt_handlers[regs.int_no] != 0)
+    {
+        isr_t handler = interrupt_handlers[regs.int_no];
+        handler(regs);
     }
-    outb(0x20, 0x20);       /*master PIC*/
+
 }
-/*End of Borrowing*/
+/*End of borrowing*/
+

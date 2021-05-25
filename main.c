@@ -116,8 +116,7 @@ void kernmain(){
 			acal();
 		}else if(strcmp(choice, "pit")==0){
 			clscr();
-			print_int(uptime());
-			printf("seconds passed");
+			pit(18);
 		}else if(strcmp(choice, "credit")==0 || strcmp(choice, "credits")==0){
 			clscr();
 			credits();
@@ -176,16 +175,6 @@ void mkern_main()
   printf(".");
   suspend(1);
   printf(" [OK]\n");
-  init_pit();
-  printf("\nPIT initialization");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
   printf("Loading main menu.");
   suspend(1);
   printf(".");
@@ -199,7 +188,6 @@ void mkern_main()
   clscr();
   init_vga(CYAN, BLACK);
   #include "strtscrn.h"
-  strt_scrn();
   clscr();
   newmain();
 }

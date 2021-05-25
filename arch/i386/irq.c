@@ -1,4 +1,5 @@
 #include "irq.h"
+#include "isr.h"
 #include "../../kinc/api.h"
 extern void set_idt_gate(uint8_t intnum, uint32 isr);
 
@@ -108,6 +109,33 @@ void irq_install(){
 	asm volatile ("sti");
 }
 
+isr_t interrupt_handlers[256];
+
+void register_interrupt_handler(u8int n, isr_t handler)
+{
+    interrupt_handlers[n] = handler;
+}
+
+void irq_handler(registers_t regs)
+{
+    // Send an EOI (end of interrupt) signal to the PICs.
+    // If this interrupt involved the slave.
+    if (regs.int_no >= 40)
+    {
+        // Send reset signal to slave.
+        outb(0xA0, 0x20);
+    }
+    // Send reset signal to master. (As well as slave, if necessary).
+    outb(0x20, 0x20);
+
+    if (interrupt_handlers[regs.int_no] != 0)
+    {
+        isr_t handler = interrupt_handlers[regs.int_no];
+        handler(regs);
+    }
+
+}
+
 /*The following code has been borrowed from https://github.com/ayush7788/discitix_kernel/blob/devel/cpu/irq.c, which is licensed under MIT.
 */
 /*pointers to IRQ handlers in C*/
@@ -119,19 +147,5 @@ void *irq_routines[16] = {
 /*install a given function as handler of given IRQ*/
 void irq_install_handler(int irq, void (*handler)(struct regs *r)){
     irq_routines[irq] = handler;
-}
-
-void irq_handler(struct regs *r){
-    void (*handler)(struct regs *r);    /*blank IRQ handler function*/
-    
-    handler = irq_routines[r->int_no - 32];
-    if (handler){   /*check if handler is present*/
-        handler(r); /*if it is present call it*/
-    }
-    
-    if (r->int_no >= 40){       /*send End of Interrupt command to the PIC*/
-        outb(0xA0, 0x20);   /*slave PIC*/
-    }
-    outb(0x20, 0x20);       /*master PIC*/
 }
 /*End of Borrowing*/

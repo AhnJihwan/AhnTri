@@ -129,29 +129,29 @@ irq15:
   jmp irq_stub
   
 
-irq_stub:
-    pusha
-    pushl %ds
-    pushl %es
-    pushl %fs
-    pushl %gs
+irq_stub: 
+    pusha                    # Pushes edi,esi,ebp,esp,ebx,edx,ecx,eax
 
-    movw $0x10,%ax
+    movw %ds,%ax             # Lower 16-bits of eax = ds.
+    pushl %eax               # save the data segment descriptor
+
+    movw $0x10,%ax # load the kernel data segment descriptor
     movw %ax,%ds
     movw %ax,%es
     movw %ax,%fs
     movw %ax,%gs
-    movl %esp,%eax
 
-    pushl %eax
-    movl $irq_handler, %eax
-    call *%eax
-    popl %eax
+    call irq_handler
 
-    popl %gs
-    popl %fs
-    popl %es
-    popl %ds
-    popa
-    addl $8,%esp
-    iret
+    popl %ebx      # reload the original data segment descriptor
+    movw %bx,%ds
+    movw %bx,%es
+    movw %bx,%fs
+    movw %bx,%gs
+
+    popa                     # Pops edi,esi,ebp...
+    addl $8,%esp   # Cleans up the pushed error code and pushed ISR number
+    sti
+    iret           # pops 5 things at once: CS, EIP, EFLAGS, SS, and ESP
+
+

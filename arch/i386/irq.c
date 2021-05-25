@@ -1,5 +1,6 @@
 #include "isr.h"
 #include "irq.h"
+#include "isr.h"
 #include "../../kinc/api.h"
 extern void set_idt_gate(uint8_t intnum, uint32 isr);
 
@@ -37,6 +38,8 @@ void irq_install(){
 	asm volatile ("sti");
 }
 
+
+
 /*The following code is borrowed from James Molloy's OSDev Tutorials mad in 2007.*/
 isr_t interrupt_handlers[256];
 
@@ -62,7 +65,15 @@ void irq_handler(registers_t regs)
         isr_t handler = interrupt_handlers[regs.int_no];
         handler(regs);
     }
-
 }
-/*End of borrowing*/
+/*End of Borrowing*/
 
+/*The following code has been borrowed from https://github.com/ayush7788/discitix_kernel/blob/devel/cpu/irq.c, which is licensed under MIT.
+*/
+/*pointers to IRQ handlers in C*/
+void *irq_routines[16] = {
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0
+};
+
+/*End of borrowing*/

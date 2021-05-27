@@ -28,8 +28,8 @@ This is for
 - [x] Apps as file(.o)
 - [x] ISRs
 - [ ] Change to graphics instead of text mode - framebuffer
-- [ ] IRQs
-- [ ] Programmable Interval Timer
+- [x] IRQs
+- [x] Programmable Interval Timer
 - [ ] Paging
 - [ ] ATA drivers and stuff
 - [ ] Filesystem

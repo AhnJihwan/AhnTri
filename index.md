@@ -1,39 +1,42 @@
-# Welcome to AhnTri Page
+![AhnTriLogo](at.jpg)
+# AhnTri OS
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
+# Getting some Stargazer's Languages: https://forms.gle/GcfstgAjpzB3h9JP7
+# The name `AhnTri` came from my last name `Ahn`.
+Ahn is a **Korean** Last name. It's **not** chinese, don't mail or redditchat me in chinese.
+I can't understand them.
+https://en.wikipedia.org/wiki/Ahn_(Korean_surname)#Gwangju_Clan
+# Recommend Ventoy for USB.
+# Messege from Core developer Jihwan Ahn
+I can't develop much again until 1 month later because of the examination.
+Sorry.
+# What this project is all 'bout
+This is for
+ - People who don't want to trash thier old PC but has an useless USB
+ - People who loved TUI from 80/90/00
+ - People who just want to try out any OS
+ - People who are AhnTri fans
+ - People who are AhnTri Stargazers
+ - Contributers(Owners of copyright)
+ - Special Thankers
+# Current status
+- [x] Text mode
+- [x] Descripter Tables(GDT, IDT)
+- [x] Apps as file(.o)
+- [x] ISRs
+- [ ] Change to graphics instead of text mode - framebuffer
+- [ ] IRQs
+- [ ] Programmable Interval Timer
+- [ ] Paging
+- [ ] ATA drivers and stuff
+- [ ] Filesystem
 
-AhnTri is my hobbiest OS yet and it is in developmeent.
-
-### What it is all about
-
-This is little more than some freeware OS which can run with Linux thanks to GRUB so that it can multiboot. People who know C and Assembly can make something like this.
-So, it is very, very simple.
-In able to run it, copy and paste the code below.
-
+# Multiboot
+In order to be able to run it in your PC, copy and paste the code below.
 ```INI
-menuentry "AhnTri OS" {
-	multiboot /boot/ATOS1.bin
+menuentry "AhnTriOS" {
+	multiboot /boot/directory/of/your/os/ATOS1.bin
 }
 ```
-# Current status
-Added feature(Accomplished)
-- DOS Box GUI
-- Organized structue
-- Notes(doesn't save files, just keyboard I/O) --> Looking forward to save
-- Power functions in CCalc
-- Grub which could be run with Linux
-
-WIW(What I Want, Unaccomplished yet)
-- Memory mamgaement( Directories, Filesystem, save/open files...)
-- Time
-- Window multi taksing
-
-# How to build
-In Linux, type `~$ ./run.sh`. I use Xfce Ubuntu(Xubuntu), and I get something like this:
-![Screenshot of building](adsf.jpg)
-Then it would build them. In windows which is not WSL, you can use virtual machine player and pre-built ISO image to try it.
-
-# Screenshot
-Just a screenshot and the window one whould probably get when typed `2` in the NumDOS terminal.
-![Screenshot of 1.2 beta 2](sshot.jpg)
-
-# Pre-built
-Go to the `build` folder of the branch `main`.
+# The UI now looks like the 8090 TUI.
+- And other modern-like UI apps.

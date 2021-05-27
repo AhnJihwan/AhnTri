@@ -7,9 +7,12 @@ Ahn is a **Korean** Last name. It's **not** chinese, don't mail or redditchat me
 I can't understand them.
 https://en.wikipedia.org/wiki/Ahn_(Korean_surname)#Gwangju_Clan
 # Recommend Ventoy for USB.
-# Messege from Core developer Jihwan Ahn
-I can't develop much again until 1 month later because of the examination.
-Sorry.
+# Announcement from Core developer Jihwan Ahn(2021-Q2)
+I am really sorry to say that AhnTriOS core developer Jihwan Ahn(Me) will not be active for 1 month due to the test.
+I have 1 months and the preparation term has been decided, and during the preparation term, so there will be none(or some) commits on github.
+It starts on May 31th, and it will end on 6/30.
+Please give me luck.
+Sorry. Thanks!
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

@@ -171,6 +171,7 @@ void credits(){
 	printf("=============Developers================\n");
 	printf("Creator: Jihwan Ahn(I am KOREAN guy)\n");
 	printf("Developer: Ivan G.\n");
+	printf("Developer: Ethan R.\n");
 	printf("The Developer's piece of code is protected by the Apache 2.0 licence and it needs warranty from the following code's creator.");
 	printf("=======Additional thanks to ...========\n");
 	printf("BK Ahn(Computer)\n");

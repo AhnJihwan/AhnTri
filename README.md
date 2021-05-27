@@ -13,6 +13,7 @@ I have 1 months and the preparation term has been decided, and during the prepar
 It starts on May 31th, and it will end on 6/30.
 Please give me luck.
 Sorry. Thanks!
+For 2021-QII post, see https://www.reddit.com/r/osdev/comments/nlipto/2021_q2_roadmap_my_hobby_oss_future_is_up_to/
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

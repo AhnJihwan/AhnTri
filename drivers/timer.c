@@ -39,9 +39,18 @@ int pbt(){
 static void timer_callback(registers_t regs)
 {
    tick++;
-   printf("Tick: ");
+   if(tick>=1080){
+      gotoxy(25, 3);
+      print_int(tick/18/60);
+      printf("min");
+      gotoxy(25, 4);
+      print_int(tick%1080/18);
+      printf("sec");
+   }  else{
+   gotoxy(25, 4);
    print_int(tick/18);
-   printf("\n");
+   printf("sec");
+   }
 }
 
 void pit(u32int frequency)

@@ -93,8 +93,6 @@ void kernmain(){
 			fbomb();
 		} else if(strcmp(choice, "homenu")==0 || strcmp(choice, "ahomenu")==0){
 			homem();
-		} else if(strcmp(choice, "timer")==0 || strcmp(choice, "atimer")==0){
-			pit();
 		} else if(strcmp(choice, "memor")==0 || strcmp(choice, "amemor")==0 || strcmp(choice, "memset")==0){
 			memanset();
 		} else if(strcmp(choice, "mp")==0 || strcmp(choice, "memprintf")==0){
@@ -114,7 +112,7 @@ void kernmain(){
 		} else if(strcmp(choice, "cal 2021")==0){
 			clscr();
 			acal();
-		}else if(strcmp(choice, "pit")==0){
+		}else if(strcmp(choice, "pit")==0 || strcmp(choice, "timer")==0 || strcmp(choice, "atimer")==0){
 			clscr();
 			pit(18);
 		}else if(strcmp(choice, "credit")==0 || strcmp(choice, "credits")==0){

@@ -10,7 +10,7 @@ https://en.wikipedia.org/wiki/Ahn_(Korean_surname)#Gwangju_Clan
 # Announcement from Core developer Jihwan Ahn(2021-Q2)
 The test had ended. Now I aam free.
 https://www.reddit.com/r/osdev/comments/oapp4z/how_to_make_the_frambuffer/?utm_medium=android_app&utm_source=share
-Do You know to make a framebuffer? Please contribute.
+Do You know to make a framebuffer? Please answer.
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

@@ -39,7 +39,19 @@ int pbt(){
 static void timer_callback(registers_t regs)
 {
    tick++;
-   if(tick>=1080){
+   gotoxy(20, 1);
+   printf("AhnTri Stopwatch");
+   if(tick>=64800){
+      gotoxy(25, 2);
+      print_int(tick/18/60/60);
+      printf("h");
+      gotoxy(25, 3);
+      print_int(tick/18/60);
+      printf("min");
+      gotoxy(25, 4);
+      print_int(tick%64880/18);
+      printf("sec");
+   } else if(tick>=1080){
       gotoxy(25, 3);
       print_int(tick/18/60);
       printf("min");

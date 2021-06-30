@@ -12,6 +12,9 @@
 .long FLAGS
 .long CHECKSUM
 
+.long 0
+.long 0
+.long 0
  
 stackBottom:
 

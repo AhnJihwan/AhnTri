@@ -8,13 +8,9 @@ I can't understand them.
 https://en.wikipedia.org/wiki/Ahn_(Korean_surname)#Gwangju_Clan
 # Recommend Ventoy for USB.
 # Announcement from Core developer Jihwan Ahn(2021-Q2)
-I am really sorry to say that AhnTriOS core developer Jihwan Ahn(Me) will not be active for 1 month due to the test.
-I have 1 months and the preparation term has been decided, and during the preparation term, so there will be none(or some) commits on github.
-It starts on May 31th, and it will end on 6/30.
-Please give me luck.
-Sorry. Thanks!
-For 2021-QII post, see https://www.reddit.com/r/osdev/comments/nlipto/2021_q2_roadmap_my_hobby_oss_future_is_up_to/
-Announcement Update: 7 days left, next goal is **frambuffer**
+The test had ended. Now I aam free.
+https://www.reddit.com/r/osdev/comments/oapp4z/how_to_make_the_frambuffer/?utm_medium=android_app&utm_source=share
+Do You know to make a framebuffer? Please contribute.
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

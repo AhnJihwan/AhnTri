@@ -31,7 +31,7 @@ Terminal name       OS_NUM
 
 void osver(){
 	os_print_color("        /\\       OS: AhnTri OS 1.2.4 i386 Crap Covid   " , BLACK, CYAN);
-	os_print_color("\n       /  \\      Machine: " , BLACK, CYAN);
+	os_print_color("\n       /  \\      System:  " , BLACK, CYAN);
 	bitidentify();
 	os_print_color("                   " , BLACK, CYAN);
 	os_print_color("\n      /    \\     Kernel: AhnTri 1.20 +                 " , BLACK, CYAN);

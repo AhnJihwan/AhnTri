@@ -7,7 +7,7 @@ uint32 qemu_init_debug(){
     return 1;
 }
 
-void qemu_printf(char ch){
+void qemu_printc(char ch){
     while((inb(QEMU_SERIAL_PORT + 5) & 0x20) == 0);
     outb(QEMU_SERIAL_PORT, ch);
 }

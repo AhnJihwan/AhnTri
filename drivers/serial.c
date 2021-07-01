@@ -1,3 +1,4 @@
+#include "../kinc/api.h"
 #include "../kinc/serial.h"
 //This code was borrowed from https://github.com/dreamos82/Dreamos64/blob/master/src/kernel/io/serial.c
 int init_serial(int port){

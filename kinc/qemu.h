@@ -5,6 +5,6 @@
 
 uint32 qemu_init_debug();
 void qemu_printf_string(char *msg);
-void qemu_printf(char);
+void qemu_printc(char);
 
 #endif

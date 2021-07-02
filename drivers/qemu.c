@@ -4,7 +4,6 @@
 
 uint32 qemu_init_debug(){
     init_serial(QEMU_SERIAL_PORT);
-    return 1;
 }
 
 void qemu_printc(char ch){

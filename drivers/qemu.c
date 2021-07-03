@@ -13,7 +13,7 @@ void qemu_printc(char ch){
 
 void qemu_printf_string(char *msg){
     while (*msg != '\0'){
-        qemu_printf(*msg);
+        qemu_printc(*msg);
         msg++;
     }
 }

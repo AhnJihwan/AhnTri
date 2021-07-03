@@ -90,7 +90,7 @@ keychar: drivers/kb/char.c
 	gcc -m32 -c drivers/kb/char.c -o char.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra
 
 qemudrivers: drivers/qemu.c
-	gcc -m32 -c drivers/qemu.c -o serial.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+	gcc -m32 -c drivers/qemu.c -o qemu.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 serialdrivers: drivers/serial.c
 	gcc -m32 -c drivers/serial.c -o serial.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra

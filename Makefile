@@ -8,8 +8,8 @@ make_deafult: bboot atclib kernel ccalc irq timer qemudrivers serialdrivers advs
 kernel: main.c
 	gcc -m32 -c main.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 #Link everything up
-ld: linker.ld linker.ld clib.o image.o irq.o irq_s.o timer.o ccalc.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
-	ld -m elf_i386 -T linker.ld clib.o image.o irq.o irq_s.o timer.o advset.o ccalc.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld clib.o image.o irq.o irq_s.o timer.o ccalc.o qemu.o serial.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
+	ld -m elf_i386 -T linker.ld clib.o image.o irq.o irq_s.o timer.o advset.o ccalc.o qemu.o serial.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
 
 #Build ISO file via grub
 buildgrub: ATOS1.bin

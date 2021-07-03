@@ -1,6 +1,6 @@
+#include "../kinc/api.h"
 #include "../kinc/qemu.h"
 #include "../kinc/serial.h"
-#include "../kinc/api.h"
 
 uint32 qemu_init_debug(){
     init_serial(QEMU_SERIAL_PORT);

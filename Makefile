@@ -2,7 +2,7 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot atclib kernel ccalc irq timer advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
+make_deafult: bboot atclib kernel ccalc irq timer qemudrivers serialdrivers advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
 
 #Build kernel main image
 kernel: main.c
@@ -87,7 +87,13 @@ bboot: boot/boot.s
 
 #Build Keychar drivers
 keychar: drivers/kb/char.c
-	gcc -m32 -c drivers/kb/char.c -o char.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
+	gcc -m32 -c drivers/kb/char.c -o char.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra
+
+qemudrivers: drivers/qemu.c
+	gcc -m32 -c drivers/qemu.c -o serial.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
+serialdrivers: drivers/serial.c
+	gcc -m32 -c drivers/serial.c -o serial.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 clean:
 	rm *.o

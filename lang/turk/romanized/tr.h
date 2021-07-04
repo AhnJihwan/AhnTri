@@ -1,3 +1,4 @@
+//This Translation is copyrighted by Umut Yavuz.
 void display_menu_tr()
 {
   printf(" ");

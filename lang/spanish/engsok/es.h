@@ -1,3 +1,4 @@
+//This translation is copyrighted by Atie P.
 void display_menu_es()
 {
   printf(" ");

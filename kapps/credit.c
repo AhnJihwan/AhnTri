@@ -173,6 +173,10 @@ void credits(){
 	printf("Developer: Ivan G.\n");
 	printf("Developer: Ethan R.\n");
 	printf("The Developer's piece of code is protected by the Apache 2.0 licence and it needs warranty from the following code's creator.");
+	printf("English Language Pack: Jihwan A. Ivan G. Ethan R.\n");
+	printf("Spanish Language Pack: Atie P.\n");
+	printf("Korean Language Pack: Jihwan A.");
+	printf("Turk Language Pack: Umut Y.\n");
 	printf("=======Additional thanks to ...========\n");
 	printf("BK Ahn(Computer)\n");
 	printf("Ethan Recendez and Justin Y.(made the first Fish Dictionary(2017) with core dev)\n");
@@ -180,6 +184,7 @@ void credits(){
 	printf("SJ Kim helped me in factorial\n");
 	printf("OSDev Wiki");
 	os_print_color("https://wiki.osdev.org/Main_Page\n", BLUE, BLACK);
+	printf("Ivan G. helped me for QEMU serial ports.\n");
 	os_print_color("https://www.geeksforgeeks.org/ for Log inspiration\n", BLUE, BLACK);
 	printf("E.S Lee (lending PC for real PC iso file)\n");
 	printf("Thank you u/Bob-The-One, u/jtsiomb, and u/Ayush7788!\n");
@@ -205,6 +210,7 @@ void credits(){
 	printf("CyborgXB4ing who Joined on May 13, 2021\n");
 	printf("CaydendW who lives in South Africa\n");
 	printf("DamieFC\n");
+	printf("owtla who lives in Los Angeles, CA USA");
 	printf("AhnJihwan who lives in Seoul, South Korea\n");
 	printf("Thank you for all, who helped me XD! \nMay you be in AhnTri...\n[a] for Return, [b] for Apache 2.0 licence");
 	char licnce = KEY_A;

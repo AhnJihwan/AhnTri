@@ -1,3 +1,4 @@
+//This translation is copyrighted by Jihwan Ahn
 void display_menu_kr()
 {
   printf(" ");

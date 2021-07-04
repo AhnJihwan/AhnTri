@@ -16,6 +16,9 @@
 #include "kinc/homenu.h"
 #include "arch/i386/gdt.h"
 #include "arch/i386/irq.h"
+#include "korean/romanized/kr.h"
+#include "turk/romanized/tr.h"
+#include "spanish/engsok/es.h"
 
 void display_menu()
 {

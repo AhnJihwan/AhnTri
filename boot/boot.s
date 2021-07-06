@@ -1,7 +1,7 @@
 #Assembly TriOS bootloader
 // Made in Android
 
-#define MULTIBOOT_INFO_FB_INFO 16
+#define MULTIBOOT_INFO_FB_INFO 4096
 
 .set FLAGS,    1 << 12                    #Flags to 12 bit for frambuffer preparation
 

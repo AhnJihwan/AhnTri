@@ -1,9 +1,7 @@
 #Assembly TriOS bootloader
 // Made in Android
 
-#define MULTIBOOT_INFO_FB_INFO 4096
-
-.set FLAGS,    1 << 12                    #Flags to 12 bit for frambuffer preparation
+.set FLAGS,    0                    #Flags to 12 bit for frambuffer preparation
 
 .set MAGIC,    0x1BADB002           #Magic number
 

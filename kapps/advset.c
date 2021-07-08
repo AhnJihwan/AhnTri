@@ -89,15 +89,19 @@ void lang(){
 	capsz = get_input_keycode();
 	if(capsz == KEY_1){
 		clscr();
+		qemu_printf_string("Language: set to English.");
 		kernmain();
 	} else if(capsz == KEY_2){
 		clscr();
+		qemu_printf_string("Idioma: establezca en español.");
 		kernmain_es();
 	} else if(capsz == KEY_3){
 		clscr();
+		qemu_printf_string("언어: 한국어로 설정되었습니다.");
 		kernmain_kr();
 	} else if(capsz == KEY_4){
 		clscr();
+		qemu_printf_string("Dil: Türkçe olarak ayarlayın.");
 		kernmain_tr();
 	} else if(capsz == KEY_5){
 		clscr();

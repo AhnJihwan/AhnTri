@@ -1,10 +1,3 @@
-/*
- * file './font-bin/AVGA2_8x8.bin', filesize 2048bytes, linewidth=8bytes
- * array created from bin-file by bin2header
- * bin2header (c) 2013 Nils Stec, <nils.stec@gmail.com>
- *
- */
-
 uint8_t AVGA2_8x8[2048] = {
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 	0x7e, 0x81, 0xa5, 0x81, 0xbd, 0x99, 0x81, 0x7e, 	//number 1 on VGA

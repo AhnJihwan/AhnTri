@@ -172,6 +172,7 @@ void credits(){
 	printf("Creator: Jihwan Ahn(I am KOREAN guy)\n");
 	printf("Developer: Ivan G.\n");
 	printf("Developer: Ethan R.\n");
+	printf("Developer: Gauravsingh S.\n");
 	printf("The Developer's piece of code is protected by the Apache 2.0 licence and it needs warranty from the following code's creator.");
 	printf("English Language Pack: Jihwan A. Ivan G. Ethan R.\n");
 	printf("Spanish Language Pack: Atie P.\n");

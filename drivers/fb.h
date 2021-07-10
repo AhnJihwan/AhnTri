@@ -2,8 +2,8 @@
 #define _fb_H_
 
 #define FONT_HEIGHT    8
-#define FONTT_WIDTH     8
-
+#define FONT_WIDTH     8
+#include "../boot/multiboot.h"
 extern uint32_t* fb_buffer;
 int init_fb(multiboot_info_t* mboot);
 void fb_put_pixel(uint32_t x, uint32_t y, uint32_t color);

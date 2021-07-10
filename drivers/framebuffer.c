@@ -47,7 +47,7 @@ void fb_draw_rect(uint32_t initx, uint32_t inity, uint32_t suspendx, uint32_t su
 
 void fb_backspace(uint32_t clr){
     x_cur--;
-    fb_putchar_col(1, clr);
+    fb_putchar_color(1, clr);
     x_cur--;
 }
 
@@ -77,7 +77,7 @@ void fb_putchar_color(char c, uint32_t color){
 
 void fb_putstr_color(char *str, uint32_t color){
     while(*str!=0){
-        fb_putchar_col(*str, color);
+        fb_putchar_color(*str, color);
         str++;
     }
 }

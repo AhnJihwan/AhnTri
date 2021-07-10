@@ -7,27 +7,27 @@
 //Had a hard time finding out all the stuff
 //https://github.com/clawbhaiya/discitix_kernel was a good example to learn frambuffer and tty stuff
 
-uint32_t *fb_buffer = NULL;
-uint32_t fb_width;
-uint32_t fb_height;
-uint32_t fb_bpp;
-uint32_t fb_pitch;
+uint32_t *framebuffer_buffer = NULL;
+uint32_t framebuffer_width;
+uint32_t framebuffer_height;
+uint32_t framebuffer_bpp;
+uint32_t framebuffer_pitch;
 
 
 uint32_t x_cur = 0;
 uint32_t y_cur = 0;
 
 int init_fb(multiboot_info_t* mboot){
-    fb_buffer = (uint32_t*)((uintptr_t)mboot->fb_addr);
-    fb_bpp = mboot->fb_bpp;
-    fb_pitch = mboot->fb_pitch;
-    fb_height = mboot->fb_height;
-fb_width = mboot->fb_width;
+    framebuffer_buffer = (uint32_t*)((uintptr_t)mboot->framebuffer_addr);
+    framebuffer_bpp = mboot->framebuffer_bpp;
+    framebuffer_pitch = mboot->framebuffer_pitch;
+    framebuffer_height = mboot->framebuffer_height;
+framebuffer_width = mboot->framebuffer_width;
     return 1;
 }
 
 void fb_put_pixel(uint32_t x, uint32_t y, uint32_t color){
-    *(uint32_t*)(x + y * fb_width + fb_buffer) = color;
+    *(uint32_t*)(x + y * framebuffer_width + framebuffer_buffer) = color;
 }
 
 void fb_draw_rect(uint32_t initx, uint32_t inity, uint32_t suspendx, uint32_t suspendy, uint32_t color){
@@ -69,7 +69,7 @@ void fb_putchar_color(char c, uint32_t color){
         }
         x_cur += 1;
     }
-    if(x_cur >= fb_width/FONT_WIDTH){
+    if(x_cur >= framebuffer_width/FONT_WIDTH){
         x_cur = 0;
         y_cur += 1;
     }
@@ -83,8 +83,8 @@ void fb_putstr_color(char *str, uint32_t color){
 }
 
 void fb_clscr(uint32_t color){
-    for(uint32_t i = 0; i < (fb_height * fb_width); i++){
-        fb_buffer[i] = color;
+    for(uint32_t i = 0; i < (framebuffer_height * framebuffer_width); i++){
+        framebuffer_buffer[i] = color;
     }
     x_cur = 0;
     y_cur = 0;

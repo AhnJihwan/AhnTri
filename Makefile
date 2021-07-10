@@ -2,7 +2,7 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot atclib kernel ccalc irq timer qemudrivers serialdrivers advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
+make_deafult: bboot atclib kernel ccalc fb tty irq timer qemudrivers serialdrivers advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
 
 #Build kernel main image
 kernel: main.c
@@ -41,6 +41,12 @@ idt: arch/i386/idt.c arch/i386/load_idt.s
 	gcc -m32 -c arch/i386/idt.c -o idt.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 	as --32 arch/i386/load_idt.s -o load_idt.o
 	as --32 arch/i386/isr.s -o isr.o
+
+fb: drivers/framebuffer.c
+	gcc -m32 -c drivers/framebuffer.c -o framebuffer.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
+tty: drivers/tty.c
+	gcc -m32 -c drivers/tty.c -o tty.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 timer: drivers/timer.c
 	gcc -m32 -c drivers/timer.c -o timer.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra

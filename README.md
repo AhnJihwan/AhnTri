@@ -2,10 +2,9 @@
 # AhnTri OS
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
 # Getting some Stargazer's Languages: https://forms.gle/GcfstgAjpzB3h9JP7
-# The name `AhnTri` came from my last name `Ahn`.
+# BTW don't email me in chinese or japanese. I'm south korean guys.
 Ahn is a **Korean** Last name. It's **not** chinese, don't mail or redditchat me in chinese.
 I can't understand them.
-https://en.wikipedia.org/wiki/Ahn_(Korean_surname)#Gwangju_Clan
 # Recommend Ventoy for USB.
 # Announcement from Core developer Jihwan Ahn(2021-Q2)
 The test had ended. Now I aam free.

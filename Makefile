@@ -2,7 +2,7 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot atclib kernel ccalc fb tty irq timer qemudrivers serialdrivers advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
+make_deafult: bboot atclib kernel ccalc irq timer qemudrivers serialdrivers advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
 
 #Build kernel main image
 kernel: main.c

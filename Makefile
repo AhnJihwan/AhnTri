@@ -42,12 +42,6 @@ idt: arch/i386/idt.c arch/i386/load_idt.s
 	as --32 arch/i386/load_idt.s -o load_idt.o
 	as --32 arch/i386/isr.s -o isr.o
 
-fb: drivers/framebuffer.c
-	gcc -m32 -c drivers/framebuffer.c -o framebuffer.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-
-tty: drivers/tty.c
-	gcc -m32 -c drivers/tty.c -o tty.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-
 timer: drivers/timer.c
 	gcc -m32 -c drivers/timer.c -o timer.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 

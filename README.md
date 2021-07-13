@@ -1,5 +1,6 @@
 ![AhnTriLogo](at.jpg)
 # AhnTri OS
+🇰🇷🇮🇳🇺🇸🇮🇪🇹🇷
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
 # Getting some Stargazer's Languages: https://forms.gle/GcfstgAjpzB3h9JP7
 # BTW don't email me in chinese or japanese. I'm south korean guys.

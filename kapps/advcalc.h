@@ -65,7 +65,7 @@ void advccalc(){
 				printf("Radian to Degrees: ");
 				num1=read_int();
 				print_int(num1*180/3);
-				printf(" if Pi=3);
+				printf(" if Pi=3");
 			case 0:
 				ccalc();
 				break;

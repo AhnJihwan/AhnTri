@@ -27,7 +27,7 @@ void display_menu_ccalc_adv()
 }
 
 void advccalc(){
-	int ccho, num1;
+	int ccho, num1, num2;
 	while(1){
 		display_menu_ccalc_adv();
 		printf("\n\nADV> ");
@@ -64,8 +64,13 @@ void advccalc(){
 			case 6:
 				printf("Radian to Degrees: ");
 				num1=read_int();
-				print_int(num1*180/3);
-				printf(" if Pi=3");
+				num2=num1*180/3;
+				print_int(num2);
+				print_char(248);
+				printf(" if Pi=3, and in general angle, ");
+				print_int(num2%360);
+				print_char(248);
+				printf(".");
 				break;
 			case 0:
 				ccalc();

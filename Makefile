@@ -2,14 +2,14 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot atclib kernel ccalc irq timer advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
+make_deafult: bboot atclib kernel ccalc irq timer qemudrivers serialdrivers advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
 
 #Build kernel main image
 kernel: main.c
 	gcc -m32 -c main.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 #Link everything up
-ld: linker.ld linker.ld clib.o image.o irq.o irq_s.o timer.o ccalc.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
-	ld -m elf_i386 -T linker.ld clib.o image.o irq.o irq_s.o timer.o advset.o ccalc.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld clib.o image.o irq.o irq_s.o timer.o ccalc.o qemu.o serial.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o
+	ld -m elf_i386 -T linker.ld clib.o image.o irq.o irq_s.o timer.o advset.o ccalc.o qemu.o serial.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o -o ATOS1.bin -nostdlib
 
 #Build ISO file via grub
 buildgrub: ATOS1.bin
@@ -87,7 +87,13 @@ bboot: boot/boot.s
 
 #Build Keychar drivers
 keychar: drivers/kb/char.c
-	gcc -m32 -c drivers/kb/char.c -o char.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
+	gcc -m32 -c drivers/kb/char.c -o char.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra
+
+qemudrivers: drivers/qemu.c
+	gcc -m32 -c drivers/qemu.c -o qemu.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
+serialdrivers: drivers/serial.c
+	gcc -m32 -c drivers/serial.c -o serial.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 clean:
 	rm *.o

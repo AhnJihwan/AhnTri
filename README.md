@@ -1,16 +1,16 @@
 ![AhnTriLogo](at.jpg)
 # AhnTri OS
+🇰🇷🇮🇳🇺🇸🇮🇪🇹🇷
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
 # Getting some Stargazer's Languages: https://forms.gle/GcfstgAjpzB3h9JP7
-# The name `AhnTri` came from my last name `Ahn`.
+# BTW don't email me in chinese or japanese. I'm south korean guys.
 Ahn is a **Korean** Last name. It's **not** chinese, don't mail or redditchat me in chinese.
 I can't understand them.
-https://en.wikipedia.org/wiki/Ahn_(Korean_surname)#Gwangju_Clan
-# Recommend Ventoy for USB.
-# Announcement from Core developer Jihwan Ahn(2021-Q2)
-The test had ended. Now I aam free.
-https://www.reddit.com/r/osdev/comments/oapp4z/how_to_make_the_frambuffer/?utm_medium=android_app&utm_source=share
-Do You know to make a framebuffer? Please answer.
+# Needed to be built with Xubuntu 20.04/18.04.
+http://mirror.us.leaseweb.net/ubuntu-cdimage/xubuntu/releases/20.04/release/xubuntu-20.04.2.0-desktop-amd64.iso
+https://cdimage.ubuntu.com/xubuntu/releases/20.04.2/release/xubuntu-20.04.2.0-desktop-amd64.iso
+https://cdimage.ubuntu.com/xubuntu/releases/18.04/release/xubuntu-18.04.5-desktop-i386.iso
+
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

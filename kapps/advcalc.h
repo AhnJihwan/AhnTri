@@ -21,6 +21,8 @@ void display_menu_ccalc_adv()
   printf("\n");
   os_print_color("Press [5] for Temp transfer ", BLACK, WHITE);
   printf("\n");
+  os_print_color("Press [6] for Deg <=> Rad   ", BLACK, WHITE);
+  printf("\n");
   os_print_color("Press [0] for Exit          ", BLACK, WHITE);
 }
 
@@ -57,8 +59,13 @@ void advccalc(){
 			case 5:
 				printf("Celsius to Fahrenheit: ");
 				num1  = read_int();
-				print_int(cel2far);
+				print_int(cel2far(num1));
 				break;
+			case 6:
+				printf("Radian to Degrees: ");
+				num1=read_int();
+				print_int(num1*180/3);
+				printf(" if Pi=3");
 			case 0:
 				ccalc();
 				break;

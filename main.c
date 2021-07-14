@@ -16,6 +16,9 @@
 #include "kinc/homenu.h"
 #include "arch/i386/gdt.h"
 #include "arch/i386/irq.h"
+#include "lang/korean/romanized/kr.h"
+#include "lang/turk/romanized/tr.h"
+#include "lang/spanish/engsok/es.h"
 
 void display_menu()
 {
@@ -75,6 +78,7 @@ void kernmain(){
 			help();
 		} else if(strcmp(choice, "ccalc")==0 || strcmp(choice, "calc")==0 || strcmp(choice, "accalc")==0){
 			ccalc();
+			qemu_printf_string("Ccalc App Started");
 		} else if(strcmp(choice, "exit")==0){
 			exit();
 		} else if(strcmp(choice, "osver")==0 || strcmp(choice, "atfetch")==0 || strcmp(choice, "aatfetch")==0){
@@ -87,6 +91,7 @@ void kernmain(){
 			cputest();
 		} else if(strcmp(choice, "notes")==0 || strcmp(choice, "anotes")==0){
 			notes();
+			qemu_printf_string("Notes App Stated");
 		} else if(strcmp(choice, "pedx")==0 || strcmp(choice, "apedx")==0){
 			pedx();
 		} else if(strcmp(choice, "atfork")==0 || strcmp(choice, "aatfork")==0){
@@ -115,6 +120,7 @@ void kernmain(){
 		}else if(strcmp(choice, "pit")==0 || strcmp(choice, "timer")==0 || strcmp(choice, "atimer")==0){
 			clscr();
 			pit(18);
+			qemu_printf_string("PIT Timer started");
 		}else if(strcmp(choice, "credit")==0 || strcmp(choice, "credits")==0){
 			clscr();
 			credits();
@@ -122,7 +128,7 @@ void kernmain(){
 			printf("\n");
 			printf(choice);
 			printf(": command not found");
-
+			qemu_printf_string("Command that was inputted was not found. Sorry.");
 		}
 	}
 }
@@ -173,6 +179,7 @@ void mkern_main()
   printf(".");
   suspend(1);
   printf(" [OK]\n");
+  qemu_printf_string("Everything is initialized. System is starting...");
   printf("Loading main menu.");
   suspend(1);
   printf(".");

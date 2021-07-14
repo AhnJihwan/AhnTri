@@ -3,6 +3,7 @@
 
 void advset(){
 	char cps = KEY_A;
+	clscr();
 	gotoxy(25, 0);
 	printf("AhnTri Advanced settings\n\n");
 	printf("1. Change Text color\n");
@@ -15,6 +16,7 @@ void advset(){
 	printf("8. PC CPU ID\n");
 	printf("9. Go to kernel main\n");
 	printf("a. Change Theme\n");
+	printf("b. Change Language\n");
 	printf("AhnTroid AI is a part of AhnTri and is protected by the Apache 2.0 open source licence.\n");
 	cps = get_input_keycode();
 	if(cps == KEY_1){
@@ -40,6 +42,9 @@ void advset(){
 		return;
 	}else if(cps == KEY_A){
 		init_vga(BLACK, WHITE);
+	}else if(cps == KEY_B){
+		printf("What Lanauge?");
+		lang();
 	} else{
 		clscr();
 		return;
@@ -70,6 +75,36 @@ void txtcolr(){
 	} else if(caps == KEY_6){
 		clscr();
 		init_vga(BROWN, BLACK);
+	}else{
+		printf("No such color. Try again.");
+	}
+	printf("Color set: Complete.");
+}
+
+void lang(){
+	char capsz = KEY_A;
+	printf("Select Text color");
+	printf("\nDeafult(1). English\n2. Spanish\n3. Korean\n4. Turk\n");
+	suspend(3);
+	capsz = get_input_keycode();
+	if(capsz == KEY_1){
+		clscr();
+		qemu_printf_string("Language: set to English.");
+		kernmain();
+	} else if(capsz == KEY_2){
+		clscr();
+		qemu_printf_string("Idioma: establezca en español.");
+		kernmain_es();
+	} else if(capsz == KEY_3){
+		clscr();
+		qemu_printf_string("언어: 한국어로 설정되었습니다.");
+		kernmain_kr();
+	} else if(capsz == KEY_4){
+		clscr();
+		qemu_printf_string("Dil: Türkçe olarak ayarlayın.");
+		kernmain_tr();
+	} else if(capsz == KEY_5){
+		clscr();
 	}else{
 		printf("No such color. Try again.");
 	}

@@ -11,19 +11,19 @@ void display_menu_ccalc_adv()
   printf("\n");
   os_print_color("    --~=-~=~--~=~--~=~--~=~--~=~    ", BLACK, WHITE);
   printf("\n");
-  os_print_color("Press [1] for Data Transfer  ", BLACK, WHITE);
+  os_print_color("Press [1] for Data Transfer         ", BLACK, WHITE);
   printf("\n");
-  os_print_color("Press [2] for mass transfer ", BLACK, WHITE);
+  os_print_color("Press [2] for mass transfer         ", BLACK, WHITE);
   printf("\n");
-  os_print_color("Press [3] for Length Transfer", BLACK, WHITE);
+  os_print_color("Press [3] for Length Transfer       ", BLACK, WHITE);
   printf("\n");
-  os_print_color("Press [4] for Time transfer ", BLACK, WHITE);
+  os_print_color("Press [4] for Time transfer         ", BLACK, WHITE);
   printf("\n");
-  os_print_color("Press [5] for Temp transfer ", BLACK, WHITE);
+  os_print_color("Press [5] for Temp transfer         ", BLACK, WHITE);
   printf("\n");
-  os_print_color("Press [6] for Deg <=> Rad   ", BLACK, WHITE);
+  os_print_color("Press [6] for Deg <=> Rad           ", BLACK, WHITE);
   printf("\n");
-  os_print_color("Press [0] for Exit          ", BLACK, WHITE);
+  os_print_color("Press [0] for Exit                  ", BLACK, WHITE);
 }
 
 void advccalc(){

@@ -2,18 +2,18 @@
 void display_menu_tr()
 {
   printf(" ");
-  os_print_color("    Terminal - ana menu    ", WHITE, GREY);
+  os_print_color("    Terminal - ana menü    ", WHITE, GREY);
   os_print_color("-", YELLOW, BLACK);
   os_print_color("+", GREEN, BLACK);
   os_print_color("x\n", RED, BLACK);
   printf(" ");
-  os_print_color("      AhnTri Terminal         \n", BLACK, WHITE);
+  os_print_color("      AhnTri Terminali         \n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
   os_print_color("  -~=-~=~--~=~--~=~--~=~-=-   \n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
-  os_print_color(" Yardim icin yardim yazin ve  \n", BLACK, WHITE);
+  os_print_color(" Yardım için yardım yazın,  \n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
-  os_print_color(" her uygulama icin digerleri. \n", BLACK, WHITE);
+  os_print_color(" her uygulama için diğerleri yazın \n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
   os_print_color("                              \n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
@@ -112,7 +112,7 @@ void kernmain_tr(){
 void mkern_main_tr()
 {
   init_vga(CYAN, BLACK);
-  printf("\nVGA baslatildi");
+  printf("\nVGA başlatıldı");
   suspend(1);
   printf(".");
   suspend(1);
@@ -120,10 +120,10 @@ void mkern_main_tr()
   suspend(1);
   printf(".");
   suspend(1);
-  printf(" [OK]\n");
+  printf(" [TAMAM]\n");
   suspend(2);
   init_gdt();
-  printf("\nGDT baslatildi");
+  printf("\nGDT başlatıldı");
   suspend(1);
   printf(".");
   suspend(1);
@@ -136,7 +136,7 @@ void mkern_main_tr()
   init_idt();
   asm volatile("\tmov $12395, %eax");
   asm volatile("\tint $0");
-  printf("\nIDT baslatildi");
+  printf("\nIDT başlatıldı");
   suspend(1);
   printf(".");
   suspend(1);
@@ -146,7 +146,7 @@ void mkern_main_tr()
   suspend(1);
   printf(" [OK]\n");
   irq_install();
-  printf("\nIRQ baslatildi");
+  printf("\nIRQ başlatıldı");
   suspend(1);
   printf(".");
   suspend(1);
@@ -155,7 +155,7 @@ void mkern_main_tr()
   printf(".");
   suspend(1);
   printf(" [OK]\n");
-  printf("Loading main menu.");
+  printf("");
   suspend(1);
   printf(".");
   suspend(1);

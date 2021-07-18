@@ -141,7 +141,7 @@ struct multiboot_elf_section_header_table
 };
 typedef struct multiboot_elf_section_header_table multiboot_elf_section_header_table_t;
 
-struct *multiboot_info
+struct multiboot_info
 {
   /* Multiboot info version number */
   multiboot_uint32_t flags;

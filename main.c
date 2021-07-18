@@ -19,7 +19,7 @@
 #include "lang/korean/romanized/kr.h"
 #include "lang/turk/romanized/tr.h"
 #include "lang/spanish/engsok/es.h"
-#include "../boot/multiboot.h"
+#include "boot/multiboot.h"
 
 void display_menu()
 {

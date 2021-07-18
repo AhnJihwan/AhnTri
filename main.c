@@ -134,7 +134,7 @@ void kernmain(){
 	}
 }
 
-void mkern_main()
+void mkern_main(multiboot_info_t* multiboot)
 {
   init_vga(CYAN, BLACK);
   printf("\nVGA initialization");

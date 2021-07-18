@@ -25,9 +25,8 @@ stackTop:
 
 _start:
     mov $stackTop, %esp
-
+    pushl %ebx
     call mkern_main
-
     cli
 
 hltLoop:

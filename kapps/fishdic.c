@@ -1,11 +1,8 @@
 #include "../kernel.h"
 #include "../libc/atclib.h"
-
-//                         ___
-//Fish Dictionary since 201  /
-//                          /
-//                         /
-//Originally in HTML, moved to C
+//Next version of Fish Dictionary
+//Fish Dictionary ++
+//Word 1-6 are original, line 7~ are new words(FishDic++).
 void fdic(){
 	char * input;
 	while(1){
@@ -28,6 +25,12 @@ void fdic(){
 			free(input);
 		}else if(strcmp(input, "ablaze")==0 || strcmp(input, "alight")==0 || strcmp(input, "aflame")==0 || strcmp(input, "on fire")==0){
 			printf("burning fiercely.");
+			free(input);
+		}else if(strcmp(input, "accelerate")==0 || strcmp(input, "hurry up")==0 || strcmp(input, "speed up")==0 || strcmp(input, "hurry")==0){
+			printf("To make faster; to hurry up");
+			free(input);
+		}else if(strcmp(input, "in terms of")==0 || strcmp(input, "in light of")==0 || strcmp(input, "in regard to")==0){
+			printf("in relation to something; from the side");
 			free(input);
 		}else{
 			printf("Word does not exist. Please contribute if you know that word.");

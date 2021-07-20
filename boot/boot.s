@@ -1,7 +1,7 @@
 #Assembly TriOS bootloader
 // Made in Android
-
-.set FLAGS,    0                    #Flags to 12 bit for frambuffer preparation
+#include "multiboot.h"
+.set FLAGS,    MULTIBOOT_PAGE_ALIGN | MULTIBOOT_MEMORY_INFO | MULTIBOOT_VIDEO_MODE | AOUT_KLUDGE
 
 .set MAGIC,    0x1BADB002           #Magic number
 

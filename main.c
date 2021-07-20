@@ -136,16 +136,8 @@ void kernmain(){
 
 void mkern_main(multiboot_info_t* multiboot)
 {
-  init_vga(CYAN, BLACK);
-  printf("\nVGA initialization");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
+  if (CHECK_FLAG (mbi->flags, 12)){
+    qemu_printf_string("Framebuffer flags(12) checked! \\/");
   suspend(2);
   init_gdt();
   printf("\nGDT initialization");

@@ -134,6 +134,9 @@ void kernmain(){
 	}
 }
 
+#define CHECK_FLAG(flags,bit)   ((flags) & (1 << (bit)))
+
+
 void mkern_main(multiboot_info_t* multiboot)
 {
   if (CHECK_FLAG (multiboot->flags, 12)){

@@ -1,4 +1,5 @@
 void memanset(){
+	char args[];
 	int *inpLoc = args[0];
 	char *inpDat = args[1];
 	char *value = ((char*)stoi(inpLoc));

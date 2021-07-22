@@ -21,6 +21,9 @@
 #include "lang/spanish/engsok/es.h"
 #include "boot/multiboot.h"
 
+//Define Macros
+#define CHECK_FLAG(flags,bit)   ((flags) & (1 << (bit)))
+
 void display_menu()
 {
   printf(" ");
@@ -133,10 +136,6 @@ void kernmain(){
 		}
 	}
 }
-
-#define CHECK_FLAG(flags,bit)   ((flags) & (1 << (bit)))
-
-multiboot_info_t framebuffer_type = 1;
 
 void mkern_main(multiboot_info_t* multiboot)
 {

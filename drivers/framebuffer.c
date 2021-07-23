@@ -8,7 +8,12 @@ void framebuffer_check(multiboot_info_t* multiboot){
     suspend(1);
     qemu_printf_string("Framebuffer flags(12) checked! \\/");
     switch (mbi->framebuffer_type){
-      case MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED:
+      case MULTIBOOT_FRAMEBUFFER_TYPE_RGB:
+        qemu_printf_string("Framebuffer type is rgb");
+    }
   }
 }
 
+void init_framebuffer(multiboot_info_t* mbi){
+  
+}

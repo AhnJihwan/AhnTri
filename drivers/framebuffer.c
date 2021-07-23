@@ -15,5 +15,7 @@ void framebuffer_check(multiboot_info_t* multiboot){
 }
 
 void init_framebuffer(multiboot_info_t* mbi){
-  
+  multiboot_uint32_t color;
+  unsigned i;
+  void *fb = (void *) (unsigned long) mbi->framebuffer_addr;
 }

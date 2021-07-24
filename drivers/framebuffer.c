@@ -58,5 +58,6 @@ void framebuffer_putchar(char ch, uint32_t color){
         framebuffer_putpixel(xx + cur_x*FONT_WIDTH, yy + cur_y*FONT_HEIGHT, color);
       }
     }
+    cur_x += 1;
   }
 }

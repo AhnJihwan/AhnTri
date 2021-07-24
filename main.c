@@ -150,4 +150,5 @@ void mkern_main(multiboot_info_t* multiboot)
   irq_install();
   qemu_printf_string("Everything is initialized. System is starting...");
   init_framebuffer(multiboot);
+  fraebuffer_putpixel(8, 8, 0x7fa49d);
 }

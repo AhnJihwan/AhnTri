@@ -63,3 +63,9 @@ void framebuffer_putchar(char ch, uint32_t color){
     cur_x += 1;
   }
 }
+
+void framebuffer_backspace(uint32_t color){ /*prints a 8x8 glyph on previous glyph*/
+    cur_x--;
+    framebuffer_putchar(253, color);
+    cur_x--;
+}

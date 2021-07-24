@@ -55,7 +55,9 @@ void framebuffer_putchar(char ch, uint32_t color){
   }else{
     for(xx=0;xx<8;xx++){
       for(yy=0;yy<8;yy++){
-        framebuffer_putpixel(xx + cur_x*FONT_WIDTH, yy + cur_y*FONT_HEIGHT, color);
+        if((font[(uint8_t)ch][yy] >> xx) & 1){
+          framebuffer_putpixel(xx + cur_x*FONT_WIDTH, yy + cur_y*FONT_HEIGHT, color);
+        }
       }
     }
     cur_x += 1;

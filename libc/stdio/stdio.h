@@ -134,7 +134,7 @@ void print_char_notepad(char ch)
   vga_index++;
 }
 
-void printf(char *str)
+void printf_vga(char *str)
 {
   uint32 index = 0;
   while(str[index]){

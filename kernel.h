@@ -42,7 +42,7 @@ enum vga_color {
 #define BRIGHT_GREEN     0xa3bd8d
 #define BRIGHT_CYAN      0x00ffff
 #define BRIGHT_RED       0xff5555
-#dcfinc BRIGHT_MAGENTA   0xba9da2
+#define BRIGHT_MAGENTA   0xba9da2
 #define YELLOW           0xeaa442
 #define WHITE            0xffffff
 

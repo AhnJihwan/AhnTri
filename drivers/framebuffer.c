@@ -13,6 +13,7 @@ multiboot_uint32_t framebuffer_width;
 uint32_t cur_x = 0;
 uint32_t cur_y = 0;
 
+uint32_t fg_color, bg_color;
 //Define Macros
 #define CHECK_FLAG(flags,bit)   ((flags) & (1 << (bit)))
 #define FONT_HEIGHT 8
@@ -68,4 +69,30 @@ void framebuffer_backspace(uint32_t color){ /*prints a 8x8 glyph on previous gly
     cur_x--;
     framebuffer_putchar(253, color);
     cur_x--;
+}
+
+void framebuffer_putstr(char *str, uint32_t color){
+    while(*str!=0){
+        framebuffer_putchar(*str, color);
+        str++;
+    }
+}
+
+void framebuffer_clscr(uint32_t color){
+    for(uint32_t i = 0; i < (framebuffer_height * framebuffer_width); i++){
+        framebuffer_buffer[i] = color;
+    }
+    cur_x = 0;
+    cur_y = 0;
+}
+
+void init_tty(multibboot_info_t *mbi, uint32_t fg, uint32_t bg){
+  init_framebuffer(mbi);
+  fg_color = fg;
+  bg_color = bg;
+  framebuffer_clscr(bg);
+}
+
+void printf(char *str){
+  framebuffer_putstr(str, fg_color);
 }

@@ -149,4 +149,5 @@ void mkern_main(multiboot_info_t* multiboot)
   asm volatile("\tint $0");
   irq_install();
   qemu_printf_string("Everything is initialized. System is starting...");
+  init_framebuffer(multiboot);
 }

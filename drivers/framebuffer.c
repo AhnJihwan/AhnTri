@@ -37,3 +37,7 @@ void init_framebuffer(multiboot_info_t* mbi){
     framebuffer_width = mbi->framebuffer_width;
   }
 }
+
+void framebuffer_putpixel(uint32_t x, uint32_t y, uint32_t color){  /*this plots a single pixel to the given coordinates with the given color*/
+    *(uint32_t*)(x + y * framebuffer_width + framebuffer_buffer) = color;
+}

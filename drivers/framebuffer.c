@@ -1,14 +1,23 @@
-#include "boot/multiboot.h"
+#include "../boot/multiboot.h"
+#include "../libc/gcc/stdint-gcc.h"
+#include "../libc/types/ctypes.h"
+#include "../kinc/qemu.h"
+
+multiboot_uint32_t* framebuffer_buffer;
+multiboot_uint32_t framebuffer_bpp;
+multiboot_uint32_t framebuffer_pitch;
+multiboot_uint32_t framebuffer_height;
+multiboot_uint32_t framebuffer_width;
 
 //Define Macros
 #define CHECK_FLAG(flags,bit)   ((flags) & (1 << (bit)))
 
-void framebuffer_check(multiboot_info_t* multiboot){
+int framebuffer_check(multiboot_info_t* multiboot){
   int framebuffer_type;
   if (CHECK_FLAG (multiboot->flags, 12)){
     suspend(1);
     qemu_printf_string("Framebuffer flags(12) checked! \\/");
-    switch (mbi->framebuffer_type){
+    switch (multiboot->framebuffer_type){
       case MULTIBOOT_FRAMEBUFFER_TYPE_RGB:
         qemu_printf_string("Framebuffer type is rgb");
         framebuffer_type = 1;

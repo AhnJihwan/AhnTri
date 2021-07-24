@@ -2,6 +2,7 @@
 #include "../libc/gcc/stdint-gcc.h"
 #include "../libc/types/ctypes.h"
 #include "../kinc/qemu.h"
+#include "romfont.h"
 
 multiboot_uint32_t* framebuffer_buffer;
 multiboot_uint32_t framebuffer_bpp;
@@ -28,7 +29,7 @@ int framebuffer_check(multiboot_info_t* multiboot){
   return framebuffer_type;
 }
 
-void init_framebuffer(multiboot_info_t* mbi){
+int init_framebuffer(multiboot_info_t* mbi){
   if(framebuffer_check(mbi)==1){
     framebuffer_buffer = (uint32_t*)((uintptr_t)mbi->framebuffer_addr);
     framebuffer_bpp = mbi->framebuffer_bpp;

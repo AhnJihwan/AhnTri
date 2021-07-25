@@ -29,6 +29,7 @@ This is for
 - [x] A basic TTY that can fully supersede VGA text mode
 - [x] IRQs
 - [x] Programmable Interval Timer
+- [ ] Language pack upgrade
 - [ ] Paging
 - [ ] ATA drivers and stuff
 - [ ] Filesystem

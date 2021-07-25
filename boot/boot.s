@@ -1,7 +1,7 @@
 #Assembly TriOS bootloader
 // Made in Android
 
-.set FLAGS,    0                    #Flags to 12 bit for frambuffer preparation
+.set FLAGS,    0
 
 .set MAGIC,    0x1BADB002           #Magic number
 

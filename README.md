@@ -26,7 +26,7 @@ This is for
 - [x] Apps as file(.o)
 - [x] ISRs
 - [x] Change to graphics instead of text mode - framebuffer
-- [ ] A basic TTY that can fully supersede VGA text mode
+- [x] A basic TTY that can fully supersede VGA text mode
 - [x] IRQs
 - [x] Programmable Interval Timer
 - [ ] Paging

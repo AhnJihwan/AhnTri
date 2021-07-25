@@ -1,29 +1,26 @@
 //Ccalc for Advanced Calculations
 void display_menu_ccalc_adv()
 {
-  gotoxy(25, 0);
   printf("\n");
-  os_print_color("   CCalc for advanced calculations  ", BLACK, GREY);
-  gotoxy(25, 0);
+  printf("   CCalc for advanced calculations  ");
   printf("\n");
-  os_print_color("     [ Welcome to AhnTri Calc ]     ", BLACK, WHITE);
-  gotoxy(25, 0);
+  printf("     [ Welcome to AhnTri Calc ]     ");
   printf("\n");
-  os_print_color("    --~=-~=~--~=~--~=~--~=~--~=~    ", BLACK, WHITE);
+  printf("    --~=-~=~--~=~--~=~--~=~--~=~    ");
   printf("\n");
-  os_print_color("Press [1] for Data Transfer         ", BLACK, WHITE);
+  printf("Press [1] for Data Transfer         ");
   printf("\n");
-  os_print_color("Press [2] for mass transfer         ", BLACK, WHITE);
+  printf("Press [2] for mass transfer         ");
   printf("\n");
-  os_print_color("Press [3] for Length Transfer       ", BLACK, WHITE);
+  printf("Press [3] for Length Transfer       ");
   printf("\n");
-  os_print_color("Press [4] for Time transfer         ", BLACK, WHITE);
+  printf("Press [4] for Time transfer         ");
   printf("\n");
-  os_print_color("Press [5] for Temp transfer         ", BLACK, WHITE);
+  printf("Press [5] for Temp transfer         ");
   printf("\n");
-  os_print_color("Press [6] for Deg <=> Rad           ", BLACK, WHITE);
+  printf("Press [6] for Deg <=> Rad           ");
   printf("\n");
-  os_print_color("Press [0] for Exit                  ", BLACK, WHITE);
+  printf("Press [0] for Exit                  ");
 }
 
 void advccalc(){

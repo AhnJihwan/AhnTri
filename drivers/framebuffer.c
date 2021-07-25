@@ -50,7 +50,7 @@ void framebuffer_putpixel(uint32_t x, uint32_t y, uint32_t color){  /*this plots
 
 void framebuffer_putchar(char ch, uint32_t color){
   uint8_t xx, yy;
-  if(ch=="\n"|cur_x>=framebuffer_width/FONT_WIDTH){
+  if(ch=='\n'|cur_x>=framebuffer_width/FONT_WIDTH){
     cur_x=0;
     cur_y+=1;
   }else{
@@ -95,4 +95,13 @@ void init_tty(multiboot_info_t *mbi, uint32_t fg, uint32_t bg){
 
 void printf(char *str){
   framebuffer_putstr(str, fg_color);
+}
+
+void print_char(char ch){
+	framebuffer_putchar(ch, fg_color);
+}
+
+void gotoxy(uint32_t x, uint32_t y){
+	cur_x=x;
+	cur_y=y;
 }

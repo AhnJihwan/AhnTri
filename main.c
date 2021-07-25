@@ -149,19 +149,6 @@ void mkern_main(multiboot_info_t* multiboot)
   asm volatile("\tint $0");
   irq_install();
   qemu_printf_string("Everything is initialized. System is starting...");
-  init_framebuffer(multiboot);
-  framebuffer_putchar('A', BLUE);
-  framebuffer_putchar('h', GREEN);
-  framebuffer_putchar('n', CYAN);
-  framebuffer_putchar('T', YELLOW);
-  framebuffer_putchar('r', BRIGHT_BLUE);
-  framebuffer_putchar('i', BRIGHT_RED);
-  framebuffer_putchar(' ', 0x7fa49d);
-  framebuffer_putchar('H', WHITE);
-  framebuffer_putchar('o', BRIGHT_RED);
-  framebuffer_putchar('r', BRIGHT_GREEN);
-  framebuffer_putchar('r', BRIGHT_CYAN);
-  framebuffer_putchar('a', BRIGHT_MAGENTA);
-  framebuffer_putchar('y', MAGENTA);
-  framebuffer_putchar('!', RED);
+  init_ttt(multiboot, 0x7fa49d, 0x000000);
+  printf("Hello, AhnTri!");
 }

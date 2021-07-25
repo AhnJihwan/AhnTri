@@ -1,6 +1,6 @@
 // For the command 'clscr'
 void clscr(){
-	clear_screen();
+	framebuffer_clscr();
 }
 /*
 For LS@

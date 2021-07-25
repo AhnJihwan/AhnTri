@@ -2,54 +2,54 @@
 void display_menu_kr()
 {
   printf(" ");
-  os_print_color("      Teomineol - Giebon Menu    ", WHITE, GREY);
-  os_print_color("-", YELLOW, BLACK);
-  os_print_color("+", GREEN, BLACK);
-  os_print_color("x\n", RED, BLACK);
+  printf("      Teomineol - Giebon Menu    ");
+  printf("-");
+  printf("+");
+  printf("x\n");
   printf(" ");
-  os_print_color("           AhnTri Teomieol          \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color(" -~=-~=~--~=~--~=~--~=~-=--~-=-~-=- \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color(" doum-mal-eun ""help"", gita app sil    \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color(" haeng-eun darun myeongryeong-eo    \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color(" reul iblyeokhasio                  \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color("                                    \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
+  printf("           AhnTri Teomieol          \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf(" -~=-~=~--~=~--~=~--~=~-=--~-=-~-=- \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf(" doum-mal-eun ""help"", gita app sil    \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf(" haeng-eun darun myeongryeong-eo    \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf(" reul iblyeokhasio                  \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf("                                    \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
 }
 
 void kernmain_kr(){
@@ -80,8 +80,6 @@ void kernmain_kr(){
 			pedx();
 		} else if(strcmp(choice, "atfork")==0 || strcmp(choice, "aatfork")==0){
 			fbomb();
-		} else if(strcmp(choice, "homenu")==0 || strcmp(choice, "ahomenu")==0){
-			homem();
 		} else if(strcmp(choice, "memor")==0 || strcmp(choice, "amemor")==0 || strcmp(choice, "memset")==0){
 			memanset();
 		} else if(strcmp(choice, "mp")==0 || strcmp(choice, "memprintf")==0){
@@ -114,66 +112,4 @@ void kernmain_kr(){
 
 		}
 	}
-}
-
-void mkern_main_kr()
-{
-  init_vga(CYAN, BLACK);
-  printf("\nVGA chogihwa");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [Guenchanuem]\n");
-  suspend(2);
-  init_gdt();
-  printf("\nGDT chogihwa");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [Guenchanuem]\n");
-  suspend(2);
-  init_idt();
-  asm volatile("\tmov $12395, %eax");
-  asm volatile("\tint $0");
-  printf("\nIDT chogihwa");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
-  irq_install();
-  printf("\nIRQ chogihwa");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [Guenchanuem]\n");
-  printf("Maeen Menu roading joong...");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(2);
-  clscr();
-  init_vga(CYAN, BLACK);
-  clscr();
-  kernmain_kr();
 }

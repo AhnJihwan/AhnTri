@@ -13,7 +13,6 @@
 #include "kapps/timermode.h"
 #include "kapps/mem.h"
 #include "kinc/new.h"
-#include "kinc/homenu.h"
 #include "arch/i386/gdt.h"
 #include "arch/i386/irq.h"
 #include "lang/korean/romanized/kr.h"
@@ -27,55 +26,56 @@
 void display_menu()
 {
   printf(" ");
-  os_print_color("    Terminal - main menu  ", WHITE, GREY);
-  os_print_color("-", YELLOW, BLACK);
-  os_print_color("+", GREEN, BLACK);
-  os_print_color("x\n", RED, BLACK);
+  printf("    Terminal - main menu  ");
+  printf("-");
+  printf("+");
+  printf("x\n");
   printf(" ");
-  os_print_color("      AhnTri Terminal        \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color("  -~=-~=~--~=~--~=~--~=~-=-  \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color("   Type help for help or o   \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color("   ther key for each apps.   \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color("                             \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
+  printf("      AhnTri Terminal        \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf("  -~=-~=~--~=~--~=~--~=~-=-  \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf("   Type help for help or o   \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf("   ther key for each apps.   \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf("                             \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
 }
 
 void kernmain(){
+	framebuffer_clscr(0x000000);
 	char * choice;
 	display_menu();
 	while(1){
 		printf("\n\n@kern~");
-		print_char(30);
+		framebuffer_putchar(30, 0x7fa49d);
 		printf(" ");
 		choice = read_char();
 		if(strcmp(choice, "help")==0){
@@ -100,8 +100,6 @@ void kernmain(){
 			pedx();
 		} else if(strcmp(choice, "atfork")==0 || strcmp(choice, "aatfork")==0){
 			fbomb();
-		} else if(strcmp(choice, "homenu")==0 || strcmp(choice, "ahomenu")==0){
-			homem();
 		} else if(strcmp(choice, "memor")==0 || strcmp(choice, "amemor")==0 || strcmp(choice, "memset")==0){
 			memanset();
 		} else if(strcmp(choice, "mp")==0 || strcmp(choice, "memprintf")==0){
@@ -150,5 +148,5 @@ void mkern_main(multiboot_info_t* multiboot)
   irq_install();
   qemu_printf_string("Everything is initialized. System is starting...");
   init_tty(multiboot, 0x7fa49d, 0x000000);
-  printf("Hello, AhnTri!");
+  newmain();
 }

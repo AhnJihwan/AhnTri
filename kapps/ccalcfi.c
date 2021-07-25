@@ -39,20 +39,16 @@ void quareq_ccalc(){
 
 void display_menu_ccalc()
 {
-  init_vga(WHITE, BLACK);
+  framebuffer_clscr(0xeaa442);
   gotoxy(25, 0);
+  printf("\n    Start - AhnTri CCalc      ");
+  printf("\n  [ Welcome to AhnTri Calc ]  ");
   printf("\n");
-  os_print_color("    Start - AhnTri CCalc      ", BLACK, GREY);
-  gotoxy(25, 0);
+  printf("  -~=-~=~--~=~--~=~--~=~--~=  ");
   printf("\n");
-  os_print_color("  [ Welcome to AhnTri Calc ]  ", BLACK, WHITE);
-  gotoxy(25, 0);
-  printf("\n");
-  os_print_color("  -~=-~=~--~=~--~=~--~=~--~=  ", BLACK, WHITE);
-  printf("\n");
-  os_print_color("For More, press [0] for help. ", BLACK, WHITE);
+  printf("For More, press [0] for help. ");
   suspend(20);
-  clscr();
+  framebuffer_clscr(0xeaa442);
 }
 
 void rtn(int* num1, int *num2)
@@ -111,9 +107,9 @@ void ccalc(){
 		switch(ccho){
 			case 0:
  			 	printf("\n");
-  				os_print_color("Addition:1, Sub:2, Mul:3, Div:4, Power 2:5, Power 3:6, sqrt: [10]", BLACK, WHITE);
+  				printf("Addition:1, Sub:2, Mul:3, Div:4, Power 2:5, Power 3:6, sqrt: [10]");
    			   printf("\n");
-  				os_print_color("For (a+b)^3,  [8], GeX [9], TUI [7], factorial [11], Advanced calc [12], for ax^2+bx+c [13], for x^y [14], for logab [15], and for Logical AND, OR, XOR respectively, [16], [17], [18]", BLACK, WHITE);
+  				printf("For (a+b)^3,  [8], GeX [9], TUI [7], factorial [11], Advanced calc [12], for ax^2+bx+c [13], for x^y [14], for logab [15], and for Logical AND, OR, XOR respectively, [16], [17], [18]");
    			   printf("\n");
 				break;
 			case 1:
@@ -159,7 +155,6 @@ void ccalc(){
 				print_int(powth(po1));
 				break;
 			case 7:
-				init_vga(CYAN, BLACK);
 				kernmain();
 				break;
 			case 8:
@@ -190,8 +185,7 @@ void ccalc(){
 				print_int(xpy(num1, num2));
 				break;
 			case 9:
-				homem();
-				break;
+				printf("Not supported anymore.");
 			case 15:
 				logf();		//Log b = x function
 				break;		//   a
@@ -219,6 +213,6 @@ void ccalc(){
 		}
 		printf("\n\nPress any key to reload screen...");
 		getchar();
-		clear_screen();
+		framebuffer_clscr(0xeaa442);
 	}
 }

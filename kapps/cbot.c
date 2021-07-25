@@ -6,7 +6,6 @@ void antroid_hmenu(){
 }
 
 void ahntroid(){
-	init_vga(BRIGHT_BLUE, BLACK);
 	char * input;
 	antroid_hmenu();
 	while(1){
@@ -18,7 +17,6 @@ void ahntroid(){
 			free(input);
 		}else if(strcmp(input, "bye")==0 || strcmp(input, "good bye")==0 || strcmp(input, "bye")==0){
 			printf("Bye-Bye, Good-Bye!!");
-			init_vga(CYAN, BLACK);
 			kernmain();
 		}else if(strcmp(input, "help")==0){
 			printf("Help: exit() to exit");

@@ -149,6 +149,6 @@ void mkern_main(multiboot_info_t* multiboot)
   asm volatile("\tint $0");
   irq_install();
   qemu_printf_string("Everything is initialized. System is starting...");
-  init_ttt(multiboot, 0x7fa49d, 0x000000);
+  init_tty(multiboot, 0x7fa49d, 0x000000);
   printf("Hello, AhnTri!");
 }

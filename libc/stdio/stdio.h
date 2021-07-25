@@ -1,6 +1,6 @@
 #include "../../kernel.h"
 
-#define OS_suspend 3
+#define OS_suspend 16
 
 uint8 inb(uint16 port)
 {

@@ -29,6 +29,23 @@ void newmain(){
 	framebuffer_putchar(178, 0x8f8f8f);
 	printf("Copyright 2021 Jihwan Ahn    \n");
 	framebuffer_putchar(178, 0x8f8f8f);
+	printf("\n\n");
+	framebuffer_putchar(219, 0x000000);
+	framebuffer_putchar(219, 0x013571);
+	framebuffer_putchar(219, 0x015229);
+	framebuffer_putchar(219, 0x7fa49d);
+	framebuffer_putchar(219, 0xf70f0f);
+	framebuffer_putchar(219, 0x741b47);
+	framebuffer_putchar(219, 0x8d6b00);
+	framebuffer_putchar(219, 0x999999);
+	framebuffer_putchar(219, 0x8f8f8f);
+	framebuffer_putchar(219, 0x65abe7);
+	framebuffer_putchar(219, 0xa3bd8d);
+	framebuffer_putchar(219, 0x00ffff);
+	framebuffer_putchar(219, 0xff5555);
+	framebuffer_putchar(219, 0xba9da2);
+	framebuffer_putchar(219, 0xeaa442);
+	framebuffer_putchar(219, 0xffffff);
 	capps = get_input_keycode();
 	if(capps == KEY_A){
 		framebuffer_clscr();

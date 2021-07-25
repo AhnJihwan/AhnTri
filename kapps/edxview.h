@@ -2,17 +2,18 @@
 
 void display_menu_edx()
 {
+  framebuffer_clscr(0x000000);
   char edx;
   gotoxy(25, 0);
   printf("\n                    ");
-  os_print_color("       AhnTri EDX value viewer     ", BLACK, WHITE);
+  printf("       AhnTri EDX value viewer     ");
   printf("\n                    ");
-  os_print_color("   Input [<-Enter] twice to Exit   ", BLACK, BRIGHT_MAGENTA);
+  printf("   Input [<-Enter] twice to Exit   ");
   gotoxy(25, 0);
-  os_print_color("\n                    ", BLACK, BLACK);
-  os_print_color("       [ INPUT 4 EDX VALUE ]       ", BLACK, BRIGHT_MAGENTA);
-  os_print_color("\n                    ", BLACK, BLACK);
-  os_print_color("    EDX value is a value of bits   ", BLACK, BRIGHT_MAGENTA);
+  printf("\n                    ");
+  printf("       [ INPUT 4 EDX VALUE ]       ");
+  printf("\n                    ");
+  printf("    EDX value is a value of bits   ");
   print_new_line();
   printf("                    -> ");
   edx = read_int();

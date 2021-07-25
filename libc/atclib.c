@@ -1,3 +1,4 @@
+#include "gcc/stdint-gcc.h"
 #include "types/ctypes.h"
 #include "string/string.h"
 #include "math/math.h"

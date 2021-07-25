@@ -1,17 +1,7 @@
-char args[];
-	
 void memanset(){
-	int *inpLoc = args[0];
-	char *inpDat = args[1];
-	char *value = ((char*)stoi(inpLoc));
-	printf("One alphabet to store: ");
-	inpDat = read_char();
-	memcpy(value, inpDat, sizeof(char));
-	printf("OK!");
+  //Will be made again with real memory management
 }
 
 void memprintf(){
-	int *inpLoc = args[0];
-	char *value = ((char*)stoi(inpLoc));
-	printf(value);
+  //Will be made again with real memory management
 }

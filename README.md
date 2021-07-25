@@ -25,7 +25,8 @@ This is for
 - [x] Descripter Tables(GDT, IDT)
 - [x] Apps as file(.o)
 - [x] ISRs
-- [ ] Change to graphics instead of text mode - framebuffer
+- [x] Change to graphics instead of text mode - framebuffer
+- [x] A basic TTY that can fully supersede VGA text mode
 - [x] IRQs
 - [x] Programmable Interval Timer
 - [ ] Paging

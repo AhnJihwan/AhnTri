@@ -1,19 +1,17 @@
 #Assembly TriOS bootloader
 // Made in Android
+.set FLAGS,    1<<2		     # Flag are 1<<2
 
-.set FLAGS,    0
-
-.set MAGIC,    0x1BADB002           #Magic number
+.set MAGIC,    0x1BADB002           # Magic number
 
 .set CHECKSUM, -(MAGIC + FLAGS)     # set the checksum
 
 .section .multiboot                 # set multiboot enabled
-
 .long MAGIC
 .long FLAGS
 .long CHECKSUM
 
- 
+
 stackBottom:
 
 .skip 4096                          #512 B
@@ -26,15 +24,14 @@ stackTop:
 
 
 _start:
-	mov $stackTop, %esp
-
-	call mkern_main
-
-	cli
+    mov $stackTop, %esp
+    pushl %ebx
+    call mkern_main
+    cli
 
 hltLoop:
 
-	hlt
-	jmp hltLoop                     # System Loop: infinity
+    hlt
+    jmp hltLoop                     # System Loop: infinity
 
 .size _start, . - _start

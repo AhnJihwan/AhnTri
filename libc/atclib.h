@@ -1,3 +1,4 @@
+#include "gcc/stdint-gcc.h"
 #include "types/ctypes.h"
 #define OS_suspend 16
 #define NULL 0

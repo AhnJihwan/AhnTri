@@ -2,47 +2,47 @@
 void display_menu_tr()
 {
   printf(" ");
-  os_print_color("    Terminal - ana menu    ", WHITE, GREY);
-  os_print_color("-", YELLOW, BLACK);
-  os_print_color("+", GREEN, BLACK);
-  os_print_color("x\n", RED, BLACK);
+  printf("    Terminal - ana menu    ");
+  printf("-");
+  printf("+");
+  printf("x\n");
   printf(" ");
-  os_print_color("      AhnTri Terminal         \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color("  -~=-~=~--~=~--~=~--~=~-=-   \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color(" Yardim icin yardim yazin ve  \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color(" her uygulama icin digerleri. \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_print_color("                              \n", BLACK, WHITE);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
-  os_color_char(178, GREY, BLACK);
+  printf("      AhnTri Terminal         \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf("  -~=-~=~--~=~--~=~--~=~-=-   \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf(" Yardim icin yardim yazin ve  \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf(" her uygulama icin digerleri. \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  printf("                              \n");
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
+  framebuffer_putchar(178, 0x8f8f8f);
 }
 
 void kernmain_tr(){
@@ -73,8 +73,6 @@ void kernmain_tr(){
 			pedx();
 		} else if(strcmp(choice, "atfork")==0 || strcmp(choice, "aatfork")==0){
 			fbomb();
-		} else if(strcmp(choice, "homenu")==0 || strcmp(choice, "ahomenu")==0){
-			homem();
 		} else if(strcmp(choice, "memor")==0 || strcmp(choice, "amemor")==0 || strcmp(choice, "memset")==0){
 			memanset();
 		} else if(strcmp(choice, "mp")==0 || strcmp(choice, "memprintf")==0){
@@ -107,66 +105,4 @@ void kernmain_tr(){
 
 		}
 	}
-}
-
-void mkern_main_tr()
-{
-  init_vga(CYAN, BLACK);
-  printf("\nVGA baslatildi");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
-  suspend(2);
-  init_gdt();
-  printf("\nGDT baslatildi");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
-  suspend(2);
-  init_idt();
-  asm volatile("\tmov $12395, %eax");
-  asm volatile("\tint $0");
-  printf("\nIDT baslatildi");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
-  irq_install();
-  printf("\nIRQ baslatildi");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
-  printf("Loading main menu.");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(2);
-  clscr();
-  init_vga(CYAN, BLACK);
-  clscr();
-  newmain();
 }

@@ -38,6 +38,7 @@ int pbt(){
 
 static void timer_callback(registers_t regs)
 {
+   clscr();
    tick++;
    gotoxy(20, 1);
    printf("AhnTri Stopwatch");

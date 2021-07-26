@@ -57,6 +57,7 @@ char get_ascii_char(uint8 key_code)
     case KEY_AND : return '&';
     case KEY_STAR : return '*';
     case KEY_TAB : return '       ';
+    case KEY_BACKSPACE : return '\b';
     default : return 0;
   }
 }

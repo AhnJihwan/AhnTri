@@ -53,6 +53,8 @@ void framebuffer_putchar(char ch, uint32_t color){
   if(ch=='\n'|cur_x>=framebuffer_width/FONT_WIDTH){
     cur_x=0;
     cur_y+=1;
+  }else if(ch=='\b'){
+    framebuffer_backspace(color);
   }else{
     for(xx=0;xx<8;xx++){
       for(yy=0;yy<8;yy++){

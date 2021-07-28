@@ -25,6 +25,7 @@ void display_menu_ccalc_adv()
 
 void advccalc(){
 	int ccho, num1, num2;
+	int i;
 	while(1){
 		display_menu_ccalc_adv();
 		printf("\n\nADV> ");
@@ -68,6 +69,18 @@ void advccalc(){
 				print_int(num2%360);
 				print_char(248);
 				printf(".");
+				break;
+			case 7:
+				printf("Arthmatic Sequence an=a1+(n-1)*d");
+				printf("\nYour a1: ");
+				num1 = read_int();
+				printf("\nYour d: ");
+				num2 = read_int();
+				for(i=1;i<=20;i++){
+					printf("\n");
+					print_int(num1+i*num2=num2);
+					printf(", ");
+				}
 				break;
 			case 0:
 				ccalc();

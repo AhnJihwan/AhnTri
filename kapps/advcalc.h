@@ -20,6 +20,8 @@ void display_menu_ccalc_adv()
   printf("\n");
   printf("Press [6] for Deg <=> Rad           ");
   printf("\n");
+  printf("Press [7] for Arthimatic Sequence   ");
+  printf("\n");
   printf("Press [0] for Exit                  ");
 }
 
@@ -78,7 +80,7 @@ void advccalc(){
 				num2 = read_int();
 				for(i=1;i<=20;i++){
 					printf("\n");
-					print_int(num1+i*num2=num2);
+					print_int(num1+i*num2-num2);
 					printf(", ");
 				}
 				break;

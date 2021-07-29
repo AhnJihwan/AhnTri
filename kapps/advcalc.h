@@ -81,7 +81,10 @@ void advccalc(){
 				for(i=1;i<=20;i++){
 					printf("\n");
 					print_int(num1+i*num2-num2);
-					printf(", ");
+					if(i<20){
+						printf(", ");
+					}
+					suspend(1);
 				}
 				break;
 			case 0:

@@ -73,6 +73,7 @@ void credits(){
 	printf("Parsa Mahmoudy who lives in Iran\n");
 	printf("Riahiamirreza Joined on Aug 26, 2019\n");
 	printf("BOBBYWY Joined on Apr 2, 2015\n");
+	printf("Thanks to color contributer: Ethan R. Umut Y, Jihwan A. BK A.");
 	suspend(1000);
 	clscr();
 	printf("==Stargazers, who make AhnTri AhnTri.==\n");

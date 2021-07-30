@@ -41,7 +41,7 @@ void newmain(){
 	framebuffer_putchar(219, 0x8f8f8f);
 	framebuffer_putchar(219, 0x65abe7);
 	framebuffer_putchar(219, 0xa3bd8d);
-	framebuffer_putchar(219, 0x00ffff);
+	framebuffer_putchar(219, 0xe61e2b);
 	framebuffer_putchar(219, 0xff5555);
 	framebuffer_putchar(219, 0xba9da2);
 	framebuffer_putchar(219, 0xeaa442);

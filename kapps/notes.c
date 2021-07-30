@@ -22,29 +22,29 @@ void notetake()
 
 void display_help()
 {
-  gotoxy(25, 0);
-  framebuffer_putstr("\n                           ", 0x65abe7);
-  framebuffer_putstr(" /-----------------------/ |", 0x65abe7);
-  framebuffer_putstr("\n                           ", 0x65abe7);
-  framebuffer_putstr(" ------------------------| |", 0x65abe7);
-  framebuffer_putstr("\n                           ", 0x65abe7);
-  framebuffer_putstr("|    AhnTri NoteTaker    | |", 0x65abe7);
-  framebuffer_putstr("\n                           ", 0x65abe7);
-  framebuffer_putstr("|-~=-~=~--v1.3-~=~--~=~--| |", 0x65abe7);
-  framebuffer_putstr("\n                           ", 0x65abe7);
-  framebuffer_putstr("| Take notes and do not  | |", 0x65abe7);
-  framebuffer_putstr("\n                           ", 0x65abe7);
-  framebuffer_putstr("| shut down the PC then. | |", 0x65abe7);
-  framebuffer_putstr("\n                           ", 0x65abe7);
-  framebuffer_putstr("-------------------------|/ ", 0x65abe7);
+  framebuffer_clscr(0x000000);
+  framebuffer_putstr("\n                           ", 0x015229);
+  framebuffer_putstr(" /-----------------------/ |", 0x015229);
+  framebuffer_putstr("\n                           ", 0x015229);
+  framebuffer_putstr(" ------------------------| |", 0x015229);
+  framebuffer_putstr("\n                           ", 0x015229);
+  framebuffer_putstr("|    AhnTri NoteTaker    | |", 0x015229);
+  framebuffer_putstr("\n                           ", 0x015229);
+  framebuffer_putstr("|-~=-~=~--v1.3-~=~--~=~--| |", 0x015229);
+  framebuffer_putstr("\n                           ", 0x015229);
+  framebuffer_putstr("| Take notes and do not  | |", 0x015229);
+  framebuffer_putstr("\n                           ", 0x015229);
+  framebuffer_putstr("| shut down the PC then. | |", 0x015229);
+  framebuffer_putstr("\n                           ", 0x015229);
+  framebuffer_putstr("-------------------------|/ ", 0x015229);
 }
 
 void notes(){
 	display_help();
 	printf("\nStarting Notetaker");
 	suspend(100);
-	clscr();
-	framebuffer_putstr("\nWelcome to AhnTri NoteTaker.\n", BLACK, GREY);
+	framebuffer_clscr(0x000000);
+	framebuffer_putstr("\nWelcome to AhnTri NoteTaker.\n", 0xa3bd8d);
 	printf("Hint: press [Esc] or [Tab] to exit AhnTri NoteTaker\n================================================================================");
 	notetake();
 }

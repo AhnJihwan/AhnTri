@@ -2,7 +2,7 @@
 #include "../libc/atclib.h"
 
 process art(){
-	clscr();
+	framebuffer_clscr(0x65abe7);
 	printf("                    AhnTri Sun\n\n");
 	framebuffer_putstr("```````...................-.--.............```````", BROWN);
 	suspend(1);

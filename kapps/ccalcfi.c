@@ -55,14 +55,9 @@ void rtn(int* num1, int *num2)
 {
   printf("\nEnter first number");
   suspend(ccalsusp);
-  gotoxy(2, 2);
   *num1 = read_int();
-  gotoxy(0, 5);
-  printf("Enter second number");
+  printf("\nEnter second number");
   suspend(ccalsusp);
-  gotoxy(2, 2);
-  printf("[                         ] ");
-  gotoxy(2, 2);
   *num2 = read_int();
 }
 
@@ -115,13 +110,11 @@ void ccalc(){
 			case 1:
 				printf("\nADDING 2 NUMERALS");
 				rtn(&num1, &num2);
-				gotoxy(2, 2);
 				adton(num1, num2);
 				break;
 			case 2:
 				printf("\nSUBTRACTING 2 NUMERALS");
 				rtn(&num1, &num2);
-				gotoxy(2, 2);
 				subton(num1, num2);
 				break;
 			case 3:

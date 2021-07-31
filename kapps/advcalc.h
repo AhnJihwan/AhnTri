@@ -26,7 +26,7 @@ void display_menu_ccalc_adv()
 }
 
 void advccalc(){
-	  framebuffer_clscr(0x2b0303);
+	framebuffer_clscr(0x2b0303);				//Advanced CCALC does not rely on the default theme...
 	int ccho, num1, num2;
 	int i;
 	while(1){

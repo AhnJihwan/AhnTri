@@ -48,7 +48,7 @@ void display_menu_ccalc()
   printf("\n");
   printf("For More, press [0] for help. ");
   suspend(20);
-  framebuffer_clscr(0x013571);
+  framebuffer_clscr(0x2b0303);
 }
 
 void rtn(int* num1, int *num2)
@@ -213,6 +213,6 @@ void ccalc(){
 		}
 		printf("\n\nPress any key to reload screen...");
 		getchar();
-		framebuffer_clscr(0xeaa442);
+		framebuffer_clscr(0x2b0303);
 	}
 }

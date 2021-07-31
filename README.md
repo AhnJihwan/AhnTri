@@ -1,18 +1,13 @@
 ![AhnTriLogo](at.jpg)
 # AhnTri OS
-🇰🇷🇮🇳🇺🇸🇮🇹🇹🇷
-# Go Korea in the Olympics!
-# Go KR IN US IT TR in the Olymopics!!
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
-# Getting some Stargazer's Languages: https://forms.gle/GcfstgAjpzB3h9JP7
-# BTW don't email me in chinese or japanese. I'm south korean guys.
-Ahn is a **Korean** Last name. It's **not** chinese, don't mail or redditchat me in chinese.
-I can't understand them.
 # Needed to be built with Xubuntu 20.04/18.04.
 http://mirror.us.leaseweb.net/ubuntu-cdimage/xubuntu/releases/20.04/release/xubuntu-20.04.2.0-desktop-amd64.iso
 https://cdimage.ubuntu.com/xubuntu/releases/20.04.2/release/xubuntu-20.04.2.0-desktop-amd64.iso
 https://cdimage.ubuntu.com/xubuntu/releases/18.04/release/xubuntu-18.04.5-desktop-i386.iso
 
+# Colors
+16 Default Colors + 2 Premium colors
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB
@@ -43,6 +38,3 @@ menuentry "AhnTriOS" {
 	multiboot /boot/directory/of/your/os/ATOS1.bin
 }
 ```
-
-# The UI now looks like the 8090 TUI.
-- And other modern-like UI apps.

@@ -98,7 +98,7 @@ void advccalc(){
 				num2 = read_int();
 				for(i=1;i<=20;i++){
 					printf("\n");
-					print_int(num1*powt(num2, i-1));
+					print_int(num1*xpy(num2, i-1));
 					if(i<20){
 						printf(", ");
 					}

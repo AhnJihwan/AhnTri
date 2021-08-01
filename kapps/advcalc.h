@@ -22,6 +22,8 @@ void display_menu_ccalc_adv()
   printf("\n");
   printf("Press [7] for Arthimatic Sequence   ");
   printf("\n");
+  printf("Press [8] for Geometric Sequence   ");
+  printf("\n");
   printf("Press [0] for Exit                  ");
 }
 
@@ -82,6 +84,21 @@ void advccalc(){
 				for(i=1;i<=20;i++){
 					printf("\n");
 					print_int(num1+i*num2-num2);
+					if(i<20){
+						printf(", ");
+					}
+					suspend(1);
+				}
+				break;
+			case 7:
+				printf("Geometric Sequence an=a1*r^(n-1)");
+				printf("\nYour a1: ");
+				num1 = read_int();
+				printf("\nYour r: ");
+				num2 = read_int();
+				for(i=1;i<=20;i++){
+					printf("\n");
+					print_int(num1*powt(num2, i-1));
 					if(i<20){
 						printf(", ");
 					}

@@ -90,7 +90,7 @@ void advccalc(){
 					suspend(1);
 				}
 				break;
-			case 7:
+			case 8:
 				printf("Geometric Sequence an=a1*r^(n-1)");
 				printf("\nYour a1: ");
 				num1 = read_int();

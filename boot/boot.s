@@ -1,3 +1,4 @@
+
 #Assembly TriOS bootloader
 // Made in Android
 .set FLAGS,    1<<2		     # Flag are 1<<2

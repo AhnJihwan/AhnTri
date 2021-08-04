@@ -117,12 +117,12 @@ int LOGICAL(char *l, int a, int b){
 int sumofap(int a, int d, int n){
 	int i, j;
 	n--;
-	i = r*d+2*a;
+	i = n*d+2*a;
 	n++;
 	j=n*i/2;
 	return j;
 }
 
-int soap(int a, int d, int m){		//Sigma Of A.P.
+int soap(int a, int d, int n, int m){		//Sigma Of A.P.
 	return sumofap(a, d, n)-sumofap(a, d, m);
 }

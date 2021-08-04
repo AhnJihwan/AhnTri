@@ -200,6 +200,19 @@ void ccalc(){
 				rtn(&num1, &num2);
 				print_int(LOGICAL("xor", num1, num2));
 				break;
+			case 19:
+				printf("n\n");
+				print_char(228);
+				printf(" = {a+(n-1)d}\n");
+				printf("i=m\n");
+				printf("Your a: ");
+				read_int(&num1);
+				printf("Your d: ");
+				read_int(&num2);
+				printf("Your n: ");
+				read_int(&po1);
+				print_int(soap(num1, num2, num3, po1);
+				break;
 			default:
 				ccalc();
 				break;

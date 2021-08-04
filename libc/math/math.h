@@ -91,6 +91,7 @@ int powf(int a){						//4
 int powfi(int a){						//5
     xpy(a, 5);
 }
+
 int log(int a, int b){
                 return (b > 1) ? 1 + log(a, b / a) : 0;
 }
@@ -111,4 +112,17 @@ int LOGICAL(char *l, int a, int b){
 		return x;
 	}
 	return x;
+}
+
+int sumofap(int a, int d, int n){
+	int i, j;
+	n--;
+	i = r*d+2*a;
+	n++;
+	j=n*i/2;
+	return j;
+}
+
+int soap(int a, int d, int m){		//Sum Of A.P.
+	return sumofap(a, d, n)-sumofap(a, d, m);
 }

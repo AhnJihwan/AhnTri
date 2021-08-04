@@ -211,7 +211,7 @@ void ccalc(){
 				read_int(&num2);
 				printf("Your n: ");
 				read_int(&po1);
-				print_int(soap(num1, num2, num3, po1);
+				print_int(soap(num1, num2, num3, po1));
 				break;
 			default:
 				ccalc();

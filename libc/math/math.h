@@ -123,6 +123,6 @@ int sumofap(int a, int d, int n){
 	return j;
 }
 
-int soap(int a, int d, int m){		//Sum Of A.P.
+int soap(int a, int d, int m){		//Sigma Of A.P.
 	return sumofap(a, d, n)-sumofap(a, d, m);
 }

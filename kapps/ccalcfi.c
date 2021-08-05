@@ -206,13 +206,13 @@ void ccalc(){
 				printf(" = {a+(n-1)d}\n");
 				printf("i=m\n");
 				printf("Your a: ");
-				read_int(&num1);
+				num1 = read_int();
 				printf("Your d: ");
-				read_int(&num2);
+				num2 = read_int();
 				printf("Your n: ");
-				read_int(&po1);
+				po1 = read_int();
 				printf("Your m: ");
-				read_int(&num3);
+				num3 = read_int();
 				print_int(soap(num1, num2, po1, num3));
 				break;
 			default:

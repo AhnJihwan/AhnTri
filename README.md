@@ -39,7 +39,7 @@ menuentry "AhnTriOS" {
 }
 ```
 
-# Screenshots!
+# Screenshots
 ![sshot1](sshot1.png)
 ![sshot2](sshot2.png)
 ![sshot3](sshot3.png)

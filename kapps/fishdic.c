@@ -33,6 +33,12 @@ void fdic(){
 		}else if(strcmp(input, "in terms of")==0 || strcmp(input, "in light of")==0 || strcmp(input, "in regard to")==0){
 			framebuffer_putstr("in relation to something; from the side", 0xc3a984);
 			free(input);
+		}else if(strcmp(input, "act as")==0 || strcmp(input, "serve as")==0 || strcmp(input, "function as")==0){
+			framebuffer_putstr("To play the role of", 0xc3a984);
+			free(input);
+		}else if(strcmp(input, "prove to")==0 || strcmp(input, "turn out to")==0){
+			framebuffer_putstr("be discovered to be", 0xc3a984);
+			free(input);
 		}else{
 			framebuffer_putstr("Word does not exist. Please contribute if you know that word.", 0xc3a984);
 			

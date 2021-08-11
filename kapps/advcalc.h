@@ -27,6 +27,20 @@ void display_menu_ccalc_adv()
   printf("Press [0] for Exit                  ");
 }
 
+int fib(int max){				//Fibonacci Seq I made using this:
+        int n   = 1;				//a  = a    + a
+        int n1  = 1;				// n+2  n+1    n
+        int n2;
+        printf("1, 1, ");
+        while(n2<=max){
+                n2 = n+n1;
+                printf(", ");
+                print_int(n2);
+                n = n1;
+                n1 = n2;
+        }
+}
+
 void advccalc(){
 	framebuffer_clscr(0x2b0303);				//Advanced CCALC does not rely on the default theme...
 	int ccho, num1, num2;
@@ -104,6 +118,11 @@ void advccalc(){
 					}
 					suspend(1);
 				}
+				break;
+			case 9:
+				printf("max: ");
+				num1 = read_int();
+				fib(num1);
 				break;
 			case 0:
 				ccalc();

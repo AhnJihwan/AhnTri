@@ -24,6 +24,8 @@ void display_menu_ccalc_adv()
   printf("\n");
   printf("Press [8] for Geometric Sequence   ");
   printf("\n");
+  printf("Press [9] for Fibonacci Sequence   ");
+  printf("\n");
   printf("Press [0] for Exit                  ");
 }
 

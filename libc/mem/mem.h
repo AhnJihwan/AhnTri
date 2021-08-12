@@ -10,4 +10,14 @@ void memcpy(void *dest, void *src, signed n)
    char *cdest = (char *)dest; 
    for (int i=0; i<n; i++) 
        cdest[i] = csrc[i]; 
-} 
+}
+
+void *memset(void *str, int a, uint8_t n){
+        int i = 0;
+        uint8_t *ptr = str;
+        while(n>0){
+                *ptr = a;
+                n--;
+                ptr++;
+        }
+}

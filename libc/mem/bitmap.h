@@ -13,3 +13,7 @@ bitmap[]	0	0	0	0	0	0	0	0         0
 void bitmap_set(uint32_t *bitmap, int bit) {
     bitmap[bit / BITMAP_ROW_SIZE] |= (1 << (bit % BITMAP_ROW_SIZE));
 }
+
+void bitmap_unset(uint32_t *bitmap, int bit) {
+    bitmap[bit / 32] &= ~(1 << (bit % 32));
+}

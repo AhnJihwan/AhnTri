@@ -2,7 +2,7 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot paging atclib kernel ccalc irq timer framebuffer qemudrivers serialdrivers advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa ld buildgrub clean
+make_deafult: bboot paging atclib kernel ccalc irq timer framebuffer qemudrivers serialdrivers advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa pmm ld buildgrub clean
 
 #Build kernel main image
 kernel: main.c
@@ -101,6 +101,9 @@ qemudrivers: drivers/qemu.c
 
 serialdrivers: drivers/serial.c
 	gcc -m32 -c drivers/serial.c -o serial.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
+pmm: mm/pmm.c
+	gcc -m32 -c mm/pmm.c -o pmm.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 clean:
 	rm *.o

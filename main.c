@@ -20,6 +20,7 @@
 #include "lang/spanish/engsok/es.h"
 #include "boot/multiboot.h"
 #include "mm/pmm.h"
+#include "mm/mmap.h"
 
 //Define Macros
 #define CHECK_FLAG(flags,bit)   ((flags) & (1 << (bit)))

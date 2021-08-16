@@ -148,10 +148,12 @@ void mkern_main(multiboot_info_t* multiboot)
   asm volatile("\tmov $12395, %eax");
   asm volatile("\tint $0");
   irq_install();
-  printf_mmap_addr(multiboot);
   extern uint8_t *_kernel_end;								//Defined in Linker.ld
   pmm_init((uint32_t) &_kernel_end, mem_size);
   qemu_printf_string("Everything is initialized. System is starting...");
   init_tty(multiboot, 0x7fa49d, 0x000000);
+  printf_mmap_addr(multiboot);
+  suspend(20);
+  framebuffer_clscr(0x000000);
   newmain();
 }

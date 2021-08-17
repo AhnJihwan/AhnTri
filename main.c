@@ -17,7 +17,7 @@
 #include "arch/i386/irq.h"
 #include "lang/korean/romanized/kr.h"
 #include "lang/turk/romanized/tr.h"
-#include "lang/spanish/engsok/es.h"
+#include "lang/italian/italian.h"
 #include "boot/multiboot.h"
 #include "mm/pmm.h"
 #include "mm/mmap.h"

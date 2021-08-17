@@ -1,4 +1,4 @@
-//Italian Language Pack by Ivan Gualandri
+//This translation is copyrighted by Ivan Gualandri
 
 void display_menu_it()
 {

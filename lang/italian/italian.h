@@ -4,9 +4,9 @@ void display_menu_it()
 {
   printf(" ");
   printf("    Terminal - Menu principale  ");
-  printf("-", YELLOW, BLACK);
-  printf("+", GREEN, BLACK);
-  printf("x\n", RED, BLACK);
+  printf("-");
+  printf("+");
+  printf("x\n");
   printf(" ");
   printf("      AhnTri Terminal        \n");
   framebuffer_putchar(178, 0x8f8f8f);

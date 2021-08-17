@@ -76,8 +76,6 @@ void kernmain_it(){
 			pedx();
 		} else if(strcmp(choice, "atfork")==0 || strcmp(choice, "aatfork")==0){
 			fbomb();
-		} else if(strcmp(choice, "homenu")==0 || strcmp(choice, "ahomenu")==0){
-			homem();
 		} else if(strcmp(choice, "memor")==0 || strcmp(choice, "amemor")==0 || strcmp(choice, "memset")==0){
 			memanset();
 		} else if(strcmp(choice, "mp")==0 || strcmp(choice, "memprintf")==0){

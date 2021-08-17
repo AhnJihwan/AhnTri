@@ -14,7 +14,7 @@ void display_menu_it()
   os_color_char(178, GREY, BLACK);
   os_print_color("Digita help for la guida o o\n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
-  os_print_color("poi il relativo pulsante per ogni applicazione.", BLACK, WHITE);
+  os_print_color("poi il relativo pulsante per ogni applicazione.\n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
   os_print_color("                             \n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);

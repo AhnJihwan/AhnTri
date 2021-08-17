@@ -47,7 +47,7 @@ void advset(){
 void lang(){
 	char capsz = KEY_A;
 	printf("Select Text color");
-	printf("\nDeafult(1). English\n2. Spanish\n3. Korean\n4. Turk\n");
+	printf("\nDeafult(1). English\n2. Italian\n3. Korean\n4. Turk\n");
 	suspend(3);
 	capsz = get_input_keycode();
 	if(capsz == KEY_1){

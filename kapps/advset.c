@@ -56,8 +56,8 @@ void lang(){
 		kernmain();
 	} else if(capsz == KEY_2){
 		clscr();
-		qemu_printf_string("Idioma: establezca en español.");
-		kernmain_es();
+		qemu_printf_string("Lingua: impostato su italiano.");
+		kernmain_it();
 	} else if(capsz == KEY_3){
 		clscr();
 		qemu_printf_string("언어: 한국어로 설정되었습니다.");

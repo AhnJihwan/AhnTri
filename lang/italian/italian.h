@@ -1,7 +1,9 @@
+//Italian Language Pack by Ivan Gualandri
+
 void display_menu_it()
 {
   printf(" ");
-  os_print_color("    Terminal - main menu  ", WHITE, GREY);
+  os_print_color("    Terminal - Menu principale  ", WHITE, GREY);
   os_print_color("-", YELLOW, BLACK);
   os_print_color("+", GREEN, BLACK);
   os_print_color("x\n", RED, BLACK);
@@ -10,9 +12,9 @@ void display_menu_it()
   os_color_char(178, GREY, BLACK);
   os_print_color("  -~=-~=~--~=~--~=~--~=~-=-  \n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
-  os_print_color("   Type help for help or o   \n", BLACK, WHITE);
+  os_print_color("Digita help for la guida o o\n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
-  os_print_color("   ther key for each apps.   \n", BLACK, WHITE);
+  os_print_color("poi il relativo pulsante per ogni applicazione.", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
   os_print_color("                             \n", BLACK, WHITE);
   os_color_char(178, GREY, BLACK);
@@ -105,73 +107,8 @@ void kernmain_it(){
 		}else{
 			printf("\n");
 			printf(choice);
-			printf(": command not found");
+			printf(": comando non trovato");
 			qemu_printf_string("Command that was inputted was not found. Sorry.");
 		}
 	}
-}
-
-void mkern_main_it()
-{
-  init_vga(CYAN, BLACK);
-  printf("\nVGA initialization");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
-  suspend(2);
-  init_gdt();
-  printf("\nGDT initialization");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
-  suspend(2);
-  init_idt();
-  asm volatile("\tmov $12395, %eax");
-  asm volatile("\tint $0");
-  printf("\nIDT initialization");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
-  irq_install();
-  printf("\nIRQ initialization");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(" [OK]\n");
-  qemu_printf_string("Everything is initialized. System is starting...");
-  printf("Loading main menu.");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(1);
-  printf(".");
-  suspend(2);
-  clscr();
-  init_vga(CYAN, BLACK);
-  #include "strtscrn.h"
-  strt_scrn();
-  clscr();
-  newmain();
 }

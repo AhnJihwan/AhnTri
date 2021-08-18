@@ -22,3 +22,15 @@ void pmm_init(uint32_t pmmap_addr, uint8_t size) {
     }
     memset(pmmap, 0xFF, pmmap_size);                      //Memset 0xFF to pmmap of pmmap size.
 }
+
+void pmm_region_init(uint32_t base, uint8_t size) {
+    uint8_t blocks  = size / BLOCK_SIZE;
+    uint32_t align = base / BLOCK_SIZE;
+    uint8_t i;
+    for (i = 0; i < blocks; i++) {
+        bitmap_unset(pmmap, align++);
+        used_blocks--;
+    }
+    bitmap_set(pmmap, 0);
+}
+

@@ -123,6 +123,33 @@ int read_uint()
   return atoui(data);
 }
 
+void printf_hex(uint32_t n)
+{
+    int tmp;
+    printf("0x");
+    char noZeroes = 1;
+    int i;
+    for (i = 28; i > 0; i -= 4){
+        tmp = (n >> i) & 0xF;
+        if (tmp == 0 && noZeroes != 0){
+            continue;
+        }
+        if (tmp >= 0xA){
+            noZeroes = 0;
+            framebuffer_putchar(tmp-0xA+'a' );
+        } else{
+            noZeroes = 0;
+            framebuffer_putchar( tmp+'0' );
+        }
+    }
+    tmp = n & 0xF;
+    if (tmp >= 0xA){
+        framebuffer_putchar(tmp-0xA+'a');
+    } else{
+        framebuffer_putchar(tmp+'0');
+    }
+}
+
 char getchar()
 {
   char keycode = 0;

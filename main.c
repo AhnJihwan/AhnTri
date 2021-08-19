@@ -21,6 +21,8 @@
 #include "boot/multiboot.h"
 #include "mm/pmm.h"
 #include "mm/mmap.h"
+#include "drivers/sound.h"
+#include "strtscrn.h"
 
 //Define Macros
 #define CHECK_FLAG(flags,bit)   ((flags) & (1 << (bit)))
@@ -139,7 +141,27 @@ void kernmain(){
 		}
 	}
 }
-
+ 
+ //Welcome sound
+ void beep() {
+	play_sound(100);
+	suspend(4);
+	play_sound(300);
+	suspend(2);
+	play_sound(50);
+	suspend(1);
+	play_sound(300);
+	suspend(3);
+	play_sound(100);
+	suspend(5);
+	play_sound(50);
+	suspend(1);
+	play_sound(300);
+	suspend(2);
+	play_sound(50);
+	nosound();
+}
+ 
 void mkern_main(multiboot_info_t* multiboot)
 {
   if (CHECK_FLAG (multiboot->flags, 12)){
@@ -156,8 +178,11 @@ void mkern_main(multiboot_info_t* multiboot)
   qemu_printf_string("Everything is initialized. System is starting...");
   init_tty(multiboot, 0x7fa49d, 0x000000);
   printf_mmap_addr(multiboot);
+  beep();
   print_kernel_map();
-  suspend(30);
+  suspend(20);
+  framebuffer_clscr(0x000000);
+  strt_scrn();
   framebuffer_clscr(0x000000);
   newmain();
 }

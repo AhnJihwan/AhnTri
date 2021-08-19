@@ -128,6 +128,9 @@ void kernmain(){
 		}else if(strcmp(choice, "credit")==0 || strcmp(choice, "credits")==0){
 			clscr();
 			credits();
+		}else if(strcmp(choice, "kmap")==0 || strcmp(choice, "kmap kernel")==0){
+			clscr();
+			print_kernel_map();
 		}else{
 			printf("\n");
 			printf(choice);
@@ -153,7 +156,8 @@ void mkern_main(multiboot_info_t* multiboot)
   qemu_printf_string("Everything is initialized. System is starting...");
   init_tty(multiboot, 0x7fa49d, 0x000000);
   printf_mmap_addr(multiboot);
-  suspend(20);
+  print_kernel_map();
+  suspend(30);
   framebuffer_clscr(0x000000);
   newmain();
 }

@@ -144,21 +144,14 @@ void kernmain(){
  
  //Welcome sound
  void beep() {
-	play_sound(100);
+	play_sound(1000);
 	suspend(4);
-	play_sound(300);
+	play_sound(400);
 	suspend(2);
-	play_sound(50);
-	suspend(1);
-	play_sound(300);
-	suspend(3);
-	play_sound(100);
+	play_sound(740);
+	suspend(7);
+	play_sound(800);
 	suspend(5);
-	play_sound(50);
-	suspend(1);
-	play_sound(300);
-	suspend(2);
-	play_sound(50);
 	nosound();
 }
  

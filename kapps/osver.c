@@ -30,12 +30,12 @@ Terminal name       OS_NUM
 */
 
 void osver(){
-	printf("        /\\       OS: AhnTri OS 1.2.4 i386 Crap Covid   ");
+	printf("        /\\       OS: AhnTri OS 1.2.5 i386 Fluent Flu     ");
 	printf("\n       /  \\      System:  ");
 	bitidentify();
 	printf("                   ");
 	printf("\n      /    \\     Kernel: AhnTri 1.20 +                 ");
-	printf("\n     /      \\    Terminal: Terminal 124                ");
+	printf("\n     /      \\    Terminal: Terminal 125                ");
 	printf("\n    /        \\   Themes: AhnTri                        ");
 	printf("\n   /  AhnTri  \\                                        ");
 	printf("\n  /____________\\                                       ");

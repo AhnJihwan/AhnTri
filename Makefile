@@ -102,6 +102,9 @@ qemudrivers: drivers/qemu.c
 serialdrivers: drivers/serial.c
 	gcc -m32 -c drivers/serial.c -o serial.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
+cmos: drivers/cmos.c
+	gcc -m32 -c drivers/cmos.c -o cmos.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
 pmm: mm/pmm.c
 	gcc -m32 -c mm/pmm.c -o pmm.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 

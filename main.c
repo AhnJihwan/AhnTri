@@ -173,6 +173,7 @@ void mkern_main(multiboot_info_t* multiboot)
   printf_mmap_addr(multiboot);
   beep();
   print_kernel_map();
+  read_rtc();
   suspend(20);
   framebuffer_clscr(0x000000);
   strt_scrn();

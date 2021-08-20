@@ -2,7 +2,7 @@
 #include "../kernel.h"
 #include "../kinc/api.h"
 #include "advcalc.h"
-#define ccalsusp 10
+#define ccalsusp 16
 //Ccalc for include
 //Made in Xubuntu
 // Simple calculations

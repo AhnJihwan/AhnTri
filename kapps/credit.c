@@ -50,11 +50,12 @@ void credits(){
 	printf("Developer: Ivan G.\n");
 	printf("Developer: Ethan R.\n");
 	printf("Developer: Gauravsingh S.\n");
-	printf("The Developer's piece of code is protected by the Apache 2.0 licence and it needs warranty from the following code's creator.");
 	printf("English Language Pack: Jihwan A. Ivan G. Ethan R.\n");
-	printf("Spanish Language Pack: Atie P.\n");
+	printf("Italian Language Pack: Ivan G.\n");
 	printf("Korean Language Pack: Jihwan A.");
 	printf("Turk Language Pack: Umut Y.\n");
+	printf("Thanks to color contributer: Ethan R. Umut Y, Jihwan A. BK A.");
+	printf("The Developer's piece of code is protected by the Apache 2.0 licence and it needs warranty from the following code's creator.");
 	printf("=======Additional thanks to ...========\n");
 	printf("BK Ahn(Computer)\n");
 	printf("Ethan Recendez and Justin Y.(made the first Fish Dictionary(2017) with core dev)\n");
@@ -73,7 +74,6 @@ void credits(){
 	printf("Parsa Mahmoudy who lives in Iran\n");
 	printf("Riahiamirreza Joined on Aug 26, 2019\n");
 	printf("BOBBYWY Joined on Apr 2, 2015\n");
-	printf("Thanks to color contributer: Ethan R. Umut Y, Jihwan A. BK A.");
 	suspend(1000);
 	clscr();
 	printf("==Stargazers, who make AhnTri AhnTri.==\n");

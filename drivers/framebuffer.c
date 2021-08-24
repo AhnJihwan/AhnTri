@@ -54,7 +54,7 @@ void framebuffer_putchar(char ch, uint32_t color){
     cur_x=0;
     cur_y+=1;
   }else if(ch=='\b'){
-    framebuffer_backspace(color);
+    framebuffer_backspace(bg_color);
   }else{
     for(xx=0;xx<8;xx++){
       for(yy=0;yy<8;yy++){
@@ -69,7 +69,7 @@ void framebuffer_putchar(char ch, uint32_t color){
 
 void framebuffer_backspace(uint32_t color){ /*prints a 8x8 glyph on previous glyph*/
     cur_x--;
-    framebuffer_putchar(253, color);
+    framebuffer_putchar(219, color);
     cur_x--;
 }
 

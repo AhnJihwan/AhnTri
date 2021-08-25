@@ -1,5 +1,6 @@
 #include "gcc/stdint-gcc.h"
 #include "types/ctypes.h"
+#include "stdbool/stdbool.h"
 #define OS_suspend 16
 #define NULL 0
 //String

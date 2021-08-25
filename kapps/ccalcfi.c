@@ -215,6 +215,25 @@ void ccalc(){
 				num3 = read_int();
 				print_int(soap(num1, num2, po1, num3));
 				break;
+			case 20:
+				printf("n\n");
+				printf("lim f(x)    f(x) = b^c");
+				printf(" \nx-->a\n");
+				printf("is your a ");
+				print_char(236);
+				printf("? 1 for yes, 2 for no");
+				num1 = read_int();
+				if(num1 == 1){
+					print_int(expfxlim(false, 1, 2, true));
+				}else if(num1 == 2){
+					printf("\nyour b: ");
+					num2 = read_int();
+					printf("\nyour c: ");
+					num3 = read_int();
+					print_int(expfxlim(true, num2, num3, false));
+				}
+				printf("\ninfinity will be printed as 1000000.");
+				break;
 			default:
 				ccalc();
 				break;

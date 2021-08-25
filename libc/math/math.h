@@ -3,6 +3,9 @@
 // Define what ppl use a lot
 #define Math_PI = 3.14159265359;					//Stable...
 #define ROOT_TWO = 1.414213562373095048801688724209698079;
+#define finity_bool true
+#define infinity_bool false
+#define infinity 1000000
 
 int addnpth(int a, int b){						//This is for (a+b)^3
     int k;
@@ -125,4 +128,21 @@ int sumofap(int a, int d, int n){
 
 int soap(int a, int d, int n, int m){		//Sigma Of A.P.
 	return sumofap(a, d, n)-sumofap(a, d, m);
+}
+
+int expfxlim(bool a, int b, int c, bool inf){				//lim f(x)            f(x)=b^c
+	int i;										  //x-->a
+	if(a==true){									    //if a is not ∞
+		i = xpy(b, c);								//Ut us b^c
+	}else if(a==false){								//if a is ∞
+		if(inf==true){								//if a is ∞
+			i = infinity;							//it is ∞
+			return i;
+		}else if(inf==false){						//if a is -∞
+			i = 0;								//it is 0
+			return i;
+		}
+		return i;
+	}
+	return i;
 }

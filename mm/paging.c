@@ -12,9 +12,9 @@ void clear_page_directory(uint32_t page_dir){
 
 page_table_t page_table[1024] __attribute__((aligned(4096)));
 
-void clear_page_table(uint32_t page_table){
+void clear_page_table(uint32_t page_tble){
   uint32 i;
   for(i = 0; i < 1024; i++){
-    first_page_table[i] = (i * 0x1000) | 3;
+    page_tble[i] = (i * 0x1000) | 3;
   }
 }

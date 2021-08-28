@@ -5,15 +5,15 @@
 void apache(){
 	printf("                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/");
 	printf("\nPermissions\n");
-	framebuffer_putchar(251, 0x015229);
+	framebuffer_putchar(251, 0x0e9f68);
 	printf(" Commercial use\n");
-	framebuffer_putchar(251, 0x015229);
+	framebuffer_putchar(251, 0x0e9f68);
 	printf(" Modification\n");
-	framebuffer_putchar(251, 0x015229);
+	framebuffer_putchar(251, 0x0e9f68);
 	printf(" Distribution\n");
-	framebuffer_putchar(251, 0x015229);
+	framebuffer_putchar(251, 0x0e9f68);
 	printf(" Patent use\n");
-	framebuffer_putchar(251, 0x015229);
+	framebuffer_putchar(251, 0x0e9f68);
 	printf(" Private use\n");
 	printf("\nLimitations");
 	printf("\nx");

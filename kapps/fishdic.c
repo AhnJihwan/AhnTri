@@ -7,7 +7,7 @@ void fdic(){
 	framebuffer_clscr(0x013571);
 	char * input;
 	while(1){
-		framebuffer_putstr("\n\nFDic{ ", 0xc3a984);
+		framebuffer_putstr("\n\n><(((@)> ", 0xc3a984);
 		input = read_char();
 		if(strcmp(input, "abandon")==0 || strcmp(input, "desert")==0){
 			framebuffer_putstr("verb-cease to support or look after (someone)", 0xc3a984);
@@ -39,6 +39,8 @@ void fdic(){
 		}else if(strcmp(input, "prove to")==0 || strcmp(input, "turn out to")==0){
 			framebuffer_putstr("be discovered to be", 0xc3a984);
 			free(input);
+		}else if(strcmp(input, "exit")==0 || strcmp(input, "out")==0){
+			kernmain();
 		}else{
 			framebuffer_putstr("Word does not exist. Please contribute if you know that word.", 0xc3a984);
 			

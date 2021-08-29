@@ -133,6 +133,9 @@ void kernmain(){
 		}else if(strcmp(choice, "kmap")==0 || strcmp(choice, "kmap kernel")==0){
 			clscr();
 			print_kernel_map();
+		}else if(strcmp(choice, "clibver")==0 || strcmp(choice, "atclibver")==0){
+			clscr();
+			clibver();
 		}else{
 			printf("\n");
 			printf(choice);

@@ -12,7 +12,7 @@ uint16* vga_buffer;
 
 #define BLACK            0x000000
 #define BLUE             0x013571
-#define GREEN            0x015229
+#define GREEN            0x0e9f68
 #define CYAN             0x7fa49d
 #define RED              0xf70f0f
 #define MAGENTA          0x741b47

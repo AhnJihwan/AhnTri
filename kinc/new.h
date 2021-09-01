@@ -32,7 +32,7 @@ void newmain(){
 	printf("\n\n");
 	framebuffer_putchar(219, 0x000000);
 	framebuffer_putchar(219, 0x013571);
-	framebuffer_putchar(219, 0x015229);
+	framebuffer_putchar(219, 0x0e9f68);
 	framebuffer_putchar(219, 0x7fa49d);
 	framebuffer_putchar(219, 0xf70f0f);
 	framebuffer_putchar(219, 0x741b47);

@@ -2,12 +2,13 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot paging atclib kernel ccalc irq timer framebuffer qemudrivers serialdrivers cmos advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa pmm ld buildgrub clean
+make_deafult: bboot paging atclib kernel ccalc irq clibv timer framebuffer qemudrivers serialdrivers cmos advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa pmm ld buildgrub clean
 
 #Build kernel main image
 kernel: main.c
 	gcc -m32 -c main.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 #Link everything up
+
 ld: linker.ld linker.ld clib.o image.o pagingi.o pagingii.o irq.o irq_s.o timer.o ccalc.o qemu.o serial.o cmos.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o pmm.o 
 	ld -m elf_i386 -T linker.ld clib.o image.o pagingi.o pagingii.o irq.o irq_s.o cmos.o framebuffer.o timer.o advset.o ccalc.o qemu.o serial.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o pmm.o -o ATOS1.bin -nostdlib
 
@@ -108,6 +109,9 @@ cmos: drivers/cmos.c
 
 pmm: mm/pmm.c
 	gcc -m32 -c mm/pmm.c -o pmm.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
+clibv: kapps/clibv.c
+	gcc -m32 -c kapps/clibv.c -o clibv.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 clean:
 	rm *.o

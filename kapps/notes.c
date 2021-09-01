@@ -23,20 +23,20 @@ void notetake()
 void display_help()
 {
   framebuffer_clscr(0x000000);
-  framebuffer_putstr("\n                           ", 0x015229);
-  framebuffer_putstr(" /-----------------------/ |", 0x015229);
-  framebuffer_putstr("\n                           ", 0x015229);
-  framebuffer_putstr(" ------------------------| |", 0x015229);
-  framebuffer_putstr("\n                           ", 0x015229);
-  framebuffer_putstr("|    AhnTri NoteTaker    | |", 0x015229);
-  framebuffer_putstr("\n                           ", 0x015229);
-  framebuffer_putstr("|-~=-~=~--v1.3-~=~--~=~--| |", 0x015229);
-  framebuffer_putstr("\n                           ", 0x015229);
-  framebuffer_putstr("| Take notes and do not  | |", 0x015229);
-  framebuffer_putstr("\n                           ", 0x015229);
-  framebuffer_putstr("| shut down the PC then. | |", 0x015229);
-  framebuffer_putstr("\n                           ", 0x015229);
-  framebuffer_putstr("-------------------------|/ ", 0x015229);
+  framebuffer_putstr("\n                           ", 0x0e9f68);
+  framebuffer_putstr(" /-----------------------/ |", 0x0e9f68);
+  framebuffer_putstr("\n                           ", 0x0e9f68);
+  framebuffer_putstr(" ------------------------| |", 0x0e9f68);
+  framebuffer_putstr("\n                           ", 0x0e9f689);
+  framebuffer_putstr("|    AhnTri NoteTaker    | |", 0x0e9f68);
+  framebuffer_putstr("\n                           ", 0x0e9f68);
+  framebuffer_putstr("|-~=-~=~--v1.3-~=~--~=~--| |", 0x0e9f68);
+  framebuffer_putstr("\n                           ", 0x0e9f68);
+  framebuffer_putstr("| Take notes and do not  | |", 0x0e9f68);
+  framebuffer_putstr("\n                           ", 0x0e9f68);
+  framebuffer_putstr("| shut down the PC then. | |", 0x0e9f68);
+  framebuffer_putstr("\n                           ", 0x0e9f68);
+  framebuffer_putstr("-------------------------|/ ", 0x0e9f68);
 }
 
 void notes(){

@@ -1,15 +1,15 @@
 typedef struct paget{
-  uint32_t present;
-  uint32_t readwrite;
-  uint32_t usersupervisor;
-  uint32_t writethrough;
-  uint32_t cachedisabled;
-  uint32_t accessed;
-  uint32_t dirty;
-  uint32_t pat;
-  uint32_t global;
-  uint32_t available;
-  uint32_t pbadress;
+  uint32_t present            : 1;
+  uint32_t readwrite          : 1;
+  uint32_t usersupervisor     : 1;
+  uint32_t writethrough       : 1;
+  uint32_t cachedisabled      : 1;
+  uint32_t accessed           : 1;
+  uint32_t dirty              : 1;
+  uint32_t pat                : 1;
+  uint32_t global             : 1;
+  uint32_t available          : 3;
+  uint32_t pbadress           : 20;
 } page_t;
 
 typedef struct page_table {

@@ -8,8 +8,8 @@ make_deafult: bboot paging atclib kernel ccalc irq timer framebuffer qemudrivers
 kernel: main.c
 	gcc -m32 -c main.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 #Link everything up
-ld: linker.ld linker.ld clib.o image.o paging.o irq.o irq_s.o timer.o ccalc.o qemu.o serial.o cmos.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o pmm.o 
-	ld -m elf_i386 -T linker.ld clib.o image.o paging.o irq.o irq_s.o cmos.o framebuffer.o timer.o advset.o ccalc.o qemu.o serial.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o pmm.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld clib.o image.o pagingi.o pagingii.o irq.o irq_s.o timer.o ccalc.o qemu.o serial.o cmos.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o pmm.o 
+	ld -m elf_i386 -T linker.ld clib.o image.o pagingi.o pagingii.o irq.o irq_s.o cmos.o framebuffer.o timer.o advset.o ccalc.o qemu.o serial.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o pmm.o -o ATOS1.bin -nostdlib
 
 #Build ISO file via grub
 buildgrub: ATOS1.bin
@@ -90,8 +90,8 @@ bboot: boot/boot.s
 
 #Assemble Paging
 paging: mm/paging.S mm/paging.c
-	as --32 mm/paging.S -o paging.o
-	gcc -m32 -c mm/paging.c -o paging.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+	as --32 mm/paging.S -o pagingi.o
+	gcc -m32 -c mm/paging.c -o pagingii.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 #Build Keychar drivers
 keychar: drivers/kb/char.c

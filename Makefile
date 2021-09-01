@@ -89,8 +89,9 @@ bboot: boot/boot.s
 	as --32 boot/boot.s -o boot.o
 
 #Assemble Paging
-paging: mm/paging.S
+paging: mm/paging.S mm/paging.c
 	as --32 mm/paging.S -o paging.o
+	gcc -m32 -c mm/paging.c -o paging.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 #Build Keychar drivers
 keychar: drivers/kb/char.c

@@ -5,6 +5,7 @@ page_table_t page_table_i[1024];
 page_dir_t page_dir_i[1024];
 page_directory_t page_directory_i[1024];
 
+/*
 void init_page(page_t page){
 	int i;
 	page.present = 1;
@@ -18,7 +19,21 @@ void init_page(page_t page){
 	page.pat = 0;
 	page.global = 0;
 }
+*/
 
+void init_page(page_t page){
+	int i;
+	page.present = 0;
+	page.readwrite = 0;
+	page.usersupervisor = 0;
+	page.writethrough = 0;
+	page.cachedisabled = 0;
+	page.accessed = 0;
+	page.dirty = 0;
+	page.dirty = 0;
+	page.pat = 0;
+	page.global = 0;
+}
 
 void init_page_table(page_table_t page_table){
 	int i;

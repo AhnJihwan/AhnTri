@@ -59,7 +59,7 @@ void credits(){
 	printf("=======Additional thanks to ...========\n");
 	printf("BK Ahn(Computer)\n");
 	printf("Ethan Recendez and Justin Y.(made the first Fish Dictionary(2017) with core dev)\n");
-	printf("u/fir4rfin for typos\n");
+	printf("u/fin4rfin for typos\n");
 	printf("SJ Kim helped me in factorial\n");
 	printf("OSDev Wiki");
 	printf("https://wiki.osdev.org/Main_Page\n");

@@ -3,18 +3,21 @@
 
 page_table_t page_table_i[1024];
 
-void init_page_table(page_t *page){
+void init_page_table(page_table_t *page_table){
   int i;
   for(i=0; i<1024; i++){
-    page->present = 1;
-    page->readwrite = 1;
-    page->usersupervisor = 1;
-    page->writethrough = 1;
-    page->cachedisabled = 0;
-    page->accessed = 0;
-    page->dirty = 0;
-    page->dirty = 0;
-    page->pat = 0;
-    page->global = 0;
+    page_table[i]->present = 1;
+    page_table[i]->readwrite = 1;
+    page_table[i]->usersupervisor = 1;
+    page_table[i]->writethrough = 1;
+    page_table[i]->cachedisabled = 0;
+    page_table[i]->accessed = 0;
+    page_table[i]->dirty = 0;
+    page_table[i]->dirty = 0;
+    page_table[i]->pat = 0;
+    page_table[i]->global = 0;
   }
 }
+
+page_dir_t page_dir_i[1024];
+

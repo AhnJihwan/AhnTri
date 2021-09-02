@@ -21,3 +21,7 @@ typedef struct page_dir {
   uint32_t tablesPhysical[1024];
   uint32_t pysicalAdress;
 } page_directory_t;
+
+typedef struct page_directory {
+   page_t dirs[1024];
+} page_dir_t;

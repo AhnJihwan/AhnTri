@@ -23,5 +23,5 @@ typedef struct page_dir {
 } page_directory_t;
 
 typedef struct page_directory {
-   page_t dirs[1024];
+   page_t pages[1024];
 } page_dir_t;

@@ -27,8 +27,6 @@ void init_page_table(page_table_t page_table){
 	}
 }
 
-page_dir_t page_dir_i[1024];
-
 void init_page_dir(page_dir_t page_dir){
 	int i;
 	for(i=0;i<1024;i++){

@@ -7,14 +7,14 @@ void init_page_table(page_t *page){
   int i;
   for(i=0; i<1024; i++){
     page->present = 1;
-    page_table->readwrite = 1;
-    page_table->usersupervisor = 1;
-    page_table->writethrough = 1;
-    page_table->cachedisabled = 0;
-    page_table->accessed = 0;
-    page_table->dirty = 0;
-    page_table->dirty = 0;
-    page_table->pat = 0;
-    page_table->global = 0;
+    page->readwrite = 1;
+    page->usersupervisor = 1;
+    page->writethrough = 1;
+    page->cachedisabled = 0;
+    page->accessed = 0;
+    page->dirty = 0;
+    page->dirty = 0;
+    page->pat = 0;
+    page->global = 0;
   }
 }

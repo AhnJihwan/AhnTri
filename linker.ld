@@ -2,8 +2,8 @@ ENTRY(_start)
 
 SECTIONS
 {
-	. = 1M;
 	_kernel_start = .;		/* Start of the Kernel! */
+	. = 1M;
 	
 	_kernel_start_of_text = .;	/* Start of the Kernel Text! */
 	.text BLOCK(4K) : ALIGN(4K)

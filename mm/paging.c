@@ -1,7 +1,9 @@
 #include "../libc/atclib.h"
 #include "paging.h"
 
-uint32_t page_table_i;
+page_table_t page_table_i[1024];
+page_dir_t page_dir_i[1024];
+page_directory_t page_directory_i[1024];
 
 void init_page(page_t page){
 	int i;
@@ -26,3 +28,10 @@ void init_page_table(page_table_t page_table){
 }
 
 page_dir_t page_dir_i[1024];
+
+void init_page_dir(page_dir_t page_dir){
+	int i;
+	for(i=0;i<1024;i++){
+		init_page(page_dir.pages[i]);
+	}
+}

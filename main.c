@@ -178,6 +178,7 @@ void mkern_main(multiboot_info_t* multiboot)
   ptinpd(page_directory, page_table);
   loadPageDirectory(page_directory);
   paging_enablement();
+  asm volatile("\tint $3");
   qemu_printf_string("Everything is initialized. System is starting...");
   init_tty(multiboot, 0x7fa49d, 0x000000);
   printf_mmap_addr(multiboot);

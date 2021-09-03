@@ -73,11 +73,7 @@ void isr_13_handler(){
 }
 
 void isr_14_handler(){
-  while(1){
-    printf("isr_14_handler called\n");
-    printf("Page Fault(#PF) handled :/...\n");
-    qemu_printf_string("Page Fault(#PF handled :/...\n");
-  }
+  printf("isr_14_handler called\n");
 }
 
 void isr_15_handler(){

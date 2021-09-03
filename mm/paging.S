@@ -10,3 +10,14 @@ paging_enablement:
   or $0x00000010, %eax
   mov %eax, %cr4
   ret
+  
+.text
+.globl loadPageDirectory
+loadPageDirectory:
+push %ebp
+mov %esp, %ebp
+mov 8(%esp), %eax
+mov %eax, %cr3
+mov %ebp, %esp
+pop %ebp
+ret

@@ -73,7 +73,9 @@ void isr_13_handler(){
 }
 
 void isr_14_handler(){
-  printf("isr_14_handler called\n");
+  while(1){
+    printf("isr_14_handler called\n");
+  }
 }
 
 void isr_15_handler(){

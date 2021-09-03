@@ -75,6 +75,7 @@ void isr_13_handler(){
 void isr_14_handler(){
   while(1){
     printf("isr_14_handler called\n");
+    printf("Page Fault(#PF) handled :/...\n");
   }
 }
 

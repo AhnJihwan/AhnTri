@@ -70,27 +70,8 @@ void credits(){
 	printf("Thank you Ayush Yadav for helping for ISRs.");
 	printf("James Molloy's OSDEv tutorials");
 	printf("www.jamesmolloy.co.uk\n");
-	printf("==Stargazers, who make AhnTri AhnTri.==\n");
-	printf("Parsa Mahmoudy who lives in Iran\n");
-	printf("Riahiamirreza Joined on Aug 26, 2019\n");
-	printf("BOBBYWY Joined on Apr 2, 2015\n");
+	
 	suspend(1000);
-	clscr();
-	printf("==Stargazers, who make AhnTri AhnTri.==\n");
-	printf("unsafecast Joined on Dec 18, 2020\n");
-	printf("ehalferty who lives in San Francisco, CA\n");
-	printf("Ivan Gualandri who lives in Dublin\n");
-	printf("programmeruser2 who lives in /dev/tty\n");
-	printf("Diego Garza who lives in Mexico\n");
-	printf("growlnx who lives in Rio de Janeiro, Brazil\n");
-	printf("Sanchit Kalra who lives in Chandigarh, India\n");
-	printf("scpmx who Joined on August 1, 2015\n");
-	printf("Thesodadrinkerswho lives in Los Angeles, CA - Justin Y.\n");
-	printf("CyborgXB4ing who Joined on May 13, 2021\n");
-	printf("CaydendW who lives in South Africa\n");
-	printf("DamieFC\n");
-	printf("owtla who lives in Los Angeles, CA USA");
-	printf("AhnJihwan who lives in Seoul, South Korea\n");
 	printf("Thank you for all, who helped me XD! \nMay you be in AhnTri...\n[a] for Return, [b] for Apache 2.0 licence");
 	char licnce = KEY_A;
 	licnce = get_input_keycode();

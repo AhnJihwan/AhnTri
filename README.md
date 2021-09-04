@@ -17,6 +17,7 @@ This is for
  - People who are AhnTri Stargazers
  - Contributers(Owners of copyright)
  - Special Thankers
+
 # Current status
 - [x] Text mode
 - [x] Descripter Tables(GDT, IDT)

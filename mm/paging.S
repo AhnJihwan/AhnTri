@@ -15,7 +15,7 @@ ret
 loadPageDirectory:
 push %ebp
 mov %esp, %ebp
-mov 8(%esp), %eax
+mov 4(%esp), %eax
 mov %eax, %cr3
 mov %ebp, %esp
 pop %ebp

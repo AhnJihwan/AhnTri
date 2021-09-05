@@ -14,22 +14,24 @@ void cli(){
 void isr_0_handler(){
   if(current_regs == NULL)
     return;
-  printf("isr_0_handler called,  ");
-  printf("Value of eax: ");
-  print_int(current_regs->eax);
-  printf("\n");
+  printf("isr_0_handler called\n");
+  printf("#DE Division Error. You cannot divide by 0 obviously.\n");
 }
 
 void isr_1_handler(){
   printf("isr_1_handler called\n");
+  printf("#DE Debug Exception. Reserved by ");
+  framebuffer_putstr("intel R\n", 0x0071c5);
 }
 
 void isr_2_handler(){
   printf("isr_2_handler called\n");
+  printf("I'm a NMI Interrupt.\n");
 }
 
 void isr_3_handler(){
   printf("isr_3_handler called\n");
+  printf("#BP Breakpoint Exception. Breakpoint is trapped.\n");
 }
 
 void isr_4_handler(){

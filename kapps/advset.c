@@ -1,6 +1,6 @@
 #include "../kernel.h"
 #include "../kinc/api.h"
-
+#include "../arch/i386/isr.h"
 void advset(){
 	char cps = KEY_A;
 	clscr();

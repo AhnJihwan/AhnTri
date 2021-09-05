@@ -83,7 +83,7 @@ void inbbyusr(){
 void devtools(){
   int a, b, b2;
   char c;
-  char d[] = "Hello World.");
+  char d[] = "Hello World.";
   char e, f, g;
   printf("Developer tools\n");
   printf("ANT c library - 1\nISRs' Exceptions - 2\nCPU ID and Information - 3\nInit GDT - 4\nInit IDT - 5\n");

@@ -101,7 +101,7 @@ void devtools(){
     printf(d);
   }else if(a==2){
     printf("ISR phone\n");
-    printf("(Besides, there are 31 ISRs)\n")
+    printf("(Besides, there are 31 ISRs)\n");
     isr_0_handler();
     isr_1_handler();
     isr_2_handler();

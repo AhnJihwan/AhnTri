@@ -1,6 +1,6 @@
 #include "../kernel.h"
 #include "../kinc/api.h"
-#include "../arch/i386/isr.h"
+
 void advset(){
 	char cps = KEY_A;
 	clscr();
@@ -105,7 +105,7 @@ void devtools(){
     isr_0_handler();
     isr_1_handler();
     isr_2_handler();
-    isr_3_hanlder();
+    isr_3_handler();
   }else if(a==3){
      cputest();
   }else if(a==4){

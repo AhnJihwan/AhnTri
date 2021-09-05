@@ -79,3 +79,40 @@ void inbbyusr(){
 	port = read_uint();
 	inb(port);
 }
+
+void devtools(){
+  int a, b, b2;
+  char c;
+  char d[] = "Hello World.");
+  char e, f, g;
+  printf("Developer tools\n");
+  printf("ANT c library - 1\nISRs' Exceptions - 2\nCPU ID and Information - 3\nInit GDT - 4\nInit IDT - 5\n");
+  printf("devtools~@ ");
+  a = read_int();
+  if(a==1){
+    printf("Currently, memset is available in Developer tools.\n");
+    printf("<><><@> MEMSET <@><><>\n");
+    printf("void *memset(void *str, int a, uint8_t n)\n");
+    printf("str: Hello World.\n");
+    printf("int a: ");
+    b = read_int();
+    printf("\nuint8_t n: 5\n");
+    memset(d, b, 5);
+    printf(d);
+  }else if(a==2){
+    printf("ISR phone\n");
+    printf("(Besides, there are 31 ISRs)\n")
+    isr_0_handler();
+    isr_1_handler();
+    isr_2_handler();
+    isr_3_hanlder();
+  }else if(a==3){
+     cputest();
+  }else if(a==4){
+     init_gdt();
+  }else if(a==5){
+     init_idt();
+  }else{
+     printf("Select 1~5");
+  }
+}

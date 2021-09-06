@@ -70,7 +70,7 @@ void credits(){
 	printf("Thank you Ayush Yadav for helping for ISRs.");
 	printf("James Molloy's OSDEv tutorials");
 	printf("www.jamesmolloy.co.uk\n");
-	
+	printf("u/DeanBurrito for Paging and Page fault help\n");
 	suspend(1000);
 	printf("Thank you for all, who helped me XD! \nMay you be in AhnTri...\n[a] for Return, [b] for Apache 2.0 licence");
 	char licnce = KEY_A;

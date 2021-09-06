@@ -14,52 +14,60 @@ void cli(){
 void isr_0_handler(){
   if(current_regs == NULL)
     return;
-  printf("isr_0_handler called\n");
+  printf("isr 0 handler called\n");
   printf("#DE Division Error. You cannot divide by 0 obviously.\n");
 }
 
 void isr_1_handler(){
-  printf("isr_1_handler called\n");
+  printf("isr I handler called\n");
   printf("#DE Debug Exception. Reserved by ");
-  framebuffer_putstr("intel R\n", 0x0071c5);
+  framebuffer_putstr("intel\n", 0x0071c5);
 }
 
 void isr_2_handler(){
-  printf("isr_2_handler called\n");
+  printf("isr II handler called\n");
   printf("I'm a NMI Interrupt.\n");
 }
 
 void isr_3_handler(){
-  printf("isr_3_handler called\n");
+  printf("isr III handler called\n");
   printf("#BP Breakpoint Exception. Breakpoint is trapped.\n");
 }
 
 void isr_4_handler(){
-  printf("isr_4_handler called\n");
+  printf("isr IV handler called\n");
+  printf("#OF An overflow trap occurred when an INTO instruction was executed.\n");
 }
 
 void isr_5_handler(){
-  printf("isr_5_handler called\n");
+  printf("isr V handler called\n");
+  printf("#BR Bound Instruction executed fault.\n");
 }
 
 void isr_6_handler(){
-  printf("isr_6_handler called\n");
+  printf("isr VI handler called\n");
+  printf("#UD Invalid Opcode Exception Fault.\n");
 }
 
 void isr_7_handler(){
-  printf("isr_7_handler called\n");
+  printf("isr VII handler called\n");
+  printf("#NM Device Not Available right now.\n");
 }
 
 void isr_8_handler(){
-  printf("isr_8_handler called\n");
+  printf("isr VIII handler called\n");
+  printf(":/ Double Fault.\n");
 }
 
 void isr_9_handler(){
-  printf("isr_9_handler called\n");
+  printf("isr IX handler called\n");
+  printf("Coprocessor Segment Overrun.");
+  framebuffer_putstr("intel\n", 0x0071c5);
 }
 
 void isr_10_handler(){
-  printf("isr_10_handler called\n");
+  printf("isr X handler called\n");
+  printf("Task switch attempted, invalid information was detected in the TSS for the target task.\n");
 }
 
 void isr_11_handler(){

@@ -1,0 +1,4 @@
+Fundings
+ Developer                                                                                       Method
+Jihwan Ahn       Bitcoin in PC: bc1q7csp68t9dyjarnhsqzvnd7j9y7l9eu6k4ygr53                   Bitcoin Wallet
+Jihwan Ahn       Bitcoin in Tablet: bitcoin:1BJ6867i2CXCZb4bzWuChny2dASevNcQpY               Bitcoin Wallet

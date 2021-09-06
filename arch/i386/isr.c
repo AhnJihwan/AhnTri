@@ -82,6 +82,7 @@ void isr_12_handler(){
 
 void isr_13_handler(){
   printf("isr_13_handler called\n");
+  printf("#GP General Protection Exception\n");
 }
 
 void isr_14_handler(){
@@ -96,6 +97,7 @@ void isr_15_handler(){
 
 void isr_16_handler(){
   printf("isr_16_handler called\n");
+  printf("#MF x87 FPU Floating-Point Error\n");
 }
 
 void isr_17_handler(){

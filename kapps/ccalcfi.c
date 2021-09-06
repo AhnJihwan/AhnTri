@@ -126,9 +126,8 @@ void ccalc(){
 			case 4:
 				rtn(&num1, &num2);
 				if(num2 == 0){
-					isr_0_handler();
+					asm volatile("int $0");
 				}else{
-					asm volatile("\tint $0");
 					gotoxy(2, 2);
 					print_int(num1 / num2);
 				}
@@ -241,6 +240,7 @@ void ccalc(){
 				printf("\nk? ");
 				num2 = read_int();
 				devofqf(num1, num2);
+				break;
 			default:
 				ccalc();
 				break;

@@ -103,6 +103,8 @@ void devtools(){
     clscr();
     printf("ISR phone\n");
     printf("(Besides, there are 31 ISRs)\n");
+    isr_0_handler();
+    printf("\n");
     isr_1_handler();
     printf("\n");
     isr_2_handler();

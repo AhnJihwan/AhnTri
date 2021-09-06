@@ -100,8 +100,15 @@ void devtools(){
     memset(d, b, 5);
     printf(d);
   }else if(a==2){
+    clscr();
     printf("ISR phone\n");
     printf("(Besides, there are 31 ISRs)\n");
+    isr_1_handler();
+    printf("\n");
+    isr_2_handler();
+    printf("\n");
+    isr_3_handler();
+    printf("\n");
     isr_4_handler();
     printf("\n");
     isr_5_handler();

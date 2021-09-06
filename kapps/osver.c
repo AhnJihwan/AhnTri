@@ -34,9 +34,9 @@ void osver(){
 	printf("\n       /  \\      System:  ");
 	bitidentify();
 	printf("                   ");
-	printf("\n      /    \\     Kernel: AhnTri 1.20 +                 ");
-	printf("\n     /      \\    Terminal: Terminal 125                ");
-	printf("\n    /        \\   Themes: AhnTri                        ");
-	printf("\n   /  AhnTri  \\                                        ");
-	printf("\n  /____________\\                                       ");
+	printf("\n      /    \\     Kernel: AhnTri 1.20 +    ____    _____ ");
+	printf("\n     /      \\    Terminal: Terminal 125   |___   |____  ");
+	printf("\n    /        \\   Themes: AhnTri    \\ | / |      |      ");
+	printf("\n   /  AhnTri  \\                   ={ o }= |luent | lu    ");
+	printf("\n  /____________\\                   / | \\ |      |      ");
 }

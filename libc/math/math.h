@@ -146,3 +146,14 @@ int expfxlim(bool a, int b, int c, bool inf){				//lim f(x)            f(x)=b^c
 	}
 	return i;
 }
+
+int devofqf(int a, int x){
+	//f(x)=ax^2, then f'(x) = lim = {f(x)-f(k)}/(x-k)
+	//			x-->k
+	//So a(x+k)(x-k)/(x-k)
+	//  = a(x+k)
+	//  = ax+ak
+	//But x was k bc x-->k when calculating
+	//So it is 2ax
+	return 2*a*x;	//returning 2ax
+}

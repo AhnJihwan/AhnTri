@@ -116,6 +116,8 @@ void kernmain(){
 			plant();
 		} else if(strcmp(choice, "advset")==0){
 			advset();
+		} else if(strcmp(choice, "devtools")==0){
+			devtools();
 		} else if(strcmp(choice, "atroid")==0 || strcmp(choice, "ai")==0){
 			ahntroid();
 		} else if(strcmp(choice, "adic")==0 || strcmp(choice, "dict")==0){

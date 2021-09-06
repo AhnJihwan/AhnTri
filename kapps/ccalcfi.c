@@ -102,10 +102,11 @@ void ccalc(){
 		switch(ccho){
 			case 0:
  			 	printf("\n");
-  				printf("Addition:1, Sub:2, Mul:3, Div:4, Power 2:5, Power 3:6, sqrt: [10]");
-   			   printf("\n");
-  				printf("For (a+b)^3,  [8], GeX [9], TUI [7], factorial [11], Advanced calc [12], for ax^2+bx+c [13], for x^y [14], for logab [15], and for Logical AND, OR, XOR respectively, [16], [17], [18]");
-   			   printf("\n");
+  				printf(" [1] Addition\n [2] Sub\n [3] Mul\n [4] Div\n [5] Power 2\n [6] Power 3\n [7] Return to kernel\n [8] Add and power 3\n [9] Not supported anymore\n [10] sqrt");
+   			   	printf("\n");
+  				printf(" [11] factorial\n [12] Advanced calc\n [13] for ax^2+bx+c\n [14] for x^y\n [15] for logab\n [16] Logical AND\n [17] OR\n [18] XOR\n");
+				printf(" [19] Sigma of A.P. \n [20] Limit of Exponential Funtion\n [21] Differential Coefficient of Quadratic Function f(x)=ax^2\n");
+   			   	printf("\n");
 				break;
 			case 1:
 				printf("\nADDING 2 NUMERALS");

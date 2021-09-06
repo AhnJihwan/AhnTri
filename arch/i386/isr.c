@@ -71,11 +71,13 @@ void isr_10_handler(){
 }
 
 void isr_11_handler(){
-  printf("isr_11_handler called\n");
+  printf("isr XI handler called\n");
+  printf("#NP Segment Not Present\n");
 }
 
 void isr_12_handler(){
-  printf("isr_12_handler called\n");
+  printf("isr XII handler called\n");
+  printf("#SS Stack Fault Exception\n");
 }
 
 void isr_13_handler(){
@@ -83,7 +85,9 @@ void isr_13_handler(){
 }
 
 void isr_14_handler(){
-  printf("isr_14_handler called\n");
+    printf("isr XIV handler called\n");
+    printf("Page Fault(#PF) handled :/...\n");
+    qemu_printf_string("Page Fault(#PF handled :/...\n");
 }
 
 void isr_15_handler(){

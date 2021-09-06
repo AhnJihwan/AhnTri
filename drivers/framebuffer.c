@@ -44,7 +44,7 @@ int init_framebuffer(multiboot_info_t* mbi){
   }
 }
 
-void framebuffer_putpixel(uint32_t x, uint32_t y, uint32_t color){  /*this plots a single pixel to the given coordinates with the given color*/
+void framebuffer_putpixel(uint32_t x, uint32_t y, uint32_t color){
     *(uint32_t*)(x + y * framebuffer_width + framebuffer_buffer) = color;
 }
 
@@ -67,7 +67,7 @@ void framebuffer_putchar(char ch, uint32_t color){
   }
 }
 
-void framebuffer_backspace(uint32_t color){ /*prints a 8x8 glyph on previous glyph*/
+void framebuffer_backspace(uint32_t color){
     cur_x--;
     framebuffer_putchar(219, color);
     cur_x--;

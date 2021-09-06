@@ -9,7 +9,7 @@ void strt_scrn(){
   printf("      .           .            \n\n\n");
   gotoxy(25, 9);
   suspend(4);
-  printf("    .    AhnTri      .   1.2.4 \n\n\n");
+  printf("    .    AhnTri      .   1.2.5 \n\n\n");
   gotoxy(25, 12);
   suspend(4);
   printf(" .   .   .    .   .    .       \n\n\n");

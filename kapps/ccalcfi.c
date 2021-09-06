@@ -126,9 +126,9 @@ void ccalc(){
 			case 4:
 				rtn(&num1, &num2);
 				if(num2 == 0){
-					printf("Error : Divide by 0");
+					isr_0_handler();
 				}else{
-					printf("DIVIDING 2 NUMERALS");
+					asm volatile("\tint $0");
 					gotoxy(2, 2);
 					print_int(num1 / num2);
 				}
@@ -234,6 +234,13 @@ void ccalc(){
 				}
 				printf("\ninfinity will be printed as 1000000.");
 				break;
+			case 21:
+				printf("f(x)=ax^2, f'(x) x-->k\n");
+				printf("a? ");
+				num1 = read_int();
+				printf("\nk? ");
+				num2 = read_int();
+				devofqf(num1, num2);
 			default:
 				ccalc();
 				break;

@@ -132,11 +132,11 @@ void advccalc(){
 				printf("Virtual Adress in dec: ");
 				num1 = read_int();
 				printf("\nThe Page Directory Entry is: ");
-				print_int(va2pa((void *)num1, 1)));
+				print_int(va2pa((void *)num1, 1));
 				printf("\nThe Page Table Entry is: ");
-				print_int(va2pa((void *)num1, 2)));
+				print_int(va2pa((void *)num1, 2));
 				printf("\nThe Page Table Entry is: ");
-				print_int(va2pa((void *)num1, 3)));
+				print_int(va2pa((void *)num1, 3));
 				break;
 			case 0:
 				ccalc();

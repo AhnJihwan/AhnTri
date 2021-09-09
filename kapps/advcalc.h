@@ -26,6 +26,8 @@ void display_menu_ccalc_adv()
   printf("\n");
   printf("Press [9] for Fibonacci Sequence   ");
   printf("\n");
+  printf("Press [10] for Virtual Adress Translation   ");
+  printf("\n");
   printf("Press [0] for Exit                  ");
 }
 
@@ -125,6 +127,16 @@ void advccalc(){
 				printf("max: ");
 				num1 = read_int();
 				fib(num1);
+				break;
+			case 10:
+				printf("Virtual Adress in dec: ");
+				num1 = read_int();
+				printf("\nThe Page Directory Entry is: ");
+				print_int(va2pa((void *)num1, 1));
+				printf("\nThe Page Table Entry is: ");
+				print_int(va2pa((void *)num1, 2
+				printf("\nThe Page Table Entry is: ");
+				print_int(va2pa((void *)num1, 3));
 				break;
 			case 0:
 				ccalc();

@@ -34,3 +34,13 @@ void pmm_region_init(uint32_t base, uint8_t size) {
     bitmap_set(pmmap, 0);
 }
 
+
+void pmm_free_block(void *phy) {
+    if(phy == NULL){
+        return;
+    }
+    uint32_t paddr = (uint32_t) phy;
+    int index = paddr / BLOCK_SIZE;
+    bitmap_unset(pmmap, index);
+    used_blocks--;
+}

@@ -1,22 +1,14 @@
 .text
 .global paging_enablement
 paging_enablement:
-push %ebp
-mov %esp, %ebp
-mov %cr0, %eax
-or $0x80000000, %eax
-mov %eax, %cr0
-mov %ebp, %esp
-pop %ebp
-ret
-
+	mov %cr0, %ebx
+	or $0x80000000, %ebx
+	mov %ebx, %cr0
+	ret
+  
 .text
 .globl loadPageDirectory
 loadPageDirectory:
-push %ebp
-mov %esp, %ebp
-mov 8(%esp), %eax
-mov %eax, %cr3
-mov %ebp, %esp
-pop %ebp
-ret
+	mov 4(%esp), %eax
+	mov %eax, %cr3
+	ret

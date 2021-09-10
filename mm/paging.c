@@ -68,8 +68,7 @@ void init_page_dir(page_dir_t page_dir){
 }
 */
 
-#include "../libc/atclib.h"
-#include "paging.h"
+
 
 
 void clear_page_directory(uint32_t page_dir[]){

@@ -159,7 +159,10 @@ void kernmain(){
 	suspend(5);
 	nosound();
 }
- 
+
+uint32_t page_directory[1024] __attribute__((aligned(4096)));
+uint32_t page_table[1024] __attribute__((aligned(4096)));
+
 void mkern_main(multiboot_info_t* multiboot)
 {
   if (CHECK_FLAG (multiboot->flags, 12)){
@@ -173,6 +176,11 @@ void mkern_main(multiboot_info_t* multiboot)
   irq_install();
   extern uint8_t *_kernel_end;								//Defined in Linker.ld
   pmm_init((uint32_t) &_kernel_end, mem_size);
+  clear_page_directory(page_directory);
+  clear_page_table(page_table);
+  ptinpd(page_directory, page_table);
+  loadPageDirectory(page_directory);
+  paging_enablement();
   qemu_printf_string("Everything is initialized. System is starting...");
   init_tty(multiboot, 0x7fa49d, 0x000000);
   printf_mmap_addr(multiboot);

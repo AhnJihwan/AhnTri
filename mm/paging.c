@@ -2,10 +2,6 @@
 #include "../libc/atclib.h"
 #include "paging.h"
 
-page_table_t page_table_i[1024];
-page_dir_t page_dir_i[1024];
-page_directory_t page_directory_i[1024];
-
 void *va2pa(void *vaddr, int a) {
 	unsigned long output;
 	unsigned long pdei = (unsigned long)vaddr >> 22;

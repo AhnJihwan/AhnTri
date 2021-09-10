@@ -116,8 +116,6 @@ void kernmain(){
 			plant();
 		} else if(strcmp(choice, "advset")==0){
 			advset();
-		} else if(strcmp(choice, "devtools")==0){
-			devtools();
 		} else if(strcmp(choice, "atroid")==0 || strcmp(choice, "ai")==0){
 			ahntroid();
 		} else if(strcmp(choice, "adic")==0 || strcmp(choice, "dict")==0){
@@ -159,7 +157,6 @@ void kernmain(){
 	suspend(5);
 	nosound();
 }
-
 uint32_t page_directory[1024] __attribute__((aligned(4096)));
 uint32_t page_table[1024] __attribute__((aligned(4096)));
 
@@ -171,8 +168,6 @@ void mkern_main(multiboot_info_t* multiboot)
   }
   init_gdt();
   init_idt();
-  asm volatile("\tmov $12395, %eax");
-  asm volatile("\tint $0");
   irq_install();
   extern uint8_t *_kernel_end;								//Defined in Linker.ld
   pmm_init((uint32_t) &_kernel_end, mem_size);

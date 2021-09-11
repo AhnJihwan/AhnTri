@@ -44,3 +44,12 @@ void pmm_free_block(void *phy) {
     bitmap_unset(pmmap, index);
     used_blocks--;
 }
+
+void pmm_add_block(void *phy){
+    if(phy != NULL){
+        return;
+    }
+    uint32_t paddr = (uint32_t)phy;
+    bitmap_set(pmmap, paddr/BLOCK_SIZE);
+    used_blocks++;
+}

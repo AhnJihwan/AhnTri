@@ -53,3 +53,10 @@ void pmm_add_block(void *phy){
     bitmap_set(pmmap, paddr/BLOCK_SIZE);
     used_blocks++;
 }
+
+void pmm_add_blocks(void *phy, uint32_t how_many){
+    int i;
+    for(i=0; i<how_many; i++){
+        pmm_add_block((void *)(BLOCK_SIZE*i+phy);
+    }
+}

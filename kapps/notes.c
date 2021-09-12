@@ -5,6 +5,7 @@ void notetake()
 {
   char ch = 0;
   char inp = 0;
+  printf(" ");
   do{
     inp = get_input_keycode();
     if(inp == KEY_ENTER){

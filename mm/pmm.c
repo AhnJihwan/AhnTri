@@ -45,11 +45,11 @@ void pmm_free_block(void *phy) {
     used_blocks--;
 }
 
-void pmm_add_block(void *phy){
+void pmm_add_block(uin32_t *phy){
     if(phy != NULL){
         return;
     }
-    uint32_t paddr = (uint32_t)phy;
+    uint32_t paddr = phy;
     bitmap_set(pmmap, paddr/BLOCK_SIZE);
     used_blocks++;
 }

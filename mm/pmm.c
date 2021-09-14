@@ -57,6 +57,6 @@ void pmm_add_block(uin32_t *phy){
 void pmm_add_blocks(void *phy, uint32_t how_many){
     int i;
     for(i=0; i<how_many; i++){
-        pmm_add_block((void *)(BLOCK_SIZE*i+phy));
+        pmm_add_block((uint32_t *)(BLOCK_SIZE*i+phy));
     }
 }

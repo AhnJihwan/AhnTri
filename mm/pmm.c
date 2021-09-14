@@ -45,7 +45,7 @@ void pmm_free_block(void *phy) {
     used_blocks--;
 }
 
-void pmm_add_block(uin32_t *phy){
+void pmm_add_block(uint32_t *phy){
     if(phy != NULL){
         return;
     }

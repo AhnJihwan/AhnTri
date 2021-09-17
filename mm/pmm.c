@@ -62,5 +62,5 @@ void pmm_add_blocks(void *phy, uint32_t how_many){
 }
 
 void pmm_add_blocks_from_base(uint32_t how_many){
-    pmm_add_blocks(&0x0, how_many);
+    pmm_add_blocks(0x0, how_many);
 }

@@ -37,6 +37,15 @@ void ahntroid(){
 		}else if(strcmp(input, "open ccalc")==0 || strcmp(input, "plz ccalc")==0){
 			ccalc();
 			free(input);
+		}else if(strcmp(input, "where are u")==0){
+			printf("I am here. Just here. Right here. Yes in front of you. Here.");
+			free(input);
+		}else if(strcmp(input, "whats ur age")==0){
+			printf("My age is 0 years old, and gonna be 1 in 12/22/2021. That's my brithday :)\n");
+			free(input);
+		}else if(strcmp(input, "bruh")==0){
+			printf("Wassup man\n");
+			free(input);
 		}else{
 			framebuffer_putstr("Word not trained or not exist in code.", 0x65abe7);
 			

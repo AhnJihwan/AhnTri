@@ -2,7 +2,7 @@
 #include "../libc/atclib.h"
 
 void antroid_hmenu(){
-	framebuffer_putstr("\nArtificial Intellegence by AhnTri: Type [6390] for help. Do not input nothing, or it would crash.", 0x65abe7);
+	framebuffer_putstr("\nArtificial Intellegence by AhnTri: Type [6390] for help. Do not input nothing, or it would crash. There might be some bugs in it - well - idk...", 0x65abe7);
 }
 
 void ahntroid(){

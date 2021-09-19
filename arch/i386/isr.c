@@ -101,7 +101,8 @@ void isr_16_handler(){
 }
 
 void isr_17_handler(){
-  printf("isr_17_handler called\n");
+  printf("isr XII handler called\n");
+  printf("#AC Alignment Check Exception\n");
 }
 
 void isr_18_handler(){

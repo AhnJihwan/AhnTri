@@ -240,7 +240,7 @@ void ccalc(){
 				num1 = read_int();
 				printf("\nk? ");
 				num2 = read_int();
-				devofqf(num1, num2);
+				print_int(devofqf(num1, num2));
 				break;
 			default:
 				ccalc();

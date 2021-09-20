@@ -61,6 +61,7 @@ void credits(){
 	printf("u/DeanBurrito for Paging and Page fault help(ing)\n");
 	suspend(1000);
 	printf("Thank you for all, who helped me XD! \nMay you be in AhnTri...\n[a] for Return, [b] for Apache 2.0 licence");
+	printf("\nOfficial SNS of AhnTri/Jihwan Ahn:\nDiscord(Jihwan Ahn): eric0823ahn#7196\nOpen Kakaotalk(AhnTri): https://open.kakao.com/me/ahntri\nGoogle: ahntridev@gmail.com\nReddit(Jihwan Ahn): u/eric0823ahn1\nYoutube playlist: https://youtube.com/playlist?list=PLgUQc-w_4F0IqoslRqjFQ5tHWJu0KcSCH");
 	char licnce = KEY_A;
 	licnce = get_input_keycode();
 	if(licnce == KEY_A){

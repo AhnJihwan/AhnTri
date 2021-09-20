@@ -106,7 +106,8 @@ void isr_17_handler(){
 }
 
 void isr_18_handler(){
-  printf("isr_18_handler called\n");
+  printf("isr XIII handler called\n");
+  printf("#MC Machine Check Exception\n");
 }
 
 void isr_19_handler(){

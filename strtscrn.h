@@ -12,7 +12,7 @@ void strt_scrn(){
   printf("    .    AhnTri      .   1.2.5 \n\n\n");
   gotoxy(25, 12);
   suspend(4);
-  printf(" .   .   .    .   .    .       \n\n\n");
+  printf(" .   .   .    .   .    .   Freedom of your life.\n\n\n");
   gotoxy(25, 15);
   suspend(4);
   printf("System is starting...          \n\n\n");

@@ -111,7 +111,8 @@ void isr_18_handler(){
 }
 
 void isr_19_handler(){
-  printf("isr_19_handler called\n");
+  printf("isr XIX handler called\n");
+  printf("#XD SIMD Floating-Point Exception");
 }
 
 void isr_20_handler(){

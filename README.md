@@ -1,6 +1,9 @@
 ![AhnTriLogo](at.jpg)
+
 # AhnTri OS
+
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
+
 # Needed to be built with Xubuntu 20.04/18.04.
 http://mirror.us.leaseweb.net/ubuntu-cdimage/xubuntu/releases/20.04/release/xubuntu-20.04.2.0-desktop-amd64.iso
 https://cdimage.ubuntu.com/xubuntu/releases/20.04.2/release/xubuntu-20.04.2.0-desktop-amd64.iso
@@ -8,6 +11,7 @@ https://cdimage.ubuntu.com/xubuntu/releases/18.04/release/xubuntu-18.04.5-deskto
 
 # Colors
 16 Default Colors + 2 Premium colors
+
 # What this project is all 'bout
 This is for
  - People who don't want to trash thier old PC but has an useless USB

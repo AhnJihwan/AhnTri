@@ -125,6 +125,8 @@ void devtools(){
     printf("\n");
     isr_10_handler();
     printf("\n");
+    suspend(50);
+    clscr();
     isr_11_handler();
     printf("\n");
     isr_12_handler();
@@ -140,6 +142,8 @@ void devtools(){
     isr_17_handler();
     printf("\n");
     isr_18_handler();
+    printf("\n");
+    isr_19_handler();
     printf("\n");
   }else if(a==3){
      cputest();

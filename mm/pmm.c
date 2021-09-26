@@ -79,7 +79,7 @@ void pmm_add_blocks_from_kstart(uint32_t how_many){
 
 void pmm_kernel_deinit(void){
     uint8_t sizeof_kernel = (uint8_t)&_kernel_end-(uint8_t)&_kernel_start;
-    kernel_region_deinit((uint32_t)&_kernel_start, sizeof_kernel);
+    pmm_region_deinit((uint32_t)&_kernel_start, sizeof_kernel);
     uint32_t pmm_siz_aligned = pmmap_size;
-    kernel_region_deinit((uint32_t)&_kernel_end, pmmap_size);
+    pmm_region_deinit((uint32_t)&_kernel_end, pmmap_size);
 }

@@ -34,6 +34,15 @@ void pmm_region_init(uint32_t base, uint8_t size) {
     bitmap_set(pmmap, 0);
 }
 
+void pmm_region_deinit(uint32_t base, uint8_t size){
+    uint8_t blocks  =   size/BLOCK_SIZE;
+    uint32_t align  =   base/BLOCK_SIZE;
+    uint8_t i;
+    for(i=0; i<blocks; i++){
+        bitmap_set(pmmap, align++);
+        used_blocks++;
+    }
+}
 
 void pmm_free_block(void *phy) {
     if(phy == NULL){

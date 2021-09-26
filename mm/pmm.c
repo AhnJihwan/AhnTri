@@ -71,11 +71,15 @@ void pmm_add_blocks(void *phy, uint32_t how_many){
 }
 
 extern uint8_t *_kernel_start;
+extern uint8_t *_kernel_end;
 
 void pmm_add_blocks_from_kstart(uint32_t how_many){
     pmm_add_blocks(_kernel_start, how_many);
 }
 
-/*WORKING ON
-void init_kernel
-*/
+void pmm_kernel_deinit(void){
+    uint8_t sizeof_kernel = (uint8_t)&_kernel_end-(uint8_t)&_kernel_start;
+    kernel_region_deinit((uint32_t)&_kernel_stsart, sizeof_kernel);
+    uint32_t pmm_siz_aligned = pmm_size;
+    kernel_region_deinit((uint32_t)&_kernel_end, pmm_size);
+}

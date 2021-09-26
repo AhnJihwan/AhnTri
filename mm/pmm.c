@@ -61,6 +61,12 @@ void pmm_add_blocks(void *phy, uint32_t how_many){
     }
 }
 
-void pmm_add_blocks_from_base(uint32_t how_many){
-    pmm_add_blocks(0x0, how_many);
+extern uint8_t *_kernel_start;
+
+void pmm_add_blocks_from_kstart(uint32_t how_many){
+    pmm_add_blocks(_kernel_start, how_many);
 }
+
+/*WORKING ON
+void init_kernel
+*/

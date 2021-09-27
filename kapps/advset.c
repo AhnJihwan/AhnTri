@@ -3,11 +3,13 @@
 
 void advset(){
 	char cps = KEY_A;
+	char cpsii = KEY_A;
+	int i;
 	clscr();
 	gotoxy(25, 0);
 	printf("AhnTri Advanced settings\n\n");
-	printf("1. Change Text color\n");
-	printf("2. Change Theme color\n");
+	printf("1. Change Text color - NOT WORKING\n");
+	printf("2. Change Theme color - NOT WORKING\n");
 	printf("3. Reload GDT\n");
 	printf("4. Reload IDT\n");
 	printf("5. Send byte to OS\n");
@@ -17,6 +19,7 @@ void advset(){
 	printf("9. Go to kernel main\n");
 	printf("a. Change Theme\n");
 	printf("b. Change Language\n");
+	printf("c. Physical Memory Manager\n");
 	printf("AhnTroid AI is a part of AhnTri and is protected by the Apache 2.0 open source licence.\n");
 	cps = get_input_keycode();
 	if(cps == KEY_3){
@@ -39,6 +42,23 @@ void advset(){
 	}else if(cps == KEY_B){
 		printf("What Lanauge?");
 		lang();
+	}else if(cps == KEY_C){
+		printf("Physical Memory Manager.\n[0] Add Block\n[1] free block\n[2] Kernel Deinit\n");
+		cpsii = get_input_keycode();
+		if(cpsii == KEY_0){
+			printf("Please enter the physical adress as a int(e.g. 0x98789 --> 624521)\n");
+			i = read_int();
+			pmm_add_block((uint32_t *)i);
+		}else if(cpsii == KEY_1){
+			printf("Please enter the physical adress as a int(e.g. 0x98789 --> 624521)\n");
+			i = read_int();
+			pmm_free_block((uint32_t *)i);
+		}else if(cpsii == KEY_2){
+			printf("Deiniting the kernel\n");
+			pmm_kernel_deninit();
+		}else{
+			printf("Input Not Vaild.\n");
+		}
 	} else{
 		clscr();
 		return;

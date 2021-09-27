@@ -55,7 +55,7 @@ void advset(){
 			pmm_free_block((uint32_t *)i);
 		}else if(cpsii == KEY_2){
 			printf("Deiniting the kernel\n");
-			pmm_kernel_deninit();
+			pmm_kernel_deinit();
 		}else{
 			printf("Input Not Vaild.\n");
 		}

@@ -44,7 +44,9 @@ void advset(){
 		lang();
 	}else if(cps == KEY_C){
 		printf("Physical Memory Manager.\n[0] Add Block\n[1] free block\n[2] Kernel Deinit\n");
+		suspend(3);
 		cpsii = get_input_keycode();
+		suspend(3);
 		if(cpsii == KEY_0){
 			printf("Please enter the physical adress as a int(e.g. 0x98789 --> 624521)\n");
 			i = read_int();

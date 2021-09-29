@@ -4,6 +4,7 @@ Protected by Apache licence 2.0.
 Copyright 2021 Jihwan Ahn
 */
 
+#include "../boot/multiboot.h"
 #include "../libc/atclib.h"
 #include "pmm.h"
 

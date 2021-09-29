@@ -174,6 +174,7 @@ void mkern_main(multiboot_info_t* multiboot)
   extern uint8_t *_kernel_end;								//Defined in Linker.ld
   uint32_t sizeofpmminit = multiboot->mem_upper + 1024;
   pmm_init((uint32_t) &_kernel_end, sizeofpmminit);
+  pmm_init_availreg(multiboot->mmap_addr, multiboot->mmap_addr+multiboot->mmap_length);
   pmm_kernel_deinit();
   qemu_printf_string("Everything is initialized. System is starting...");
   init_tty(multiboot, 0x7fa49d, 0x000000);

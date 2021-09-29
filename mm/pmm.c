@@ -77,6 +77,18 @@ void pmm_add_blocks_from_kstart(uint32_t how_many){
     pmm_add_blocks(_kernel_start, how_many);
 }
 
+void pmm_init_availreg(uint32_t mmap, uint32_t mmap_endp){
+	multiboot_memory_map_t* mmap1 = (multiboot_memory_map_t*) mmap;
+	multiboot_memory_map_t* mmap_endp1 = (multiboot_memory_map_t*) mmap_endp;
+	int i;
+	for(i=0; mmap_endp < mmap1; i++){
+		mmap1++;
+		if(mmap1->type == 1){				//Available RAM
+			pmm_region_init((uint32_t)mmap1->addr, (uint8_t)mmap1->len);		//Init the available regions
+		}
+	}
+}
+
 void pmm_kernel_deinit(void){
     uint8_t sizeof_kernel = (uint8_t)&_kernel_end-(uint8_t)&_kernel_start;
     pmm_region_deinit((uint32_t)&_kernel_start, sizeof_kernel);

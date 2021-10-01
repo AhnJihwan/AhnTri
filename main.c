@@ -178,6 +178,9 @@ void mkern_main(multiboot_info_t* multiboot)
   pmm_kernel_deinit();
   qemu_printf_string("Everything is initialized. System is starting...");
   init_tty(multiboot, 0x7fa49d, 0x000000);
+  print_int((int)sizeofpmminit);
+  printf(" pages initialized.\n");
+  suspend(4);
   printf_mmap_addr(multiboot);
   beep();
   print_kernel_map();

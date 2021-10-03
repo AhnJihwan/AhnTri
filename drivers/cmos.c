@@ -117,8 +117,8 @@ void read_rtc() {
       print_int(day);
       printf("/");
       print_int(year);
-      printf("/");
+      printf("    ");
       print_int(hour);
-      printf("/");
+      printf(":");
       print_int(minute);
 }

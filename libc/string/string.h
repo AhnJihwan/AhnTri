@@ -60,19 +60,13 @@ int strrlen(const char* str)
   return length;
 }
 
-void strcpy(char dest[], const char source[]) {
-    int i = 0;
-    while (1)
+char *strcpy(char *dest, const char *src)
+{
+    do
     {
-        dest[i] = source[i];
-
-        if (dest[i] == '\0')
-        {
-            break;
-        }
-
-        i++;
+      *dest++ = *src++;
     }
+    while (*src != 0);
 }
 
 void itoa(int num, char *number)

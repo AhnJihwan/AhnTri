@@ -36,4 +36,4 @@ struct dirent *readdir_fs(fs_node_t *node, uint32_t index){
         }else{
                 return 0;
         }
-]
+}

@@ -6,12 +6,19 @@ static signed ni = 0;
 void free(){
 }
 
-void memcpy(void *dest, void *src, signed n) 
+void memcpy_old(void *dest, void *src, signed n) 
 { 
    char *csrc = (char *)src; 
    char *cdest = (char *)dest; 
    for (int i=0; i<n; i++) 
        cdest[i] = csrc[i]; 
+}
+
+void memcpy(u8int *dest, const u8int *src, u32int len)
+{
+    const u8int *sp = (const u8int *)src;
+    u8int *dp = (u8int *)dest;
+    for(; len != 0; len--) *dp++ = *sp++;
 }
 
 void *memset(void *str, int a, uint8_t n){

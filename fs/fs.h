@@ -10,8 +10,8 @@
 
 typedef u32int (*read_type_t)(struct fs_node*,u32int,u32int,u8int*);
 typedef u32int (*write_type_t)(struct fs_node*,u32int,u32int,u8int*);
-typedef void (*open_type_t)(struct fs_node*);
-typedef void (*close_type_t)(struct fs_node*);
+typedef uin32_t (*open_type_t)(struct fs_node*);
+typedef uin32_t (*close_type_t)(struct fs_node*);
 typedef struct dirent * (*readdir_type_t)(struct fs_node*,u32int);
 typedef struct fs_node * (*finddir_type_t)(struct fs_node*,char *name);
 

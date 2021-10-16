@@ -1,9 +1,9 @@
 #include "fs.h"
 
-fs_node_t *fs_root 0;
+fs_node_t *fs_root = 0;
 
 uint32_t read_fs(fs_node_t *node, uint32_t size, uint32_t offset, uint32_t *buffer){
-        if(nod->read!=NULL){
+        if(node->read!=NULL){
                 return node->read(node, offset, size, buffer);
         }else{
                 return 0;
@@ -30,7 +30,7 @@ uint32_t close_fs(fs_node_t *node, uint8_t read, uint8_t write){
         }
 }
 
-struct dirent readdir_fs(fs_node_t *node, uint32_t index){
+struct dirent *readdir_fs(fs_node_t *node, uint32_t index){
         if ((node->flags&0x7) == FS_DIRECTORY && node->readdir != 0 ){
                 return node->readdir(node, index);
         }else{

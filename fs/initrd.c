@@ -18,3 +18,22 @@ enum tar_file_types{
   dir = '5',
   namedpipefifo = '6',
 };
+
+typedef struct tarheader{
+        uint32_t filename[FILE_NAME_LEN];
+        uint32_t filmode;
+        uint32_t owneruid[OWNER_NUMERIC_ID];
+        uint32_t groupuid[GROUP_NUMERIC_ID];
+        uint32_t fsize[FILESIZE_LEN];
+        uint32_t modt[12];
+        uint32_t checksum[8];
+        uint8_t type;
+        uint8_t linkedfile[100]
+        uint8_t sign[6];        // Which is gonna be ustar\0
+        uint8_t ver[2];         // Gotta be 00
+        uint8_t owneruname[OWNER_USER_NAME_SIZE];
+        uint8_t ownergname[OWNER_GROUP_NAME_SIZE];
+        uint32_t devmajornum[8];
+        uint32_t devminornum[8];
+        uint32_t filenameprefix[155];
+}

@@ -36,4 +36,4 @@ typedef struct tarheader{
         uint32_t devmajornum[8];
         uint32_t devminornum[8];
         uint32_t filenameprefix[155];
-}
+} tar_header_t;

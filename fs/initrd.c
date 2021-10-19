@@ -49,3 +49,13 @@ int oct2bin(unsigned char *str, int size) {
     return n;
 }
 
+extern char _binary_ahntri_initrd_kerneldisk_start;
+extern char _binary__ahntri_initrd_kerneldisk_size;
+extern char _binary_ahntri_initrd_kerneldisk_end;
+
+void initinitrd(){
+  uint8_t initrd_start = (uint8_t)&_binary_ahntri_initrd_kerneldisk_start;
+  uint8_t initrd_size = (uint8_t)&_binary_ahntri_initrd_kerneldisk_size;
+  uint8_t initrd_end = (uint8_t)&_binary_ahntri_initrd_kerneldisk_end;
+}
+

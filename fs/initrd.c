@@ -50,7 +50,7 @@ int oct2bin(unsigned char *str, int size) {
 }
 
 extern char _binary_ahntri_initrd_kerneldisk_start;
-extern char _binary__ahntri_initrd_kerneldisk_size;
+extern char _binary_ahntri_initrd_kerneldisk_size;
 extern char _binary_ahntri_initrd_kerneldisk_end;
 
 void initinitrd(){

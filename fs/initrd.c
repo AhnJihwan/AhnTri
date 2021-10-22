@@ -1,3 +1,5 @@
+#include "initrd.h"
+
 //------------------------------
 #define FILE_NAME_LEN 100
 #define OWNER_NUMERIC_ID 8
@@ -59,3 +61,35 @@ void initinitrd(){
   uint8_t initrd_end = (uint8_t)&_binary_ahntri_initrd_kerneldisk_end;
 }
 
+/*
+// Going to use later
+// 미래에 사용예정
+int tar_lookup(unsigned char *archive, char *filename, char **out) {
+    unsigned char *ptr = archive;
+    while (!memcmp(ptr + 257, "ustar", 5)) {
+        int filesize = oct2bin(ptr + 0x7c, 11);
+        if (!memcmp(ptr, filename, strlen(filename) + 1)) {
+            *out = ptr + 512;
+            return filesize;
+        }
+        ptr += (((filesize + 511) / 512) + 1) * 512;
+    }
+    return 0;
+}
+*/
+
+fs_node_t fs_array[9];
+
+fs_node_t init_initrd(uint32_t loc){
+  fs_array[0].name    = "initrd";
+  fs_array[0].mask    = 0;
+  fs_array[0].uid     = 0;
+  fs_array[0].gid     = 0;
+  fs_array[0].inode   = 0;
+  fs_array[0].length  = 0;
+  fs_array[0].flags   = FS_DIRECTORY;
+  fs_array[0].read    = 0;
+  fs_array[0].open    = 0;
+  fs_array[0].close   = 0;
+  fs_array[0].readdir = &initrd_readdir;
+  

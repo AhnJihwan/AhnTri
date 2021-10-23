@@ -10,6 +10,13 @@
 #define OWNER_GROUP_NAME_SIZE 32
 //-------------------------------
 
+initrd_header_t *initrd_header;
+initrd_file_header_t *file_headers;
+fs_node_t *root_nodes;
+int nroot_nodes;
+
+struct dirent dirent;
+
 enum tar_file_types{
   norfilei = 0,
   norfileii = '0',
@@ -78,6 +85,23 @@ int tar_lookup(unsigned char *archive, char *filename, char **out) {
 }
 */
 
+static struct dirent *initrd_readdir(fs_node_t *node, uint32_t index)
+{
+   if(node == initrd_root && index == 0) {
+     dirent.name = "dev";
+     dirent.name[3] = 0;
+     dirent.ino = 0;
+     return &dirent;
+   }
+   if (index-1 >= nroot_nodes) {
+       return 0;
+   }
+   dirent.name = root_nodes[index-1].name
+   dirent.name[strlen(root_nodes[index-1].name)] = 0;
+   dirent.ino = root_nodes[index-1].inode;
+   return &dirent;
+}
+
 fs_node_t fs_array[9];
 
 fs_node_t init_initrd(uint32_t loc){
@@ -92,4 +116,21 @@ fs_node_t init_initrd(uint32_t loc){
   fs_array[0].open    = 0;
   fs_array[0].close   = 0;
   fs_array[0].readdir = &initrd_readdir;
-  
+  fs_array[0].finddir = &initrd_finddir;
+  fs_array[0].ptr = 0;
+  fs_array[0].impl = 0;
+  fs_array[1].name    = "dev";
+  fs_array[1].mask    = 0;
+  fs_array[1].uid     = 0;
+  fs_array[1].gid     = 0;
+  fs_array[1].inode   = 0;
+  fs_array[1].length  = 0;
+  fs_array[1].flags   = FS_DIRECTORY;
+  fs_array[1].read    = 0;
+  fs_array[1].open    = 0;
+  fs_array[1].close   = 0;
+  fs_array[1].readdir = &initrd_readdir;
+  fs_array[1].finddir = &initrd_finddir;
+  fs_array[1].ptr = 0;
+  fs_array[1].impl = 0;
+}

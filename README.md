@@ -9,6 +9,10 @@ http://mirror.us.leaseweb.net/ubuntu-cdimage/xubuntu/releases/20.04/release/xubu
 https://cdimage.ubuntu.com/xubuntu/releases/20.04.2/release/xubuntu-20.04.2.0-desktop-amd64.iso
 https://cdimage.ubuntu.com/xubuntu/releases/18.04/release/xubuntu-18.04.5-desktop-i386.iso
 
+# Discord Server
+(To be an AhnTrian, please contact me via my reddit r/eric0823ahn1)
+https://discord.gg/jCzq4YMCMJ
+
 # Colors
 16 Default Colors + 2 Premium colors
 

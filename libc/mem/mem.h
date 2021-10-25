@@ -30,3 +30,23 @@ void *memset(void *str, int a, uint8_t n){
                 ptr++;
         }
 }
+
+//The following code is borrowed from https://aticleworld.com/memcmp-in-c/ and edited by me thus the code of memcmp isn't fully mine.
+int memcmp(const void *s1, const void *s2, uint32 len){
+   uint8 *a = s1;
+   uint8 *b = s2;
+   int compstat = 0;
+   if (s1 == s2){
+      return 0;
+   }
+   while (len > 0){
+      if (*a != *b){
+         compstat = (*a >*b)?1:-1;
+         break;
+      }
+      len--;
+      a++;
+      b++;
+   }
+   return compstat;
+}

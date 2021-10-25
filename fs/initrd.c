@@ -82,3 +82,30 @@ int tar_lookup(unsigned char *ptr, char *filename, char **out) {
     }
     return filesize;
 }
+
+bool getfiledata(char *filename, void **start, void **end, uint8_t size){
+  void *scanptr = initrd_start;
+	tar_header_t *scan = (tar_header_t*)scanptr;
+  
+  while((uin8_t)scan < _binary_ahntri_initrd_kerneldisk_end){
+		uint8_t lenofthefilename = strlen((char *)scan->filename);
+    uint8_t lenoffilename = strlen(filename);
+    //If the length of the filename givn is smaller than the length of the file name in it make it equal.
+		if (lenoffilename < lenofthefilename){
+			lenofthefilename = lenoffilename;
+    }
+    //When filename matched
+		if (memcmp(scan->filename, filename, lenofthefilename) == 0){																	//Is filename.Data() filename?
+      return true;
+    }
+    uint8_t fsize				= OctalToUseful(scan->fileSize, USTAR_FILESIZE_LENGTH - 1);
+    uint8_t remainder		= USTAR_SECTOR_SIZE - (fileSize % USTAR_SECTOR_SIZE);
+    if (remainder == USTAR_SECTOR_SIZE){
+      remainder = 0;
+    }
+    scanptr += USTAR_SECTOR_SIZE + fileSize + remainder;
+    scan = (tar_header_t*)scanptr;
+  }
+  *start = *end = size = NULL;
+  return false;
+}

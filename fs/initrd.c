@@ -47,6 +47,7 @@ typedef struct tarheader{
         uint32_t filenameprefix[155];
 } tar_header_t;
 
+//Borrowed from osdev.org (like many did)
 int oct2bin(unsigned char *str, int size) {
     int n = 0;
     unsigned char *c = str;
@@ -68,11 +69,9 @@ void initinitrd(){
   uint8_t initrd_end = (uint8_t)&_binary_ahntri_initrd_kerneldisk_end;
 }
 
-/*
-// Going to use later
-// 미래에 사용예정
-int tar_lookup(unsigned char *archive, char *filename, char **out) {
-    unsigned char *ptr = archive;
+// tar lookup(returns the file size
+// tar 안에서 찾기
+int tar_lookup(unsigned char *ptr, char *filename, char **out) {
     while (!memcmp(ptr + 257, "ustar", 5)) {
         int filesize = oct2bin(ptr + 0x7c, 11);
         if (!memcmp(ptr, filename, strlen(filename) + 1)) {
@@ -81,77 +80,5 @@ int tar_lookup(unsigned char *archive, char *filename, char **out) {
         }
         ptr += (((filesize + 511) / 512) + 1) * 512;
     }
-    return 0;
+    return filesize;
 }
-*/
-
-static struct dirent *initrd_readdir(fs_node_t *node, uint32_t index)
-{
-   if(node == initrd_root && index == 0) {
-     dirent.name = "dev";
-     dirent.name[3] = 0;
-     dirent.ino = 0;
-     return &dirent;
-   }
-   if (index-1 >= nroot_nodes) {
-       return 0;
-   }
-   dirent.name = root_nodes[index-1].name
-   dirent.name[strlen(root_nodes[index-1].name)] = 0;
-   dirent.ino = root_nodes[index-1].inode;
-   return &dirent;
-}
-
-fs_node_t fs_array[9];
-
-fs_node_t init_initrd(uint32_t loc){
-  int i;
-  initrd_header = (initrd_header_t *)loc;
-  file_headers = (initrd_file_header_t *)(loc+sizeof(initrd_header_t));
-  fs_array[0].name    = "initrd";
-  fs_array[0].mask    = 0;
-  fs_array[0].uid     = 0;
-  fs_array[0].gid     = 0;
-  fs_array[0].inode   = 0;
-  fs_array[0].length  = 0;
-  fs_array[0].flags   = FS_DIRECTORY;
-  fs_array[0].read    = 0;
-  fs_array[0].open    = 0;
-  fs_array[0].close   = 0;
-  fs_array[0].readdir = &initrd_readdir;
-  fs_array[0].finddir = &initrd_finddir;
-  fs_array[0].ptr = 0;
-  fs_array[0].impl = 0;
-  fs_array[1].name    = "dev";
-  fs_array[1].mask    = 0;
-  fs_array[1].uid     = 0;
-  fs_array[1].gid     = 0;
-  fs_array[1].inode   = 0;
-  fs_array[1].length  = 0;
-  fs_array[1].flags   = FS_DIRECTORY;
-  fs_array[1].read    = 0;
-  fs_array[1].open    = 0;
-  fs_array[1].close   = 0;
-  fs_array[1].readdir = &initrd_readdir;
-  fs_array[1].finddir = &initrd_finddir;
-  fs_array[1].ptr = 0;
-  fs_array[1].impl = 0;
-  nroot_nodes = 9;
-  for(i=0; i<9; i++){
-    file_headers[i].offset+=location;
-    root_nodes[i].name=&file_headers[i].name;
-    root_nodes[i].mask = 0;
-    root_nodes[i].uid = 0;
-    root_nodes[i].gid = 0;
-    root_nodes[i].length = file_headers[i].length;
-    root_nodes[i].inode = i;
-    root_nodes[i].read = &initrd_read;
-    root_nodes[i].write = 0;
-    root_nodes[i].readdir = 0;
-    root_nodes[i].finddir = 0;
-    root_nodes[i].open = 0;
-    root_nodes[i].close = 0;
-    root_nodes[i].impl = 0;
-  }
-}
-

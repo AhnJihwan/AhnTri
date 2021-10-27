@@ -253,7 +253,7 @@ void ccalc(){
 				printf("f(x)=ax^2+bx+c, x that satisifies Rolle's theorem.\n");
 				printf("a: ");
 				num1 = read_int();
-				printf("\nb: );
+				printf("\nb: ");
 				num2 = read_int();
 				printf_int(-1*b/2/a);
 				break;

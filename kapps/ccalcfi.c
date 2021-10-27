@@ -249,6 +249,14 @@ void ccalc(){
 				num2 = read_int();
 				print_int(num2*xpy(num1, num2-1));
 				break;
+			case 23:
+				printf("f(x)=ax^2+bx+c, x that satisifies Rolle's theorem.\n");
+				printf("a: ");
+				num1 = read_int();
+				printf("\nb: );
+				num2 = read_int();
+				printf_int(-1*b/2/a);
+				break;
 			default:
 				ccalc();
 				break;

@@ -255,7 +255,7 @@ void ccalc(){
 				num1 = read_int();
 				printf("\nb: ");
 				num2 = read_int();
-				printf_int(-1*b/2/a);
+				printf_int(-1*num2/2/num1);
 				break;
 			default:
 				ccalc();

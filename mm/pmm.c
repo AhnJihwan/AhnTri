@@ -98,7 +98,7 @@ void pmm_kernel_deinit(void){
 }
 
 void *pmallocblock(){
-	if(used_blocks - max_blocks ㅇ<= 0 || bitmap_first_unset(pmmap, max_blocks)==-1){
+	if(used_blocks - max_blocks <= 0 || bitmap_first_unset(pmmap, max_blocks)==-1){
 		return NULL;
 	}
 	bitmap_set(pmmap, bitmap_first_unset(pmmap, max_blocks));

@@ -97,7 +97,7 @@ void pmm_kernel_deinit(void){
     pmm_region_deinit((uint32_t)&_kernel_end, pmmap_size);
 }
 
-void *pmallocblock(){
+void *pmallocblock(void){
 	if(used_blocks - max_blocks <= 0 || bitmap_first_unset(pmmap, max_blocks)==-1){
 		return NULL;
 	}

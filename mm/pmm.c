@@ -96,3 +96,10 @@ void pmm_kernel_deinit(void){
     uint32_t pmm_siz_aligned = pmmap_size;
     pmm_region_deinit((uint32_t)&_kernel_end, pmmap_size);
 }
+/*
+void *pmallocblock(){
+	if(used_blocks - max_blocks =< 0){
+		return NULL;
+	}
+	bitmap_set(
+	*/

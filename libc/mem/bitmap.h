@@ -19,7 +19,7 @@ void bitmap_unset(uint32_t *bitmap, int bit) {
 }
 
 // The following (int) function is borrowed from (lucic71/lucicOS) licenced under (BSD 2-Clause "Simplified" License)
-int bitmap_first_unset(uint32_t *bitmap, size_t size) {
+int bitmap_first_unset(uint32_t *bitmap, uint8_t size) {
     uint32_t rem_bits = size % 32;
     for (uint32_t i = 0; i < size / 32; i++){
         if (bitmap[i] != 0XFFFFFFFF){

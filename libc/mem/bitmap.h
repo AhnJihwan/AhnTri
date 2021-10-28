@@ -17,9 +17,8 @@ void bitmap_set(uint32_t *bitmap, int bit) {
 void bitmap_unset(uint32_t *bitmap, int bit) {
     bitmap[bit / BITMAP_ROW_SIZE] &= ~(1 << (bit % BITMAP_ROW_SIZE));
 }
-/*
-// The following (int) function is borrowed from (lucic71/lucicOS
-) licenced under (BSD 2-Clause "Simplified" License)
+
+// The following (int) function is borrowed from (lucic71/lucicOS) licenced under (BSD 2-Clause "Simplified" License)
 int bitmap_first_unset(uint32_t *bitmap, size_t size) {
     uint32_t rem_bits = size % 32;
     for (uint32_t i = 0; i < size / 32; i++){
@@ -40,4 +39,3 @@ int bitmap_first_unset(uint32_t *bitmap, size_t size) {
     }
     return -1;
 }
-*/

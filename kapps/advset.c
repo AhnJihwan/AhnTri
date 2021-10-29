@@ -43,7 +43,7 @@ void advset(){
 		printf("What Lanauge?");
 		lang();
 	}else if(cps == KEY_C){
-		printf("Physical Memory Manager.\n[0] Add Block\n[1] free block\n[2] Kernel Deinit\n[3] Print PMM Info");
+		printf("Physical Memory Manager.\n[0] Add Block\n[1] free block\n[2] Kernel Deinit\n[3] Print PMM Info\n");
 		suspend(3);
 		cpsii = get_input_keycode();
 		suspend(3);

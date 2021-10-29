@@ -107,3 +107,9 @@ void *pmallocblock(void){
 	return (void*)(BLOCK_SIZE*bitmap_first_unset(pmmap, max_blocks));
 }
 
+void print_pmm_info(){
+	print_int((int)used_blocks);
+	printf(" Blocks used\n");
+	print_int((int)mem_size);
+	printf(" KB available");
+}

@@ -58,6 +58,8 @@ void advset(){
 		}else if(cpsii == KEY_2){
 			printf("Deiniting the kernel\n");
 			pmm_kernel_deinit();
+		}else if(cpsii == KEY_3){
+			print_pmm_info();
 		}else{
 			printf("Input Not Vaild.\n");
 		}

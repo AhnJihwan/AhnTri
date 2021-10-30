@@ -159,5 +159,5 @@ int devofqf(int a, int x){
 }
 
 int fpx(int num1, int num2){
-	return num2*xpy(num1, num2-1)
+	return num2*xpy(num1, num2-1);
 }

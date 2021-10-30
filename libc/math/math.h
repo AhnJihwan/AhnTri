@@ -157,3 +157,7 @@ int devofqf(int a, int x){
 	//So it is 2ax
 	return 2*a*x;	//returning 2ax
 }
+
+int fpx(int num1, int num2){
+	return num2*xpy(num1, num2-1)
+}

@@ -4,10 +4,9 @@ Copyright 2021 Jihwan Ahn
 The permissions to copy, modify, use privately, and distribute are granted without permission
 and limitations if Licence and Copyright information is noticed and the changes are noticed w
 hen modified. However, Commercial use is granted provided that one has got the copyrighter's p
-ermission. The use of trademarks 'CCALC' and 'CCALC for AhnTri' is prohibited. Liability and W
-arranty, as with trademark use, are limited. 
+ermission. The use of trademarks 'CCALC' and 'CCALC for AhnTri' is prohibited without the copy
+righer's permission. Liability and Warranty, as with trademark use, are limited. 
 */
-//That's still made by me lol
 
 #include "../kernel.h"
 #include "../kinc/api.h"

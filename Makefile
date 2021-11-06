@@ -2,15 +2,15 @@
 all: make_deafult
 
 #Makes everything up
-make_deafult: bboot paging atclib kernel ccalc irq clibv timer framebuffer qemudrivers serialdrivers cmos advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa pmm ld buildgrub clean
+make_deafult: bboot paging atclib kernel ccalc ccalcg irq clibv timer framebuffer qemudrivers serialdrivers cmos advset cbot cal credit art artii fishdic game notes osver keychar gdt idt fsa pmm ld buildgrub clean
 
 #Build kernel main image
 kernel: main.c
 	gcc -m32 -c main.c -o image.o -std=gnu99 -ffreestanding -O1 -Wall -Wextra 
 #Link everything up
 
-ld: linker.ld linker.ld clib.o image.o pagingi.o pagingii.o clibv.o irq.o irq_s.o timer.o ccalc.o qemu.o serial.o cmos.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o pmm.o 
-	ld -m elf_i386 -T linker.ld clib.o image.o pagingi.o pagingii.o clibv.o irq.o irq_s.o cmos.o framebuffer.o timer.o advset.o ccalc.o qemu.o serial.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o pmm.o -o ATOS1.bin -nostdlib
+ld: linker.ld linker.ld clib.o image.o pagingi.o pagingii.o clibv.o irq.o irq_s.o timer.o ccalc.o ccalcgraph.o qemu.o serial.o cmos.o advset.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o pmm.o 
+	ld -m elf_i386 -T linker.ld clib.o image.o pagingi.o pagingii.o clibv.o irq.o irq_s.o cmos.o framebuffer.o timer.o advset.o ccalc.o ccalcgraph.o qemu.o serial.o cbot.o isr.o cal.o art.o artii.o notes.o osver.o fishdic.o credit.o game.o char.o boot.o gdt.o load_gdt.o idt.o load_idt.o fs.o pmm.o -o ATOS1.bin -nostdlib
 
 #Build ISO file via grub
 buildgrub: ATOS1.bin
@@ -48,6 +48,9 @@ timer: drivers/timer.c
 
 ccalc: kapps/ccalcfi.c
 	gcc -m32 -c kapps/ccalcfi.c -o ccalc.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+
+ccalcg: kapps/ccalcgraph.c
+	gcc -m32 -c kapps/ccalcgraph.c -o ccalcgraph.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 framebuffer: drivers/framebuffer.c
 	gcc -m32 -c drivers/framebuffer.c -o framebuffer.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra

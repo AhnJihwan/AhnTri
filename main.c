@@ -138,6 +138,8 @@ void kernmain(){
 		}else if(strcmp(choice, "clibver")==0 || strcmp(choice, "atclibver")==0){
 			clscr();
 			clibver();
+		}else if(strcmp(choice, "ccalcgraph")==0 || strcmp(choice, "ccalcgraphplus")==0){
+			ccalcgraph();
 		}else{
 			printf("\n");
 			printf(choice);

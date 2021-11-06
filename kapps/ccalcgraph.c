@@ -1,3 +1,13 @@
+/*
+Copyright 2021 Jihwan Ahn
+
+The permissions to copy, modify, use privately, and distribute are granted without permission
+and limitations if Licence and Copyright information is noticed and the changes are noticed w
+hen modified. However, Commercial use is granted provided that one has got the copyrighter's p
+ermission. The use of trademarks 'CCALC' and 'CCALC for AhnTri' is prohibited without the copy
+righer's permission. Liability and Warranty, as with trademark use, are limited. 
+*/
+
 void graph_putpixel(uint32_t x, uint32_t y, uint32_t c){
 	uint32_t graphxx=203+x;
 	uint32_t graphyy=203-y;

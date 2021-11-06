@@ -34,5 +34,15 @@ void ccalcgraph(){
 			graph_putpixel(i, a*xpy(k, 2)+b*k+c, 0xbfbccb);
 		} else if(inputgrph==3){
 			graph_putpixel(i, a*xpy(k, 3)+b*xpy(k, 2)+c*k+d, 0x16a26c);
-		} else if(
+		} else if(inputgrph==4){
+			graph_putpixel(i, 2*a*k+b, 0xbfbccb);
+		} else if(inputgrph==5){
+			graph_putpixel(i, 3*a*xpy(k, 2)+2*b*k, 0x16a26c);
+		}
+	}
+	if(inputgrph!=1 | inputgrph!=2 | inputgrph!=3 | inputgrph!=4 | inputgrph!=5){
+		printf("Invalid Input\n");
+		printf("Please insert the valid input again.\n");
+		kernmain();
+	}
 }

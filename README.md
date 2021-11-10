@@ -54,4 +54,4 @@ menuentry "AhnTriOS" {
 ![sshot3](sshot3.png)
 ![sshot4](sshot4.png)
 
-# Dudes I returned.
+# ANNOUNCEMENT: cannot be here a lot until the test ends AGAIN,,.

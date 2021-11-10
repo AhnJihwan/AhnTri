@@ -107,7 +107,7 @@ void *pmallocblock(void){
 	return (void*)(BLOCK_SIZE*bitmap_first_unset(pmmap, max_blocks));
 }
 
-void *pmallocblocks(void, int count){
+void *pmallocblocks(int count){
 	for(int i=0; i<count; count++){
 		if(used_blocks - max_blocks <= 0 || bitmap_first_unset(pmmap, max_blocks)==-1){
 			return NULL;

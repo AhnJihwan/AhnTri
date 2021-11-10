@@ -107,6 +107,18 @@ void *pmallocblock(void){
 	return (void*)(BLOCK_SIZE*bitmap_first_unset(pmmap, max_blocks));
 }
 
+void *pmallocblocks(void, int count){
+	for(int i=0; i<count; count++){
+		if(used_blocks - max_blocks <= 0 || bitmap_first_unset(pmmap, max_blocks)==-1){
+			return NULL;
+		}
+		bitmap_set(pmmap, bitmap_first_unset(pmmap, max_blocks));
+		used_blocks++;
+
+		return (void*)(BLOCK_SIZE*bitmap_first_unset(pmmap, max_blocks));
+	}
+}
+
 void print_pmm_info(){
 	print_int((int)used_blocks);
 	printf(" Blocks used\n");

@@ -122,6 +122,8 @@ void *pmallocblocks(int count){
 void print_pmm_info(){
 	print_int((int)used_blocks);
 	printf(" Blocks used\n");
+	print_int((int)used_blocks*4);
+	printf("KB used\n");
 	print_int((int)mem_size);
 	printf(" KB available");
 }

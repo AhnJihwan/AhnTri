@@ -36,6 +36,10 @@ void print_edx(uint32 edx)
   printf("\n\tBit 6 : PAE-Physical Address Extensions");
 }
 
+static inline void cpuid_ii(int code, uint32_t *a, uint32_t *d) {
+  asm volatile("cpuid":"=a"(*a),"=d"(*d):"a"(code):"ecx","ebx");
+}
+
 #define cpuid(in, eax, ebx, ecx, edx) __asm__("cpuid": "=a" (eax), "=b" (ebx), "=c" (ecx), "=d" (edx) : "a" (in));
 
 void cpuid_test(void)

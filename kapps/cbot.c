@@ -12,7 +12,7 @@ void ahntroid(){
 	while(1){
 		framebuffer_putstr("\n\nUser_Master| ", 0x7fa49d);
 		input = read_char();
-		if(strcmp(input, "hello")==0 || strcmp(input, "hola")==0 || strcmp(input, "hi")==0 || strcmp(input, "hi man")==0 || strcmp(input, "dude")==0){
+		if(strcmp(input, "hello")==0 || strcmp(input, "hola")==0 || strcmp(input, "hi")==0 || strcmp(input, "hi man")==0 || strcmp(input, "dude")==0 || strcmp(input, "hey")==0){
 			framebuffer_putstr("Hello, User Master. This AI is well-trained by arrays of words or numbers", 0x65abe7);
 			framebuffer_putstr("\nbut have only one output. Whatever, have a good day!", 0x65abe7);
 			free(input);
@@ -47,7 +47,7 @@ void ahntroid(){
 			printf("Wassup man\n");
 			free(input);
 		}else{
-			framebuffer_putstr("Word not trained or not exist in code.", 0x65abe7);
+			framebuffer_putstr("wth u talking about", 0x65abe7);
 			
 		}
 	}

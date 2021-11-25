@@ -13,6 +13,9 @@ https://cdimage.ubuntu.com/xubuntu/releases/18.04/release/xubuntu-18.04.5-deskto
 (To be an AhnTrian, please contact me via my reddit r/eric0823ahn1)
 https://discord.gg/jCzq4YMCMJ
 
+# Gonna be here again 12/15/2021
+because of the test...
+
 # Colors
 16 Default Colors + 2 Premium colors
 

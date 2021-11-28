@@ -19,7 +19,7 @@
 #define IA32_PACKAGE_THERM_STATUS 0x1B1
 
 //FROM HERE IS THE RDMSR AND WRMSR FUNCTIONS
-void rdmsr(uint32_t addr){
+uint64_t rdmsr(uint32_t addr){
   uint32_t lo, hi;
   asm volatile("rdmsr" : "=a"(lo), "=d"(hi) : "c"(addr));
   return lo | ((uint64_t)hi << 32);

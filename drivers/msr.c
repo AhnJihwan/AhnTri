@@ -17,7 +17,7 @@
 #define IA32_MISC_ENABLE 0x1A0H
 #define IA32_ENERGY_PERF_BIAS 0x1B0H
 #define IA32_PACKAGE_THERM_STATUS 0x1B1H
-
+uint64_t doesthiswork;
 //FROM HERE IS THE RDMSR AND WRMSR FUNCTIONS
 void rdmsr(uint32_t addr, uint32_t lo, uint32_t hi){
   asm volatile("rdmsr" : "=a"(lo), "=d"(hi) : "c"(addr));
@@ -26,3 +26,4 @@ void rdmsr(uint32_t addr, uint32_t lo, uint32_t hi){
 void wrmsr(uint32_t addr, uint32_t lo, uint32_t hi){
   asm volatile("wrmsr" : "=a"(lo), "=d"(hi) : "c"(addr));
 }
+

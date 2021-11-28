@@ -29,3 +29,8 @@ void wrmsr(uint32_t addr, uint32_t lo, uint32_t hi){
   asm volatile("wrmsr" : "=a"(lo), "=d"(hi) : "c"(addr));
 }
 
+void hightempset(){
+  uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
+  hts |= (1 << 0);
+  wrmsr(IA32_THERM_INTERRUPT, (uint23_t)hts, hts >> 32);
+}

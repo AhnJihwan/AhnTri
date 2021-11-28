@@ -25,9 +25,7 @@ void rdmsr(uint32_t addr){
   return lo | ((uint64_t)hi << 32);
 }
 
-void wrmsr(uint32_t addr, uint64_t msrdata){
-  uint32_t lo = (uint32_t)msrdata;
-  uint64_t hi = msrdata >> 32;
-  asm volatile("wrmsr" :: "a"(lo), "d"(hi) : "c"(addr));
+void wrmsr(uint32_t addr, uint32_t lo, uint32_t hi){
+  asm volatile("wrmsr" : "=a"(lo), "=d"(hi) : "c"(addr));
 }
 

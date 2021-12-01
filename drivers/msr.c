@@ -34,3 +34,10 @@ void hightempset(){
   hts |= (1 << 0);
   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)hts, hts >> 32);
 }
+
+void lowtempset(){
+  uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
+  hts |= (1 << 1);
+  wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
+}
+

@@ -29,15 +29,14 @@ void wrmsr(uint32_t addr, uint32_t lo, uint32_t hi){
   asm volatile("wrmsr" : "=a"(lo), "=d"(hi) : "c"(addr));
 }
 
-void hightempset(){
-  uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
-  hts |= (1 << 0);
-  wrmsr(IA32_THERM_INTERRUPT, (uint32_t)hts, hts >> 32);
+void ia32_therm_interrupt(int numob){
+  if(numob == 0){
+    uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
+    hts |= (1 << 0);
+    wrmsr(IA32_THERM_INTERRUPT, (uint32_t)hts, hts >> 32);
+  }else if(numob == 1){
+    uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
+    lts |= (1 << 1);
+    wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
+  }
 }
-
-void lowtempset(){
-  uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
-  lts |= (1 << 1);
-  wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
-}
-

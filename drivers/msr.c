@@ -29,7 +29,7 @@ void wrmsr(uint32_t addr, uint32_t lo, uint32_t hi){
   asm volatile("wrmsr" : "=a"(lo), "=d"(hi) : "c"(addr));
 }
 
-void ia32_therm_interrupt(int numob){
+void ia32_therm_interrupt_function(int numob){
   if(numob == 0){
     uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
     hts |= (1 << 0);

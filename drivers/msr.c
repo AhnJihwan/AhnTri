@@ -49,13 +49,9 @@ void ia32_therm_interrupt_f(int numob, bool setornt){
   }
 }
 
-void ia32_energy_pref_status_f(bool energysave_not){
+void ia32_energy_pref_status_f(){
   uint64_t energy = rdmsr(IA32_ENERGY_PERF_BIAS);
-  if(energysave_not == true){
     energy |= (1001 << 0);                // Your Eco-friendly 🍀☘🍀☘
-  }else if(energysave_not == false){
-    energy |= (0000 << 0);                // You are killing Earth 🌎🌏🌍
-  }
   wrmsr(IA32_ENERGY_PERF_BIAS, (uint32_t)energy, energy >> 32);
-  printf("0~15 Energy Set.");
+  printf("Eco mode...");
 }

@@ -46,6 +46,23 @@ void newmain(){
 	framebuffer_putchar(219, 0xba9da2);
 	framebuffer_putchar(219, 0xeaa442);
 	framebuffer_putchar(219, 0xffffff);
+	printf("\n");
+	framebuffer_putchar(219, 0x8a2be2);
+	framebuffer_putchar(219, 0x8a2be2);
+	framebuffer_putchar(219, 0xfcfdbd);
+	framebuffer_putchar(219, 0xfcfdbd);
+	framebuffer_putchar(219, 0x4a771f);
+	framebuffer_putchar(219, 0x4a771f);
+	framebuffer_putchar(219, 0x2b0303);
+	framebuffer_putchar(219, 0x2b0303);
+	framebuffer_putchar(219, 0x84442f);
+	framebuffer_putchar(219, 0x84442f);
+	framebuffer_putchar(219, 0x3b008a);
+	framebuffer_putchar(219, 0x3b008a);
+	framebuffer_putchar(219, 0x9cbbd7);
+	framebuffer_putchar(219, 0x9cbbd7);
+	framebuffer_putchar(219, 0x9bb7d4);
+	framebuffer_putchar(219, 0x9bb7d4);
 	capps = get_input_keycode();
 	if(capps == KEY_A){
 		framebuffer_clscr();

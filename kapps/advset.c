@@ -20,6 +20,8 @@ void advset(){
 	printf("a. Change Theme\n");
 	printf("b. Change Language\n");
 	printf("c. Physical Memory Manager\n");
+	printf("d. Earth Save Mode(Eco Mode)\n");
+	printf("e. Safe Termperature mode\n");
 	printf("AhnTroid AI is a part of AhnTri and is protected by the Apache 2.0 open source licence.\n");
 	cps = get_input_keycode();
 	if(cps == KEY_3){
@@ -63,6 +65,12 @@ void advset(){
 		}else{
 			printf("Input Not Vaild.\n");
 		}
+	}else if(cps == KEY_D){
+		ia32_energy_pref_status_f();
+	}else if(cps == KEY_E){
+		ia32_therm_interrupt_f(0, true);
+		ia32_therm_interrupt_f(1, true);
+		ia32_therm_interrupt_f(2, true);
 	} else{
 		clscr();
 		return;

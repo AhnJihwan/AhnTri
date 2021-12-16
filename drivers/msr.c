@@ -29,7 +29,7 @@ void wrmsr(uint32_t addr, uint32_t lo, uint32_t hi){
   asm volatile("wrmsr" : "=a"(lo), "=d"(hi) : "c"(addr));
 }
 
-void ia32_therm_interrupt_status(int numob, bool setornt){
+void ia32_therm_interrupt_f(int numob, bool setornt){
   if(numob == 0){
     uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
     hts |= (1 << 0);
@@ -47,4 +47,15 @@ void ia32_therm_interrupt_status(int numob, bool setornt){
     wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
     printf("PROCHOT# and FORCEPR# Log Enabled.");
   }
+}
+
+void ia32_energy_pref_status_f(bool energysave_not){
+  uint64_t energy = rdmsr(IA32_ENERFY_PREF_STATUS);
+  if(enrgysave_not == true){
+    energy |= (1001 << 0);                // Your Eco-friendly 🍀☘🍀☘
+  }else if(enrgysave_not == false){
+    energy |= (0000 << 0);                // You are killing Earth 🌎🌏🌍
+  }
+  wrmsr(IA32_ENERGY_PREF_STATUS, (uint32_t)energy, energy >> 32);
+  printf("0~15 Energy Set.");
 }

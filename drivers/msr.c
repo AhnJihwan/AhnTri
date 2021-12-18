@@ -80,4 +80,5 @@ void ia32_energy_pref_status_f(bool set_or_not){
 		energy |= (0000 << 0);                // Save Energy X
 		wrmsr(IA32_ENERGY_PERF_BIAS, (uint32_t)energy, energy >> 32);
 		printf("Eco mode off...");
+	}
 }

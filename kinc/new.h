@@ -61,8 +61,8 @@ void newmain(){
 	framebuffer_putchar(219, 0x3b008a);
 	framebuffer_putchar(219, 0x9cbbd7);
 	framebuffer_putchar(219, 0x9cbbd7);
-	framebuffer_putchar(219, 0x9bb7d4);
-	framebuffer_putchar(219, 0x9bb7d4);
+	framebuffer_putchar(219, 0x5555ff);
+	framebuffer_putchar(219, 0x5555ff);
 	capps = get_input_keycode();
 	if(capps == KEY_A){
 		framebuffer_clscr();

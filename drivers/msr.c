@@ -30,23 +30,43 @@ void wrmsr(uint32_t addr, uint32_t lo, uint32_t hi){
 }
 
 void ia32_therm_interrupt_f(int numob, bool setornt){
-  if(numob == 0){
-    uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
-    hts |= (1 << 0);
-    wrmsr(IA32_THERM_INTERRUPT, (uint32_t)hts, hts >> 32);
-    printf("High Temperature Interrupt Set.");
-  }else if(numob == 1){
-    uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
-    lts |= (1 << 1);
-    wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
-    printf("Low Temperature Interrupt Set.");
-  }else if(numob == 2 || numob == 3){
-    uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
-    lts |= (1 << 2);
-    lts |= (1 << 3);
-    wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
-    printf("PROCHOT# and FORCEPR# Log Enabled.");
-  }
+	if(setornt == true){
+		if(numob == 0){
+			uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
+ 		   hts |= (1 << 0);
+ 		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)hts, hts >> 32);
+ 		   printf("High Temperature Interrupt Set.");
+		}else if(numob == 1){
+ 		   uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
+ 		   lts |= (1 << 1);
+ 		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
+ 		   printf("Low Temperature Interrupt Set.");
+ 		 }else if(numob == 2 || numob == 3){
+ 		   uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
+ 		   lts |= (1 << 2);
+ 		   lts |= (1 << 3);
+ 		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
+ 		   printf("PROCHOT# and FORCEPR# Log Enabled.");
+ 		 }
+	}else if(setornt == false){
+		if(numob == 0){
+			uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
+ 		   hts |= (0 << 0);
+ 		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)hts, hts >> 32);
+ 		   printf("High Temperature Interrupt Unset.");
+		}else if(numob == 1){
+ 		   uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
+ 		   lts |= (0 << 1);
+ 		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
+ 		   printf("Low Temperature Interrupt Unset.");
+ 		 }else if(numob == 2 || numob == 3){
+ 		   uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
+ 		   lts |= (0 << 2);
+ 		   lts |= (0 << 3);
+ 		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
+ 		   printf("PROCHOT# and FORCEPR# Log Disabled.");
+ 		 }
+	}
 }
 
 void ia32_energy_pref_status_f(){

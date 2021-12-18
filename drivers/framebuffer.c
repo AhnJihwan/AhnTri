@@ -73,6 +73,10 @@ void framebuffer_backspace(uint32_t color){
     cur_x--;
 }
 
+void framebuffer_back(){
+    cur_x--;
+}
+
 void framebuffer_putstr(char *str, uint32_t color){
     while(*str!=0){
         framebuffer_putchar(*str, color);

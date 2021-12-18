@@ -114,7 +114,7 @@ void ccalc(){
   				printf(" [1] Addition\n [2] Sub\n [3] Mul\n [4] Div\n [5] Power 2\n [6] Power 3\n [7] Return to kernel\n [8] Add and power 3\n [9] Not supported anymore\n [10] sqrt");
    			   	printf("\n");
   				printf(" [11] factorial\n [12] Advanced calc\n [13] for ax^2+bx+c\n [14] for x^y\n [15] for logab\n [16] Logical AND\n [17] OR\n [18] XOR\n");
-				printf(" [19] Sigma of A.P. \n [20] Limit of Exponential Funtion\n [21] Derivative of Quadratic Function f(x)=ax^2\n [22] Derivative of the function f(x)=x^n(f'(x) calculaton...)\n [23] f(x)=ax^2+bx+c, x that satisifies Rolle's theorem.\n");
+				printf(" [19] Sigma of A.P. \n [20] Limit of Exponential Funtion\n [21] Derivative of Quadratic Function f(x)=ax^2\n [22] Derivative of the function f(x)=x^n(f'(x) calculaton...)\n [23] f(x)=ax^2+bx+c, x that satisifies Rolle's theorem.\n [24] Integral of ax^n\n ");
    			   	printf("\n");
 				break;
 			case 1:

@@ -69,9 +69,15 @@ void ia32_therm_interrupt_f(int numob, bool setornt){
 	}
 }
 
-void ia32_energy_pref_status_f(){
-  uint64_t energy = rdmsr(IA32_ENERGY_PERF_BIAS);
-  energy |= (1001 << 0);                // Your Eco-friendly 🍀☘🍀☘
-  wrmsr(IA32_ENERGY_PERF_BIAS, (uint32_t)energy, energy >> 32);
-  printf("Eco mode...");
+void ia32_energy_pref_status_f(bool set_or_not){
+	if(set_or_not == true){
+		uint64_t energy = rdmsr(IA32_ENERGY_PERF_BIAS);
+		energy |= (1001 << 0);                // Your Eco-friendly 🍀☘🍀☘
+		wrmsr(IA32_ENERGY_PERF_BIAS, (uint32_t)energy, energy >> 32);
+		printf("Eco mode...");
+	} else if(set_or_not == false){
+		uint64_t energy = rdmsr(IA32_ENERGY_PERF_BIAS);
+		energy |= (0000 << 0);                // Save Energy X
+		wrmsr(IA32_ENERGY_PERF_BIAS, (uint32_t)energy, energy >> 32);
+		printf("Eco mode off...");
 }

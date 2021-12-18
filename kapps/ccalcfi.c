@@ -267,6 +267,19 @@ void ccalc(){
 				printf("-");
 				print_int(num2/2/num1);
 				break;
+			case 24:
+				print_char(255);
+				printf("ax^n  dx\n");
+				printf("a: ");
+				num1 = read_int();
+				printf("\nn: ");
+				num2 = read_int();
+				print_int(num1);
+				printf("*1/");
+				print_int(num2+1);
+				printf("*x^");
+				print_int(num2+1);
+				break;
 			default:
 				ccalc();
 				break;

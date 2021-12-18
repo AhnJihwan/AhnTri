@@ -269,7 +269,7 @@ void ccalc(){
 				break;
 			case 24:
 				print_char(244);
-				cur_x--;
+				framebuffer_back();
 				print_char(245);
 				printf("ax^n  dx\n");
 				printf("a: ");

@@ -2,7 +2,7 @@
 void display_menu_ccalc_adv()
 {
   printf("\n");
-  printf("   CCalc for advanced calculations  ");
+  printf("             CCalc Life             ");
   printf("\n");
   printf("     [ Welcome to AhnTri Calc ]     ");
   printf("\n");

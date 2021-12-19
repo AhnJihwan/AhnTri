@@ -163,6 +163,6 @@ int fpx(int num1, int num2){
 }
 
 int integral(float num1, float num2){
-	kk = num2+1;
+	float kk = num2+1;
 	return xpy((int)num1, (int)kk)/kk;
 }

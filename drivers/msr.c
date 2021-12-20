@@ -32,7 +32,7 @@ void wrmsr(uint32_t addr, uint32_t lo, uint32_t hi){
 void ia32_therm_interrupt_f(int numob, bool setornt){
 	if(setornt == true){
 		if(numob == 0){
-			uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
+		   uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
  		   hts |= (1 << 0);
  		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)hts, hts >> 32);
  		   printf("High Temperature Interrupt Set.");
@@ -47,7 +47,11 @@ void ia32_therm_interrupt_f(int numob, bool setornt){
  		   lts |= (1 << 3);
  		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
  		   printf("PROCHOT# and FORCEPR# Log Enabled.");
- 		 }
+		}else if(numob == 4){
+ 		   uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
+ 		   lts |= (1 << 4);
+ 		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
+ 		   printf("Critical Temperature Interrupt Set.");
 	}else if(setornt == false){
 		if(numob == 0){
 			uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
@@ -65,7 +69,11 @@ void ia32_therm_interrupt_f(int numob, bool setornt){
  		   lts |= (0 << 3);
  		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
  		   printf("PROCHOT# and FORCEPR# Log Disabled.");
- 		 }
+		}else if(numob == 4){
+ 		   uint64_t lts = rdmsr(IA32_THERM_INTERRUPT);
+ 		   lts |= (0 << 4);
+ 		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
+ 		   printf("Critical Temperature Interrupt Unset.");
 	}
 }
 

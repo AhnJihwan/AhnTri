@@ -52,6 +52,7 @@ void ia32_therm_interrupt_f(int numob, bool setornt){
  		   lts |= (1 << 4);
  		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
  		   printf("Critical Temperature Interrupt Set.");
+		}
 	}else if(setornt == false){
 		if(numob == 0){
 			uint64_t hts = rdmsr(IA32_THERM_INTERRUPT);
@@ -74,6 +75,7 @@ void ia32_therm_interrupt_f(int numob, bool setornt){
  		   lts |= (0 << 4);
  		   wrmsr(IA32_THERM_INTERRUPT, (uint32_t)lts, lts >> 32);
  		   printf("Critical Temperature Interrupt Unset.");
+		}
 	}
 }
 

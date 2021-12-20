@@ -75,10 +75,12 @@ void advset(){
 		ia32_therm_interrupt_f(0, true);
 		ia32_therm_interrupt_f(1, true);
 		ia32_therm_interrupt_f(2, true);
+		ia32_therm_interrupt_f(4, true);
 	}else if(cps == KEY_G){
 		ia32_therm_interrupt_f(0, false);
 		ia32_therm_interrupt_f(1, false);
 		ia32_therm_interrupt_f(2, false);
+		ia32_therm_interrupt_f(4, false);
 	} else{
 		clscr();
 		return;

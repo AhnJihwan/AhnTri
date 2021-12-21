@@ -2,8 +2,6 @@
 
 # AhnTri OS
 
-[![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
-
 # Needed to be built with Xubuntu 20.04/18.04.
 http://mirror.us.leaseweb.net/ubuntu-cdimage/xubuntu/releases/20.04/release/xubuntu-20.04.2.0-desktop-amd64.iso
 https://cdimage.ubuntu.com/xubuntu/releases/20.04.2/release/xubuntu-20.04.2.0-desktop-amd64.iso
@@ -12,22 +10,6 @@ https://cdimage.ubuntu.com/xubuntu/releases/18.04/release/xubuntu-18.04.5-deskto
 # Discord Server
 (To be an AhnTrian, please contact me via my reddit r/eric0823ahn1)
 https://discord.gg/jCzq4YMCMJ
-
-# Gonna be here again 12/15/2021
-because of the test...
-
-# Colors
-16 Default Colors + 2 Premium colors
-
-# What this project is all 'bout
-This is for
- - People who don't want to trash thier old PC but has an useless USB
- - People who loved TUI from 80/90/00
- - People who just want to try out any OS
- - People who are AhnTri fans
- - People who are AhnTri Stargazers
- - Contributers(Owners of copyright)
- - Special Thankers
 
 # Current status
 - [x] Text mode
@@ -56,5 +38,3 @@ menuentry "AhnTriOS" {
 ![sshot2](sshot2.png)
 ![sshot3](sshot3.png)
 ![sshot4](sshot4.png)
-
-# ANNOUNCEMENT: cannot be here a lot until the test ends AGAIN,,.

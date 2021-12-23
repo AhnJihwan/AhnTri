@@ -34,7 +34,7 @@ I. Creating a basic Kernel
 - [x] Differentiation
 - [x] Negative Integration
 - [x] Positive Integration
-- [x] sin/cos/tan
+- [ ] sin/cos/tan
 - [ ] More maths when I learn them and can program them
 
 # Current status(AhnTri Apps/MSR)

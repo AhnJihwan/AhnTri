@@ -11,19 +11,45 @@ https://cdimage.ubuntu.com/xubuntu/releases/18.04/release/xubuntu-18.04.5-deskto
 (To be an AhnTrian, please contact me via my reddit r/eric0823ahn1)
 https://discord.gg/jCzq4YMCMJ
 
-# Current status
-- [x] Text mode
-- [x] Descripter Tables(GDT, IDT)
-- [x] Apps as file(.o)
-- [x] ISRs
-- [x] Change to graphics instead of text mode - framebuffer
-- [x] A basic TTY that can fully supersede VGA text mode
-- [x] IRQs
-- [x] Programmable Interval Timer
-- [ ] Language pack upgrade
-- [ ] Paging
-- [ ] ATA drivers and stuff
-- [ ] Filesystem
+# Current status(AhnTri Kernel)
+I. Creating a basic Kernel
+- [x] Booting up
+- [x] Keyboard
+- [x] GDT/IDT/IRQ
+- [x] PIT
+- [x] Framebuffer
+- [x] PMM
+- [x] VFS
+- [ ] INITRD
+- [ ] EXT2 driver
+- [ ] ATA driver
+- [ ] ACPI
+
+# Current status(AhnTri CCALC)
+- [x] Basic calculator functions
+- [x] Powers/Roots
+- [x] Logical Operations
+- [x] Sigma
+- [x] Limit
+- [x] Differentiation
+- [x] Negative Integration
+- [x] Positive Integration
+- [x] sin/cos/tan
+- [ ] More maths when I learn them and can program them
+
+# Current status(AhnTri Apps/MSR)
+- [x] AI assistant
+- [x] Dictionary
+- [x] Game
+- [x] Notes
+- [x] OSver
+- [x] CCALC
+- [x] ascii sun art
+- [x] Calander
+- [x] RTC
+- [x] Thermal Control in Advanced Settings
+- [x] Eco mode
+- [ ] More when I have ideas
 
 # Multiboot
 In order to be able to run it in your PC, copy and paste the code below.

@@ -80,7 +80,6 @@ void pmm_add_blocks_from_kstart(uint32_t how_many){
 
 void pmm_init_availreg(uint32_t mmap, uint32_t mmap_endp){
 	multiboot_memory_map_t* mmap1 = (multiboot_memory_map_t*) mmap;
-	multiboot_memory_map_t* mmap_endp1 = (multiboot_memory_map_t*) mmap_endp;
 	int i;
 	for(i=0; mmap_endp < mmap1; i++){
 		mmap1++;
@@ -93,7 +92,6 @@ void pmm_init_availreg(uint32_t mmap, uint32_t mmap_endp){
 void pmm_kernel_deinit(void){
     uint8_t sizeof_kernel = (uint8_t)&_kernel_end-(uint8_t)&_kernel_start;
     pmm_region_deinit((uint32_t)&_kernel_start, sizeof_kernel);
-    uint32_t pmm_siz_aligned = pmmap_size;
     pmm_region_deinit((uint32_t)&_kernel_end, pmmap_size);
 }
 

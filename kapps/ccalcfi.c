@@ -289,8 +289,8 @@ void ccalc(){
 				printf("\nA(big): ");
 				num2 = read_int();
 				printf("\nB(small): ");
-				nume3 = read_int();
-				printf("-");
+				num3 = read_int();
+				printf("\n");
 				print_int(num1*powth(num2-num3)/6);		// |a(A-B)^3/6|
 				break;
 			default:

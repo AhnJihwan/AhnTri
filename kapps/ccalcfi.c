@@ -282,6 +282,17 @@ void ccalc(){
 				printf("*x^");
 				print_int(num2+1);
 				break;
+			case 25:
+				printf("The surface of the area between a curve a(x-A)(x-B) and the x axis\n");
+				printf("a: ");
+				num1 = read_int();
+				printf("\nA(big): ");
+				num2 = read_int();
+				printf("\nB(small): ");
+				nume3 = read_int();
+				printf("-");
+				print_int(num1*powth(num2-num3)/6);		// |a(A-B)^3/6|
+				break;
 			default:
 				ccalc();
 				break;

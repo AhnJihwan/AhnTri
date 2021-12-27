@@ -8,5 +8,5 @@ typedef struct rsdp {
   uint8_t xsdtaddr;
   uint8_t xcsum;
   uint8_t reserved;
-}
+} rsdp_t;
 

@@ -1,39 +1,43 @@
-typedef struct rsdp {
-  uint8_t sign;
+struct rsdp_v1 {
+  char sign[8];
   uint8_t csum;
-  uint8_t oemid;
+  char oemid[6];
   uint8_t revision;
-  uint8_t rsdtaddr;
-  uint8_t len;
-  uint8_t xsdtaddr;
+  uint32_t rsdtaddr;
+} __attribute__ ((packed));
+
+struct rsdp_v2 {
+  char sign[8];
+  uint8_t csum;
+  char oemid[6];
+  uint8_t revision;
+  uint32_t rsdtaddr;
+  uint32_t len;
+  uint64_t xsdtaddr;
   uint8_t xcsum;
   uint8_t reserved;
-} rsdp_t;
+} __attribute__ ((packed));
 
-typedef struct rsdt {
-  uint8_t sign;
-  uint8_t len;
+struct acpi_header {
+  char sign[4];
+  uint32_t len;
   uint8_t revision;
   uint8_t csum;
-  uint8_t oemid;
-  uint8_t oemtbleid;
-  uint8_t oemrevision;
-  uint8_t creatorid;
-  uint8_t creatorrevision;
-  uint32_t entry;
+  char oemid[6];
+  char oemtbleid[8];
+  uint32_t oemrevision;
+  uint32_t creatorid;
+  uint32_t creatorrevision;
+};
+
+typedef struct rsdt {
+  acpi_header head;
+  uint32_t entry[(acpi_header.len-sizeof(h))/4];
 } rsdt_t;
 
 typedef struct xsdt {
-  uint8_t sign;
-  uint8_t len;
-  uint8_t revision;
-  uint8_t csum;
-  uint8_t oemid;
-  uint8_t oemtbleid;
-  uint8_t oemrevision;
-  uint8_t creatorid;
-  uint8_t creatorrevision;
-  uint64_t entry;
+  acpi_header head;
+  uint32_t entry[(acpi_header.len-sizeof(h))/8];
 } xsdt_t;
 
 typedef struct gas {

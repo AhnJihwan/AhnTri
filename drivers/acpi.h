@@ -4,7 +4,7 @@ struct rsdp_v1 {
   char oemid[6];
   uint8_t revision;
   uint32_t rsdtaddr;
-} __attribute__ ((packed));
+} __attribute__ ((packed)) rsdp_v1_t;
 
 struct rsdp_v2 {
   char sign[8];
@@ -16,7 +16,7 @@ struct rsdp_v2 {
   uint64_t xsdtaddr;
   uint8_t xcsum;
   uint8_t reserved;
-} __attribute__ ((packed));
+} __attribute__ ((packed)) rsdp_v2_t;
 
 typedef struct acpi_header {
   char sign[4];

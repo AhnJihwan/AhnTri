@@ -20,9 +20,9 @@ uint32_t fg_color, bg_color;
 #define FONT_WIDTH 8
 int framebuffer_check(multiboot_info_t* multiboot){
   int framebuffer_type;
-  if (CHECK_FLAG (multiboot->flags, 12)){
+  if (CHECK_FLAG (multiboot->flags, 8)){
     suspend(1);
-    qemu_printf_string("Framebuffer flags(12) checked! \\/");
+    qemu_printf_string("Framebuffer flags(8) checked! \\/");
     switch (multiboot->framebuffer_type){
       case MULTIBOOT_FRAMEBUFFER_TYPE_RGB:
         qemu_printf_string("Framebuffer type is rgb");

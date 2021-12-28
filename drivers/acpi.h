@@ -18,7 +18,7 @@ struct rsdp_v2 {
   uint8_t reserved;
 } __attribute__ ((packed));
 
-struct acpi_header {
+typedef struct acpi_header {
   char sign[4];
   uint32_t len;
   uint8_t revision;
@@ -28,16 +28,16 @@ struct acpi_header {
   uint32_t oemrevision;
   uint32_t creatorid;
   uint32_t creatorrevision;
-};
+} acpi_header_t;
 
 typedef struct rsdt {
-  acpi_header head;
-  uint32_t entry[(acpi_header.len-sizeof(h))/4];
+  acpi_header_t head;
+  uint32_t entry[];
 } rsdt_t;
 
 typedef struct xsdt {
-  acpi_header head;
-  uint32_t entry[(acpi_header.len-sizeof(h))/8];
+  acpi_header_t head;
+  uint64_t entry[];
 } xsdt_t;
 
 typedef struct gas {

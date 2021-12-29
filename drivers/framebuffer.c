@@ -18,29 +18,24 @@ uint32_t fg_color, bg_color;
 #define CHECK_FLAG(flags,bit)   ((flags) & (1 << (bit)))
 #define FONT_HEIGHT 8
 #define FONT_WIDTH 8
-int framebuffer_check(multiboot_info_t* multiboot){
+int framebuffer_check(struct multiboot_tag_framebuffer *multiboot){
   int framebuffer_type;
-  if (CHECK_FLAG (multiboot->flags, 8)){
-    suspend(1);
-    qemu_printf_string("Framebuffer flags(8) checked! \\/");
-    switch (multiboot->framebuffer_type){
-      case MULTIBOOT_FRAMEBUFFER_TYPE_RGB:
-        qemu_printf_string("Framebuffer type is rgb");
-        framebuffer_type = 1;
-        return framebuffer_type;
-    }
-    return framebuffer_type;
-  }
+  switch (multiboot->common.framebuffer_type){
+    case MULTIBOOT_FRAMEBUFFER_TYPE_RGB:
+      qemu_printf_string("Framebuffer type is rgb");
+      framebuffer_type = 1;
+      return framebuffer_type;
+   }
   return framebuffer_type;
 }
 
-int init_framebuffer(multiboot_info_t* mbi){
+int init_framebuffer(struct multiboot_tag_framebuffer *mbi){
   if(framebuffer_check(mbi)==1){
-    framebuffer_buffer = (uint32_t*)((uintptr_t)mbi->framebuffer_addr);
-    framebuffer_bpp = mbi->framebuffer_bpp;
-    framebuffer_pitch = mbi->framebuffer_pitch;
-    framebuffer_height = mbi->framebuffer_height;
-    framebuffer_width = mbi->framebuffer_width;
+    framebuffer_buffer = (uint32_t*)((uintptr_t)mbi->common.framebuffer_addr);
+    framebuffer_bpp = mbi->common.framebuffer_bpp;
+    framebuffer_pitch = mbi->common.framebuffer_pitch;
+    framebuffer_height = mbi->common.framebuffer_height;
+    framebuffer_width = mbi->common.framebuffer_width;
   }
 }
 

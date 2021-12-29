@@ -3,7 +3,7 @@
 // Made in Android
 .set FLAGS,    1<<2		     # Flag are 1<<2
 
-.set MAGIC,    0x1BADB002           # Magic number
+.set MAGIC,    0xe85250d6           # Magic number
 
 .set CHECKSUM, -(MAGIC + FLAGS)     # set the checksum
 

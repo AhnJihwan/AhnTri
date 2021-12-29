@@ -176,7 +176,7 @@ void mkern_main(unsigned long addr)
   asm volatile("\tint $0");
   irq_install();
   extern uint8_t *_kernel_end;								//Defined in Linker.ld
-  uint32_t sizeofpmminit = (bmeminfo_tag->mem_upper + 1024;
+  uint32_t sizeofpmminit = (bmeminfo_tag->mem_upper + 1024);
   pmm_init((uint32_t) &_kernel_end, sizeofpmminit);
   pmm_init_availreg(mmap_tag->addr, mmap->addr+mmap->len);
   pmm_kernel_deinit();

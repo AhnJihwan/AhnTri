@@ -87,7 +87,7 @@ void framebuffer_clscr(uint32_t color){
     cur_y = 0;
 }
 
-void init_tty(multiboot_info_t *mbi, uint32_t fg, uint32_t bg){
+void init_tty(struct multiboot_tag_framebuffer *mbi, uint32_t fg, uint32_t bg){
   init_framebuffer(mbi);
   fg_color = fg;
   bg_color = bg;

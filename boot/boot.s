@@ -1,6 +1,5 @@
+#include "multiboot.h"
 
-#Assembly TriOS bootloader
-// Made in Android
 .set FLAGS,    1<<2		     # Flag are 1<<2
 
 .set MAGIC,    0xe85250d6           # Magic number

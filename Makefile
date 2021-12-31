@@ -14,7 +14,7 @@ ld: linker.ld linker.ld clib.o image.o pagingi.o pagingii.o clibv.o irq.o irq_s.
 
 #Build ISO file via grub
 buildgrub: ATOS1.bin
-	grub-file --is-x86-multiboot ATOS1.bin
+	grub-file --is-x86-multiboot2 ATOS1.bin
 	mkdir -p rpc_isodir/boot/grub
 	cp ATOS1.bin rpc_isodir/boot/ATOS1.bin
 	cp grub.cfg rpc_isodir/boot/grub/grub.cfg
@@ -136,7 +136,7 @@ ld_vm: linker.ld linker.ld imagei.o ccalc.o advset.o cbot.o cal.o artii.o notes.
 
 #Build ISO file via grub
 buildgrub_vmpc: ATOS2.bin
-	grub-file --is-x86-multiboot ATOS2.bin
+	grub-file --is-x86-multiboot2 ATOS2.bin
 	mkdir -p vmpc_isodir/boot/grub
 	cp ATOS2.bin vmpc_isodir/boot/ATOS2.bin
 	grub-mkrescue -o atos_vmpc.iso vmpc_isodir

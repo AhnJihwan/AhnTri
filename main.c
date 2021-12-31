@@ -161,33 +161,33 @@ void kernmain(){
 	suspend(5);
 	nosound();
 }
- 
-void mkern_main(multiboot_info_t* multiboot)
+
+struct multiboot_tag *multiboot;
+struct multiboot_tag_basic_meminfo *bmeminfo_tag;
+multiboot_memory_map_t *mmap_tag;
+struct multiboot_tag_framebuffer *framebuffer_tag;
+struct multiboot_tag_string *string_tag;
+
+void mkern_main(unsigned long addr)
 {
-  if (CHECK_FLAG (multiboot->flags, 12)){
-    suspend(1);
-    qemu_printf_string("Framebuffer flags(12) checked! \\/");
-  }
   init_gdt();
   init_idt();
   asm volatile("\tmov $12395, %eax");
   asm volatile("\tint $0");
   irq_install();
   extern uint8_t *_kernel_end;								//Defined in Linker.ld
-  uint32_t sizeofpmminit = multiboot->mem_upper + 1024;
+  uint32_t sizeofpmminit = (bmeminfo_tag->mem_upper + 1024);
   pmm_init((uint32_t) &_kernel_end, sizeofpmminit);
-  pmm_init_availreg(multiboot->mmap_addr, multiboot->mmap_addr+multiboot->mmap_length);
+  pmm_init_availreg(mmap_tag->addr, mmap_tag->addr+mmap_tag->len);
   pmm_kernel_deinit();
   qemu_printf_string("Everything is initialized. System is starting...");
-  init_tty(multiboot, 0x7fa49d, 0x000000);
+  init_tty(framebuffer_tag, 0x7fa49d, 0x000000);
   print_int((int)sizeofpmminit);
   printf(" pages initialized.\n");
   suspend(4);
-  printf_mmap_addr(multiboot);
+  printf_mmap_addr(mmap_tag);
   beep();
   print_kernel_map();
-  printf("\nBoot loader: ");
-  printf((char*)multiboot->boot_loader_name);
   read_rtc();
   suspend(20);
   framebuffer_clscr(0x000000);

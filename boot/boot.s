@@ -1,17 +1,15 @@
+#include "multiboot.h"
 
-#Assembly TriOS bootloader
-// Made in Android
-.set FLAGS,    1<<2		     # Flag are 1<<2
-
-.set MAGIC,    0x1BADB002           # Magic number
-
-.set CHECKSUM, -(MAGIC + FLAGS)     # set the checksum
+.extern mkern_main
 
 .section .multiboot                 # set multiboot enabled
-.long MAGIC
-.long FLAGS
-.long CHECKSUM
 
+multiboot_header_start:
+.long    0xe85250d6           # Magic number
+.long	0
+.long	multiboot_header_end - multiboot_header_start
+.long	-(0xe85250d6 + (multiboot_header_end - multiboot_header_start))     # set the checksum
+multiboot_header_end:
 
 stackBottom:
 

@@ -1,7 +1,7 @@
 #include "../kinc/api.h"
 
-#define CURRENT_YEAR        2021                            // Change this each year!
-#define CURRENT_MONTH       08
+#define CURRENT_YEAR        2022                            // Change this each year!
+#define CURRENT_MONTH       01
 
 /*
 From OSDev.org

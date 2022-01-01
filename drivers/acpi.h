@@ -63,4 +63,3 @@ typedef struct gas {
   uint8_t accesssize;
   uint8_t addr;
 } gas_t;
-

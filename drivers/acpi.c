@@ -3,10 +3,15 @@
 void parse_rsdp(uint8_t* addr){
 	rsdp_v1_t* rsdp = (rsdp_v1_t*) addr;
 	char sign[8] = rsdp->sign;
+	printf("Signature: ");
+	printf(sign);
 	uint8_t csum = rsdp->csum;
 	char oemid[6] = rsdp->oemid;
+	printf("\nOEMID: ");
+	printf(oemid);
 	uint8_t revision = rsdp->revision;
 	uint32_t rsdtaddr = rsdp->rsdtaddr;
+	printf_hex(rsdtaddr);
 }
 
 void parse_rsdt(rsdt_t* rsdt){
@@ -41,7 +46,7 @@ void searchforrsdp(){
 	uint8_t* end = (uint8_t*)0x000FFFFF;
 	// TODO: checksum
 	while(addr<end){
-		if(*(uint64_t*)start == 0x5253442050545220){
+		if(*(uint64_t*)start == 0x2052545020445352){
 			parse_rsdt(addr);
 		}
 	}

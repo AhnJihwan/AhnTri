@@ -12,6 +12,7 @@ void parse_rsdp(uint8_t* addr){
 	printf_hex(rsdtaddr);
 }
 
+/*
 void parse_rsdt(rsdt_t* rsdt){
 	acpi_header_t* head = rsdt->head;
 	printf(head->sign);
@@ -38,13 +39,14 @@ void parse_xsdt(xsdt_t* xsdt){
 	uint32_t creatorid = head->creatorid;
 	uint32_t creatorrevision = head->creatorrevision;
 }
+*/
 
 void searchforrsdp(){
 	uint8_t* addr = (uint8_t*)0x000E0000;
 	uint8_t* end = (uint8_t*)0x000FFFFF;
 	// TODO: checksum
 	while(addr<end){
-		if(*(uint64_t*)start == 0x2052545020445352){
+		if(*(uint64_t*)addr == 0x2052545020445352){
 			parse_rsdt(addr);
 		}
 	}

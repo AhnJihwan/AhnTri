@@ -2,26 +2,24 @@
 
 void parse_rsdp(uint8_t* addr){
 	rsdp_v1_t* rsdp = (rsdp_v1_t*) addr;
-	char sign[8] = rsdp->sign;
 	printf("Signature: ");
-	printf(sign);
+	printf(rsdp->sign);
 	uint8_t csum = rsdp->csum;
-	char oemid[6] = rsdp->oemid;
 	printf("\nOEMID: ");
-	printf(oemid);
+	printf(rsdp->oemid);
 	uint8_t revision = rsdp->revision;
 	uint32_t rsdtaddr = rsdp->rsdtaddr;
 	printf_hex(rsdtaddr);
 }
 
 void parse_rsdt(rsdt_t* rsdt){
-	acpi_header_t head = rsdt->head;
-	char sign[4] = head->sign;
+	acpi_header_t* head = rsdt->head;
+	printf(head->sign);
 	uint32_t len = head->len;
 	uint8_t revision = head->revision;
-	uint8_t csu|m = head->csum;
-	char oemid[6] = head->oemid;
-	char oemtbleid[8] = head->oemtbleid;
+	uint8_t csum = head->csum;
+	printf(head->oemid);
+	printf(head->oemtbleid);
 	uint32_t oemrevision = head->oemrevision;
 	uint32_t creatorid = head->creatorid;
 	uint32_t creatorrevision = head->creatorrevision;
@@ -29,13 +27,13 @@ void parse_rsdt(rsdt_t* rsdt){
 }
 
 void parse_xsdt(xsdt_t* xsdt){
-	acpi_header_t head = rsdt->head;
-	char sign[4] = head->sign;
+	acpi_header_t* head = rsdt->head;
+	printf(head->sign);
 	uint32_t len = head->len;
 	uint8_t revision = head->revision;
-	uint8_t csu|m = head->csum;
-	char oemid[6] = head->oemid;
-	char oemtbleid[8] = head->oemtbleid;
+	uint8_t csum = head->csum;
+	printf(head->oemid);
+	printf(head->oemtbleid);
 	uint32_t oemrevision = head->oemrevision;
 	uint32_t creatorid = head->creatorid;
 	uint32_t creatorrevision = head->creatorrevision;

@@ -1,3 +1,5 @@
+#include "../libc/atclib.h"
+
 typedef struct rsdp_v1 {
   char sign[8];
   uint8_t csum;

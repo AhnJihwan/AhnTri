@@ -7,13 +7,20 @@ void parse_rsdp(uint8_t* addr){
 	char oemid[6] = rsdp->oemid;
 	uint8_t revision = rsdp->revision;
 	uint32_t rsdtaddr = rsdp->rsdtaddr;
-	numofrsdtbles = (head.len-sizeof(acpi_header_t))/4;
 }
 
-void parse_rsdp_2(uint8_t* addr){
-	
-void parse_rsdt(uint8_t* ){
-	
+void parse_rsdt(rsdt_t* rsdt){
+	acpi_header_t head = rsdt->head;
+	char sign[4] = head->sign;
+	uint32_t len = head->len;
+	uint8_t revision = head->revision;
+	uint8_t csu|m = head->csum;
+	char oemid[6] = head->oemid;
+	char oemtbleid[8] = head->oemtbleid;
+	uint32_t oemrevision = head->oemrevision;
+	uint32_t creatorid = head->creatorid;
+	uint32_t creatorrevision = head->creatorrevision;
+	numofrsdtbles = (head.len-sizeof(acpi_header_t))/4;
 }
 
 void parse_xsdt(xsdt_t* xsdt){

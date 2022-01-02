@@ -47,7 +47,7 @@ void searchforrsdp(){
 	// TODO: checksum
 	while(addr<end){
 		if(*(uint64_t*)addr == 0x2052545020445352){
-			parse_rsdt(addr);
+			parse_rsdp(addr);
 		}
 	}
 }

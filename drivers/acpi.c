@@ -2,13 +2,14 @@
 
 void parse_rsdp(uint8_t* addr){
 	rsdp_v1_t* rsdp = (rsdp_v1_t*) addr;
-	printf("Signature: ");
+	printf("\nSignature: ");
 	printf(rsdp->sign);
 	uint8_t csum = rsdp->csum;
 	printf("\nOEMID: ");
 	printf(rsdp->oemid);
 	uint8_t revision = rsdp->revision;
 	uint32_t rsdtaddr = rsdp->rsdtaddr;
+	printf("\nRSDT Address: ");
 	printf_hex(rsdtaddr);
 }
 
@@ -49,5 +50,6 @@ void searchforrsdp(){
 		if(*(uint64_t*)addr == 0x2052545020445352){
 			parse_rsdp(addr);
 		}
+		addr += 16;
 	}
 }

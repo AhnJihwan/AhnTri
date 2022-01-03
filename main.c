@@ -140,6 +140,8 @@ void kernmain(){
 			clibver();
 		}else if(strcmp(choice, "ccalcgraph")==0 || strcmp(choice, "ccalcgraphplus")==0){
 			ccalcgraph();
+		}else if(strcmp(choice, "rsdpparse")==0{
+			searchforrsdp();
 		}else{
 			printf("\n");
 			printf(choice);
@@ -188,6 +190,7 @@ void mkern_main(multiboot_info_t* multiboot)
   print_kernel_map();
   printf("\nBoot loader: ");
   printf((char*)multiboot->boot_loader_name);
+  searchforrsdp();
   read_rtc();
   suspend(20);
   framebuffer_clscr(0x000000);

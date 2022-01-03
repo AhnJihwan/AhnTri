@@ -140,7 +140,7 @@ void kernmain(){
 			clibver();
 		}else if(strcmp(choice, "ccalcgraph")==0 || strcmp(choice, "ccalcgraphplus")==0){
 			ccalcgraph();
-		}else if(strcmp(choice, "rsdpparse")==0{
+		}else if(strcmp(choice, "rsdpparse")==0){
 			searchforrsdp();
 		}else{
 			printf("\n");

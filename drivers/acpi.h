@@ -1,4 +1,6 @@
-struct rsdp_v1 {
+#include "../libc/atclib.h"
+
+typedef struct rsdp_v1 {
   char sign[8];
   uint8_t csum;
   char oemid[6];
@@ -6,7 +8,7 @@ struct rsdp_v1 {
   uint32_t rsdtaddr;
 } __attribute__ ((packed)) rsdp_v1_t;
 
-struct rsdp_v2 {
+typedef struct rsdp_v2 {
   char sign[8];
   uint8_t csum;
   char oemid[6];

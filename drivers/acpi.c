@@ -15,7 +15,7 @@ void parse_rsdp(uint8_t* addr){
 	printf_hex(rsdtaddr);
 }
 
-//TODO: Parse the RSDT based on the address given
+// TODO: Parse the RSDT based on the address given
 
 /*
 void parse_rsdt(rsdt_t* rsdt){

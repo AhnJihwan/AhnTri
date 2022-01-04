@@ -15,6 +15,8 @@ void parse_rsdp(uint8_t* addr){
 	printf_hex(rsdtaddr);
 }
 
+//TODO: Parse the RSDT based on the address given
+
 /*
 void parse_rsdt(rsdt_t* rsdt){
 	acpi_header_t* head = rsdt->head;
@@ -58,6 +60,7 @@ uint8_t checksum(const char* addr, uint8_t size){
 void searchforrsdp(){
 	uint8_t* addr = (uint8_t*)0x000E0000;
 	uint8_t* end = (uint8_t*)0x000FFFFF;
+	printf("\nPari ACPI Manager says: ");
 	while(addr<end){
 		if(*(uint64_t*)addr == 0x2052545020445352 && checksum(addr, sizeof(rsdp_v1_t)) == 0){
 			parse_rsdp(addr);

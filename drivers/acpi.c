@@ -1,3 +1,5 @@
+//Codename Pari(means 'fly' in Korean)
+
 #include "acpi.h"
 
 void parse_rsdp(uint8_t* addr){
@@ -42,12 +44,22 @@ void parse_xsdt(xsdt_t* xsdt){
 }
 */
 
+uint8_t checksum(const char* addr, uint8_t size){
+	const char* end = addr + size;
+	uint8_t sum = 0;
+	while (addr < end) {
+		sum += *addr;
+		addr++;
+	}
+	return sum;
+}
+
+
 void searchforrsdp(){
 	uint8_t* addr = (uint8_t*)0x000E0000;
 	uint8_t* end = (uint8_t*)0x000FFFFF;
-	// TODO: checksum
 	while(addr<end){
-		if(*(uint64_t*)addr == 0x2052545020445352){
+		if(*(uint64_t*)addr == 0x2052545020445352 && checksum(addr, sizeof(rsdp_v1_t)) == 0){
 			parse_rsdp(addr);
 		}
 		addr += 16;

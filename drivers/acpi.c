@@ -17,7 +17,7 @@ void parse_rsdp(uint8_t* addr){
 
 // TODO: Parse the RSDT based on the address given
 
-/*
+
 void parse_rsdt(rsdt_t* rsdt){
 	acpi_header_t* head = rsdt->head;
 	printf(head->sign);
@@ -32,6 +32,7 @@ void parse_rsdt(rsdt_t* rsdt){
 	numofrsdtbles = (head.len-sizeof(acpi_header_t))/4;
 }
 
+/*
 void parse_xsdt(xsdt_t* xsdt){
 	acpi_header_t* head = rsdt->head;
 	printf(head->sign);

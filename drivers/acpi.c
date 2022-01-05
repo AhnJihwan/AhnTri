@@ -19,7 +19,7 @@ void parse_rsdp(uint8_t* addr){
 
 
 void parse_rsdt(rsdt_t* rsdt){
-	acpi_header_t* head = rsdt->head;
+	acpi_header_t* head = (acpi_header_t *)rsdt->head;
 	printf(head->sign);
 	uint32_t len = head->len;
 	uint8_t revision = head->revision;
@@ -29,7 +29,7 @@ void parse_rsdt(rsdt_t* rsdt){
 	uint32_t oemrevision = head->oemrevision;
 	uint32_t creatorid = head->creatorid;
 	uint32_t creatorrevision = head->creatorrevision;
-	numofrsdtbles = (head.len-sizeof(acpi_header_t))/4;
+	int numofrsdtbles = (head->len-sizeof(acpi_header_t))/4;
 }
 
 /*

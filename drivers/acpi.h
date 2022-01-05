@@ -30,7 +30,7 @@ typedef struct acpi_header {
   uint32_t oemrevision;
   uint32_t creatorid;
   uint32_t creatorrevision;
-} acpi_header_t;
+} __attribute__ ((packed)) acpi_header_t;
 
 typedef struct rsdt {
   acpi_header_t head;

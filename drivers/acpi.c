@@ -15,10 +15,8 @@ void parse_rsdp(uint8_t* addr){
 	printf_hex(rsdtaddr);
 }
 
-// TODO: Parse the RSDT based on the address given
-
-
-void parse_rsdt(rsdt_t* rsdt){
+void parse_rsdt(uint8_t* addr){
+	rsdt_t* rsdt = (rsdt_t*) addr;
 	acpi_header_t head = rsdt->head;
 	printf(head.sign);
 	uint32_t len = head.len;
@@ -32,20 +30,20 @@ void parse_rsdt(rsdt_t* rsdt){
 	int numofrsdtbles = (head.len-sizeof(acpi_header_t))/4;
 }
 
-/*
-void parse_xsdt(xsdt_t* xsdt){
-	acpi_header_t* head = rsdt->head;
-	printf(head->sign);
-	uint32_t len = head->len;
-	uint8_t revision = head->revision;
-	uint8_t csum = head->csum;
-	printf(head->oemid);
-	printf(head->oemtbleid);
-	uint32_t oemrevision = head->oemrevision;
-	uint32_t creatorid = head->creatorid;
-	uint32_t creatorrevision = head->creatorrevision;
+void parse_rsdt(uint8_t* addr){
+	xsdt_t* xsdt = (xsdt_t*) addr;
+	acpi_header_t head = rsdt->head;
+	printf(head.sign);
+	uint32_t len = head.len;
+	uint8_t revision = head.revision;
+	uint8_t csum = head.csum;
+	printf(head.oemid);
+	printf(head.oemtbleid);
+	uint32_t oemrevision = head.oemrevision;
+	uint32_t creatorid = head.creatorid;
+	uint32_t creatorrevision = head.creatorrevision;
+	int numofrsdtbles = (head.len-sizeof(acpi_header_t))/4;
 }
-*/
 
 uint8_t checksum(const char* addr, uint8_t size){
 	const char* end = addr + size;

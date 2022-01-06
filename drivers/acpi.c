@@ -15,7 +15,9 @@ void parse_rsdp(uint8_t* addr){
 	printf_hex(rsdtaddr);
 }
 
-void parse_rsdt(uint8_t* addr){
+void parse_rsdt(uint8_t* rsdpaddr){					//Address of RSDP
+	rsdp_v1_t* rsdp = (rsdp_v1_t*) rsdpaddr;
+	uint32_t* addr = rsdp->rsdtaddr;
 	rsdt_t* rsdt = (rsdt_t*) addr;
 	acpi_header_t head = rsdt->head;
 	printf(head.sign);
@@ -30,7 +32,9 @@ void parse_rsdt(uint8_t* addr){
 	int numofrsdtbles = (head.len-sizeof(acpi_header_t))/4;
 }
 
-void parse_xsdt(uint8_t* addr){
+void parse_xsdt(uint8_t* rsdpaddr){					//Address of RSDP
+	rsdp_v1_t* rsdp = (rsdp_v1_t*) rsdpaddr;
+	uint32_t* addr = rsdp->xsdtaddr;
 	xsdt_t* xsdt = (xsdt_t*) addr;
 	acpi_header_t head = xsdt->head;
 	printf(head.sign);

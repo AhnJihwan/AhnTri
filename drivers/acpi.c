@@ -24,8 +24,8 @@ void parse_rsdt(rsdt_t* rsdt){
 	uint32_t len = head.len;
 	uint8_t revision = head.revision;
 	uint8_t csum = head.csum;
-	printf(head->oemid);
-	printf(head->oemtbleid);
+	printf(head.oemid);
+	printf(head.oemtbleid);
 	uint32_t oemrevision = head.oemrevision;
 	uint32_t creatorid = head.creatorid;
 	uint32_t creatorrevision = head.creatorrevision;

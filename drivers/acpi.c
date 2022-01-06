@@ -30,9 +30,9 @@ void parse_rsdt(uint8_t* addr){
 	int numofrsdtbles = (head.len-sizeof(acpi_header_t))/4;
 }
 
-void parse_rsdt(uint8_t* addr){
+void parse_xsdt(uint8_t* addr){
 	xsdt_t* xsdt = (xsdt_t*) addr;
-	acpi_header_t head = rsdt->head;
+	acpi_header_t head = xsdt->head;
 	printf(head.sign);
 	uint32_t len = head.len;
 	uint8_t revision = head.revision;
@@ -42,7 +42,7 @@ void parse_rsdt(uint8_t* addr){
 	uint32_t oemrevision = head.oemrevision;
 	uint32_t creatorid = head.creatorid;
 	uint32_t creatorrevision = head.creatorrevision;
-	int numofrsdtbles = (head.len-sizeof(acpi_header_t))/4;
+	int numofxsdtbles = (head.len-sizeof(acpi_header_t))/8;
 }
 
 uint8_t checksum(const char* addr, uint8_t size){

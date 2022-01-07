@@ -34,7 +34,7 @@ void parse_rsdt(uint8_t* rsdpaddr){					//Address of RSDP
 
 void parse_xsdt(uint8_t* rsdpaddr){					//Address of RSDP
 	rsdp_v1_t* rsdp = (rsdp_v1_t*) rsdpaddr;
-	uint32_t* addr = rsdp->xsdtaddr;
+	uint32_t* addr = rsdp->rsdtaddr;
 	xsdt_t* xsdt = (xsdt_t*) addr;
 	acpi_header_t head = xsdt->head;
 	printf(head.sign);

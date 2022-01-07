@@ -65,3 +65,17 @@ typedef struct gas {
   uint8_t accesssize;
   uint8_t addr;
 } gas_t;
+
+/*
+Working on FACP
+typedef struct facp {
+  char sign[4];
+  uint32_t len[4];
+  uint8_t majver;
+  uint8_t checksum;
+  char oemid[6];
+  uint32_t oemtbleid;
+  uint16_t creatorid;
+  uint16_t creatorrevision;
+  uint16_t firmware_ctrl;
+*/

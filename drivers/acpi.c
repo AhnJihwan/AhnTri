@@ -20,11 +20,14 @@ void parse_rsdt(uint8_t* rsdpaddr){					//Address of RSDP
 	uint32_t* addr = rsdp->rsdtaddr;
 	rsdt_t* rsdt = (rsdt_t*) addr;
 	acpi_header_t head = rsdt->head;
+	printf("\nSigniture: ");
 	printf(head.sign);
 	uint32_t len = head.len;
 	uint8_t revision = head.revision;
 	uint8_t csum = head.csum;
+	printf("\nOEMID: ");
 	printf(head.oemid);
+	printf("\nOEM Table ID: ");
 	printf(head.oemtbleid);
 	uint32_t oemrevision = head.oemrevision;
 	uint32_t creatorid = head.creatorid;
@@ -37,16 +40,19 @@ void parse_xsdt(uint8_t* rsdpaddr){					//Address of RSDP
 	uint32_t* addr = rsdp->rsdtaddr;
 	xsdt_t* xsdt = (xsdt_t*) addr;
 	acpi_header_t head = xsdt->head;
+	printf("\nSigniture: ");
 	printf(head.sign);
 	uint32_t len = head.len;
 	uint8_t revision = head.revision;
 	uint8_t csum = head.csum;
+	printf("\nOEMID: ");
 	printf(head.oemid);
+	printf("\nOEM Table ID: ");
 	printf(head.oemtbleid);
 	uint32_t oemrevision = head.oemrevision;
 	uint32_t creatorid = head.creatorid;
 	uint32_t creatorrevision = head.creatorrevision;
-	int numofxsdtbles = (head.len-sizeof(acpi_header_t))/8;
+	int numofxsdtbles = (head.len-sizeof(acpi_header_t))/4;
 }
 
 uint8_t checksum(const char* addr, uint8_t size){
@@ -67,6 +73,7 @@ void searchforrsdp(){
 	while(addr<end){
 		if(*(uint64_t*)addr == 0x2052545020445352 && checksum(addr, sizeof(rsdp_v1_t)) == 0){
 			parse_rsdp(addr);
+			parse_rsdt(addr);
 		}
 		addr += 16;
 	}

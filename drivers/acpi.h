@@ -66,16 +66,16 @@ typedef struct gas {
   uint8_t addr;
 } gas_t;
 
-/*
-Working on FACP
+
+//Working on FACP
+
 typedef struct facp {
-  char sign[4];
-  uint32_t len[4];
-  uint8_t majver;
-  uint8_t checksum;
-  char oemid[6];
-  uint32_t oemtbleid;
-  uint16_t creatorid;
-  uint16_t creatorrevision;
-  uint16_t firmware_ctrl;
-*/
+  acpi_header_t head;
+  uint32_t firmware_ctrl;
+  uint32_t dsdt;
+  uint8_t reserved;
+  uint8_t pref_pm_prof;
+  uint16_t sci_int;
+  uint32_t smi_int;
+  //More going to be added
+}

@@ -78,4 +78,4 @@ typedef struct facp {
   uint16_t sci_int;
   uint32_t smi_int;
   //More going to be added
-}
+} facp_t;

@@ -90,5 +90,12 @@ typedef struct facp {
   uint32_t GPE1_BLK;
   uint8_t PM1_EVT_len;
   uint8_t PM1_CNT_len;
+  uint8_t PM2_CNT_LEN;
+  uint8_t PM_TMR_LEN;
+  uint8_t GPE0_BLK_LEN;
+  uint8_t GPE1_BLK_LEN;
+  uint8_t GPE1_BASE;
+  uint8_t CST_CNT;
+  uint16_t P_LVL2_LAT;
   //More going to be added
 } facp_t;

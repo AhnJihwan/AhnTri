@@ -76,6 +76,20 @@ typedef struct facp {
   uint8_t reserved;
   uint8_t pref_pm_prof;
   uint16_t sci_int;
-  uint32_t smi_int;
+  uint32_t smi_cmd;
+  uint8_t acpi_enable;
+  uint8_t acpi_disable;
+  uint8_t pstate_cnt;
+  uint32_t PM1a_EVT_BLK;
+  uint32_t PM1b_EVT_BLK;
+  uint32_t PM1a_CNT_BLK;
+  uint32_t PM1b_CNT_BLK;
+  uint32_t PM1b_CNT_BLK;
+  uint32_t PM2_CNT_BLK;
+  uint32_t PM_TMR_BLK;
+  uint32_t GPE0_BLK;
+  uint32_t GPE1_BLK;
+  uint8_t PM1_EVT_len;
+  uint8_t PM1_CNT_len;
   //More going to be added
 } facp_t;

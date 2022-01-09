@@ -84,7 +84,6 @@ typedef struct facp {
   uint32_t PM1b_EVT_BLK;
   uint32_t PM1a_CNT_BLK;
   uint32_t PM1b_CNT_BLK;
-  uint32_t PM1b_CNT_BLK;
   uint32_t PM2_CNT_BLK;
   uint32_t PM_TMR_BLK;
   uint32_t GPE0_BLK;

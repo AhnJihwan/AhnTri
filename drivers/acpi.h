@@ -69,6 +69,14 @@ typedef struct gas {
 
 //Working on FACP
 
+typedef struct addr_type_t {
+  uint8_t addr_space;
+  uint8_t bit_widtht;
+  uint8_t bit_offset;
+  uint8_t access_size;
+  uint64_t addr;
+} addr_type_t;
+
 typedef struct facp {
   acpi_header_t head;
   uint32_t firmware_ctrl;
@@ -97,5 +105,34 @@ typedef struct facp {
   uint8_t GPE1_BASE;
   uint8_t CST_CNT;
   uint16_t P_LVL2_LAT;
+  uint16_t P_LVL3_LAT;
+  uint16_t FLUSH_SIZE;
+  uint16_t FLUSH_STRIDE;
+  uint8_t duty_offset;
+  uint8_t duty_width;
+  uint8_t day_alrn;
+  uint8_t mon_alrm;
+  uint8_t century;
+  uint16_t iapc_boot_arch;
+  uint8_t reservedi;
+  uint32_t flags;
+  addr_type_t reset_reg;
+  uint8_t reset_value;
+  uint16_t arm_boot_arch;
+  uint8_t fadt_minor_version;
+  uint64_t x_firmware_ctrl;
+  uint64_t dsdt;
+  addr_type_t X_PM1a_EVT_BLK
+  addr_type_t X_PM1b_EVT_BLK
+  addr_type_t X_PM1a_CNT_BLK
+  addr_type_t X_PM1b_CNT_BLK
+  addr_type_t X_PM2_CNT_BLK
+  addr_type_t X_PM_TMR_BLK
+  addr_type_t X_GPE0_BLK
+  addr_type_t X_GPE1_BLK
+  addr_type_t SLEEP_CONTROL_REG
+  addr_type_t SLEEP_STATUS_REG
+  addr_type_t 
+  uint64_t hv_vendor_identity;
   //More going to be added
 } facp_t;

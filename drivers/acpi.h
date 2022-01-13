@@ -121,18 +121,17 @@ typedef struct facp {
   uint16_t arm_boot_arch;
   uint8_t fadt_minor_version;
   uint64_t x_firmware_ctrl;
-  uint64_t dsdt;
-  addr_type_t X_PM1a_EVT_BLK
-  addr_type_t X_PM1b_EVT_BLK
-  addr_type_t X_PM1a_CNT_BLK
-  addr_type_t X_PM1b_CNT_BLK
-  addr_type_t X_PM2_CNT_BLK
-  addr_type_t X_PM_TMR_BLK
-  addr_type_t X_GPE0_BLK
-  addr_type_t X_GPE1_BLK
-  addr_type_t SLEEP_CONTROL_REG
-  addr_type_t SLEEP_STATUS_REG
-  addr_type_t 
+  uint64_t x_dsdt;
+  addr_type_t X_PM1a_EVT_BLK;
+  addr_type_t X_PM1b_EVT_BLK;
+  addr_type_t X_PM1a_CNT_BLK;
+  addr_type_t X_PM1b_CNT_BLK;
+  addr_type_t X_PM2_CNT_BLK;
+  addr_type_t X_PM_TMR_BLK;
+  addr_type_t X_GPE0_BLK;
+  addr_type_t X_GPE1_BLK;
+  addr_type_t SLEEP_CONTROL_REG;
+  addr_type_t SLEEP_STATUS_REG;
   uint64_t hv_vendor_identity;
   //More going to be added
 } facp_t;

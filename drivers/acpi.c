@@ -2,6 +2,9 @@
 
 #include "acpi.h"
 
+uint32_t rsdt_addr;
+uint32_t fadt_addr;
+
 void parse_rsdp(uint8_t* addr){
 	rsdp_v1_t* rsdp = (rsdp_v1_t*) addr;
 	printf("\nSignature: ");
@@ -11,6 +14,7 @@ void parse_rsdp(uint8_t* addr){
 	printf(rsdp->oemid);
 	uint8_t revision = rsdp->revision;
 	uint32_t rsdtaddr = rsdp->rsdtaddr;
+	rsdt_addr = rsdp->rsdtaddr;
 	printf("\nRSDT Address: ");
 	printf_hex(rsdtaddr);
 }
@@ -53,6 +57,20 @@ void parse_xsdt(uint8_t* rsdpaddr){					//Address of RSDP
 	uint32_t creatorid = head.creatorid;
 	uint32_t creatorrevision = head.creatorrevision;
 	int numofxsdtbles = (head.len-sizeof(acpi_header_t))/4;
+}
+
+facp_t facp;
+
+acpi_header_t* find_facp(uint32_t* rsdt_addr){
+	rsdt_t* rsdt = (rsdt_t*) rsdt_addr;
+	int entries = (rsdt->header_len - sizeof(rsdt->head)) / 4;
+	for(int i = 0; i<entries; i++) {
+		acpi_header_t *headf = (acpi_header_t*) rsdt->entry[i];
+		if(strncmp(headf->sign, "FACP", 4)==0){
+			return headf;
+		}
+	}
+	return NULL;
 }
 
 uint8_t checksum(const char* addr, uint8_t size){

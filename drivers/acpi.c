@@ -1,6 +1,7 @@
 //Codename Pari(means 'fly' in Korean)
 
 #include "acpi.h"
+#include "../libc/atclib.h"
 
 uint32_t rsdt_addr;
 uint32_t fadt_addr;

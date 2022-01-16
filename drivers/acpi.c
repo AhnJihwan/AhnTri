@@ -63,7 +63,7 @@ facp_t facp;
 
 acpi_header_t* find_facp(uint32_t* rsdt_addr){
 	rsdt_t* rsdt = (rsdt_t*) rsdt_addr;
-	int entries = (rsdt->header_len - sizeof(rsdt->head)) / 4;
+	int entries = (rsdt->head.len - sizeof(rsdt->head)) / 4;
 	for(int i = 0; i<entries; i++) {
 		acpi_header_t *headf = (acpi_header_t*) rsdt->entry[i];
 		if(strncmp(headf->sign, "FACP", 4)==0){

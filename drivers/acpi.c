@@ -68,6 +68,7 @@ acpi_header_t* find_facp(uint32_t* rsdt_addr){
 		acpi_header_t *headf = (acpi_header_t*) rsdt->entry[i];
 		if(strncmp(headf->sign, "FACP", 4)==0){
 			return headf;
+			printf("FACP found\n");
 		}
 	}
 	return NULL;

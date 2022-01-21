@@ -97,3 +97,12 @@ void searchforrsdp(){
 		addr += 16;
 	}
 }
+
+uint8_t parse_table_header(uint8_t* addr, uint64_t* value, char charrr[]){
+	uint8_t encvalue = *addr++;
+	if(encvalue==0x0){
+		*value = 0;		//Zero Op
+	} else if(encvalue==0x1){
+		*value = 0;		//One Op
+	}
+}

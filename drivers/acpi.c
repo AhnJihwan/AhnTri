@@ -103,6 +103,10 @@ uint8_t parse_table_header(uint8_t* addr, uint64_t* value, char charrr[]){
 	if(encvalue==0x0){
 		*value = 0;		//Zero Op
 	} else if(encvalue==0x1){
-		*value = 0;		//One Op
-	}
+		*value = 1;		//One Op
+	} else if(encvalue==0x6){
+		*value = 6;		//Alias Op
+	} else if(encvalue==0x8){
+		*value = 8;		//Name Op
+	}	
 }

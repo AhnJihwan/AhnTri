@@ -108,5 +108,11 @@ uint8_t parse_table_header(uint8_t* addr, uint64_t* value, char charrr[]){
 		*value = 6;		//Alias Op
 	} else if(encvalue==0x8){
 		*value = 8;		//Name Op
-	}	
+	} else if(encvalue==0xA){
+		*value = addr[0];	//Bytedata
+	} else if(encvalue==0xB){
+		*value = addr[0] | ((uint16_t)addr[1] << 8);	//Wordddata
+	} else if(encvalue==0xC){
+		*value = addr[0] | ((uint16_t)addr[1] << 8) | ((uint16_t)addr[2] << 16) | ((uint16_t)addr[3] << 24);	//Dworddata
+	}
 }

@@ -113,6 +113,8 @@ uint8_t parse_table_header(uint8_t* addr, uint64_t* value, char charrr[]){
 	} else if(encvalue==0xB){
 		*value = addr[0] | ((uint16_t)addr[1] << 8);	//Wordddata
 	} else if(encvalue==0xC){
-		*value = addr[0] | ((uint16_t)addr[1] << 8) | ((uint16_t)addr[2] << 16) | ((uint16_t)addr[3] << 24);	//Dworddata
+		*value = addr[0] | ((uint32_t)addr[1] << 8) | ((uint32_t)addr[2] << 16) | ((uint32_t)addr[3] << 24);	//Dworddata
+	} else if(encvalue==0xC){
+		*value = addr[0] | ((uint64_t)addr[1] << 8) | ((uint64_t)addr[2] << 16) | ((uint64_t)addr[3] << 24) | ((uint64_t)addr[4] << 32) | ((uint64_t)addr[5] << 40) | ((uint64_t)addr[6] << 48) | ((uint64_t)addr[7] << 56);	//Qworddata
 	}
 }

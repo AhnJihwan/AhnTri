@@ -102,19 +102,27 @@ uint8_t parse_table_header(uint8_t* addr, uint64_t* value, char charrr[]){
 	uint8_t encvalue = *addr++;
 	if(encvalue==0x0){
 		*value = 0;		//Zero Op
+		return 1;
 	} else if(encvalue==0x1){
 		*value = 1;		//One Op
+		return 1;
 	} else if(encvalue==0x6){
 		*value = 6;		//Alias Op
+		return 1;
 	} else if(encvalue==0x8){
 		*value = 8;		//Name Op
+		return 1;
 	} else if(encvalue==0xA){
 		*value = addr[0];	//Bytedata
+		return 2;
 	} else if(encvalue==0xB){
 		*value = addr[0] | ((uint16_t)addr[1] << 8);	//Wordddata
+		return 3
 	} else if(encvalue==0xC){
 		*value = addr[0] | ((uint32_t)addr[1] << 8) | ((uint32_t)addr[2] << 16) | ((uint32_t)addr[3] << 24);	//Dworddata
+		return 5;
 	} else if(encvalue==0xC){
 		*value = addr[0] | ((uint64_t)addr[1] << 8) | ((uint64_t)addr[2] << 16) | ((uint64_t)addr[3] << 24) | ((uint64_t)addr[4] << 32) | ((uint64_t)addr[5] << 40) | ((uint64_t)addr[6] << 48) | ((uint64_t)addr[7] << 56);	//Qworddata
+		return 9;
 	}
 }

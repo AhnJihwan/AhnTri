@@ -117,7 +117,7 @@ uint8_t parse_table_header(uint8_t* addr, uint64_t* value, char charrr[]){
 		return 2;
 	} else if(encvalue==0xB){
 		*value = addr[0] | ((uint16_t)addr[1] << 8);	//Wordddata
-		return 3
+		return 3;
 	} else if(encvalue==0xC){
 		*value = addr[0] | ((uint32_t)addr[1] << 8) | ((uint32_t)addr[2] << 16) | ((uint32_t)addr[3] << 24);	//Dworddata
 		return 5;

@@ -61,11 +61,11 @@ void parse_xsdt(uint8_t* rsdpaddr){					//Address of RSDP
 
 facp_t facp;
 
-acpi_header_t* find_facp(uint32_t* rsdt_addr){
+acpi_header_t find_facp(uint32_t* rsdt_addr){
 	rsdt_t* rsdt = (rsdt_t*) rsdt_addr;
 	int entries = (rsdt->head.len - sizeof(rsdt->head)) / 4;
 	for(int i = 0; i<entries; i++) {
-		acpi_header_t *headf = (acpi_header_t*) rsdt->entry[i];
+		acpi_header_t headf = (acpi_header_t) rsdt->entry[i];
 		if(strncmp(headf->sign, "FACP", 4)==0){
 			return headf;
 			printf("FACP found\n");
@@ -73,6 +73,14 @@ acpi_header_t* find_facp(uint32_t* rsdt_addr){
 	}
 	return NULL;
 }
+
+//TODO: Parse the FACP
+/*
+void parse_facp(uint8_t* rsdp_addr){
+	rsdp_v1_t* rsdp = (rsdp_v1_t*) rsdpaddr;
+	uint32_t* addr = rsdp->rsdtaddr;
+	facp->head = find_facp(rsdtaddr);
+*/
 
 uint8_t checksum(const char* addr, uint8_t size){
 	const char* end = addr + size;

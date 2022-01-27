@@ -76,9 +76,9 @@ void* find_facp(uint32_t* rsdt_addr){
 
 // TODO: Parse the FACP
 void parse_facp(uint8_t* rsdp_addr){
-	rsdp_v1_t* rsdp = (rsdp_v1_t*) rsdpaddr;
+	rsdp_v1_t* rsdp = (rsdp_v1_t*) rsdp_addr;
 	uint32_t* addr = rsdp->rsdtaddr;
-	facp->head = (acpi_header_t)find_facp(rsdtaddr);
+	facp->head = (acpi_header_t)find_facp(addr);
 }
 	
 uint8_t checksum(const char* addr, uint8_t size){

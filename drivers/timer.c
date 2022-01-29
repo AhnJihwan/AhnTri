@@ -16,7 +16,7 @@ unsigned read_pit_count(void) {
 }
 
 void spfreq(unsigned count) {
-	// Interrupts interrupts
+	// Disable interrupts
 	cli();
 	// Set low byte
 	outb(0x40,count&0xFF);		// Low byte

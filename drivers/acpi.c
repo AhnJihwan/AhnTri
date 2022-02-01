@@ -64,26 +64,25 @@ facp_t* facp;
 uint32_t *find_facp(uint32_t* rsdt_addr){
 	rsdt_t* rsdt = (rsdt_t*) rsdt_addr;
 	uint32_t *addr = (uint32_t*) rsdt_addr;
-	addr += size(acpi_header_t);
+	addr += sizeof(acpi_header_t);
 	int entries = (rsdt->head.len - sizeof(rsdt->head)) / 4;
-	for(int i = 0; i<entries; i++) {
-		addr += 4;
-		acpi_header_t headf = (acpi_header_t) rsdt->entry[i];
-		if(strncmp(headf->sign, "FACP", 4)==0){
+	while(entries>0){
+		acpi_header_t* ssdt = (acpi_header_t*) (uintptr_t) (*(uint32_t*) addr);
+		addr+=4;
+		entries--;
+		if(strncmp(ssdt->sign, "FACP", 4)==0){
 			printf("FACP found\n");
-			return addr;
+			parse_facp((uint8_t*)addr);
 		}
 	}
 	return NULL;
 }
 
 // TODO: Parse the FACP
-void parse_facp(uint8_t* rsdp_addr){
-	rsdp_v1_t* rsdp = (rsdp_v1_t*) rsdp_addr;
-	uint32_t* addr = rsdp->rsdtaddr;
-	facp->head = (acpi_header_t)find_facp(addr);
+void parse_facp(uint8_t* addr){
+	facp = (facp_t*) addr;
 }
-	
+
 uint8_t checksum(const char* addr, uint8_t size){
 	const char* end = addr + size;
 	uint8_t sum = 0;

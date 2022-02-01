@@ -30,9 +30,9 @@ typedef struct acpi_header {
   uint32_t oemrevision;
   uint32_t creatorid;
   uint32_t creatorrevision;
-  uint32_t siginture(){
+  uint32_t siginture() {
       return *(uint32_t*) sign;
-  }
+  ]
 } __attribute__ ((packed)) acpi_header_t;
 
 typedef struct rsdt {
@@ -40,7 +40,7 @@ typedef struct rsdt {
   uint32_t entry[];
 } rsdt_t;
 
-typedef stuct xsdt {
+typedef struct xsdt {
   acpi_header_t head;
   uint64_t entry[];
 } xsdt_t;

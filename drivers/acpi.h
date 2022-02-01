@@ -30,9 +30,6 @@ typedef struct acpi_header {
   uint32_t oemrevision;
   uint32_t creatorid;
   uint32_t creatorrevision;
-  uint32_t siginture() {
-      return *(uint32_t*) sign;
-  ]
 } __attribute__ ((packed)) acpi_header_t;
 
 typedef struct rsdt {

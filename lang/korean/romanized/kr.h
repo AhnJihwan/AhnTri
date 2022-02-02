@@ -2,7 +2,7 @@
 void display_menu_kr()
 {
   printf(" ");
-  printf("      Teomineol - Giebon Menu    ");
+  printf("      Teomineol - Chueum Menu    ");
   printf("-");
   printf("+");
   printf("x\n");
@@ -11,11 +11,11 @@ void display_menu_kr()
   framebuffer_putchar(178, 0x8f8f8f);
   printf(" -~=-~=~--~=~--~=~--~=~-=--~-=-~-=- \n");
   framebuffer_putchar(178, 0x8f8f8f);
-  printf(" doum-mal-eun ""help"", gita app sil    \n");
+  printf(" doum-mal-eun ""help"", gita app yeo    \n");
   framebuffer_putchar(178, 0x8f8f8f);
-  printf(" haeng-eun darun myeongryeong-eo    \n");
+  printf(" ulgie-neun darun natmalul keybodrow    \n");
   framebuffer_putchar(178, 0x8f8f8f);
-  printf(" reul iblyeokhasio                  \n");
+  printf(" chunuhuh jjugeusio                     \n");
   framebuffer_putchar(178, 0x8f8f8f);
   printf("                                    \n");
   framebuffer_putchar(178, 0x8f8f8f);
@@ -108,7 +108,7 @@ void kernmain_kr(){
 		}else{
 			printf("\n");
 			printf(choice);
-			printf(": myungryungeorel chazjeulsu upseum");
+			printf(": stored-duen natmalul chajeulsu upseum");
 
 		}
 	}

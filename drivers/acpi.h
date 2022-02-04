@@ -135,3 +135,8 @@ typedef struct facp {
   uint64_t hv_vendor_identity;
   //More going to be added
 } facp_t;
+
+typedef struct madt_item {
+  uint8_t entry_type;
+  uint8_t record_len;
+} __addtribute__((packed)) madt_item_t;

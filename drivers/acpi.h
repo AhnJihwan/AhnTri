@@ -141,8 +141,15 @@ typedef struct madt_item {
   uint8_t record_len;
 } __attribute__((packed)) madt_item_t;
 
-typedef struct madt_ent_tzero {
+typedef struct madt_ent_tzero {                   // Processor Local ACPI
   uint8_t acpi_processor_id;
   uint8_t apic_id;
   uint32_t flags;
 } __attribute__((packed)) madt_ent_tzero_t;
+
+typedef struct madt_ent_ti {                      // IO APIC
+  uint8_t ioapicid;
+  uint8_t reserved;
+  uint32_t ioapicaddr;
+  uint32_t gsib;
+} __attribute__((packed)) madt_ent_ti_t;

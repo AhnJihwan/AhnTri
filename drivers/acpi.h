@@ -139,4 +139,4 @@ typedef struct facp {
 typedef struct madt_item {
   uint8_t entry_type;
   uint8_t record_len;
-} __addtribute__((packed)) madt_item_t;
+} __attribute__((packed)) madt_item_t;

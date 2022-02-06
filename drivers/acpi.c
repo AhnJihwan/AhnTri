@@ -70,7 +70,7 @@ uint32_t *find_facp(uint32_t* rsdt_addr){
 		acpi_header_t* ssdt = (acpi_header_t*) (uintptr_t) (*(uint32_t*) addr);
 		addr+=4;
 		entries--;
-		if(strncmp(ssdt->sign, "FACP", 4)==0){
+		if(strncmp(ssdt->sign, "FACP", 4)!=0){
 			printf("FACP found\n");
 			parse_facp((uint8_t*)addr);
 		}

@@ -2,8 +2,8 @@
 
 #include "acpi.h"
 
-uint32_t rsdt_addr;
-uint32_t fadt_addr;
+uint32_t *rsdt_addr;
+uint32_t *fadt_addr;
 
 void parse_rsdp(uint8_t* addr){
 	rsdp_v1_t* rsdp = (rsdp_v1_t*) addr;
@@ -69,14 +69,14 @@ uint32_t *find_facp(uint32_t * rsdt_addr){
 		acpi_header_t* ssdt = (acpi_header_t*) rsdt->entry[i];
 		if(strncmp(ssdt->sign, "FACP", 4)==0){
 			printf("FACP found\n");
-			parse_facp((uint8_t*)addr);
+			parse_facp(ssdt);
 		}
 	}
 	return NULL;
 }
 
 // TODO: Parse the FACP
-void parse_facp(uint8_t* addr){
+void parse_facp(acpi_header_t* addr){
 	facp = (facp_t*) addr;
 }
 
@@ -99,6 +99,7 @@ void searchforrsdp(){
 		if(*(uint64_t*)addr == 0x2052545020445352 && checksum(addr, sizeof(rsdp_v1_t)) == 0){
 			parse_rsdp(addr);
 			parse_rsdt(addr);
+			parse_facp(
 		}
 		addr += 16;
 	}

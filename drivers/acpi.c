@@ -99,7 +99,7 @@ void searchforrsdp(){
 		if(*(uint64_t*)addr == 0x2052545020445352 && checksum(addr, sizeof(rsdp_v1_t)) == 0){
 			parse_rsdp(addr);
 			parse_rsdt(addr);
-			parse_facp(
+			parse_facp(rsdt_addr);
 		}
 		addr += 16;
 	}

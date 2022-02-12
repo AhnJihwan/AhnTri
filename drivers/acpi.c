@@ -76,13 +76,19 @@ uint32_t *find_facp(uint32_t * rsdt_addr){
 // TODO: Parse the FACP
 void parse_facp(acpi_header_t* addr){
 	facp_t* facp = (facp_t*) addr;
-	printf("\nSignature: ");
-	printf(facp->sign);
-	uint8_t csum = facp->csum;
+	acpi_header_t head = facp->head;
+	printf("\nSigniture: ");
+	printf(head.sign);
+	uint32_t len = head.len;
+	uint8_t revision = head.revision;
+	uint8_t csum = head.csum;
 	printf("\nOEMID: ");
-	printf(rsdp->oemid);
-	uint8_t revision = facp->revision;
-	uint32_t rsdtaddr = facp->rsdtaddr;
+	printf(head.oemid);
+	printf("\nOEM Table ID: ");
+	printf(head.oemtbleid);
+	uint32_t oemrevision = head.oemrevision;
+	uint32_t creatorid = head.creatorid;
+	uint32_t creatorrevision = head.creatorrevision;
 }
 
 uint8_t checksum(const char* addr, uint8_t size){

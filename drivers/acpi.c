@@ -59,8 +59,6 @@ void parse_xsdt(uint8_t* rsdpaddr){					//Address of RSDP
 	int numofxsdtbles = (head.len-sizeof(acpi_header_t))/4;
 }
 
-facp_t* facp;
-
 uint32_t *find_facp(uint32_t * rsdt_addr){
 	rsdt_t* rsdt = (rsdt_t*) rsdt_addr;
 	int entries = (rsdt->head.len - sizeof(rsdt->head)) / 4;
@@ -77,7 +75,14 @@ uint32_t *find_facp(uint32_t * rsdt_addr){
 
 // TODO: Parse the FACP
 void parse_facp(acpi_header_t* addr){
-	facp = (facp_t*) addr;
+	facp_t* facp = (facp_t*) addr;
+	printf("\nSignature: ");
+	printf(facp->sign);
+	uint8_t csum = facp->csum;
+	printf("\nOEMID: ");
+	printf(rsdp->oemid);
+	uint8_t revision = facp->revision;
+	uint32_t rsdtaddr = facp->rsdtaddr;
 }
 
 uint8_t checksum(const char* addr, uint8_t size){

@@ -73,7 +73,6 @@ uint32_t *find_facp(uint32_t * rsdt_addr){
 	return NULL;
 }
 
-// TODO: Parse the FACP
 void parse_facp(acpi_header_t* addr){
 	facp_t* facp = (facp_t*) addr;
 	acpi_header_t head = facp->head;

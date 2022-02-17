@@ -116,7 +116,7 @@ void parse_facp(acpi_header_t* addr){
 	uint32_t creatorid = head.creatorid;
 	uint32_t creatorrevision = head.creatorrevision;
 	acpi_header_t* dsdt = (acpi_header_t*) (uintptr_t) facp->dsdt;
-	PM1a_CNT = facp->PM1a_CNT;
+	PM1a_CNT_BLK = facp->PM1a_CNT_BLK;
 	//...
 	parse_dsdt(dsdt);
 }

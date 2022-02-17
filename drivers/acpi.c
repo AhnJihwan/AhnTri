@@ -73,6 +73,33 @@ uint32_t *find_facp(uint32_t * rsdt_addr){
 	return NULL;
 }
 
+uint8_t pref_pm_prof;
+uint16_t sci_int;
+uint32_t smi_cmd;
+uint8_t acpi_enable;
+uint8_t acpi_disable;
+uint8_t pstate_cnt;
+uint32_t PM1a_EVT_BLK;
+uint32_t PM1b_EVT_BLK;
+uint32_t PM1a_CNT_BLK;
+uint32_t PM1b_CNT_BLK;
+uint32_t PM2_CNT_BLK;
+uint32_t PM_TMR_BLK;
+uint32_t GPE0_BLK;
+uint32_t GPE1_BLK;
+uint8_t PM1_EVT_len;
+uint8_t PM1_CNT_len;
+uint8_t PM2_CNT_LEN;
+uint8_t PM_TMR_LEN;
+uint8_t GPE0_BLK_LEN;
+uint8_t GPE1_BLK_LEN;
+uint8_t GPE1_BASE;
+uint8_t CST_CNT;
+uint16_t P_LVL2_LAT;
+uint16_t P_LVL3_LAT;
+uint32_t SLP_EN;
+uint32_t SCI_EN;
+
 void parse_facp(acpi_header_t* addr){
 	facp_t* facp = (facp_t*) addr;
 	acpi_header_t head = facp->head;
@@ -89,6 +116,8 @@ void parse_facp(acpi_header_t* addr){
 	uint32_t creatorid = head.creatorid;
 	uint32_t creatorrevision = head.creatorrevision;
 	acpi_header_t* dsdt = (acpi_header_t*) (uintptr_t) facp->dsdt;
+	PM1a_CNT = facp->PM1a_CNT;
+	//...
 	parse_dsdt(dsdt);
 }
 
@@ -106,6 +135,12 @@ void parse_dsdt(acpi_header_t* head){
 	uint32_t creatorid = head->creatorid;
 	uint32_t creatorrevision = head->creatorrevision;
 }
+
+/*
+int enable_acpi(){
+	if((inw((unsigned int) PM1a_CNT) &SCI_EN) == 0){
+		
+*/
 
 uint8_t checksum(const char* addr, uint8_t size){
 	const char* end = addr + size;

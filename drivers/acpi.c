@@ -136,11 +136,17 @@ void parse_dsdt(acpi_header_t* head){
 	uint32_t creatorrevision = head->creatorrevision;
 }
 
-/*
 int enable_acpi(){
 	if((inw((unsigned int) PM1a_CNT) &SCI_EN) == 0){
+		if (smi_cmd != 0 && acpi_enable != 0){
 		
-*/
+		}else{
+			printf("ACPI can't be enabled...");
+		}
+	}else{
+		printf("ACPI is already enabled...");
+	}
+}
 
 uint8_t checksum(const char* addr, uint8_t size){
 	const char* end = addr + size;

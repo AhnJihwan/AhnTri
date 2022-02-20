@@ -140,9 +140,10 @@ int enable_acpi(){
 	if((inw((uint16_t) PM1a_CNT_BLK) & (uint16_t) SCI_EN) == 0){
 		if (smi_cmd != 0 && acpi_enable != 0){
 			//Enable ACPI
-			outb((uin16_t) smi_cmd, acpi_enable);
+			outb((uint16_t) smi_cmd, acpi_enable);
 			//Enabled ACPI... ig.....................................
-			if(int i = 0; i < 300; i++){
+			int i;
+			if(i = 0; i < 300; i++){
 				if(inw((uint16_t) PM1a_CNT_BLK & (uint16_t) SCI_EN) == 1){
 					break;
 				}

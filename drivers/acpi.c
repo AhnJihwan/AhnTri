@@ -137,16 +137,39 @@ void parse_dsdt(acpi_header_t* head){
 }
 
 int enable_acpi(){
-	if((inw((unsigned int) PM1a_CNT_BLK) &SCI_EN) == 0){
+	if((inw((uint16_t) PM1a_CNT_BLK) & (uint16_t) SCI_EN) == 0){
 		if (smi_cmd != 0 && acpi_enable != 0){
 			//Enable ACPI
-			outb((unsigned int) smi_cmd, acpi_enable);
+			outb((uin16_t) smi_cmd, acpi_enable);
 			//Enabled ACPI... ig.....................................
+			if(int i = 0; i < 300; i++){
+				if(inw((uint16_t) PM1a_CNT_BLK & (uint16_t) SCI_EN) == 1){
+					break;
+				}
+				suspend(10);
+			}
+			if(PM1b_CNT_BLK != 0){
+				if(; i < 300; i++){
+					if(inw((uint16_t) PM1b_CNT_BLK & (uint16_t) SCI_EN) == 1){
+						break;
+					}
+					suspend(10);
+				}
+			}
+			if(i < 300){
+				printf("ACPI Enable... [OK]");
+				return 0;
+			} else{
+				printf("Cannot enable ACPI...");
+				return 1;
+			}
 		}else{
 			printf("ACPI can't be enabled...");
+				return 0;
 		}
 	}else{
 		printf("ACPI is already enabled...");
+			return 1;
 	}
 }
 

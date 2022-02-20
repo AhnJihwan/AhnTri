@@ -140,7 +140,8 @@ int enable_acpi(){
 	if((inw((unsigned int) PM1a_CNT_BLK) &SCI_EN) == 0){
 		if (smi_cmd != 0 && acpi_enable != 0){
 			//Enable ACPI
-			outb((unsigned int) SMI_CMD, ACPI_ENABLE);
+			outb((unsigned int) smi_cmd, acpi_enable);
+			//Enabled ACPI... ig.....................................
 		}else{
 			printf("ACPI can't be enabled...");
 		}

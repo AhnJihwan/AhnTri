@@ -143,14 +143,14 @@ int enable_acpi(){
 			outb((uint16_t) smi_cmd, acpi_enable);
 			//Enabled ACPI... ig.....................................
 			int i;
-			if(i = 0; i < 300; i++){
+			for(i = 0; i < 300; i++){
 				if(inw((uint16_t) PM1a_CNT_BLK & (uint16_t) SCI_EN) == 1){
 					break;
 				}
 				suspend(10);
 			}
 			if(PM1b_CNT_BLK != 0){
-				if(; i < 300; i++){
+				for(; i < 300; i++){
 					if(inw((uint16_t) PM1b_CNT_BLK & (uint16_t) SCI_EN) == 1){
 						break;
 					}

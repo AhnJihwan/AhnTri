@@ -164,11 +164,11 @@ int enable_acpi(){
 				printf("Cannot enable ACPI...");
 				return 1;
 			}
-		}else{
+		} else{
 			printf("ACPI can't be enabled...");
 				return 0;
 		}
-	}else{
+	} else{
 		printf("ACPI is already enabled...");
 			return 1;
 	}

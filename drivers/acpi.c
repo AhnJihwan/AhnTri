@@ -174,6 +174,11 @@ int enable_acpi(){
 	}
 }
 
+int init_acpi(acpi_header_t* addr){
+	facp_t* facp = (facp_t*) addr;
+	uint8_t* s5_addr = (uint8_t*) facp->dsdt +36;
+}
+
 uint8_t checksum(const char* addr, uint8_t size){
 	const char* end = addr + size;
 	uint8_t sum = 0;

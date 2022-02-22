@@ -176,7 +176,14 @@ int enable_acpi(){
 
 int init_acpi(acpi_header_t* addr){
 	facp_t* facp = (facp_t*) addr;
-	uint8_t* s5_addr = (uint8_t*) facp->dsdt +36;
+	uint8_t* s5_addr = (uint8_t*) facp->dsdt + 36;
+	int dsdt_len = *(facp->dsdt + 1) - 36;
+	while(0 < dsdt_len--){
+		if(memcmp(s5_addr, "_S5_", 4)==0){
+			break;
+		}
+		s5_addr++;
+	}
 }
 
 uint8_t checksum(const char* addr, uint8_t size){

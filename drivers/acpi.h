@@ -80,7 +80,7 @@ typedef struct addr_type_t {
 typedef struct facp {
   acpi_header_t head;
   uint32_t firmware_ctrl;
-  uint32_t dsdt;
+  uint32_t* dsdt;
   uint8_t reserved;
   uint8_t pref_pm_prof;
   uint16_t sci_int;

@@ -184,6 +184,14 @@ int init_acpi(acpi_header_t* addr){
 		}
 		s5_addr++;
 	}
+	if(dsdt_len > 0){
+		//AML Valid?
+		if((*(s5_addr - 1) == 0x08 || ( *(s5_addr - 2) == 0x08 && *(s5_addr - 1) == '\\') ) && *(s5_addr + 4) == 0x12){
+			//AML Valid
+			s5_addr += 5;
+			s5_addr += ((*s5_addr & 0xC0) >> 6) + 2;
+		}
+	}
 }
 
 uint8_t checksum(const char* addr, uint8_t size){

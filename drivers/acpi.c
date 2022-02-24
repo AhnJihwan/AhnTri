@@ -189,7 +189,7 @@ int init_acpi(acpi_header_t* addr){
 	}
 	if(dsdt_len > 0){
 		//AML Valid?
-		if(((*(s5_addr - 1) == 0x08 || ( *(s5_addr - 2) == 0x08 && *(s5_addr - 1) == '\\') ) && *(s5_addr + 4) == 0x12){
+		if((*(s5_addr - 1) == 0x08 || ( *(s5_addr - 2) == 0x08 && *(s5_addr - 1) == '\\') ) && *(s5_addr + 4) == 0x12){
 			//AML Valid
 			s5_addr += 5;
 			s5_addr += ((*s5_addr & 0xC0) >> 6) + 2;
@@ -215,8 +215,10 @@ int init_acpi(acpi_header_t* addr){
 			return 0;
 		} else{
 			printf("S5 Parse...[ERROR]");
+		}
 	} else{
 		printf("S5...[NOT PRESENT]");
+	}
 }
 
 uint8_t checksum(const char* addr, uint8_t size){

@@ -117,6 +117,7 @@ void parse_facp(acpi_header_t* addr){
 	uint32_t creatorrevision = head.creatorrevision;
 	acpi_header_t* dsdt = (acpi_header_t*) (uintptr_t) facp->dsdt;
 	PM1a_CNT_BLK = facp->PM1a_CNT_BLK;
+	PM1b_CNT_BLK = facp->PM1b_CNT_BLK;
 	//...
 	parse_dsdt(dsdt);
 }
@@ -190,8 +191,30 @@ int init_acpi(acpi_header_t* addr){
 			//AML Valid
 			s5_addr += 5;
 			s5_addr += ((*s5_addr & 0xC0) >> 6) + 2;
-		}
-	}
+			
+			if (*s5_addr == 0x0A){
+				s5_addr++
+			}
+			SLP_TYPa = *(s5_addr) << 10;
+			s5_addr++;
+			
+			if (*s5_addr == 0x0A){
+				s5_addr++
+			}
+			SLP_TYPb = *(s5_addr) << 10;
+			
+			smi_cmd = facp->smi_cmd;
+			acpi_enable = facp->acpi_enable;
+			acpi_disable = facp->acpi_disable;
+			PM1_CNT_len = facp->PM1_CNT_len;
+			SLP_EN = 1 << 13;
+			SCI_EN = 1;
+			
+			return 0;
+		} else{
+			printf("S5 Parse...[ERROR]");
+	} else{
+		printf("S5...[NOT PRESENT]");
 }
 
 uint8_t checksum(const char* addr, uint8_t size){

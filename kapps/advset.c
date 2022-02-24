@@ -24,6 +24,7 @@ void advset(){
 	printf("e. Earth Save Mode(Eco Mode)(X)\n");
 	printf("f. Safe Termperature mode(O)\n");
 	printf("g. Safe Termperature mode(X)\n");
+	printf("h. Shutdown via ACPI\n");
 	printf("AhnTroid AI is a part of AhnTri and is protected by the Apache 2.0 open source licence.\n");
 	cps = get_input_keycode();
 	if(cps == KEY_3){
@@ -81,6 +82,8 @@ void advset(){
 		ia32_therm_interrupt_f(1, false);
 		ia32_therm_interrupt_f(2, false);
 		ia32_therm_interrupt_f(4, false);
+	}else if(cps == KEY_H){
+		acpi_shutdown();
 	} else{
 		clscr();
 		return;

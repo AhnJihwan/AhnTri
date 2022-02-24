@@ -1,3 +1,5 @@
+#include "scicalc.c"
+
 //Ccalc for Advanced Calculations
 void display_menu_ccalc_adv()
 {
@@ -28,6 +30,8 @@ void display_menu_ccalc_adv()
   printf("\n");
   printf("Press [10] for Virtual Adress Translation   ");
   printf("\n");
+  printf("Press [11] for Finding moleclue weight   ");
+	
   printf("Press [0] for Exit                  ");
 }
 
@@ -137,6 +141,14 @@ void advccalc(){
 				print_int(va2pa((void *)num1, 2));
 				printf("\nThe Offset is: ");
 				print_int(va2pa((void *)num1, 3));
+				break;
+			case 11:
+				printf("Chemical Element Number: ");
+				num1 = read_int();
+				printf("\nNumbers of Molecule: ");
+				num2 = read_int();
+				printf("\nThe Molecular Mass is: ");
+				print_int(findmolweight(num1, num2));
 				break;
 			case 0:
 				ccalc();

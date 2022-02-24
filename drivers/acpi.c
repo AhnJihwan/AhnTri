@@ -99,6 +99,8 @@ uint16_t P_LVL2_LAT;
 uint16_t P_LVL3_LAT;
 uint32_t SLP_EN;
 uint32_t SCI_EN;
+uint32_t SLP_TYPa;
+uint32_t SLP_TYPb;
 
 void parse_facp(acpi_header_t* addr){
 	facp_t* facp = (facp_t*) addr;
@@ -199,7 +201,7 @@ int init_acpi(acpi_header_t* addr){
 			s5_addr++;
 			
 			if (*s5_addr == 0x0A){
-				s5_addr++
+				s5_addr++;
 			}
 			SLP_TYPb = *(s5_addr) << 10;
 			

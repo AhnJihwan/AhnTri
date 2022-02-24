@@ -195,7 +195,7 @@ int init_acpi(acpi_header_t* addr){
 			s5_addr += ((*s5_addr & 0xC0) >> 6) + 2;
 			
 			if (*s5_addr == 0x0A){
-				s5_addr++
+				s5_addr++;
 			}
 			SLP_TYPa = *(s5_addr) << 10;
 			s5_addr++;

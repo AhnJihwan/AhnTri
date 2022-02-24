@@ -97,10 +97,10 @@ uint8_t GPE1_BASE;
 uint8_t CST_CNT;
 uint16_t P_LVL2_LAT;
 uint16_t P_LVL3_LAT;
-uint32_t SLP_EN;
-uint32_t SCI_EN;
-uint32_t SLP_TYPa;
-uint32_t SLP_TYPb;
+uint16_t SLP_EN;
+uint16_t SCI_EN;
+uint16_t SLP_TYPa;
+uint16_t SLP_TYPb;
 
 void parse_facp(acpi_header_t* addr){
 	facp_t* facp = (facp_t*) addr;
@@ -122,6 +122,7 @@ void parse_facp(acpi_header_t* addr){
 	PM1b_CNT_BLK = facp->PM1b_CNT_BLK;
 	//...
 	parse_dsdt(dsdt);
+	init_acpi(facp);
 }
 
 void parse_dsdt(acpi_header_t* head){
@@ -219,6 +220,18 @@ int init_acpi(acpi_header_t* addr){
 	} else{
 		printf("S5...[NOT PRESENT]");
 	}
+}
+
+void shutdown(){
+	if(SCI_EN == 0){
+		return;
+	}
+	enable_acpi();
+	outw((uint16_t)PM1a_CNT_BLK, SLP_TYPa | SLP_EN );
+	if (PM1b_CNT_BLK != 0){
+		outw((uint16_t)PM1b_CNT_BLK, SLP_TYPb | SLP_EN );
+	}
+	printf("ACPI shutdown X");
 }
 
 uint8_t checksum(const char* addr, uint8_t size){

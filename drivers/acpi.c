@@ -222,7 +222,7 @@ int init_acpi(acpi_header_t* addr){
 	}
 }
 
-void shutdown(){
+void acpi_shutdown(){
 	if(SCI_EN == 0){
 		return;
 	}

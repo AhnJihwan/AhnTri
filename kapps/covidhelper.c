@@ -2,7 +2,7 @@
 #include "../libc/atclib.h"
 
 void covidhelper(int temp, int spo2){
-  if(temp <= 94){
+  if(temp <= 98){
     printf("Normal Temperature\n");
   } else{
     printf("Might be infected. Take the COVID test!\n");

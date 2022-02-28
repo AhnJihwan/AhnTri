@@ -60,12 +60,12 @@ void credits(){
 	printf("Thank you Ayush Yadav for helping for ISRs.");
 	printf("u/DeanBurrito for Paging and Page fault help(ing)\n");
 	printf("===========Other thanks to...==========\n");
-	printf("BK Ahn(Computer)\n");
+	printf("BK Ahn helped me create the COVID 19 helper\n");
 	printf("Ethan Recendez and Justin Y.(made the first Fish Dictionary(2017) with core dev)\n");
 	printf("u/fin4rfin for typos\n");
 	printf("SJ Kim helped me in factorial\n");
 	printf("Ivan G. helped me for QEMU serial ports.\n");
-	printf("E.S Lee (lending PC for real PC iso file)\n");
+	printf("E.S Lee helped me on creating the COVID helper\n");
 	suspend(1000);
 	printf("Thank you for all, who helped me XD! \nMay you be in AhnTri...\n[a] for Return, [b] for Apache 2.0 licence");
 	printf("\nOfficial SNS of AhnTri/Jihwan Ahn:\nDiscord(Jihwan Ahn): eric0823ahn#7196\nOpen Kakaotalk(AhnTri): https://open.kakao.com/me/ahntri\nGoogle: ahntridev@gmail.com\nReddit(Jihwan Ahn): u/eric0823ahn1\nYoutube playlist: https://youtube.com/playlist?list=PLgUQc-w_4F0IqoslRqjFQ5tHWJu0KcSCH");

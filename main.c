@@ -142,6 +142,8 @@ void kernmain(){
 			ccalcgraph();
 		}else if(strcmp(choice, "rsdpparse")==0){
 			searchforrsdp();
+		}else if(strcmp(choice, "covidhelp")==0){
+			covidhelperkapp();
 		}else{
 			printf("\n");
 			printf(choice);

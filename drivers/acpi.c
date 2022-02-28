@@ -73,7 +73,7 @@ uint32_t *find_facp(uint32_t * rsdt_addr){
 	return NULL;
 }
 
-uint32_t *find_facp(uint32_t * rsdt_addr){
+uint32_t *find_madtable(uint32_t * rsdt_addr){
 	rsdt_t* rsdt = (rsdt_t*) rsdt_addr;
 	int entries = (rsdt->head.len - sizeof(rsdt->head)) / 4;
 	print_int(entries);
@@ -81,7 +81,6 @@ uint32_t *find_facp(uint32_t * rsdt_addr){
 		acpi_header_t* ssdt = (acpi_header_t*) rsdt->entry[i];
 		if(strncmp(ssdt->sign, "APIC", 4)==0){
 			printf("Multiple APIC D.T. found\n");
-			parse_facp(ssdt);
 		}
 	}
 	return NULL;

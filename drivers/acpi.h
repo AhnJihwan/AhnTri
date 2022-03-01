@@ -153,3 +153,10 @@ typedef struct madt_ent_ti {                      // IO APIC
   uint32_t ioapicaddr;
   uint32_t gsib;
 } __attribute__((packed)) madt_ent_ti_t;
+
+typedef struct madt_ent_tii {                      // IO APIC Interrupt Source Override
+  uint8_t bus;
+  uint8_t irqsrc;
+  uint16_t flags;
+  uint32_t gsib;
+} __attribute__((packed)) madt_ent_tii_t;

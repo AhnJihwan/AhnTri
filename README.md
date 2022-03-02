@@ -2,6 +2,9 @@
 
 # AhnTri OS
 
+Wish you good luck, Ukraine!
+We all stand WITH UKRAINE!
+
 # Needed to be built with Xubuntu 20.04/18.04.
 http://mirror.us.leaseweb.net/ubuntu-cdimage/xubuntu/releases/20.04/release/xubuntu-20.04.2.0-desktop-amd64.iso
 https://cdimage.ubuntu.com/xubuntu/releases/20.04.2/release/xubuntu-20.04.2.0-desktop-amd64.iso

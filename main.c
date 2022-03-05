@@ -95,6 +95,7 @@ void kernmain(){
 			clscr();
 		} else if(strcmp(choice, "halt")==0 || strcmp(choice, "shutdown")==0 || strcmp(choice, "ashutdown")==0 || strcmp(choice, "ahalt")==0){
 			shutdown();
+			acpi_shudown();
 		} else if(strcmp(choice, "cputest")==0 || strcmp(choice, "cpuid")==0 || strcmp(choice, "acpuid")==0){					//The real name of it was cpuid
 			cputest();
 		} else if(strcmp(choice, "notes")==0 || strcmp(choice, "anotes")==0){

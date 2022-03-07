@@ -1,22 +1,17 @@
 #include "../libc/atclib.h"
 #include "paging.h"
 
-page_table_t page_table_i[1024];
 page_dir_t page_dir_i[1024];
 page_directory_t page_directory_i[1024];
 
 void *va2pa(void *vaddr, int a) {
 	unsigned long output;
 	unsigned long pdei = (unsigned long)vaddr >> 22;
-	unsigned long ptei = (unsigned long)vaddr >> 12 & 0x3FF;
-	unsigned long offset = (unsigned long)vaddr & 0xFFF;
+	unsigned long offset = (unsigned long)vaddr & 0xFFFFF;
 	if(a==1){						//Page Directory Entry Index
 		output = pdei;
 		return output;
-	}else if(a==2){				//Page Table Entry Index
-		output = ptei;
-		return output;
-	}else if(a==3){				//Offset
+	}else if(a==2){				//Offset
 		output = offset;
 		return offset;
 	}

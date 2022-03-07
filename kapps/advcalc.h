@@ -28,7 +28,7 @@ void display_menu_ccalc_adv()
   printf("\n");
   printf("Press [9] for Fibonacci Sequence   ");
   printf("\n");
-  printf("Press [10] for Virtual Adress Translation   ");
+  printf("Press [10] for Virtual Adress Translation 2MB paging   ");
   printf("\n");
   printf("Press [11] for Finding moleclue weight   ");
 	
@@ -137,10 +137,8 @@ void advccalc(){
 				num1 = read_int();
 				printf("\nThe Page Directory Entry is: ");
 				print_int(va2pa((void *)num1, 1));
-				printf("\nThe Page Table Entry is: ");
-				print_int(va2pa((void *)num1, 2));
 				printf("\nThe Offset is: ");
-				print_int(va2pa((void *)num1, 3));
+				print_int(va2pa((void *)num1, 2));
 				break;
 			case 11:
 				printf("Chemical Element Number: ");

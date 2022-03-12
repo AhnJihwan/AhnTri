@@ -28,7 +28,7 @@ void display_menu_ccalc_adv()
   printf("\n");
   printf("Press [9] for Fibonacci Sequence   ");
   printf("\n");
-  printf("Press [10] for Virtual Adress Translation 2MB paging   ");
+  printf("Press [10] for Virtual Adress Translation 4MB paging   ");
   printf("\n");
   printf("Press [11] for Finding moleclue weight   ");
 	

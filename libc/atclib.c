@@ -6,3 +6,4 @@
 #include "math/advmath.h"
 #include "mem/mem.h"
 #include "stdio/stdio.h"
+#include "random/random.h"

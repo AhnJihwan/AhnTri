@@ -61,3 +61,5 @@ extern char getchar();
 extern void strcpy(char dest[], const char source[]);
 extern void itoa(int num, char *number);
 extern int atoi(char* s);
+// Random
+extern unsigned int xor32();

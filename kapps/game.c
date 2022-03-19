@@ -7,7 +7,7 @@ void game(){
 	int ii;
 	printf("Guess a natural number in the set X(X={x|0<=x<=10}) ... ");
 	ii = read_int();
-	if(i = ii){
+	if(i == ii){
 		printf("The number picked is right!");
 	} else {
 		printf("Your guess is wrong...");

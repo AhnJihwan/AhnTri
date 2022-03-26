@@ -2,7 +2,7 @@
 
 # AhnTri OS
 
-!!경 윤석열대통령 확정 축!! Yoon Became the President of Republic of Korea !! Celebrating Yoon's Being the President of S.K. !! 윤석열 대통령님 대통령 축하 드립니다 !!
+Re-starting RAMFS project...
 
 # Needed to be built with Xubuntu 20.04/18.04.
 http://mirror.us.leaseweb.net/ubuntu-cdimage/xubuntu/releases/20.04/release/xubuntu-20.04.2.0-desktop-amd64.iso

@@ -5,6 +5,20 @@ unsigned int xor32(){
   return l ^= l << 19;
 }
 
+unsigned int xor32_2(){
+  static unsigned int l = 37242598UL;
+  l ^= l << 55;
+  l ^= l >> 23;
+  return l ^= l << 16;
+}
+
 unsigned int xor32_2times(){
-  return xor32(xor32());
+  int i = xor32();
+  int ii = i % 10;
+  int iii;
+  while(ii < 0){
+    iii = xor32_2();
+    ii--;
+  }
+  return iii;
 }

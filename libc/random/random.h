@@ -9,6 +9,8 @@ unsigned int xor32_2(){
   static unsigned int l = 37242598UL;
   l ^= l << 55;
   l ^= l >> 23;
+  l ^= l >> 822;
+  l ^= l << 556;
   return l ^= l << 16;
 }
 

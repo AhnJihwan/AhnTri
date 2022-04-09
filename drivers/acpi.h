@@ -160,3 +160,10 @@ typedef struct madt_ent_tii {                      // IO APIC Interrupt Source O
   uint16_t flags;
   uint32_t gsib;
 } __attribute__((packed)) madt_ent_tii_t;
+
+typedef struct madt_ent_tiii {                      // 
+  uint8_t nmisource;
+  uint8_t reserved;
+  uint16_t flags;
+  uint32_t globalsysint;
+} __attribute__((packed)) madt_ent_tiii_t;

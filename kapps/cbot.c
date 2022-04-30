@@ -17,7 +17,13 @@ void ahntroid(){
 			framebuffer_putstr("\nbut have only one output. Whatever, have a good day!", 0x65abe7);
 			free(input);
 		}else if(strcmp(input, "bye")==0 || strcmp(input, "good bye")==0 || strcmp(input, "bye")==0){
-			framebuffer_putstr("Bye-Bye, Good-Bye!!", 0x65abe7);
+			int i;
+			i = (int)xor32_2times() % 2;
+			if(i == 0){
+				framebuffer_putstr("Bye-Bye, Good-Bye!!", 0x65abe7);
+			} else if(i == 1){
+				framebuffer_putstr("Bye! Hope to see you again soon!", 0x65abe7);
+			}
 			kernmain();
 		}else if(strcmp(input, "help")==0){
 			framebuffer_putstr("Help: exit() to exit", 0x65abe7);
